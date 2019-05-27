@@ -16,3 +16,24 @@ server/src/models --> Contienen los modelos (archivos donde se definen las clase
 de datos)
 server/src/routes --> Contiene las rutas (archivo donde se define con qué método de qué controlador se va a responder a una petición determinada en una ruta determinada)
 
+
+Client: 
+
+web-app/node_modules --> Contiene las dependencias (packages, librerías, etc)
+web-app/src --> donde está el código hecho por nosotros
+web-app/angular.json --> Configuraciones de Angular
+web-app/package.json --> Configuración general (dependencias, comandos, etc)
+web-app/tsconfig.json --> Configuración de Typescript (versión de ECMA Script a la que compila, carpeta de destino, etc)
+
+web-app/src/styles.css --> Hoja de estilos global del proyecto
+web-app/src/index.html --> Archivo html principal del proyecto
+web-app/src/assets --> Donde generalmente se ponen las imagenes, videos, fuentes, etc.
+web-app/src/app --> Donde está lo importante (componente y módulo principal --> app)
+web-app/src/app/app.component.css --> Css del componente app
+web-app/src/app/app.comptonent.html --> Vista del componente app
+web-app/src/app/app.component.ts --> Lógica del componente app
+web-app/src/app/app.module.ts --> Módulo principal de la aplicación
+web-app/src/app/app.routing.module.ts --> Módulo principal de ruteo
+
+
+
