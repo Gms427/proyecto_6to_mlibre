@@ -1,4 +1,4 @@
 @echo off
 
-call npm run build | npm run dev
+call npm run test
 pause
