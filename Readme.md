@@ -1,4 +1,4 @@
-proyecto_6to_mlibre
+﻿proyecto_6to_mlibre
 
 
 Server: 
@@ -34,6 +34,8 @@ web-app/src/app/app.comptonent.html --> Vista del componente app
 web-app/src/app/app.component.ts --> Lógica del componente app
 web-app/src/app/app.module.ts --> Módulo principal de la aplicación
 web-app/src/app/app.routing.module.ts --> Módulo principal de ruteo
+
+ng g c shared/components/navbar --module shared
 
 
 

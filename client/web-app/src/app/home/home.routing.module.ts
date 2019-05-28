@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 const routes: Routes = [
   {
@@ -11,11 +13,15 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent
-    //,
-    //children: [
-    //  { path: '', component: ReportViewerComponent }
-    //]
-  }
+  },
+ {
+   path: 'login',
+   component: LoginComponent
+ },
+ {
+   path: 'signin',
+   component: SigninComponent
+ }
 ];
 
 @NgModule({
