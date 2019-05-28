@@ -8,3 +8,10 @@
   bottom: 0;
   margin: auto;
 }
+.btn-login{
+  margin: auto!important;
+  display: block;
+}
+.mat-card-header-text{
+  margin: auto!important;
+}
