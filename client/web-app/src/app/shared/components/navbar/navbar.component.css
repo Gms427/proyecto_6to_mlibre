@@ -94,3 +94,24 @@ button .favorites{
 .btn-favorites {
     padding: 15px 20px;
 }
+
+.favorites-menu{
+    padding: 20px;
+}
+
+.favorites-card{
+    padding: 20px;
+}
+
+.header-title{
+    margin: 2px 0px 0px 20px;
+}
+
+.favorites-card .modeless-box-img {
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
