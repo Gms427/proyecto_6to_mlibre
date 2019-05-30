@@ -2,10 +2,10 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-card-header-text {
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #f7f6f6}
+/* .mat-card-header-text {
   margin: auto !important;
-}
+} */
 .mat-menu-panel {
   max-width: max-content!important;
 }
