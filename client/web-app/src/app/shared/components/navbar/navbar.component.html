@@ -35,7 +35,7 @@
     </div>
     <div class="modules">
       <div class="item">
-        <button mat-button [matMenuTriggerFor]="favorites">
+        <button mat-button [matMenuTriggerFor]="favorites" (mouseover)="showFavoritesMenu()">
           <span class="favorites">Favoritos</span>
           <i class="fas fa-chevron-down"></i>
         </button>
@@ -48,12 +48,11 @@
               <mat-card-header>
                 <mat-card-title>{{favorite.name}}</mat-card-title>
                 <mat-card-subtitle>{{favorite.price}}</mat-card-subtitle>
-                <button mat-button (click)="deleteFavorite(favorite)">Eliminar</button>
+                <button mat-button (click)="deleteFavorite(favorite)" >Eliminar</button>
               </mat-card-header>
             </mat-card>
             <mat-divider></mat-divider>
           </a>
-          <button mat-button class="btn-favorites-all" (click)='listAllFavorites()'>Ver todos los favoritos</button>
           <a *ngIf="favoritesList.length == 0">
             <mat-card class="favorites-card mat-elevation-z">
               <mat-card-header>
@@ -62,6 +61,7 @@
             </mat-card>
             <mat-divider></mat-divider>
           </a>
+          <button mat-button class="btn-favorites-all" (click)='listAllFavorites()'>Ver todos los favoritos</button>          
         </mat-menu>
       </div>
       <div class="item">

@@ -1,5 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Favorites } from "./favorites";
+import { MatMenuTrigger } from '@angular/material/menu';
+
 
 @Component({
   selector: "app-navbar",
@@ -22,16 +24,18 @@ export class NavbarComponent implements OnInit {
     }
   ];
 
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
   constructor() {}
 
   ngOnInit() {}
 
   navegateToProduct(favorite) {
-    alert("Product favorite: " + favorite.name);
+    console.log("Product favorite: " + favorite.name);
   }
 
   deleteFavorite(favorite) {
-    alert("Delete favorite:" + favorite.name);
+    console.log("Delete favorite:" + favorite.name);
     const index: number = this.favoritesList.indexOf(favorite);
     if (index !== -1) {
       this.favoritesList.splice(index, 1);
@@ -39,5 +43,12 @@ export class NavbarComponent implements OnInit {
   }
   listAllFavorites() {
     console.log(this.favoritesList);
+  }
+
+  showFavoritesMenu(){
+    this.trigger.openMenu();
+  }
+  hideFavoritesMenu(){
+    this.trigger.closeMenu();
   }
 }
