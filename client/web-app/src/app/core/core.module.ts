@@ -4,6 +4,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+
+//Primeng menu
+import { MenubarModule } from 'primeng/menubar';
 
 // Form Controls
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -98,7 +102,11 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     // Forms module
-    FormsModule
+    FormsModule,
+    // Primeng Menu
+    MenubarModule,
+    // Internacionalización
+    TranslateModule
     
   ],
   exports: [
@@ -140,7 +148,10 @@ import { MatTableModule } from '@angular/material/table';
     MatSortModule,
     MatTableModule,
     // Forms module
-    FormsModule
-  ]
+    FormsModule,
+    // Primeng Menu
+    MenubarModule
+  ],
+  providers: []
 })
 export class CoreModule { }

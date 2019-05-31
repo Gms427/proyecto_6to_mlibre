@@ -8,10 +8,39 @@
   bottom: 0;
   margin: auto;
 }
-.btn-login{
-  margin: auto!important;
+.btn-login {
+  margin-left: auto !important;
+  margin-right: auto!important;
   display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: .3s;
 }
-.mat-card-header-text{
-  margin: auto!important;
+.mat-card-header-text {
+    margin: auto !important;
+}
+.example-card {
+  padding: 55px;
+}
+.card-title {
+  margin: auto;
+  text-align: center;
+}
+.btn-signin {
+  transition: .3s;
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 50%;
+  height: 35px;
+  padding: 8px 4px;
+  border-radius: 4px;
+}
+  .btn-signin:hover {
+    background: #cce6ff;
+    padding-top: 10px;
+  }
+.btn-login-container {
+  height: 65px;
+  display: block;
 }

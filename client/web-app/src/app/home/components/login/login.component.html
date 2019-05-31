@@ -1,7 +1,7 @@
 <div class="login-container">
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-title style="margin: auto; text-align: center;">Hola! Ingresa tu e-mail o usuario y contraseña</mat-card-title>
+      <mat-card-title style="margin: auto; text-align: center; font-size: 23px; margin-bottom: 20px;">{{ 'LoginMessage' | translate }}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
@@ -10,14 +10,14 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width" style="width: 100%">
-                <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                <input matInput placeholder="{{ 'UserOrEmail' | translate }}" [(ngModel)]="username" name="username" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
             <td>
               <mat-form-field class="example-full-width" style="width: 100%">
-                <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+                <input matInput placeholder="{{ 'Password' | translate }}" [(ngModel)]="password" type="password" name="password" required>
               </mat-form-field>
             </td>
           </tr>
@@ -27,9 +27,12 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <button mat-raised-button (click)="login()" color="primary" class="btn-login">Login</button>
+      <div class="btn-login-container">
+        <button mat-raised-button (click)="login()" color="primary" class="btn-login">{{ 'Login' | translate }}</button>
+      </div>
+      <a class="btn-signin" routerLink="/home/signin">{{ 'Signin' | translate }}</a>
     </mat-card-actions>
-
+    
   </mat-card>
 </div>
-
+<!--<p-menubar [model]="items"></p-menubar>-->

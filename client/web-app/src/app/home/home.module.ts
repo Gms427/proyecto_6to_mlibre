@@ -5,13 +5,15 @@ import { HomeRoutingModule } from './home.routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CoreModule } from '../core/core.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [MainComponent, LoginComponent, SigninComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CoreModule
+    CoreModule,
+    TranslateModule
   ]
 })
 export class HomeModule { }

@@ -1,3 +1,8 @@
 {
-  "test": "Test en español"
+  "Test": "Test en español",
+  "LoginMessage": "Hola! Ingresa tu e-mail o usuario y contraseña",
+  "Login": "Ingresar",
+  "Signin": "Registrarse",
+  "UserOrEmail": "Usuario o e-mail",
+  "Password": "Contraseña"
 }

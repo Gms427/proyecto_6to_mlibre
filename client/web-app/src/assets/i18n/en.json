@@ -1,3 +1,8 @@
 {
-   "test":"Test in english"
+  "Test": "Test in english",
+  "LoginMessage": "Hello! Enter your e-mail or username and password",
+  "Login": "Log in",
+  "Signin": "Sign in",
+  "UserOrEmail": "Username or e-mail",
+  "Password": "Password"
 }
