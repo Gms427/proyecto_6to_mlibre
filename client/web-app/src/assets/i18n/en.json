@@ -1,8 +1,17 @@
 {
   "Test": "Test in english",
   "LoginMessage": "Hello! Enter your e-mail or username and password",
+  "SignupMessage": "Complete your data",
   "Login": "Log in",
   "Signin": "Sign in",
   "UserOrEmail": "Username or e-mail",
-  "Password": "Password"
+  "Password": "Password",
+  "CreateCompanyAccount": "Create company account",
+  "SigninConditions1": "By registering, I declare that I am of legal age and accept the",
+  "PrivacyPolicy": "Privacy Policy",
+  "SigninConditions2": " and the ",
+  "TermsAndConditions": "Terms and Conditions",
+  "OfNosbey":  "of Nosbey",
+  "Surname": "Surname",
+  "PhoneNumber": "Phone number"
 }
