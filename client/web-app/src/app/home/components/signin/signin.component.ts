@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserSignin } from '../../models/UserSignin';
 
 @Component({
   selector: 'app-signin',
@@ -6,11 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  /*name
-  phone
-  email
-  surname
-  password*/
+  public userData: UserSignin = new UserSignin();
 
 
   constructor() { }
@@ -20,6 +17,6 @@ export class SigninComponent implements OnInit {
 
 
   signin() {
-
+    console.log(this.userData);
   }
 }

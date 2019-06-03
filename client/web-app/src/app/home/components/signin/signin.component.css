@@ -19,9 +19,10 @@
 .btn-signin {
   width: 300px;
 }
-.signin-conditions{
+.signin-conditions {
   display: inline-block;
   width: 300px;
+  font-size: 13px;
 }
 .controles-container {
   width: 95%;
