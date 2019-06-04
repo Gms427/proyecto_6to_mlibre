@@ -1,0 +1,46 @@
+  <button
+    mat-button
+    [matMenuTriggerFor]="favorites"
+    class="options"
+    matTooltip="Favorites"
+  >
+    <i class="fas fa-heart"></i>
+  </button>
+  <mat-menu #favorites="matMenu" xPosition="before">
+    <p class="header-title">Favoritos</p>
+    <mat-divider></mat-divider>
+    <div class="favorites-content">
+      <a *ngFor="let favorite of favoritesList">
+        <mat-card
+          class="favorites-card mat-elevation-z"
+          (click)="navegateToProduct(favorite)"
+        >
+          <img class="modeless-box-img" [attr.src]="favorite.img" />
+          <mat-card-header>
+            <mat-card-title>{{ favorite.name }}</mat-card-title>
+            <mat-card-subtitle>{{ favorite.price }}</mat-card-subtitle>
+            <button mat-button (click)="deleteFavorite(favorite)">
+              Eliminar
+            </button>
+          </mat-card-header>
+        </mat-card>
+        <mat-divider></mat-divider>
+      </a>
+    </div>
+    <a *ngIf="favoritesList.length == 0">
+      <mat-card class="favorites-card mat-elevation-z">
+        <mat-card-header>
+          <mat-card-title>No data to display</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      <mat-divider></mat-divider>
+    </a>
+    <button
+      mat-button
+      class="btn-favorites-all"
+      (click)="listAllFavorites()"
+    >
+      Ver todos los favoritos
+    </button>
+  </mat-menu>
+
