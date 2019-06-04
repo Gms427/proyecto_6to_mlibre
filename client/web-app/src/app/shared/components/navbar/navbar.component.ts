@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 })
 export class NavbarComponent implements OnInit {
 
+  loged = false;
 
   constructor() {}
 
