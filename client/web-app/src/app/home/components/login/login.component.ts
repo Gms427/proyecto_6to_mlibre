@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,7 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   login() {

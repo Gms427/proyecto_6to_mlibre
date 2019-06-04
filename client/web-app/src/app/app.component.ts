@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,18 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'web-app';
+
+  constructor(private translate: TranslateService){
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+
+  changeLanguage(){
+    console.log(this.translate.currentLang)
+    if(this.translate.currentLang == 'en'){
+      this.translate.use('es');
+    }else{
+      this.translate.use('en');
+    }
+  }
 }

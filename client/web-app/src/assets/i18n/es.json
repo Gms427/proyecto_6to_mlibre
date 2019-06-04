@@ -1,0 +1,18 @@
+{
+  "Test": "Test en español",
+  "LoginMessage": "Hola! Ingresa tu e-mail o usuario y contraseña",
+  "SignupMessage": "Completa tus datos",
+  "Login": "Ingresar",
+  "Signin": "Registrarse",
+  "UserOrEmail": "Usuario o e-mail",
+  "Password": "Contraseña",
+  "CreateCompanyAccount": "Crear cuenta de empresa",
+  "SigninConditions1": "Al registrarme, declaro que soy mayor de edad y acepto las",
+  "PrivacyPolicy": "Política de privacidad",
+  "SigninConditions2": " y los ",
+  "TermsAndConditions": "Términos y condiciones",
+  "OfNosbey": "de Nosbey",
+  "Surname": "Apellido",
+  "PhoneNumber": "Teléfono"
+}
+

@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module'
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [MainComponent, LoginComponent, SigninComponent],
@@ -13,7 +14,7 @@ import { SharedModule } from '../shared/shared.module'
     CommonModule,
     HomeRoutingModule,
     CoreModule,
-    HomeRoutingModule,
+    TranslateModule,
     SharedModule
   ]
 })
