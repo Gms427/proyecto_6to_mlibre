@@ -1,3 +1,5 @@
+<div class="top-section">
+</div>
 <div class="login-container">
   <mat-card class="example-card">
     <mat-card-header>
@@ -10,7 +12,7 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width" style="width: 100%">
-                <input matInput placeholder="{{ 'UserOrEmail' | translate }}" [(ngModel)]="username" name="username" required>
+                <input matInput placeholder="{{ 'UserOrEmail' | translate }}" [(ngModel)]="username" name="username" required [errorStateMatcher]="matcher">
               </mat-form-field>
             </td>
           </tr>
