@@ -1,40 +1,61 @@
 <div class="top-section">
 </div>
 <div class="login-container">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title style="margin: auto!important; text-align: center; font-size: 22px; margin-bottom: 20px!important;">{{ 'LoginMessage' | translate }}</mat-card-title>
-    </mat-card-header>
+  <form>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title style="margin: auto!important; text-align: center; font-size: 22px; margin-bottom: 20px!important;">{{ 'LoginMessage' | translate }}</mat-card-title>
+      </mat-card-header>
 
-    <mat-card-content>
-      <form class="example-form">
-        <table class="example-full-width" cellspacing="0" style="width: 100%">
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width" style="width: 100%">
-                <input matInput placeholder="{{ 'UserOrEmail' | translate }}" [(ngModel)]="username" name="username" required [errorStateMatcher]="matcher">
-              </mat-form-field>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <mat-form-field class="example-full-width" style="width: 100%">
-                <input matInput placeholder="{{ 'Password' | translate }}" [(ngModel)]="password" type="password" name="password" required>
-              </mat-form-field>
-            </td>
-          </tr>
-        </table>
-      </form>
-      <!--<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>-->
-    </mat-card-content>
+      <mat-card-content>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0" style="width: 100%">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" style="width: 100%">
+                  <input matInput placeholder="{{ 'UserOrEmail' | translate }}"
+                         [formControl]="emailFormControl"
+                         [errorStateMatcher]="matcher"
+                         [(ngModel)]="username"
+                         name="username">
 
-    <mat-card-actions>
-      <div class="btn-login-container">
-        <button mat-raised-button (click)="login()" color="primary" class="btn-login">{{ 'Login' | translate }}</button>
-      </div>
-      <a class="btn-signin" routerLink="/home/signin">{{ 'Signin' | translate }}</a>
-    </mat-card-actions>
-    
-  </mat-card>
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" style="width: 100%">
+                  <input matInput placeholder="{{ 'Password' | translate }}"
+                         [formControl]="passwordFormControl"
+                         [errorStateMatcher]="matcher"
+                         [(ngModel)]="password"
+                         name="password"
+                         type="password">
+                  <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </form>
+        <!--<mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>-->
+      </mat-card-content>
+
+      <mat-card-actions>
+        <div class="btn-login-container">
+          <button mat-raised-button (click)="login()" color="primary" class="btn-login">{{ 'Login' | translate }}</button>
+        </div>
+        <a class="btn-signin" routerLink="/home/signin">{{ 'Signin' | translate }}</a>
+      </mat-card-actions>
+
+    </mat-card>
+  </form>
 </div>
 <!--<p-menubar [model]="items"></p-menubar>-->

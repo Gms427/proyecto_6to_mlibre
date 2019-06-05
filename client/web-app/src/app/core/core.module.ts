@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 //Primeng menu
@@ -102,6 +102,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTableModule,
     // Forms module
     FormsModule,
+    ReactiveFormsModule,
     // Primeng Menu
     MenubarModule,
     // Internacionalización
@@ -148,6 +149,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTableModule,
     // Forms module
     FormsModule,
+    ReactiveFormsModule,
     // Primeng Menu
     MenubarModule
   ],
