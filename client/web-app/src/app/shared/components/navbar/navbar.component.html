@@ -34,7 +34,7 @@
         <app-favorites></app-favorites>
       </div>
       <div class="item" *ngIf="loged">
-        <button mat-button [matMenuTriggerFor]="notifications" class="options" matTooltip="Notifications">
+        <button mat-button [matMenuTriggerFor]="notifications" class="options" matTooltip='{{ "Notifications" | translate }}'>
           <i class="fas fa-bell"></i>
         </button>
         <mat-menu #notifications="matMenu" xPosition="before">
@@ -43,7 +43,7 @@
       </div>
       <div class="item">
         <app-profile *ngIf="loged"></app-profile>
-        <button mat-button class="options" *ngIf="!loged" matTooltip="Login" routerLink="/home/login">
+        <button mat-button class="options" *ngIf="!loged" matTooltip='{{ "Login" | translate }}' routerLink="/home/login">
           <i class="fas fa-sign-in-alt"></i>
         </button>
       </div>

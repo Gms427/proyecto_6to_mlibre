@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Favorites } from './favorites';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-favorites',

@@ -17,5 +17,17 @@
   "History": "History",
   "OfficialStores": "Official stores",
   "OffersWeek": "Offers of the week",
-  "Sell": "Sell"
+  "Sell": "Sell",
+  "Favorites": "Favorites",
+  "Delete":"Delete",
+  "NoDataDisplay": "No data to display",
+  "SeeAllFav": "See all favorites",
+  "Hello": "Hello ",
+  "MyAccount": "My account",
+  "Shopping":"Shopping",
+  "Sales": "Sales",
+  "MyData": "My data",
+  "Security": "Security",
+  "Logout": "Logout",
+  "Notifications": "Notifications"
 }
