@@ -1,3 +1,5 @@
+<div class="top-section">
+</div>
 <div class="signin-container">
    <mat-card class="example-card">
 
@@ -38,12 +40,12 @@
 
      <mat-grid-list cols="2" rowHeight="60px">
        <mat-grid-tile>
-         <button mat-raised-button (click)="signin()" color="primary" class="btn-signin">{{ 'Signin' | translate }}</button>
+         <button mat-raised-button (click)="signin()" color="primary" class="btn-signin" [disabled]="!buttonEnabled">{{ 'Signin' | translate }}</button>
        </mat-grid-tile>
        <mat-grid-tile>
          <p class="signin-conditions">
            <mat-checkbox class="example-margin"
-                         [(ngModel)]="checked"
+                         [(ngModel)]="buttonEnabled"
                          [(indeterminate)]="indeterminate"
                          [labelPosition]="labelPosition"
                          [disabled]="disabled">

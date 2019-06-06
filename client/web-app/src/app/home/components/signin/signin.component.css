@@ -34,3 +34,12 @@
   float: right;
   font-size: 18px;
 }
+a{
+  cursor: pointer;
+}
+.top-section{
+  position: relative;
+  background: #3f51b5;
+  width: 100vw;
+  height: 50vh;
+}

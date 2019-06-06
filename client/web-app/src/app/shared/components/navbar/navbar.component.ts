@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NavbarComponent implements OnInit {
 
-  loged = true;
+  loged = false;
 
   constructor() { }
 

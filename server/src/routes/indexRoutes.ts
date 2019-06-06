@@ -9,9 +9,11 @@ class IndexRoutes {
         this.config();
     }
 
-    config() : void {
+    config() : void { 
         this.router.get('/', indexController.index);
         this.router.get('/main', indexController.main);
+		this.router.get('/getProducts', indexController.getProducts);
+		this.router.post('/product', indexController.createProduct)
     }
 }
 
