@@ -29,11 +29,11 @@
   </div>
 
   <div class="navbar-section-options">
-    <div class="modules">
-      <div class="item" *ngIf="loged">
+    <div class="modules" *ngIf="logged" >
+      <div class="item">
         <app-favorites></app-favorites>
       </div>
-      <div class="item" *ngIf="loged">
+      <div class="item">
         <button mat-button [matMenuTriggerFor]="notifications" class="options" matTooltip='{{ "Notifications" | translate }}'>
           <i class="fas fa-bell"></i>
         </button>
@@ -42,8 +42,12 @@
         </mat-menu>
       </div>
       <div class="item">
-        <app-profile *ngIf="loged"></app-profile>
-        <button mat-button class="options" *ngIf="!loged" matTooltip='{{ "Login" | translate }}' routerLink="/home/login">
+        <app-profile></app-profile>
+      </div>
+    </div>
+    <div class="modules" *ngIf="!logged">
+      <div class="item">
+        <button mat-button class="options" matTooltip='{{ "Login" | translate }}' routerLink="/home/login">
           <i class="fas fa-sign-in-alt"></i>
         </button>
       </div>
