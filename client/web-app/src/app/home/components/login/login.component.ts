@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       console.log(`The username is ${this.username}`);
       console.log(`The password is ${this.password}`);
       let loggedUser = new UserLogin(this.username, this.password);
-      this._loginService.loginUser(loggedUser);
+      this._loginService.Login(loggedUser);
       this.router.navigate(['/home/main']);
     }
   }

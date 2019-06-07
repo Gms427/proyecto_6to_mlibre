@@ -6,31 +6,32 @@ import { UserLogin } from 'src/app/home/models/UserLogin';
   providedIn: 'root'
 })
 export class LoginService {
-  public login = new Subject<void>();
-  public loginState$: Observable<void> = this.login.asObservable();
+  //public login = new Subject<void>();
+  //public loginState$: Observable<void> = this.login.asObservable();
 
-  public logout = new Subject<void>();
-  public logoutState$: Observable<void> = this.logout.asObservable();
+  //public logout = new Subject<void>();
+  //public logoutState$: Observable<void> = this.logout.asObservable();
 
   public loggedUser: UserLogin = new UserLogin("","");
   public isLogged: boolean = false;
 
+  public login = new Subject<boolean>();
+  public login$: Observable<boolean> = this.login.asObservable();
+
   constructor() { }
 
-  test(){
-    console.log('test work');
-  }
-
-  loginUser(user: UserLogin){
+  Login(user: UserLogin) {
+    console.log('login work');
     this.loggedUser = user;
     this.isLogged = true;
-    this.login.next();
+    this.login.next(true);
   }
 
-  logoutUser(){
-    this.loggedUser = new UserLogin("","");
+  Logout() {
+    console.log('logout work');
+    this.loggedUser = new UserLogin("", "");
     this.isLogged = false;
-    this.logout.next();
+    this.login.next(false);
   }
 
   getIsLogged(){
