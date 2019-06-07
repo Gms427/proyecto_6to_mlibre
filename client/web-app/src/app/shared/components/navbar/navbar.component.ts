@@ -10,7 +10,8 @@ import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
   public logged: boolean;
-  public userLogin: boolean = true;
+  public userLogin: boolean;
+  public showNavbar: boolean = false;
 
   constructor(public _loginService: LoginService) {
   }
@@ -20,20 +21,25 @@ export class NavbarComponent implements OnInit {
       this.logged = res;
       console.log(this.logged);
     });
-    // this.getPreviousUrl();
+
+    this._loginService.inLogin$.subscribe(res => {
+      this.userLogin = res;
+      console.log(this.userLogin);
+    });
+
+    this._loginService.showNavbar$.subscribe(
+      (res) => {
+        this.showNavbar = res;
+      }
+    )
   }
 
   test() {
-    // this._loginService.Logout();
-    this.getPreviousUrl();
+     this.showNavbar = !this.showNavbar;
   }
 
-  public getPreviousUrl() {
-    const url = this._loginService.getPreviousUrl();
-     if (url == "/home/login" || url == "/home/sigin") {
-       this.userLogin = false;
-     } else {
-       this.userLogin = true;
-    }
+  login() {
+    this._loginService.userIsLogin();
   }
+
 }

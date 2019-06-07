@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { LoginService } from "../../../services/login.service";
+
+
 
 
 @Component({
@@ -9,9 +12,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _loginService: LoginService) {}
 
   ngOnInit() {
+  }
+
+  logout() {
+    this._loginService.Logout();
   }
 
 }

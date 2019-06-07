@@ -1,6 +1,6 @@
 .navbar {
   min-height: 100px;
-  background-color: #30475b;
+  background-color: #009ee3;
   display: flex;
   flex-direction: row;
   padding: 0% 10%;
@@ -25,7 +25,7 @@
 
 .navbar-section-navegation button {
   background: transparent;
-  color: #cccccc;
+  color: white;
   font-size: 14px;
   border: none;
   outline: none;
@@ -37,12 +37,12 @@
 
 .navbar-section-navegation button:hover {
   background: rgba(#397fc6, 0.3);
-  color: #eeeeee;
+  color: white;
 }
 
 .navbar-section-options button {
   background: transparent;
-  color: #cccccc;
+  color: white;
   font-size: 14px;
   border: none;
   outline: none;
@@ -52,7 +52,7 @@
 }
 
 .navbar-section-options button:hover {
-  color: #eeeeee;
+  color: white;
 }
 
 .navbar-section-options .options {
