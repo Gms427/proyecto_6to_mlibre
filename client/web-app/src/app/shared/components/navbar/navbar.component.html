@@ -4,7 +4,7 @@
     />
   </div>
   <div class="navbar-section-navegation">
-    <div class="modules">
+    <div class="modules" *ngIf="userLogin || logged">
       <div class="item">
         <button mat-button>
           <span>{{ 'Sell' | translate }}</span>
@@ -48,9 +48,9 @@
         <span style="font-size: 14px">Logout</span>
       </button>
     </div>
-    <div class="modules" *ngIf="!logged">
+    <div class="modules" *ngIf="!logged && userLogin">
       <div class="item">
-        <button mat-button class="options" matTooltip='{{ "Login" | translate }}' routerLink="/home/login">
+        <button mat-button class="options" matTooltip='{{ "Login" | translate }}' (click)="test()" routerLink="/home/login">
           <i class="fas fa-sign-in-alt"></i>
         </button>
       </div>
