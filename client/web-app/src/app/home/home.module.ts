@@ -7,15 +7,18 @@ import { SigninComponent } from './components/signin/signin.component';
 import { CoreModule } from '../core/core.module';
 import { SharedModule } from '../shared/shared.module'
 import { TranslateModule } from '@ngx-translate/core';
+import { PopularCategoriesComponent } from './components/main/popular-categories/popular-categories.component';
+import { CategoriesMenuComponent } from './components/main/categories-menu/categories-menu.component';
 
 @NgModule({
-  declarations: [MainComponent, LoginComponent, SigninComponent],
+  declarations: [MainComponent, LoginComponent, SigninComponent, PopularCategoriesComponent, CategoriesMenuComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     CoreModule,
     TranslateModule,
     SharedModule
-  ]
+  ],
+  providers: []
 })
 export class HomeModule { }

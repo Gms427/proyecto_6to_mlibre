@@ -6,15 +6,16 @@ import { FavoritesComponent } from './components/navbar/favorites/favorites.comp
 import { ProfileComponent } from './components/navbar/profile/profile.component';
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent],
+  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent],
   imports: [
     CommonModule,
     CoreModule,
     RouterModule,
     TranslateModule
   ],
-  exports: [NavbarComponent]
+  exports: [NavbarComponent, SearchComponent]
 })
 export class SharedModule { }

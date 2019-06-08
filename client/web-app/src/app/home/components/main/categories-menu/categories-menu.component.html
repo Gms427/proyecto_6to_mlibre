@@ -1,0 +1,89 @@
+<button mat-button [matMenuTriggerFor]="menu" class="btn-categories">
+  Categories
+  <i class="fas fa-angle-down" style="margin-left: 5px;"></i>
+</button>
+
+<mat-menu #menu="matMenu">
+  <div class="cats">
+    <div> <!-- NG FOR -->
+      <button mat-menu-item [matMenuTriggerFor]="subMenu">Category 1</button>
+    </div>
+    <div>
+      <button mat-menu-item [matMenuTriggerFor]="subMenu">Category 2</button>
+    </div>
+
+  </div>
+</mat-menu>
+
+<mat-menu #subMenu="matMenu" yPosition="below">
+
+  <mat-card class="favorites-card mat-elevation-z transparent text-center"> <!-- NG FOR -->
+    <mat-card-title>
+      Category 1
+    </mat-card-title>
+    <hr />
+
+    <mat-card-content>
+      <div class="container-blocks">
+        <mat-card class="favorites-card mat-elevation-z block text-center"> <!-- NG FOR -->
+          <mat-card-title style="font-size: 16px">
+            Sub-Category 1
+          </mat-card-title>
+          <mat-card-content>
+            A ver como aparece esto
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="favorites-card mat-elevation-z block text-center">
+          <mat-card-title style="font-size: 16px">
+            Sub-Category 1
+          </mat-card-title>
+          <mat-card-content>
+            A ver como aparece esto
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="favorites-card mat-elevation-z block text-center">
+          <mat-card-title style="font-size: 16px">
+            Sub-Category 1
+          </mat-card-title>
+          <mat-card-content>
+            A ver como aparece esto
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card class="favorites-card mat-elevation-z block text-center">
+          <mat-card-title style="font-size: 16px">
+            Sub-Category 1
+          </mat-card-title>
+          <mat-card-content>
+            A ver como aparece esto
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</mat-menu>
+
+
+<!--<div class="block">
+  <h4>
+    Sub-Category 1
+  </h4>
+</div>
+<div class="block">
+  <h4>
+    Sub-Category 1
+  </h4>
+</div>
+<div class="block">
+  <h4>
+    Sub-Category 1
+  </h4>
+</div>
+<div class="block">
+  <h4>
+    Sub-Category 1
+  </h4>
+</div>-->

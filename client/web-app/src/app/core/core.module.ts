@@ -8,6 +8,9 @@ import { TranslateModule } from '@ngx-translate/core';
 
 //Primeng menu
 import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+
 
 // Form Controls
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -105,6 +108,8 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     // Primeng Menu
     MenubarModule,
+    InputTextModule,
+    ButtonModule,
     // Internacionalización
     TranslateModule
     
@@ -151,7 +156,9 @@ import { MatTableModule } from '@angular/material/table';
     FormsModule,
     ReactiveFormsModule,
     // Primeng Menu
-    MenubarModule
+    MenubarModule,
+    InputTextModule,
+    ButtonModule
   ],
   providers: []
 })
