@@ -21,3 +21,7 @@ body {
 .mat-menu-content {
   padding-bottom: 0 !important;
 }
+
+.container {
+  padding: 0 10%;
+}
