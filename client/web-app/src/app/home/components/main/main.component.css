@@ -1,0 +1,11 @@
+.container-main {
+  height: calc(100vh - 151.7px);
+  //display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
