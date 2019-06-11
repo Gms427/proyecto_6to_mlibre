@@ -29,5 +29,9 @@
   "MyData": "My data",
   "Security": "Security",
   "Logout": "Logout",
-  "Notifications": "Notifications"
+  "Notifications": "Notifications",
+  "AnswerQuestion": "They answered you in ",
+  "Buy": "Buy",
+  "Ask": "Ask",
+  "SeeAllNot": "See all notifications"
 }
