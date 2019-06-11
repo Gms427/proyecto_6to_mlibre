@@ -25,3 +25,12 @@ body {
 .container {
   padding: 0 10%;
 }
+
+.btn-primary {
+  background-color: #3483fa !important;
+  color: white;
+}
+
+.btn-transparent {
+  color: #3483fa !important;
+}

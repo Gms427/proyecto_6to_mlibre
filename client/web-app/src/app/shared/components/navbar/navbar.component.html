@@ -35,12 +35,7 @@
         <app-favorites></app-favorites>
       </div>
       <div class="item">
-        <button mat-button [matMenuTriggerFor]="notifications" class="options" matTooltip='{{ "Notifications" | translate }}'>
-          <i class="fas fa-bell"></i>
-        </button>
-        <mat-menu #notifications="matMenu" xPosition="before">
-          <button mat-menu-item>Item 1</button>
-        </mat-menu>
+        <app-notifications></app-notifications>
       </div>
       <div class="item">
         <app-profile></app-profile>
