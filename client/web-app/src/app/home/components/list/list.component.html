@@ -1,0 +1,30 @@
+<div class="list-component container">
+  <div class="filters"></div>
+  <div class="list">
+    <mat-list>
+      <a *ngFor="let product of Publications">
+        <mat-card class="publication-card mat-elevation-z">
+            <mat-card-content>
+              <img class="modeless-box-img" [attr.src]="product.img" />
+              <mat-card-title>{{ product.name }}</mat-card-title>
+              <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+              <mat-card-subtitle class="subtitle-green" *ngIf="product.Shipping"
+                >Envio gratis</mat-card-subtitle
+              >
+              <mat-card-subtitle *ngIf="product.state">Nuevo</mat-card-subtitle>
+              <mat-card-subtitle *ngIf="!product.state">Usado</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+        <mat-divider></mat-divider>
+      </a>
+    </mat-list>
+
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="pageEvent = $event"
+    >
+    </mat-paginator>
+  </div>
+</div>

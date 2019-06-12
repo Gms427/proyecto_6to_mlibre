@@ -1,0 +1,29 @@
+.list-component {
+  padding-top: 30px;
+  width: 100%;
+  display: block;
+}
+
+.filters {
+  width: 20%;
+  display: block;
+  border: 1px solid transparent ;
+  float: left;
+}
+
+.list {
+  width: 80%;
+  display: block;
+  height: 100%;
+  float: left;
+}
+
+.publication-card{
+  min-height: 190px;
+  padding-top: 20px;
+}
+
+.publication-card .modeless-box-img{
+  float: left;
+  margin-right: 25px;
+}
