@@ -20,7 +20,6 @@ import { UserLogin } from "src/app/home/models/UserLogin";
 export class LoginComponent implements OnInit {
   public password: string;
   public username: string;
-  //public items: MenuItem[];
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email

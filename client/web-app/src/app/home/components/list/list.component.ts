@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { LoginService } from 'src/app/shared/services/login.service';
 export interface Section {
   id: number;
   name: string;
@@ -15,6 +16,7 @@ export interface Section {
 export class ListComponent {
   length = 100;
   pageSize = 10;
+  public added:boolean = false;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   Publications: Section[] = [
@@ -32,7 +34,7 @@ export class ListComponent {
       price: "U$S 7.450",
       state: false,
       Shipping: false,
-      img: "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp"
+      img: "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-128-gb-refurbished-macrotec-D_NP_929296-MLU29526633106_022019-X.webp"
     },
     {
       id: 3,
@@ -44,6 +46,14 @@ export class ListComponent {
     },
   ];
 
-  constructor() {}
+  constructor(loginService: LoginService) {}
+
+  addFav(){
+    this.added = true;
+  }
+
+  removeFav(){
+    this.added = false;    
+  }
 
 }
