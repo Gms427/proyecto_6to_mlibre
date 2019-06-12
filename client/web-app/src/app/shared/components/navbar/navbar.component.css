@@ -1,0 +1,80 @@
+.navbar {
+  min-height: 100px;
+  background-color: #009ee3;
+  display: flex;
+  flex-direction: row;
+  padding: 0% 10%;
+}
+
+.navbar-section-logo {
+  width: 20%;
+  margin: auto;
+}
+
+.navbar-section-navegation {
+  margin: auto;
+  width: 60%;
+  margin-bottom: 0;
+}
+
+.navbar-section-options {
+  width: 20%;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.navbar-section-navegation button {
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  padding: 15px 20px;
+  line-height: 0%;
+}
+
+.navbar-section-navegation button:hover {
+  background: rgba(#397fc6, 0.3);
+  color: white;
+}
+
+.navbar-section-options button {
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  align-items: flex-end;
+}
+
+.navbar-section-options button:hover {
+  color: white;
+}
+
+.navbar-section-options .options {
+  font-size: 20px;
+  min-width: 40px;
+  padding-bottom: 3px;
+}
+
+.navbar-section-options .options:hover {
+  color: #86c6ff;
+}
+
+.item {
+  float: left;
+}
+
+.mat-menu-content {
+  min-width: 435px;
+}
+
+.options-content {
+  max-height: 205px;
+  min-width: 450px;
+  overflow: auto;
+}

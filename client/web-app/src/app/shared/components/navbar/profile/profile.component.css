@@ -1,0 +1,35 @@
+button {
+  background: transparent;
+  color: #cccccc;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  align-items: flex-end;
+}
+
+.options {
+  font-size: 20px;
+  min-width: 40px;
+  padding-bottom: 3px;
+}
+
+.options:hover {
+  color: #86c6ff;
+}
+
+mat-card-actions button {
+  color: #86c6ff;
+}
+
+.btn-account{
+  margin-top: 16px!important;
+  width: 100%;
+  background-color: #608eb7;
+  color: white;
+}
+
+mat-card-header i {
+  font-size: 150px;
+}
