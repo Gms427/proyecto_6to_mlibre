@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 export class NavbarComponent implements OnInit {
   public logged: boolean;
   public userLogin: boolean;
-  public showNavbar: boolean = false;
+  public showNavbar: boolean = true;
 
   constructor(public _loginService: LoginService) {
   }
@@ -31,11 +31,7 @@ export class NavbarComponent implements OnInit {
       (res) => {
         this.showNavbar = res;
       }
-    )
-  }
-
-  test() {
-     this.showNavbar = !this.showNavbar;
+    );
   }
 
   login() {

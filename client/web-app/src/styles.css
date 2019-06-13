@@ -21,3 +21,20 @@ body {
 .mat-menu-content {
   padding-bottom: 0 !important;
 }
+
+.container {
+  padding: 0 10%;
+}
+
+.btn-primary {
+  background-color: #3483fa !important;
+  color: white;
+}
+
+.btn-transparent {
+  color: #3483fa !important;
+}
+
+.subtitle-green{
+  color: #0aa252!important;
+}

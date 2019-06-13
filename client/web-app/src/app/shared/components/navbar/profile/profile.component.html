@@ -2,7 +2,7 @@
   mat-button
   [matMenuTriggerFor]="profileMenu"
   class="options"
-  matTooltip='{{ "MyAccount" | translate }}'
+  matTooltip="{{ 'MyAccount' | translate }}"
 >
   <i class="fas fa-user-circle"></i>
 </button>
@@ -20,11 +20,15 @@
         </button>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>{{ "Shopping" | translate }}</button>
+        <button mat-button class="btn-transparent">
+          {{ "Shopping" | translate }}
+        </button>
         <button mat-button>{{ "Sales" | translate }}</button>
         <button mat-button>{{ "MyData" | translate }}</button>
         <button mat-button>{{ "Security" | translate }}</button>
-        <button mat-button (click)="logout()">{{ "Logout" | translate }}</button>
+        <button mat-button (click)="logout()">
+          {{ "Logout" | translate }}
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

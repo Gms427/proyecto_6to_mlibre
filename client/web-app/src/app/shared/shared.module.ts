@@ -7,9 +7,10 @@ import { ProfileComponent } from './components/navbar/profile/profile.component'
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchComponent } from './components/search/search.component';
+import { NotificationsComponent } from './components/navbar/notifications/notifications.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent],
+  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent],
   imports: [
     CommonModule,
     CoreModule,

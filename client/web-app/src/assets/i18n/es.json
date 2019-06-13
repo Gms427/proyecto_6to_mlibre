@@ -29,6 +29,15 @@
   "MyData": "Mis datos",
   "Security": "Seguridad",
   "Logout": "Salir",
-  "Notifications": "Notificaciones"
+  "Notifications": "Notificaciones",
+  "AnswerQuestion": "Te han respondido en ",
+  "Buy": "Comprar",
+  "Ask": "Preguntar",
+  "SeeAllNot": "Ver todas las notificaciones",
+  "New":"Nuevo",
+  "Used": "Usado",
+  "AddToFav": "Agregar a favoritos",
+  "DeleteFav": "Borrar favorito",
+  "FreeShipping":"Envio gratis"
 }
 

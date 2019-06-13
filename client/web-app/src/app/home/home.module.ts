@@ -9,9 +9,10 @@ import { SharedModule } from '../shared/shared.module'
 import { TranslateModule } from '@ngx-translate/core';
 import { PopularCategoriesComponent } from './components/main/popular-categories/popular-categories.component';
 import { CategoriesMenuComponent } from './components/main/categories-menu/categories-menu.component';
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
-  declarations: [MainComponent, LoginComponent, SigninComponent, PopularCategoriesComponent, CategoriesMenuComponent],
+  declarations: [MainComponent, LoginComponent, SigninComponent, PopularCategoriesComponent, CategoriesMenuComponent, ListComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

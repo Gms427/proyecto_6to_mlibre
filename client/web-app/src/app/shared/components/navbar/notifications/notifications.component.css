@@ -19,23 +19,23 @@ button{
   color: #86c6ff;
 }
 
-button .favorites {
+button .notifications {
   margin-right: 5px;
 }
 
-.btn-favorites {
+.btn-notifications {
   padding: 15px 20px;
 }
 
-.favorites-menu {
+.notifications-menu {
   padding: 20px;
 }
 
-.favorites-card {
+.notifications-card {
   padding: 20px;
 }
 
-.favorites-card:hover {
+.notifications-card:hover {
   background-color: #d6d6d6;
   cursor: pointer;
 }
@@ -45,7 +45,7 @@ button .favorites {
   font-size: 14px;
 }
 
-.favorites-card .modeless-box-img {
+.notifications-card .modeless-box-img {
   float: left;
   width: 70px;
   height: 70px;
@@ -53,7 +53,7 @@ button .favorites {
   margin-right: 16px;
 }
 
-.favorites-card button {
+.notifications-card button {
   color: #86c6ff;
 }
 
@@ -61,12 +61,12 @@ button .favorites {
   min-width: 435px;
 }
 
-.btn-favorites-all {
+.btn-notifications-all {
   width: 100%;
   color: #86c6ff;
 }
 
-.favorites-content {
+.notifications-content {
   max-height: 204px;
   min-width: 450px;
   overflow: auto;
@@ -95,4 +95,7 @@ button .favorites {
   background: #888;
 }
 
+.btn-notifications-centre{
+  padding: 0 14%;
+}
 
