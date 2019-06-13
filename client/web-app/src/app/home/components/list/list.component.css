@@ -49,3 +49,19 @@
   right: 20px;
   top: 20px;
 }
+
+.btn-sortby{
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  color:red
+}
+
+.mat-form-field {
+  width: 130px;
+}
