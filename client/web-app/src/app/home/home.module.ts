@@ -10,9 +10,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PopularCategoriesComponent } from './components/main/popular-categories/popular-categories.component';
 import { CategoriesMenuComponent } from './components/main/categories-menu/categories-menu.component';
 import { ListComponent } from './components/list/list.component';
+import { PublicationComponent } from 'src/app/home/components/publication/publication.component';
 
 @NgModule({
-  declarations: [MainComponent, LoginComponent, SigninComponent, PopularCategoriesComponent, CategoriesMenuComponent, ListComponent],
+  declarations: [MainComponent, LoginComponent, SigninComponent, PopularCategoriesComponent, CategoriesMenuComponent, ListComponent, PublicationComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
