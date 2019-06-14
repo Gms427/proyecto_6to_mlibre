@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
       (res) => {
         this.showNavbar = res;
       }
-    )
+    );
   }
 
   login() {

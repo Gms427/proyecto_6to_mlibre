@@ -33,5 +33,10 @@
   "AnswerQuestion": "They answered you in ",
   "Buy": "Buy",
   "Ask": "Ask",
-  "SeeAllNot": "See all notifications"
+  "SeeAllNot": "See all notifications",
+  "New":"New",
+  "Used": "Used",
+  "AddToFav": "Add to favorites",
+  "DeleteFav": "Delete favorite",
+  "FreeShipping": "Free shipping"
 }
