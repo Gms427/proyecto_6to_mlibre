@@ -14,13 +14,7 @@ export interface Section {
   templateUrl: "./list.component.html",
   styleUrls: ["./list.component.css"]
 })
-export class ListComponent {
-  length = 100;
-  pageSize = 10;
-  public added: boolean = false;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
-  selected: string = "option3";
-
+export class ListComponent implements OnInit{
   Publications: Section[] = [
     {
       id: 1,
@@ -28,6 +22,7 @@ export class ListComponent {
       price: "U$S 7.450",
       state: true,
       Shipping: true,
+      favorite: false,
       img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp"
     },
@@ -37,6 +32,7 @@ export class ListComponent {
       price: "U$S 7.450",
       state: false,
       Shipping: false,
+      favorite: false,
       img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-128-gb-refurbished-macrotec-D_NP_929296-MLU29526633106_022019-X.webp"
     },
@@ -46,19 +42,29 @@ export class ListComponent {
       price: "U$S 7.450",
       state: false,
       Shipping: true,
+      favorite: false,
       img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp"
     }
   ];
+  length = this.Publications.length;
+  pageSize = 10;
+  public added: boolean = false;
+  pageSizeOptions: number[] = [5, 10, 25];
+  selected: string = "option3";
+
 
   constructor(loginService: LoginService) {}
 
-  addFav() {
-    this.added = true;
+  ngOnInit(){
   }
 
-  removeFav() {
-    this.added = false;
+  addFav(product) {
+    product.favorite = true;
+  }
+
+  removeFav(product) {
+    product.favorite = false;
   }
 
   navegateToProduct(product) {
