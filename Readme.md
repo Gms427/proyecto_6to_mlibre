@@ -1,6 +1,5 @@
 ﻿proyecto_6to_mlibre
 
-
 Server: 
 
 server/initServer.bat --> Ejecutable que inicia el server
@@ -37,5 +36,11 @@ web-app/src/app/app.routing.module.ts --> Módulo principal de ruteo
 
 ng g c shared/components/navbar --module shared
 
+Comandos importantes: 
 
+NPM INSTALL: Instala las dependencias necesarias (las que están en el package.json)
+- En el client se tiene que correr en la carpeta: client/web-app
+- En el server: /server
 
+NPM RUN START: Compila y abre la web de Angular en un navegador.
+- Se corre en el client en la carpeta: client/web-app
