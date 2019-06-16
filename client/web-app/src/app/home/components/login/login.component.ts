@@ -8,7 +8,7 @@ import {
 } from "@angular/forms";
 //import { ErrorStateMatcher } from '@angular/material/core';
 import { MyErrorStateMatcher } from "../../../shared/utils/utils";
-import { Router } from "@angular/router";
+import { Router, ActivatedRouteSnapshot } from "@angular/router";
 import { LoginService } from "src/app/shared/services/login.service";
 import { UserLogin } from "src/app/home/models/UserLogin";
 
@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
               private _loginService: LoginService) { }
 
   ngOnInit() {
-    
   }
 
   login() {

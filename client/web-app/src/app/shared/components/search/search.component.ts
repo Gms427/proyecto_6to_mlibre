@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -7,13 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  public searchValue: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private _searchService: SearchService) { }
 
   ngOnInit() {
   }
 
-  navegateToList() {
-    this.router.navigate(["/home/list"]);
+  search() {
+    this._searchService.searchValue = this.searchValue;
+    this.router.navigate(["/publications/list"]);
   }
 }

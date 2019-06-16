@@ -1,5 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from "src/app/shared/services/login.service";
+import { Router } from '@angular/router';
+import { SearchService } from 'src/app/shared/services/search.service';
+
 export interface Section {
   Id: number;
   Name: string;
@@ -11,12 +14,14 @@ export interface Section {
 }
 
 @Component({
-  selector: "app-list",
-  templateUrl: "./list.component.html",
-  styleUrls: ["./list.component.css"]
+  selector: 'app-publication-list',
+  templateUrl: './publication-list.component.html',
+  styleUrls: ['./publication-list.component.css']
 })
-export class ListComponent implements OnInit{
-  Publications: Section[] = [
+export class PublicationListComponent implements OnInit{
+
+  public search: string;
+  public Publications: Section[] = [
     {
       Id: 1,
       Name: "Chevrolet Celta 1.0 full",
@@ -55,9 +60,20 @@ export class ListComponent implements OnInit{
   selected: string = "option3";
 
 
-  constructor(loginService: LoginService) {}
+  constructor(private loginService: LoginService,
+              private router: Router,
+              private _searchService: SearchService) {}
 
   ngOnInit(){
+    // service para obtener la búsqueda
+    this.search = this._searchService.searchValue;
+    /*this._searchService.search$.subscribe(
+      (val) => {
+        console.log("búsqueda:", val);
+        this.search = val;
+        console.log(this.search);
+      }
+    );*/
   }
 
   addFav(product) {
@@ -70,5 +86,6 @@ export class ListComponent implements OnInit{
 
   navegateToProduct(product) {
     console.log(product);
+    this.router.navigate([`/publications/publication/${product.Id}`]);
   }
 }
