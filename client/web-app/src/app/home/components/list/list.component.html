@@ -2,7 +2,7 @@
   <div class="filters">
     <mat-list>
       <h3>Busqueda</h3>
-      <mat-card-subtitle>3 resultados</mat-card-subtitle>
+      <mat-card-subtitle>{{length}} resultados</mat-card-subtitle>
       <div>
         <p mat-subheader>Ordenar por:</p>
         <mat-form-field>
@@ -48,14 +48,14 @@
           <button class="btn-favorite btn-transparent">
             <i
               class="far fa-heart"
-              *ngIf="!added"
-              (click)="addFav()"
+              *ngIf="!product.favorite"
+              (click)="addFav(product)"
               matTooltip="{{ 'AddToFav' | translate }}"
             ></i>
             <i
               class="fas fa-heart"
-              *ngIf="added"
-              (click)="removeFav()"
+              *ngIf="product.favorite"
+              (click)="removeFav(product)"
               matTooltip="{{ 'DeleteFav' | translate }}"
             ></i>
           </button>

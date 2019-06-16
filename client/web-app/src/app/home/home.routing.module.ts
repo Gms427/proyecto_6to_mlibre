@@ -4,6 +4,7 @@ import { MainComponent } from "./components/main/main.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SigninComponent } from "./components/signin/signin.component";
 import { ListComponent } from "./components/list/list.component";
+import { PublicationComponent } from "./components/publication/publication.component"
 
 const routes: Routes = [
   {
@@ -26,7 +27,15 @@ const routes: Routes = [
   {
     path: "list",
     component: ListComponent
-  }
+  },
+  {
+    path: "publication",
+    component: PublicationComponent
+  },
+  {
+    path: 'publication/:id',
+    component: PublicationComponent
+  },
 ];
 
 @NgModule({
