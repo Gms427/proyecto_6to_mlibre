@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "src/app/shared/services/login.service";
 export interface Section {
-  id: number;
-  name: string;
-  price: string;
-  state: boolean;
+  Id: number;
+  Name: string;
+  Price: string;
+  State: boolean;
   Shipping: boolean;
-  img: string;
+  Favorite: boolean
+  Img: string;
 }
 
 @Component({
@@ -17,33 +18,33 @@ export interface Section {
 export class ListComponent implements OnInit{
   Publications: Section[] = [
     {
-      id: 1,
-      name: "Chevrolet Celta 1.0 full",
-      price: "U$S 7.450",
-      state: true,
+      Id: 1,
+      Name: "Chevrolet Celta 1.0 full",
+      Price: "U$S 7.450",
+      State: true,
       Shipping: true,
-      favorite: false,
-      img:
+      Favorite: false,
+      Img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp"
     },
     {
-      id: 2,
-      name: "Chevrolet Celta 1.0 full",
-      price: "U$S 7.450",
-      state: false,
+      Id: 2,
+      Name: "Chevrolet Celta 1.0 full",
+      Price: "U$S 7.450",
+      State: false,
       Shipping: false,
-      favorite: false,
-      img:
+      Favorite: false,
+      Img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-128-gb-refurbished-macrotec-D_NP_929296-MLU29526633106_022019-X.webp"
     },
     {
-      id: 3,
-      name: "Chevrolet Celta 1.0 full",
-      price: "U$S 7.450",
-      state: false,
+      Id: 3,
+      Name: "Chevrolet Celta 1.0 full",
+      Price: "U$S 7.450",
+      State: false,
       Shipping: true,
-      favorite: false,
-      img:
+      Favorite: false,
+      Img:
         "https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp"
     }
   ];
