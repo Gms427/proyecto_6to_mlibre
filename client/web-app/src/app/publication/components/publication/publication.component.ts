@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PublicationService } from '../../../shared/services/publication.service';
 
 
 @Component({
@@ -11,11 +12,18 @@ export class PublicationComponent implements OnInit {
   public id: number;
 
   constructor(private _router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private _publicationService: PublicationService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     console.log(this.id);
+
+    this._publicationService.getProduct(this.id).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    );
   }
 
 }

@@ -13,7 +13,8 @@ class IndexRoutes {
         this.router.get('/', indexController.index);
         this.router.get('/main', indexController.main);
 		this.router.get('/getProducts', indexController.getProducts);
-		this.router.post('/product', indexController.createProduct)
+        this.router.post('/product', indexController.createProduct);
+        this.router.get('/product/:id', indexController.getProduct);
     }
 }
 

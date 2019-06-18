@@ -2,16 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from "src/app/shared/services/login.service";
 import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
+import {PublicationList} from '../../models/publicationList'
 
-export interface Section {
-  Id: number;
-  Name: string;
-  Price: string;
-  State: boolean;
-  Shipping: boolean;
-  Favorite: boolean;
-  Img: string;
-}
 
 @Component({
   selector: 'app-publication-list',
@@ -19,9 +11,8 @@ export interface Section {
   styleUrls: ['./publication-list.component.css']
 })
 export class PublicationListComponent implements OnInit{
-
   public search: string;
-  public Publications: Section[] = [
+  public Publications: PublicationList[] = [
     {
       Id: 1,
       Name: "Chevrolet Celta 1.0 full",
