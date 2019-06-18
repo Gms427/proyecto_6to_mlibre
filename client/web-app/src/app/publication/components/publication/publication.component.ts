@@ -10,7 +10,7 @@ import { PublicationService } from '../../../shared/services/publication.service
 })
 export class PublicationComponent implements OnInit {
   public id: number;
-
+  public product: any;
   constructor(private _router: Router,
               private route: ActivatedRoute,
               private _publicationService: PublicationService) { }
@@ -22,6 +22,7 @@ export class PublicationComponent implements OnInit {
     this._publicationService.getProduct(this.id).subscribe(
       (res) => {
         console.log(res);
+        this.product = res;
       }
     );
   }
