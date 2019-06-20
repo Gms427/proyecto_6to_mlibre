@@ -23,8 +23,4 @@ export class AppComponent {
       this.translate.use("en");
     }
   }
-
-  navegateToList() {
-    this.router.navigate(["/home/list"]);
-  }
 }
