@@ -1,14 +1,11 @@
-import client from '../database';
+import PgClient from '../database';
 
-export function TestQuery(){
-    const table = "cliente";
+export async function TestQuery(){
+    const table = "customers";
     const condition = "1 = 1"
     let query = `SELECT * FROM ${table}
                 WHERE ${condition}`;
-    let ret: any;
-    client.query(query, (err: any, response: any) => {
-        console.log(err, response);
-        ret =  response;
-    });
-    return ret;
+
+    let result = await PgClient.query(query);
+    return result;
 }

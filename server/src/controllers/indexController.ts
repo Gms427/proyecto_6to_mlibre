@@ -1,14 +1,12 @@
 import { Request, Response } from 'express';
 import path from 'path';
-import client from '../database';
 import { TestQuery } from '../serverDAL/test'
 
 class IndexController {
     
-    test(req: Request, res: Response){
-       const queryResult = TestQuery();
-       console.log("aaaa", queryResult);
-       res.send(queryResult);
+    async test(req: Request, res: Response){
+       const queryResult = await TestQuery();
+       res.send(queryResult.rows);
     }
 
     index(req: Request, res: Response){
