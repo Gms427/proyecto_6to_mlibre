@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicationService } from '../../../../shared/services/publication.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-publication-profile',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicationProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _publicationService: PublicationService, private route: ActivatedRoute) { }
+
+  public id: number;
+  public product: any;
 
   ngOnInit() {
+    this.id = this.route.snapshot.params.id;
+    
+    this._publicationService.getProduct(this.id).subscribe(
+      (res) => {
+        console.log(res);
+        this.product = res;
+      }
+    );
   }
 
 }
