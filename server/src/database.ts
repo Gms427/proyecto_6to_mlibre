@@ -4,7 +4,7 @@ const dbData = {
     user: "postgres",
     password: "root",
     url: "localhost:5432",
-    dbName: "test"
+    dbName: "agencia_db"
 }
 const connectionString = `postgressql://${dbData.user}:${dbData.password}@${dbData.url}/${dbData.dbName}`;
 

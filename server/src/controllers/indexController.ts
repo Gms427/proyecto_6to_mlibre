@@ -1,19 +1,14 @@
 import { Request, Response } from 'express';
 import path from 'path';
 import client from '../database';
+import { TestQuery } from '../serverDAL/test'
 
 class IndexController {
     
     test(req: Request, res: Response){
-        const table = "customers";
-        const condition = "id = 2"
-        let query = `SELECT * FROM ${table}
-                    WHERE ${condition}`;
-
-        client.query(query, (err: any, response: any) => {
-            console.log(err, res);
-            res.send(response);
-        });
+       const queryResult = TestQuery();
+       console.log("aaaa", queryResult);
+       res.send(queryResult);
     }
 
     index(req: Request, res: Response){
