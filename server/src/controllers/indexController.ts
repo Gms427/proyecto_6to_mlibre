@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
 import path from 'path';
-import { TestQuery } from '../serverDAL/test'
+import { TestDAL } from '../serverDAL/test'
 
 class IndexController {
     
     async test(req: Request, res: Response){
-       const queryResult = await TestQuery();
+       const queryResult = await TestDAL.TestQuery();
        res.send(queryResult.rows);
     }
 
