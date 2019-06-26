@@ -24,7 +24,7 @@
        <mat-grid-tile>
          <div class="controles-container">
            <mat-card-header style="height: 48px; float: right; align-items: center;">
-             <a class="link-company-account">{{ 'CreateCompanyAccount' | translate }}</a>
+             <a class="link-company-account btn-transparent">{{ 'CreateCompanyAccount' | translate }}</a>
            </mat-card-header>
            <mat-form-field class="example-full-width" style="width: 100%">
              <input matInput placeholder="{{ 'Surname' | translate }}" [(ngModel)]="userData.Surname" name="surname" required>
@@ -40,7 +40,7 @@
 
      <mat-grid-list cols="2" rowHeight="60px">
        <mat-grid-tile>
-         <button mat-raised-button (click)="signin()" color="primary" class="btn-signin" [disabled]="!buttonEnabled">{{ 'Signin' | translate }}</button>
+         <button mat-raised-button (click)="signin()" class="btn-signin" [disabled]="!buttonEnabled">{{ 'Signin' | translate }}</button>
        </mat-grid-tile>
        <mat-grid-tile>
          <p class="signin-conditions">

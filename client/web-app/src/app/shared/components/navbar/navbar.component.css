@@ -1,6 +1,6 @@
 .navbar {
   min-height: 100px;
-  background-color: #009ee3;
+  background-color: #303641;
   display: flex;
   flex-direction: row;
 }
@@ -35,7 +35,7 @@
 }
 
 .navbar-section-navegation button:hover {
-  background: rgba(#397fc6, 0.3);
+  background: rgba(#5294E2, 0.3);
   color: white;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .navbar-section-options .options:hover {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 .item {
@@ -76,4 +76,10 @@
   max-height: 205px;
   min-width: 450px;
   overflow: auto;
+}
+
+.logo{
+  width: auto;
+  height: 55px;
+  outline: none;
 }
