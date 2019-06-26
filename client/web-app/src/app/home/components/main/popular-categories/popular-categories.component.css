@@ -1,13 +1,12 @@
 .container-popular-categories{
   width: 100%;
   height: 230px;
-  //border: 1px solid black;
   display: flex;
 }
 .title-popular-categories {
   width: 215px;
   margin: auto;
-  margin-top: 75px;
+  margin-top: 175px;
   margin-bottom: 25px;
 }
 .container-card{
@@ -25,4 +24,10 @@ hr {
 .transparent{
   background: transparent;
   text-align: center;
+}
+.mat-card{
+  color: #ffffff;
+}
+.mat-card-subtitle{
+  color: #ffffff;
 }
