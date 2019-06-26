@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
 import path from 'path';
+import { TestDAL } from '../serverDAL/test'
 
 class IndexController {
-
-    constructor(){
-        
+    
+    async test(req: Request, res: Response){
+       const queryResult = await TestDAL.TestQuery();
+       res.send(queryResult.rows);
     }
 
     index(req: Request, res: Response){
