@@ -1,0 +1,16 @@
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AplicaciónDeEscritorio.exe.config
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AplicaciónDeEscritorio.exe
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AplicaciónDeEscritorio.pdb
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AplicaciónDeEscritorio.xml
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbprojAssemblyReference.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.login.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Resources.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Registro.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.exe
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.xml
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.pdb
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Principal.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Producto.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Spalsh.resources
