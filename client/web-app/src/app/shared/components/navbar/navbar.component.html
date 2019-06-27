@@ -1,9 +1,8 @@
-<div class="navbar container">
+<div class="navbar container"  [ngStyle]="{ 'background-color': navbarColor}" >
   <div class="navbar-section-logo">
-    <img width="50" class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logo.png"
+    <img width="50" class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logoBlanco.png"
     />
   </div>
-
   <div class="navbar-section-navegation" *ngIf="showNavbar">
     <div class="modules" *ngIf="!userLogin">
       <div class="item">
