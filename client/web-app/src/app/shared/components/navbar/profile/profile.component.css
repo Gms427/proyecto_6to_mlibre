@@ -16,17 +16,17 @@ button {
 }
 
 .options:hover {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 mat-card-actions button {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 .btn-account{
   margin-top: 16px!important;
   width: 100%;
-  background-color: #608eb7;
+  background-color: #5294E2;
   color: white;
 }
 

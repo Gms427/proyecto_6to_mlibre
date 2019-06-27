@@ -1,7 +1,7 @@
 <div class="list-component container">
   <div class="filters">
     <mat-list>
-      <h3>Busqueda</h3>
+      <h3>Busqueda: {{search}}</h3>
       <mat-card-subtitle>{{length}} resultados</mat-card-subtitle>
       <div>
         <p mat-subheader>Ordenar por:</p>
@@ -26,22 +26,22 @@
       <a *ngFor="let product of Publications">
         <mat-card class="publication-card mat-elevation-z">
           <mat-card-content>
-            <img class="modeless-box-img" [attr.src]="product.img" />
+            <img class="modeless-box-img" [attr.src]="product.Img" />
             <mat-card-title
               class="publication-name"
               (click)="navegateToProduct(product)"
-              >{{ product.name }}</mat-card-title
+              >{{ product.Name }}</mat-card-title
             >
-            <mat-card-subtitle>{{ product.price }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ product.Price }}</mat-card-subtitle>
             <mat-card-subtitle
               class="subtitle-green"
               *ngIf="product.Shipping"
               >{{ "FreeShipping" | translate }}</mat-card-subtitle
             >
-            <mat-card-subtitle *ngIf="product.state">{{
+            <mat-card-subtitle *ngIf="product.State">{{
               "New" | translate
             }}</mat-card-subtitle>
-            <mat-card-subtitle *ngIf="!product.state">{{
+            <mat-card-subtitle *ngIf="!product.State">{{
               "Used" | translate
             }}</mat-card-subtitle>
           </mat-card-content>

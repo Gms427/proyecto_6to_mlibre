@@ -1,13 +1,17 @@
 .navbar {
   min-height: 100px;
-  background-color: #009ee3;
+  background-color: rgba(0,0,0,0.5);
   display: flex;
   flex-direction: row;
+  z-index: 2;
+  position: relative;
+  width: 100vw;
 }
 
 .navbar-section-logo {
   width: 20%;
   margin: auto;
+  cursor: pointer;
 }
 
 .navbar-section-navegation {
@@ -35,7 +39,7 @@
 }
 
 .navbar-section-navegation button:hover {
-  background: rgba(#397fc6, 0.3);
+  background: rgba(#5294E2, 0.3);
   color: white;
 }
 
@@ -61,7 +65,7 @@
 }
 
 .navbar-section-options .options:hover {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 .item {
@@ -76,4 +80,10 @@
   max-height: 205px;
   min-width: 450px;
   overflow: auto;
+}
+
+.logo{
+  width: auto;
+  height: 50px;
+  outline: none;
 }
