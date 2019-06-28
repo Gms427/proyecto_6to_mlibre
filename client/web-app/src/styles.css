@@ -28,7 +28,7 @@ body {
 
 .btn-primary {
   background-color: #5294e2 !important;
-  color: white;
+  color: white!important;
 }
 
 .btn-transparent {
