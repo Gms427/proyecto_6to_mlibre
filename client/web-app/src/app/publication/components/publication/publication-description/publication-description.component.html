@@ -1,0 +1,63 @@
+<div class="publication-description">
+  <mat-card class="container-descripion">
+    <mat-accordion>
+      <mat-expansion-panel
+        [expanded]="step === 0"
+        (opened)="setStep(0)"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header class="expansion-header">
+          <mat-panel-title class="title"> Description </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquam
+          repellat ipsam, neque id veritatis debitis illum laudantium excepturi
+          similique voluptatum ad. Laborum quam labore aspernatur, ea fuga
+          assumenda obcaecati!
+        </p>
+        <mat-action-row>
+          <button
+            mat-button
+            color="primary"
+            class="btn-transparent"
+            (click)="nextStep()"
+          >
+            Next
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        [expanded]="step === 1"
+        (opened)="setStep(1)"
+      >
+        <mat-expansion-panel-header class="expansion-header">
+          <mat-panel-title class="title">
+            Day of the trip
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi aliquam
+          repellat ipsam, neque id veritatis debitis illum laudantium excepturi
+          similique voluptatum ad. Laborum quam labore aspernatur, ea fuga
+          assumenda obcaecati!
+        </p>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button
+            mat-button
+            color="primary"
+            class="btn-transparent"
+            (click)="nextStep()"
+          >
+            End
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card>
+</div>

@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   public userLogin: boolean;
   public navbarColor: string;
   public flag: boolean;
+  public searchNadvar: boolean;
 
   constructor(
     public _loginService: LoginService,
@@ -31,6 +32,10 @@ export class NavbarComponent implements OnInit {
 
     this._navbarService.userLogged$.subscribe(res => {
       this.logged = res;
-    })
+    });
+
+    this._navbarService.searcherInNavdar$.subscribe(res => {
+      this.searchNadvar = res;
+    });
   }
 }

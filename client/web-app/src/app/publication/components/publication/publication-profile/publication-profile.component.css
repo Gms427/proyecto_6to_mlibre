@@ -94,20 +94,20 @@ mat-card-subtitle:last-child {
 
 .reputation{
   margin: auto;
-  height: 10px;
-  width: 15%;
+  height: 20px;
+  width: 17%;
 }
 
 .red{
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.486);
 }
 
 .orange{
-  background-color: orange;
+  background-color: rgba(255, 166, 0, 0.486);
 }
 
 .yellow{
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.486);
 }
 
 .green{
@@ -117,4 +117,27 @@ mat-card-subtitle:last-child {
 .reputation-container{
   display: flex;
   width: 100%;
+}
+
+.seller-container{
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.contact{
+  height: 15%;
+}
+
+.seller-content{
+  width: 50%;
+  float: left;
+}
+
+.title{
+  margin-bottom: 5px;
+}
+
+.information{
+  height: 85%;
 }

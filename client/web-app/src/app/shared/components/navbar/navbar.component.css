@@ -104,11 +104,6 @@
   margin: 25px;
 }
 
-.searcher{
-  height: 37px;
-  width: 600px;
-  border-radius: 4px;
+.searcher-container{
   margin-top: 13px;
-  margin-right: 10px;
-  margin-left: 110px;
 }

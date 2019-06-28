@@ -58,20 +58,37 @@
         </mat-select>
       </mat-form-field>
       <mat-card-subtitle>22 Opiniones</mat-card-subtitle>
-      <button mat-button class="btn-buy btn-primary">{{ "Buy" | translate }}</button>
+      <button mat-button class="btn-buy btn-primary">
+        {{ "Buy" | translate }}
+      </button>
     </div>
   </mat-card>
   <mat-card class="seller-information">
+    <div class="information">
     <mat-card-title>Informacion del vendedor</mat-card-title>
-    <p>11</p>
-    <p>Ventas concretadas</p>
+    <h4 class="title">11</h4>
+    <mat-card-subtitle>Ventas concretadas</mat-card-subtitle>
     <div class="reputation-container">
       <div class="reputation red"></div>
       <div class="reputation orange"></div>
       <div class="reputation yellow"></div>
       <div class="reputation green"></div>
     </div>
-    <p><span>100%</span>De los compradores lo recomiendan<span></span></p>
-    <p><span>8 Años</span>Vendiendo en Nosbey<span></span></p>
+    <div class="seller-container">
+      <div class="seller-content">
+        <h4>100%</h4>
+        <mat-card-subtitle>de los compradores lo recomiendan</mat-card-subtitle>
+      </div>
+      <div class="seller-content">
+        <h4>8 años</h4>
+        <mat-card-subtitle>vendiendo en Nosbey</mat-card-subtitle>
+      </div>
+    </div>
+  </div>
+    <div class="contact">
+    <button mat-button class="btn-buy btn-primary">
+      Contactarme
+    </button>
+  </div>
   </mat-card>
 </div>

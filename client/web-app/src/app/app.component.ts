@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
 
   changeOfRoutes() {
     this.changeNavbar();
+    this.searcherNavbar();
     if (this.router.url === "/home/main") {
       this._navbarService.UpdateNavbarColor("rgba(0,0,0,0.4)");
     } else {
@@ -43,6 +44,14 @@ export class AppComponent implements OnInit {
       this._navbarService.UpdateNavdarplace(false);
     } else {
       this._navbarService.UpdateNavdarplace(true);
+    }
+  }
+
+  searcherNavbar() {
+    if (this.router.url === "/home/login" ||  this.router.url === "/home/signin" ||  this.router.url === "/home/main") {
+      this._navbarService.SearcherInNavdar(false);
+    } else {
+      this._navbarService.SearcherInNavdar(true);
     }
   }
 }
