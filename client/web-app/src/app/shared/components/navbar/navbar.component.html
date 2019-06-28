@@ -3,8 +3,8 @@
     <img width="50" class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logoBlanco.png"
     />
   </div>
-  <div class="navbar-section-navegation" *ngIf="showNavbar">
-    <div class="modules" *ngIf="!userLogin">
+  <div class="navbar-section-navegation">
+    <div class="modules" *ngIf="flag">
       <div class="item">
         <button mat-button>
           <span>{{ 'Sell' | translate }}</span>
@@ -28,8 +28,8 @@
     </div>
   </div>
 
-  <div class="navbar-section-options" *ngIf="showNavbar">
-    <div class="modules" *ngIf="logged">
+  <div class="navbar-section-options">
+    <div class="modules"*ngIf="flag && logged">
       <div class="item">
         <app-favorites></app-favorites>
       </div>
@@ -40,9 +40,9 @@
         <app-profile></app-profile>
       </div>
     </div>
-    <div class="modules" *ngIf="!logged && !userLogin">
+    <div class="modules"*ngIf="flag && !logged">
       <div class="item">
-        <button mat-button class="options" matTooltip='{{ "Login" | translate }}' (click)="login()" routerLink="/home/login">
+        <button mat-button class="options" matTooltip='{{ "Login" | translate }}' routerLink="/home/login">
           <i class="fas fa-sign-in-alt"></i>
         </button>
       </div>
