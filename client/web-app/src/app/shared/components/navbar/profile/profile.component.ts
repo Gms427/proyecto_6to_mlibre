@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LoginService } from "../../../services/login.service";
+import { NavbarService } from 'src/app/shared/services/navbar.service';
 
 
 
@@ -12,13 +12,13 @@ import { LoginService } from "../../../services/login.service";
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(public _loginService: LoginService) {}
+  constructor(public _navbarService: NavbarService) {}
 
   ngOnInit() {
   }
 
   logout() {
-    this._loginService.Logout();
+    this._navbarService.UserLogged(false);
   }
 
 }

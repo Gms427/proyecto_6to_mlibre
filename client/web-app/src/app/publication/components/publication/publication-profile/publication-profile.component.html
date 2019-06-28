@@ -1,3 +1,94 @@
-<div>
-  <h1>{{product.Name}}</h1>
+<div class="publication-profile">
+  <mat-card class="photo">
+    <div class="header">
+      <div class="header-left">
+        <mat-card-title class="product-name">{{ product.Name }}</mat-card-title>
+        <mat-card-subtitle
+          ><i class="fas fa-clock"></i>Publicado hace 1
+          semana</mat-card-subtitle
+        >
+        <mat-card-subtitle
+          ><i class="fas fa-map-pin"></i
+          ><span>Montevideo, Uruguay</span></mat-card-subtitle
+        >
+      </div>
+      <div class="header-right">
+        <button class="btn-favorite btn-transparent">
+          <i
+            class="far fa-heart"
+            *ngIf="!product.favorite"
+            (click)="addFav(product)"
+            matTooltip="{{ 'AddToFav' | translate }}"
+          ></i>
+          <i
+            class="fas fa-heart"
+            *ngIf="product.favorite"
+            (click)="removeFav(product)"
+            matTooltip="{{ 'DeleteFav' | translate }}"
+          ></i>
+        </button>
+        <p>{{ product.Price }}</p>
+      </div>
+    </div>
+    <div class="photo-section">
+      <img
+        src="https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NQ_NP_755476-MLU31252235723_062019-O.webp"
+      />
+    </div>
+  </mat-card>
+  <mat-card class="general-information">
+    <div>
+      <mat-card-subtitle *ngIf="product.State">{{
+        "New" | translate
+      }}</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="!product.State">{{
+        "Used" | translate
+      }}</mat-card-subtitle>
+      <mat-card-subtitle class="subtitle-green" *ngIf="product.Shipping">{{
+        "FreeShipping" | translate
+      }}</mat-card-subtitle>
+      <p class="product-info">More information</p>
+      <mat-card-subtitle>Entrega a acordar con el vendedor</mat-card-subtitle>
+      <p class="product-info">Ver costos de envio</p>
+      <mat-form-field>
+        <mat-select [(value)]="selected">
+          <mat-option value="option1">1 Unidad</mat-option>
+          <mat-option value="option2">2 Unidades</mat-option>
+          <mat-option value="option3">3 Unidades</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-card-subtitle>22 Opiniones</mat-card-subtitle>
+      <button mat-button class="btn-buy btn-primary">
+        {{ "Buy" | translate }}
+      </button>
+    </div>
+  </mat-card>
+  <mat-card class="seller-information">
+    <div class="information">
+    <mat-card-title>Informacion del vendedor</mat-card-title>
+    <h4 class="title">11</h4>
+    <mat-card-subtitle>Ventas concretadas</mat-card-subtitle>
+    <div class="reputation-container">
+      <div class="reputation red"></div>
+      <div class="reputation orange"></div>
+      <div class="reputation yellow"></div>
+      <div class="reputation green"></div>
+    </div>
+    <div class="seller-container">
+      <div class="seller-content">
+        <h4>100%</h4>
+        <mat-card-subtitle>de los compradores lo recomiendan</mat-card-subtitle>
+      </div>
+      <div class="seller-content">
+        <h4>8 años</h4>
+        <mat-card-subtitle>vendiendo en Nosbey</mat-card-subtitle>
+      </div>
+    </div>
+  </div>
+    <div class="contact">
+    <button mat-button class="btn-buy btn-primary">
+      Contactarme
+    </button>
+  </div>
+  </mat-card>
 </div>

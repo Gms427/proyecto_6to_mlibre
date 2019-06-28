@@ -4,6 +4,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -27,14 +28,26 @@ body {
 }
 
 .btn-primary {
-  background-color: #5294E2 !important;
-  color: white;
+  background-color: #5294e2 !important;
+  color: white!important;
 }
 
 .btn-transparent {
-  color: #5294E2 !important;
+  color: #5294e2 !important;
 }
 
-.subtitle-green{
-  color: #0aa252!important;
+.subtitle-green {
+  color: #0aa252 !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #5294e2 !important;
+}
+
+.mat-focused .mat-form-field-ripple {
+  background-color: #5294e2 !important;
+}
+
+:enabled.mat-raised-button.mat-primary {
+  background-color: #5294e2;
 }

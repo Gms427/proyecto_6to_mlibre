@@ -11,6 +11,7 @@ import { MyErrorStateMatcher } from "../../../shared/utils/utils";
 import { Router, ActivatedRouteSnapshot } from "@angular/router";
 import { LoginService } from "src/app/shared/services/login.service";
 import { UserLogin } from "src/app/home/models/UserLogin";
+import { NavbarService } from 'src/app/shared/services/navbar.service';
 
 @Component({
   selector: "app-login",
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 
   constructor(private router: Router,
-              private _loginService: LoginService) { }
+              private _loginService: LoginService,
+              private _navbarService: NavbarService) { }
 
   ngOnInit() {
   }
@@ -47,6 +49,7 @@ export class LoginComponent implements OnInit {
       console.log(`The password is ${this.password}`);
       let loggedUser = new UserLogin(this.username, this.password);
       this._loginService.Login(loggedUser);
+      this._navbarService.UserLogged(true);
       this.router.navigate(["/home/main"]);
     }
   }

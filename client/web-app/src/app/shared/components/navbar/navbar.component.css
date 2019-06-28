@@ -1,8 +1,6 @@
 .navbar {
   min-height: 100px;
-  background-color: rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
   position: relative;
   width: 100vw;
@@ -12,18 +10,23 @@
   width: 20%;
   margin: auto;
   cursor: pointer;
+  float: left;
 }
 
 .navbar-section-navegation {
   margin: auto;
   width: 60%;
   margin-bottom: 0;
+  height: 50px;
+  float: left;
 }
 
 .navbar-section-options {
   width: 20%;
   margin: auto;
   margin-bottom: 0;
+  height: 50px;
+  float: right;
 }
 
 .navbar-section-navegation button {
@@ -35,11 +38,22 @@
   cursor: pointer;
   transition: all 200ms ease;
   padding: 15px 20px;
-  line-height: 0%;
+}
+
+.seccion-up {
+  width: 80%;
+  height: 50px;
+  float: left;
+}
+
+.seccion-down {
+  width: 80%;
+  height: 50px;
+  float: left;
 }
 
 .navbar-section-navegation button:hover {
-  background: rgba(#5294E2, 0.3);
+  background: rgba(#5294e2, 0.3);
   color: white;
 }
 
@@ -62,10 +76,11 @@
   font-size: 20px;
   min-width: 40px;
   padding-bottom: 3px;
+  margin: 11px;
 }
 
 .navbar-section-options .options:hover {
-  color: #5294E2;
+  color: #5294e2;
 }
 
 .item {
@@ -82,8 +97,13 @@
   overflow: auto;
 }
 
-.logo{
+.logo {
   width: auto;
   height: 50px;
   outline: none;
+  margin: 25px;
+}
+
+.searcher-container{
+  margin-top: 13px;
 }
