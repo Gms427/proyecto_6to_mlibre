@@ -1,8 +1,9 @@
 import PgClient from '../database';
+import { QueryResult } from 'pg';
 
 export class TestDAL {
 
-    static async TestQuery(){
+    static async TestQuery(): Promise<QueryResult>{
         const table = "customers";
         const condition = "1 = 1"
         let query = `SELECT * FROM ${table}
