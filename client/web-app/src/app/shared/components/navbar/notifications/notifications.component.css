@@ -16,7 +16,7 @@ button{
 }
 
 .options:hover {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 button .notifications {
@@ -54,7 +54,7 @@ button .notifications {
 }
 
 .notifications-card button {
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 .mat-menu-content {
@@ -63,7 +63,7 @@ button .notifications {
 
 .btn-notifications-all {
   width: 100%;
-  color: #86c6ff;
+  color: #5294E2;
 }
 
 .notifications-content {

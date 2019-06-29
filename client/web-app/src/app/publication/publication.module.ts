@@ -7,10 +7,12 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { PublicationRoutingModule } from './publication-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { PublicationProfileComponent } from './components/publication/publication-profile/publication-profile.component';
+import { PublicationDescriptionComponent } from './components/publication/publication-description/publication-description.component';
 
 
 @NgModule({
-  declarations: [PublicationListComponent, PublicationComponent],
+  declarations: [PublicationListComponent, PublicationComponent, PublicationProfileComponent, PublicationDescriptionComponent],
   imports: [
     CommonModule,
     CoreModule,
