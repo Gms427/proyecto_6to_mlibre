@@ -1,111 +1,229 @@
 <div class="top-section"></div>
-<div class="signin-container">
-  <mat-card class="example-card">
-    <mat-grid-list cols="2" rowHeight="300px">
-      <mat-grid-tile>
-        <div class="controles-container">
-          <mat-card-header style="height: 48px; align-items: center;">
-            <mat-card-title
-              style="text-align: left; font-size: 23px; margin-bottom: 20px; margin-left: -16px;"
-              >{{ "SignupMessage" | translate }}</mat-card-title
+<!--<div class="signin-container">
+    <mat-card class="example-card">
+      <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-card-header style="height: 48px; align-items: center;">
+              <mat-card-title
+                style="text-align: left; font-size: 23px; margin-bottom: 20px; margin-left: -16px;"
+                >{{ "SignupMessage" | translate }}</mat-card-title
+              >
+            </mat-card-header>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="{{ 'Name' | translate }}"
+                [(ngModel)]="userData.Name"
+                type="text"
+                name="name"
+                [formControl]="nameFormControl"
+                [errorStateMatcher]="matcher"
+              />
+              <mat-error *ngIf="nameFormControl.hasError('validUsername')">
+                You name must have more than 3 characters
+              </mat-error>
+              <mat-error *ngIf="nameFormControl.hasError('required')">
+                  Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="{{ 'PhoneNumber' | translate }}"
+                [(ngModel)]="userData.Phone"
+                type="tel"
+                name="phone"
+                required
+              />
+              <mat-error *ngIf="phoneFormControl.hasError('required')">
+                  Phone number is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="E-mail"
+                [(ngModel)]="userData.Email"
+                type="email"
+                name="email"
+                required
+              />
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                  E-mail is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-card-header
+              style="height: 48px; float: right; align-items: center;"
             >
-          </mat-card-header>
-          <mat-form-field class="example-full-width" style="width: 100%">
-            <input
-              matInput
-              placeholder="{{ 'Name' | translate }}"
-              [(ngModel)]="userData.Name"
-              type="text"
-              name="name"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field class="example-full-width" style="width: 100%">
-            <input
-              matInput
-              placeholder="{{ 'PhoneNumber' | translate }}"
-              [(ngModel)]="userData.Phone"
-              type="tel"
-              name="phone"
-              required
-            />
-          </mat-form-field>
-          <mat-form-field class="example-full-width" style="width: 100%">
-            <input
-              matInput
-              placeholder="E-mail"
-              [(ngModel)]="userData.Email"
-              type="email"
-              name="email"
-              required
-            />
-          </mat-form-field>
-        </div>
-      </mat-grid-tile>
+              <a class="link-company-account btn-transparent">{{
+                "CreateCompanyAccount" | translate
+              }}</a>
+            </mat-card-header>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="{{ 'Surname' | translate }}"
+                [(ngModel)]="userData.Surname"
+                name="surname"
+                required
+              />
+            </mat-form-field>
+            <div class="space"></div>
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input
+                matInput
+                placeholder="{{ 'Password' | translate }}"
+                [(ngModel)]="userData.Password"
+                type="password"
+                name="password"
+                required
+              />
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
 
-      <mat-grid-tile>
-        <div class="controles-container">
-          <mat-card-header
-            style="height: 48px; float: right; align-items: center;"
-          >
-            <a class="link-company-account btn-transparent">{{
-              "CreateCompanyAccount" | translate
-            }}</a>
-          </mat-card-header>
-          <mat-form-field class="example-full-width" style="width: 100%">
-            <input
-              matInput
-              placeholder="{{ 'Surname' | translate }}"
-              [(ngModel)]="userData.Surname"
-              name="surname"
-              required
-            />
-          </mat-form-field>
-          <div class="space"></div>
-          <mat-form-field class="example-full-width" style="width: 100%">
-            <input
-              matInput
-              placeholder="{{ 'Password' | translate }}"
-              [(ngModel)]="userData.Password"
-              type="password"
-              name="password"
-              required
-            />
-          </mat-form-field>
-        </div>
-      </mat-grid-tile>
-    </mat-grid-list>
-
-    <mat-grid-list cols="2" rowHeight="60px">
-      <mat-grid-tile>
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="signin()"
-          class="btn-signin"
-          [disabled]="!buttonEnabled"
-        >
-          {{ "Signin" | translate }}
-        </button>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <p class="signin-conditions">
-          <mat-checkbox
+      <mat-grid-list cols="2" rowHeight="60px">
+        <mat-grid-tile>
+          <button
+            mat-raised-button
             color="primary"
-            class="example-margin"
-            [(ngModel)]="buttonEnabled"
-            [(indeterminate)]="indeterminate"
-            [labelPosition]="labelPosition"
-            [disabled]="disabled"
+            (click)="signin()"
+            class="btn-signin"
+            [disabled]="!buttonEnabled"
           >
-          </mat-checkbox>
-          {{ "SigninConditions1" | translate }}
-          <a>{{ "PrivacyPolicy" | translate }}</a>
-          {{ "SigninConditions2" | translate }}
-          <a>{{ "TermsAndConditions" | translate }}</a>
-          {{ "OfNosbey" | translate }}
-        </p>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </mat-card>
+            {{ "Signin" | translate }}
+          </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <p class="signin-conditions">
+            <mat-checkbox
+              color="primary"
+              class="example-margin"
+              [(ngModel)]="buttonEnabled"
+              [(indeterminate)]="indeterminate"
+              [labelPosition]="labelPosition"
+              [disabled]="disabled"
+            >
+            </mat-checkbox>
+            {{ "SigninConditions1" | translate }}
+            <a>{{ "PrivacyPolicy" | translate }}</a>
+            {{ "SigninConditions2" | translate }}
+            <a>{{ "TermsAndConditions" | translate }}</a>
+            {{ "OfNosbey" | translate }}
+          </p>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
+</div>-->
+
+<div class="signin-container">
+    <mat-card class="example-card">
+      <mat-grid-list cols="1" rowHeight="540px">
+        <mat-grid-tile>
+          <div class="controles-container">
+            <mat-card-header style="height: 48px; align-items: center;">
+              <mat-card-title
+                style="text-align: left; font-size: 23px; margin-bottom: 20px; margin-left: -16px;"
+                >{{ "SignupMessage" | translate }}</mat-card-title
+              >
+            </mat-card-header>
+            <mat-card-header style="height: 48px; float: right; align-items: center;">
+              <a class="link-company-account btn-transparent">{{
+                "CreateCompanyAccount" | translate
+              }}</a>
+            </mat-card-header>
+            <!-- Name -->
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="{{ 'Fullname' | translate }}" type="text" name="name" [formControl]="nameFormControl" />
+              <mat-error *ngIf="nameFormControl.hasError('invalidUsername')">
+                You name must have more than 3 characters
+              </mat-error>
+              <mat-error *ngIf="nameFormControl.hasError('required')">
+                  Name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <!-- Phone -->
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="{{ 'PhoneNumber' | translate }}" type="tel" name="phone" [formControl]="phoneFormControl" />
+              <mat-error *ngIf="phoneFormControl.hasError('required')">
+                  Phone number is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <!-- E-mail -->
+            <mat-form-field class="example-full-width" style="width: 100%">
+              <input matInput placeholder="E-mail" type="email" name="email" [formControl]="emailFormControl" />
+              <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                  E-mail is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('emailUsed')">
+                E-mail is already in use
+              </mat-error>
+            </mat-form-field>
+            <!-- Password -->
+            <mat-form-field class="example-full-width" style="width: 100%">
+                <input matInput placeholder="{{ 'Password' | translate }}" type="password" name="password" [formControl]="passwordFormControl" />
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                  Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('invalidLength') && !passwordFormControl.hasError('required')">
+                  Your password must have more than 6 characters
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('notLowerCaseLetters')">
+                  Your password must have lower case letters
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('notUpperCaseLetters')">
+                  Your password must have upper case letters
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('notNumbers')">
+                  Your password must have numbers
+                </mat-error>
+              </mat-form-field>
+              <!-- Generic errors -->
+              <mat-error *ngIf="error" style="font-size: 14px;">
+                {{error}}
+              </mat-error>
+            <div class="bottom-section">
+              <p class="signin-conditions">
+                  <mat-checkbox
+                    color="primary"
+                    class="example-margin"
+                    [(ngModel)]="checkTerms"
+                  >
+                  </mat-checkbox>
+                  {{ "SigninConditions1" | translate }}
+                  <a>{{ "PrivacyPolicy" | translate }}</a>
+                  {{ "SigninConditions2" | translate }}
+                  <a>{{ "TermsAndConditions" | translate }}</a>
+                  {{ "OfNosbey" | translate }}
+                </p>
+
+                <button
+                mat-raised-button
+                color="primary"
+                (click)="signin()"
+                class="btn-signin"
+                [disabled]="!(checkTerms &&
+                nameFormControl.status !== 'INVALID' &&
+                phoneFormControl.status !== 'INVALID' &&
+                emailFormControl.status !== 'INVALID' && 
+                passwordFormControl.status !== 'INVALID') 
+                "
+                >
+                  {{ "Signin" | translate }}
+                </button>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
 </div>

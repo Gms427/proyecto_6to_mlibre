@@ -3,6 +3,7 @@ import { LoginService } from "src/app/shared/services/login.service";
 import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
 import {PublicationList} from '../../models/publicationList'
+import { GeneralService } from 'src/app/shared/services/general.service';
 
 
 @Component({
@@ -12,6 +13,8 @@ import {PublicationList} from '../../models/publicationList'
 })
 export class PublicationListComponent implements OnInit{
   public search: string;
+  filtersInfo: Filter[];
+
   public Publications: PublicationList[] = [
     {
       Id: 1,
@@ -53,9 +56,10 @@ export class PublicationListComponent implements OnInit{
 
   constructor(private loginService: LoginService,
               private router: Router,
-              private _searchService: SearchService) {}
+              private _searchService: SearchService,
+              private _generalService: GeneralService) {}
 
-  ngOnInit(){
+  async ngOnInit(){
     // service para obtener la búsqueda
     this.search = this._searchService.searchValue;
     /*this._searchService.search$.subscribe(
@@ -65,6 +69,8 @@ export class PublicationListComponent implements OnInit{
         console.log(this.search);
       }
     );*/
+    this.filtersInfo = await this._generalService.getFiltersInfo();
+    console.log(this.filtersInfo);
   }
 
   addFav(product) {

@@ -1,26 +1,42 @@
 <div class="list-component container">
+  <!-- Filtros -->
   <div class="filters">
     <mat-list>
-      <h3>Busqueda: {{search}}</h3>
-      <mat-card-subtitle>{{length}} resultados</mat-card-subtitle>
+      <h3>Búsqueda: {{search}}</h3>
+      <mat-card-subtitle>{{length}} Resultados</mat-card-subtitle>
       <div>
         <p mat-subheader>Ordenar por:</p>
         <mat-form-field>
           <mat-select [(value)]="selected">
-            <mat-option value="option3">Mas visitados</mat-option>
+            <mat-option value="option3">Más visitados</mat-option>
             <mat-option value="option1">Menor precio</mat-option>
             <mat-option value="option2">Mayor precio</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-button class="btn-sortby btn-transparent">
-          <i class="fas fa-list"></i>
-        </button>
-        <button mat-button class="btn-sortby btn-transparent">
-          <i class="fas fa-th-large"></i>
-        </button>
+        <div class="btns-container">
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-list"></i>
+          </button>
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-th-large"></i>
+          </button>
+        </div>
+      </div>
+      <div class="filters-container">
+          <p mat-subheader style="height: 18px; padding: 0">Precio:</p>
+          <p>
+              <mat-form-field appearance="outline" style="width: 53px; height: 30px; font-size: 11px;">
+                <input matInput placeholder="Mínimo">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" style="width: 56px; height: 30px; font-size: 11px; margin-left: 18px;">
+                  <input matInput placeholder="Máximo">
+                </mat-form-field>
+          </p>
       </div>
     </mat-list>
   </div>
+
   <div class="list">
     <mat-list>
       <a *ngFor="let product of Publications">

@@ -1,6 +1,6 @@
 .signin-container {
-  height: 394px;
-  width: 750px;
+  height: 394px; /*394px*/
+  width: 450px; /*450px*/
   position: absolute;
   top: 0;
   left: 0;
@@ -20,7 +20,7 @@
   width: 300px;
 }
 .signin-conditions {
-  display: inline-block;
+  display: inline-block; /*inline-block*/
   width: 300px;
   font-size: 13px;
 }
@@ -42,4 +42,18 @@ a{
   background: #373D48;
   width: 100vw;
   height: 50vh;
+}
+.example-card{
+  padding: 55px;
+  margin-bottom: 50px;
+  height: auto;
+}
+.bottom-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mat-form-field{
+  margin-bottom: 8px;
 }

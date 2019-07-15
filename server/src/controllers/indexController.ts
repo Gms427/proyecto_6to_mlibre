@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import path from 'path';
-import { TestDAL } from '../serverDAL/test'
+import { TestDAL } from '../serverDAL/testDAL'
 import { QueryResult } from 'pg';
+import { Utils } from '../utils/utils';
 
 class IndexController {
     
@@ -62,6 +63,46 @@ class IndexController {
         ];
         const id = req.params.id;
         res.json(list.find((product) => product.Id == id));
+    }
+
+    async getFiltersInfo(req: Request, res: Response): Promise<void>{
+        const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
+        const rows = queryResult.rows;
+        console.log(queryResult);
+
+        /*let result = rows.map(filter => {
+            let values = rows.filter(f => {
+                return f.id_filter === filter.id_filter;
+            }).map(f => {
+                f.option_value;
+            });
+
+            return {
+                Id: filter.id_filter,
+                Name: filter.filter_name,
+                Type: filter.filter_type,
+                Values: values
+            }
+        });*/
+
+        let result: any = [];
+        rows.forEach(filter => {
+            let values: any = [];
+            rows.forEach(f => {
+                if(filter.id_filter === f.id_filter && f.option_value != null){
+                    values.push(f.option_value);
+                }
+            });
+            result.push({
+                Id: filter.id_filter,
+                Name: filter.filter_name,
+                Type: filter.filter_type,
+                Values: values
+            }); 
+        });
+        result = Utils.getUnique(result, "Id");
+
+        res.send(result);
     }
 }
 
