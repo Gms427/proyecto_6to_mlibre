@@ -23,16 +23,7 @@
         </div>
       </div>
       <div class="filters-container">
-          <p mat-subheader style="height: 18px; padding: 0">Precio:</p>
-          <p>
-              <mat-form-field appearance="outline" style="width: 53px; height: 30px; font-size: 11px;">
-                <input matInput placeholder="Mínimo">
-              </mat-form-field>
-
-              <mat-form-field appearance="outline" style="width: 56px; height: 30px; font-size: 11px; margin-left: 18px;">
-                  <input matInput placeholder="Máximo">
-                </mat-form-field>
-          </p>
+          <app-filters [filtersInfo]="filtersInfo"></app-filters>
       </div>
     </mat-list>
   </div>

@@ -41,6 +41,7 @@ interface Filter{
     Id: number,
     Name: string,
     Type: number,
+    Options?: any,
     Values?: any
 }
 

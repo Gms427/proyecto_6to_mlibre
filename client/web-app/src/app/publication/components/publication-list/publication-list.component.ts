@@ -71,6 +71,9 @@ export class PublicationListComponent implements OnInit{
     );*/
     this.filtersInfo = await this._generalService.getFiltersInfo();
     console.log(this.filtersInfo);
+    /*this.filtersInfo.find((filter: Filter): boolean => {
+      return filter.Id == 9
+    }).Values = ["Montevideo", "Canelones", "Tu biega"];*/
   }
 
   addFav(product) {

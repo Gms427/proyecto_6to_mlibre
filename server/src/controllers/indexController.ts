@@ -87,18 +87,30 @@ class IndexController {
 
         let result: any = [];
         rows.forEach(filter => {
-            let values: any = [];
+            let options: any = [];
             rows.forEach(f => {
                 if(filter.id_filter === f.id_filter && f.option_value != null){
-                    values.push(f.option_value);
+                    options.push(f.option_value);
                 }
             });
-            result.push({
-                Id: filter.id_filter,
-                Name: filter.filter_name,
-                Type: filter.filter_type,
-                Values: values
-            }); 
+            if(filter.filter_type === "BOOLEAN"){
+                result.push({
+                    Id: filter.id_filter,
+                    Name: filter.filter_name,
+                    Type: filter.filter_type,
+                    Options: options,
+                    Values: [false]
+                }); 
+            }else{
+                result.push({
+                    Id: filter.id_filter,
+                    Name: filter.filter_name,
+                    Type: filter.filter_type,
+                    Options: options,
+                    Values: []
+                }); 
+            }
+            
         });
         result = Utils.getUnique(result, "Id");
 
