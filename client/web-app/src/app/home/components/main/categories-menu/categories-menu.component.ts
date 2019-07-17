@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-categories-menu',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories-menu.component.css']
 })
 export class CategoriesMenuComponent implements OnInit {
+
+  @Input()
+  Categories: Category[];
 
   constructor() { }
 

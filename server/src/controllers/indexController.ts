@@ -72,21 +72,6 @@ class IndexController {
         const rows = queryResult.rows;
         console.log(queryResult);
 
-        /*let result = rows.map(filter => {
-            let values = rows.filter(f => {
-                return f.id_filter === filter.id_filter;
-            }).map(f => {
-                f.option_value;
-            });
-
-            return {
-                Id: filter.id_filter,
-                Name: filter.filter_name,
-                Type: filter.filter_type,
-                Values: values
-            }
-        });*/
-
         let result: any = [];
         rows.forEach(filter => {
             let options: any = [];
@@ -124,7 +109,7 @@ class IndexController {
             if(catExist){
                 let subCatExist = catExist.Subcategories.find(s => s.SubcategoryName === row.idsubcategory);
                 if(!subCatExist){
-                    categories.find(c => c.IdCategory === row.idcategory).Subcategories.push({
+                    catExist.Subcategories.push({
                         IdSubcategory: row.idsubcategory,
                         SubcategoryName: row.subcategoryname
                     });

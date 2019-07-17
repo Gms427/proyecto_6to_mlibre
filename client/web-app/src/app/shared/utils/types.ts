@@ -27,14 +27,13 @@ interface Publication{
 interface Category{
     Id: number,
     Name: string,
-    Filters: Filter[],
+    Filters?: Filter[],
     Subcategories: Subcategory[]
 }
 interface Subcategory{
     Id: number,
     Name: string,
-    Filters: Filter[],
-
+    Filters?: Filter[],
 }
 
 interface Filter{
