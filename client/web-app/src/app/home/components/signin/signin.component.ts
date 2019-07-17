@@ -4,6 +4,8 @@ import { FormControl, Validators } from '@angular/forms';
 import { CustomErrorStateMatcher, CustomValidators } from '../../../shared/utils/utils';
 import { SigninService } from '../../services/signin.service';
 import { TestService } from 'src/app/shared/services/test.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -44,7 +46,9 @@ export class SigninComponent implements OnInit {
 
 
   constructor(private _signinService: SigninService,
-              private _testService: TestService) {   }
+              private _testService: TestService,
+              private toastr: ToastrService,
+              private router: Router) {   }
 
   ngOnInit() {
     /*this.nameFormControl.setValue("Gonzalo Manzzi");
@@ -86,12 +90,19 @@ export class SigninComponent implements OnInit {
   }*/
 
   signin() {
-    console.log(this.userData);
-    console.log(this.passwordFormControl);
+    this.userData.Email = this.emailFormControl.value;
+    this.userData.Fullname = this.nameFormControl.value;
+    this.userData.Password = this.passwordFormControl.value;
+    this.userData.Phone = this.phoneFormControl.value;
     this._signinService.Signin(this.userData).subscribe(
       (res) => { 
         console.log(res)
-        this.error = "";
+        this.error = '';
+        this.toastr.success('Se ha registrado con éxito','',{
+          timeOut: 2000,
+          positionClass: 'toast-top-center'
+        });
+        this.router.navigate(['home/login']);
       },(err) => {
         this.error = err.error.text;
         console.log(err);

@@ -3,6 +3,8 @@ import path from 'path';
 import { TestDAL } from '../serverDAL/testDAL'
 import { QueryResult } from 'pg';
 import { Utils } from '../utils/utils';
+import { Category } from '../models/Category';
+import { Subcategory } from '../models/Subcategory';
 
 class IndexController {
     
@@ -93,28 +95,53 @@ class IndexController {
                     options.push(f.option_value);
                 }
             });
+            let values: any[] = [];
+
             if(filter.filter_type === "BOOLEAN"){
-                result.push({
-                    Id: filter.id_filter,
-                    Name: filter.filter_name,
-                    Type: filter.filter_type,
-                    Options: options,
-                    Values: [false]
-                }); 
-            }else{
-                result.push({
-                    Id: filter.id_filter,
-                    Name: filter.filter_name,
-                    Type: filter.filter_type,
-                    Options: options,
-                    Values: []
-                }); 
+                values = [false]; // Los boolean vienen con la opción por default en false
             }
+
+            result.push({
+                Id: filter.id_filter,
+                Name: filter.filter_name,
+                Type: filter.filter_type,
+                Options: options,
+                Values: values
+            }); 
             
         });
         result = Utils.getUnique(result, "Id");
 
         res.send(result);
+    }
+
+    async getCategories(req: Request, res: Response): Promise<void>{
+        let result = await TestDAL.GetCategories();
+        let categories: Category[] = [];
+
+        result.forEach(row => {
+            let catExist = categories.find(c => c.IdCategory === row.idcategory);
+            if(catExist){
+                let subCatExist = catExist.Subcategories.find(s => s.SubcategoryName === row.idsubcategory);
+                if(!subCatExist){
+                    categories.find(c => c.IdCategory === row.idcategory).Subcategories.push({
+                        IdSubcategory: row.idsubcategory,
+                        SubcategoryName: row.subcategoryname
+                    });
+                }
+            }else{
+                categories.push({
+                    CategoryName: row.categoryname,
+                    IdCategory: row.idcategory,
+                    Subcategories: [{
+                        IdSubcategory: row.idsubcategory,
+                        SubcategoryName: row.subcategoryname
+                    }]
+                });
+            }
+        });
+
+        res.send(categories);
     }
 }
 

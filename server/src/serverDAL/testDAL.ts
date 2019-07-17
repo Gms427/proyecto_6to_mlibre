@@ -26,5 +26,18 @@ export class TestDAL {
         let result = await PgClient.query(query);
         return result;
     }
+
+    static async GetCategories(): Promise<QueryResult["rows"]>{
+        let query = `select 
+                        cat.id_category as IdCategory,
+                        cat.name as CategoryName,
+                        scat.name as SubcategoryName,
+                        scat.id_subcategory as IdSubcategory
+                    from category cat inner join subcategory scat
+                        on cat.id_category = scat.id_category
+                    order by cat.id_category;`;
+        let result = await PgClient.query(query);
+        return result.rows;
+    }
 }
 

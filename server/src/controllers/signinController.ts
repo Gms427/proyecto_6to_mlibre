@@ -15,7 +15,7 @@ class SigninController {
                 user.Password = Utils.encriptPassword(user.Password);
                 console.log(user);
                 // TODO: validaciones que se hacen del lado del cliente
-                //SigninDAL.Signin(user);
+                SigninDAL.Signin(user);
             }
         } catch (error) {
             res.send(error);

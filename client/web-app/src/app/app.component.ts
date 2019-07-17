@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
     private _testService: TestService,
     private _navbarService: NavbarService
   ) {
-    translate.setDefaultLang("en");
-    translate.use("en");
+    translate.setDefaultLang("es");
+    translate.use("es");
   }
 
   async ngOnInit() {

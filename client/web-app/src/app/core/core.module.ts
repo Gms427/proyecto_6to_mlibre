@@ -59,6 +59,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 
+// Toast
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [],
@@ -111,8 +114,9 @@ import { MatTableModule } from '@angular/material/table';
     InputTextModule,
     ButtonModule,
     // Internacionalización
-    TranslateModule
-    
+    TranslateModule,
+    // Toast 
+    ToastrModule.forRoot()
   ],
   exports: [
     // Angular material

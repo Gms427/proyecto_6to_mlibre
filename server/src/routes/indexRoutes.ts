@@ -23,6 +23,7 @@ class IndexRoutes {
         this.router.get('/verifyEmail/:email', signinController.verifyEmail);
         this.router.post('/login', loginController.login);
         this.router.get('/getFiltersInfo', indexController.getFiltersInfo);
+        this.router.get('/getCategories', indexController.getCategories);
     }
 }
 

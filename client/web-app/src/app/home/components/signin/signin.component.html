@@ -143,49 +143,52 @@
             <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="{{ 'Fullname' | translate }}" type="text" name="name" [formControl]="nameFormControl" />
               <mat-error *ngIf="nameFormControl.hasError('invalidUsername')">
-                You name must have more than 3 characters
+                El nombre debe tener más de 3 caracteres
               </mat-error>
               <mat-error *ngIf="nameFormControl.hasError('required')">
-                  Name is <strong>required</strong>
+                  El nombre completo es <strong>obligatorio</strong>
               </mat-error>
             </mat-form-field>
             <!-- Phone -->
             <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="{{ 'PhoneNumber' | translate }}" type="tel" name="phone" [formControl]="phoneFormControl" />
               <mat-error *ngIf="phoneFormControl.hasError('required')">
-                  Phone number is <strong>required</strong>
+                  El teléfono <strong>obligatorio</strong>
               </mat-error>
+              <mat-error *ngIf="phoneFormControl.hasError('invalidLength')">
+                El teléfono debe tener al menos 5 dígitos
+            </mat-error>
             </mat-form-field>
             <!-- E-mail -->
             <mat-form-field class="example-full-width" style="width: 100%">
               <input matInput placeholder="E-mail" type="email" name="email" [formControl]="emailFormControl" />
               <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
+                Por favor, ingrese un e-mail válido
               </mat-error>
               <mat-error *ngIf="emailFormControl.hasError('required')">
-                  E-mail is <strong>required</strong>
+                  El e-mail es <strong>obligatorio</strong>
               </mat-error>
               <mat-error *ngIf="emailFormControl.hasError('emailUsed')">
-                E-mail is already in use
+                El e-mail ya está en uso
               </mat-error>
             </mat-form-field>
             <!-- Password -->
             <mat-form-field class="example-full-width" style="width: 100%">
                 <input matInput placeholder="{{ 'Password' | translate }}" type="password" name="password" [formControl]="passwordFormControl" />
                 <mat-error *ngIf="passwordFormControl.hasError('required')">
-                  Password is <strong>required</strong>
+                  La contraseña es <strong>obligatoria</strong>
                 </mat-error>
                 <mat-error *ngIf="passwordFormControl.hasError('invalidLength') && !passwordFormControl.hasError('required')">
-                  Your password must have more than 6 characters
+                  La contraseña debe tener más de 6 caracteres
                 </mat-error>
                 <mat-error *ngIf="passwordFormControl.hasError('notLowerCaseLetters')">
-                  Your password must have lower case letters
+                  La contraseña debe tener al menos una letra minúscula
                 </mat-error>
                 <mat-error *ngIf="passwordFormControl.hasError('notUpperCaseLetters')">
-                  Your password must have upper case letters
+                  La contraseña debe tener al menos una letra mayúscula
                 </mat-error>
                 <mat-error *ngIf="passwordFormControl.hasError('notNumbers')">
-                  Your password must have numbers
+                  La contraseña debe tener al menos un número
                 </mat-error>
               </mat-form-field>
               <!-- Generic errors -->

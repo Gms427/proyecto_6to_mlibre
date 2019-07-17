@@ -1,5 +1,5 @@
 export interface SigninDTO{
-    Name: string;
+    Fullname: string;
     Phone: string;
     Email: string;
     Password: string;
