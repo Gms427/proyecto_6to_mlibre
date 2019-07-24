@@ -1,4 +1,4 @@
-interface UserInfo{
+export interface UserInfo{
     Id: number,
     Name: string,
     Email: string,
@@ -11,7 +11,7 @@ interface UserInfo{
     Publications: number[]
 }
 
-interface Publication{
+export interface Publication{
     Id: number,
     Title: string,
     Description: string,
@@ -24,19 +24,20 @@ interface Publication{
     Currency: string
 }
 
-interface Category{
+export interface Category{
     Id: number,
     Name: string,
     Filters?: Filter[],
     Subcategories: Subcategory[]
 }
-interface Subcategory{
+
+export interface Subcategory{
     Id: number,
     Name: string,
     Filters?: Filter[],
 }
 
-interface Filter{
+export interface Filter{
     Id: number,
     Name: string,
     Type: number,
@@ -44,7 +45,7 @@ interface Filter{
     Values?: any
 }
 
-enum FilterTypes{
+export enum FilterTypes{
     NUMERIC_RANGE = 1, // 1 - 10
     BOOLEAN = 2, // Tiendas oficiales, si lo tengo seleccionado filtra y sino no
     OPTIONS_LIST = 3, // Nuevo o usado, solo se puede seleccionar una opción de la lista

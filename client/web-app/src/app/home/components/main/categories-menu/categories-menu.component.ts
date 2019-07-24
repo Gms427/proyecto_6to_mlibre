@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Category } from '../../../../shared/utils/types';
 
 @Component({
   selector: 'app-categories-menu',
