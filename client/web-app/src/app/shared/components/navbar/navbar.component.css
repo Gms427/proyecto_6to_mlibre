@@ -37,16 +37,16 @@
   outline: none;
   cursor: pointer;
   transition: all 200ms ease;
-  padding: 15px 20px;
+  padding: 15px 20px 0 15px;
 }
 
-.seccion-up {
+.section-up {
   width: 80%;
   height: 50px;
   float: left;
 }
 
-.seccion-down {
+.section-down {
   width: 80%;
   height: 50px;
   float: left;
@@ -104,6 +104,6 @@
   margin: 25px;
 }
 
-.searcher-container{
+.searcher-container {
   margin-top: 13px;
 }
