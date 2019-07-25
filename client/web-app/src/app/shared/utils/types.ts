@@ -51,7 +51,4 @@ export enum FilterTypes{
     OPTIONS_LIST = 3, // Nuevo o usado, solo se puede seleccionar una opción de la lista
     DATE_RANGE = 4,
     SELECTIONABLE_LIST = 5, // Ubicaciones, lista de valores predefinida, se selecciona al menos uno
-    
-
-
 }

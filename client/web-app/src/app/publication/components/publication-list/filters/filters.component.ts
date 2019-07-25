@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Filter } from 'src/app/shared/utils/types';
 
 @Component({
   selector: 'app-filters',

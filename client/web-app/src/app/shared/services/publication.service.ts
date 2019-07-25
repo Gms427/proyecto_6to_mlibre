@@ -18,17 +18,18 @@ export class PublicationService {
     return this.http.get(`${this.baseUrl}/product/${id}`);
   }
 
-  getCategories(){
+  async getCategories(): Promise<Category[]> {
     console.log("1", this.categories);
     if(this.categories){
       console.log("2.1", this.categories);
       return this.categories;
     }else{
       console.log("2.2", this.categories);
-      return this.http.get(`${this.baseUrl}/getCategories`)
+     return await this.http.get(`${this.baseUrl}/getCategories`)
       .toPromise()
-      .then(r => {
+      .then((r: Category []) => {
         this.categories = r;
+        console.log('returning categories');
         return r;
       });
     }

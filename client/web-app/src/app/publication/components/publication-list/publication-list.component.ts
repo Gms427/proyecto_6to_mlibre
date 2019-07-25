@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
 import {PublicationList} from '../../models/publicationList'
 import { GeneralService } from 'src/app/shared/services/general.service';
+import { Filter } from 'src/app/shared/utils/types';
 
 
 @Component({
