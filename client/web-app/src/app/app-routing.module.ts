@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'publications',
     loadChildren: './publication/publication.module#PublicationModule'
+  },
+  {
+    path: 'user',
+    loadChildren: './user/user.module#UserModule'
   }
 ];
 

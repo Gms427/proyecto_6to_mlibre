@@ -17,12 +17,12 @@
     <div class="navbar-section-navegation">
       <div class="modules" *ngIf="flag">
         <div class="item">
-          <button mat-button>
-            <span routerLink="/publications/new">{{ "Sell" | translate }}</span>
+          <button mat-button routerLink="/publications/new">
+            <span>{{ "Sell" | translate }}</span>
           </button>
         </div>
         <div class="item">
-          <button mat-button>
+          <button mat-button routerLink="/user/history">
             <span>{{ "History" | translate }}</span>
           </button>
         </div>
