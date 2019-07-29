@@ -24,13 +24,13 @@
       </div>
       <!-- Filtros  -->
       <div class="filters-container">
-          <app-filters [filtersInfo]="filtersInfo"></app-filters>
+          <app-filters [filtersInfo]="filtersInfo" (spinner)="onFiltersChange($event)"></app-filters>
       </div>
 
     </mat-list>
   </div>
-
-  <div class="list">
+  <mat-spinner class="spinner" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  <div class="list" [style.display]="!showSpinner ? 'block' : 'none'">
     <mat-list>
       <a *ngFor="let product of Publications">
         <mat-card class="publication-card mat-elevation-z">

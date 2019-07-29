@@ -16,6 +16,8 @@ export class PublicationListComponent implements OnInit{
   public search: string;
   filtersInfo: Filter[];
 
+  public showSpinner: boolean = false;
+
   public Publications: PublicationList[] = [
     {
       Id: 1,
@@ -88,5 +90,9 @@ export class PublicationListComponent implements OnInit{
   navegateToProduct(product) {
     console.log(product);
     this.router.navigate([`/publications/publication/${product.Id}`]);
+  }
+
+  onFiltersChange(event){
+    this.showSpinner = event;
   }
 }

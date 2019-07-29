@@ -4,15 +4,30 @@
   display: flex;
 }
 .title-popular-categories {
-  width: 215px;
+  width: 350px;
   margin: auto;
   margin-top: 175px;
   margin-bottom: 25px;
+  font-size: 35px;
 }
 .container-card{
   width: 22%;
-  margin: auto
+  margin: auto;
+  transition: .3s ease-in;
+  border-radius: 4px;
+  cursor: pointer;
 }
+
+.container-card:hover{
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.07),0 20px 25px 0 rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,.4);
+  color: #5294e2;
+}
+
+.container-card:hover hr, .container-card.hover hr {
+  border-top: 1px solid #5294e2;
+} 
+
 hr {
   display: block;
   height: 1px;
@@ -20,14 +35,19 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
+  color: inherit;
+  transition: .4s ease-in;
 }
+
 .transparent{
   background: transparent;
   text-align: center;
 }
+
 .mat-card{
-  color: #ffffff;
+  color: inherit;
 }
+
 .mat-card-subtitle{
-  color: #ffffff;
+  color: inherit;
 }

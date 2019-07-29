@@ -9,7 +9,7 @@ import { Category } from '../../../../shared/utils/types';
 export class CategoriesMenuComponent implements OnInit {
 
   @Input()
-  Categories: Category[];
+  categories: Category[];
 
   constructor() { }
 

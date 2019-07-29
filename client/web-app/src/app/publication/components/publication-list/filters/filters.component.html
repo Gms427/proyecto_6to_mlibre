@@ -19,7 +19,12 @@
             </div>
         
             <div *ngSwitchCase="'BOOLEAN'">
-                <mat-checkbox class="example-margin" [(ngModel)]="filter.Values[0]">{{ filter.Name }}</mat-checkbox>
+                <mat-slide-toggle
+                    [(ngModel)]="filter.Values[0]"
+                    [checked]="filter.Values[0]"
+                    [disabled]="disabled">
+                     {{filter.Name}}
+                </mat-slide-toggle>
             </div>
         
             <div *ngSwitchCase="'OPTIONS_LIST'">

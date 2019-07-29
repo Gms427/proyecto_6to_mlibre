@@ -25,8 +25,8 @@ export interface Publication{
 }
 
 export interface Category{
-    Id: number,
-    Name: string,
+    IdCategory: number,
+    CategoryName: string,
     Filters?: Filter[],
     Subcategories: Subcategory[]
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, Output } from '@angular/core';
 import { Filter } from 'src/app/shared/utils/types';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -10,6 +11,8 @@ export class FiltersComponent implements OnInit, AfterViewInit {
 
   @Input()
   filtersInfo: Filter[];
+
+  @Output() spinner: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
@@ -26,6 +29,10 @@ export class FiltersComponent implements OnInit, AfterViewInit {
     this.filtersInfo.forEach((f) => {
       console.log(f.Name, f.Values);
     });
+    this.spinner.emit(true);
+    setTimeout(() => {
+      this.spinner.emit(false);
+    }, 1000);
   }
 
 }

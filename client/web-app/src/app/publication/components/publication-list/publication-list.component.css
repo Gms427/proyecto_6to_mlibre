@@ -69,3 +69,9 @@
   .filters-container{
     padding: 22px 8px;
   }
+  
+  .spinner{
+    position: relative;
+    width: 100px;
+    margin: auto;
+  }
