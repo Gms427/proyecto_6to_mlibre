@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserHistoryComponent implements OnInit {
 
+  public history = [1,2,3];
   constructor() { }
 
   ngOnInit() {

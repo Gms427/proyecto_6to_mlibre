@@ -1,4 +1,24 @@
 header > h1, a{
     display: inline-block;
+}
+
+header > h1{
+    width: 600px;
+}
+
+.example-card {
+  max-width: 400px;
+  display: inline-block;
+  margin: auto;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+section{
+    width: 96%;
     margin: auto;
+    display: flex;
 }

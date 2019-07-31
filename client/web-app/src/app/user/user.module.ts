@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { UserHistoryComponent } from './components/user-history/user-history.component';
 import { UserRoutingModule } from './user-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [UserHistoryComponent],
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ]
 })
 export class UserModule { }
