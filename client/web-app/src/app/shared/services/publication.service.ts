@@ -18,6 +18,12 @@ export class PublicationService {
     return this.http.get(`${this.baseUrl}/product/${id}`);
   }
 
+  getProducts(){
+    return this.http.get(`${this.baseUrl}/getProducts`)
+      .toPromise()
+      .then(r => r);
+  }
+
   async getCategories(): Promise<Category[]> {
     if(this.categories){
       return this.categories;

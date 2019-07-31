@@ -11,7 +11,7 @@ export interface UserInfo{
     Publications: number[]
 }
 
-export interface Publication{
+/*export interface Publication{
     Id: number,
     Title: string,
     Description: string,
@@ -22,6 +22,15 @@ export interface Publication{
     Subcategory: Subcategory,
     Price: number,
     Currency: string
+}*/
+export interface Publication{
+    Id: number,
+    Name: string,
+    Price: string,
+    State: boolean,
+    Shipping: boolean,
+    Favorite: boolean,
+    Img: string
 }
 
 export interface Category{

@@ -7,7 +7,7 @@ header > h1{
 }
 
 .example-card {
-  max-width: 224px;
+  min-width: 224px;
   /*display: inline-block;*/
   margin: 0 8px 60px;
   float: left;
@@ -21,4 +21,7 @@ header > h1{
 section{
     margin: auto;
     max-width: 1200px;
+}
+.custom{
+    font-size: 18px;
 }
