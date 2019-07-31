@@ -7,9 +7,10 @@ header > h1{
 }
 
 .example-card {
-  max-width: 400px;
-  display: inline-block;
-  margin: auto;
+  max-width: 224px;
+  /*display: inline-block;*/
+  margin: 0 8px 60px;
+  float: left;
 }
 
 .example-header-image {
@@ -18,7 +19,6 @@ header > h1{
 }
 
 section{
-    width: 96%;
     margin: auto;
-    display: flex;
+    max-width: 1200px;
 }
