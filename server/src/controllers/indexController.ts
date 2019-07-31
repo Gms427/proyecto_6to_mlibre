@@ -14,7 +14,7 @@ class IndexController {
     }
 
     index(req: Request, res: Response){
-        res.send('Hello');
+        res.sendFile(path.join(__dirname, '../../../client/web-app/dist/web-app/index.html'));
     }
 
     main(req: Request, res: Response) {
