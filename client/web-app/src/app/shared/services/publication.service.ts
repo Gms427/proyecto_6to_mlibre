@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category } from '../utils/types';
+import { Category, Publication } from '../utils/types';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,10 @@ export class PublicationService {
     return this.http.get(`${this.baseUrl}/product/${id}`);
   }
 
-  getProducts(){
-    return this.http.get(`${this.baseUrl}/getProducts`)
+  async getProducts(): Promise<Publication[]>{
+    return await this.http.get(`${this.baseUrl}/getProducts`)
       .toPromise()
-      .then(r => r);
+      .then((r: Publication[]) => r);
   }
 
   async getCategories(): Promise<Category[]> {

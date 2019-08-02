@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Publication } from 'src/app/shared/utils/types';
 import { PublicationService } from '../../../shared/services/publication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-history',
@@ -10,9 +11,11 @@ import { PublicationService } from '../../../shared/services/publication.service
 })
 export class UserHistoryComponent implements OnInit {
 
-  public history: Publication[];
+  public history: Publication[] = [];
+
   constructor(private toastr: ToastrService,
-              private _publicationService: PublicationService) { }
+              private _publicationService: PublicationService,
+              private router: Router) { }
 
   async ngOnInit() {
     this.history = await this._publicationService.getProducts();
@@ -26,11 +29,23 @@ export class UserHistoryComponent implements OnInit {
     });
   }
 
-  deleteItem(publication: any){
-    console.log(publication);
+  deleteItem(IdPublication: number){
+    console.log(IdPublication);
+    
+    this.history.forEach((p: Publication, i: number, a: Publication[]) => {
+      if(p.Id === IdPublication){
+        a.splice(i, 1);
+      }
+    });
+
+
     this.toastr.success(`Se ha borrado satisfactoriamente el item`,'',{
       timeOut: 2000,
       positionClass: 'toast-top-center'
     });
+  }
+
+  navigateToPublication(IdPublication: number){
+    this.router.navigate([`/publications/publication/${IdPublication}`]);
   }
 }
