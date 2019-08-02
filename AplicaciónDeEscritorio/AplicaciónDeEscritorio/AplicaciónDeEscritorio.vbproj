@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{25F1054D-7462-453C-971E-D5874EB7C2F4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>AplicaciónDeEscritorio.My.MyApplication</StartupObject>
-    <RootNamespace>AplicaciónDeEscritorio</RootNamespace>
-    <AssemblyName>AplicaciónDeEscritorio</AssemblyName>
+    <StartupObject>AdminApp.My.MyApplication</StartupObject>
+    <RootNamespace>AdminApp</RootNamespace>
+    <AssemblyName>AdminApp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>AplicaciónDeEscritorio.xml</DocumentationFile>
+    <DocumentationFile>AdminApp.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>AplicaciónDeEscritorio.xml</DocumentationFile>
+    <DocumentationFile>AdminApp.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -77,11 +77,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Login.vb">
+    <Compile Include="CloseAppScreen.Designer.vb">
+      <DependentUpon>CloseAppScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CloseAppScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.vb">
-      <DependentUpon>Login.vb</DependentUpon>
+    <Compile Include="LogInScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInScreen.Designer.vb">
+      <DependentUpon>LogInScreen.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -99,34 +105,37 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Principal.Designer.vb">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <Compile Include="ProductsSmallScreen.Designer.vb">
+      <DependentUpon>ProductsSmallScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Principal.vb">
+    <Compile Include="ProductsSmallScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Producto.Designer.vb">
-      <DependentUpon>Producto.vb</DependentUpon>
+    <Compile Include="ProductsScreen.Designer.vb">
+      <DependentUpon>ProductsScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Producto.vb">
+    <Compile Include="ProductsScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.vb">
-      <DependentUpon>Registro.vb</DependentUpon>
+    <Compile Include="SignInScreen.Designer.vb">
+      <DependentUpon>SignInScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Registro.vb">
+    <Compile Include="SignInScreen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Spalsh.Designer.vb">
-      <DependentUpon>Spalsh.vb</DependentUpon>
+    <Compile Include="SpalshScreen.Designer.vb">
+      <DependentUpon>SpalshScreen.vb</DependentUpon>
     </Compile>
-    <Compile Include="Spalsh.vb">
+    <Compile Include="SpalshScreen.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.vb</DependentUpon>
+    <EmbeddedResource Include="CloseAppScreen.resx">
+      <DependentUpon>CloseAppScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInScreen.resx">
+      <DependentUpon>LogInScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -134,17 +143,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.vb</DependentUpon>
+    <EmbeddedResource Include="ProductsSmallScreen.resx">
+      <DependentUpon>ProductsSmallScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Producto.resx">
-      <DependentUpon>Producto.vb</DependentUpon>
+    <EmbeddedResource Include="ProductsScreen.resx">
+      <DependentUpon>ProductsScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro.resx">
-      <DependentUpon>Registro.vb</DependentUpon>
+    <EmbeddedResource Include="SignInScreen.resx">
+      <DependentUpon>SignInScreen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Spalsh.resx">
-      <DependentUpon>Spalsh.vb</DependentUpon>
+    <EmbeddedResource Include="SpalshScreen.resx">
+      <DependentUpon>SpalshScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

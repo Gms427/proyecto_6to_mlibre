@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Principal
+Partial Class ProductsSmallScreen
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,7 +22,7 @@ Partial Class Principal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProductsSmallScreen))
         Me.gbxProducto = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -38,13 +38,15 @@ Partial Class Principal
         Me.lblPrecio = New System.Windows.Forms.Label()
         Me.titProducto = New System.Windows.Forms.Label()
         Me.imgProducto = New System.Windows.Forms.PictureBox()
-        Me.titNosbey = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.imgNosbey = New System.Windows.Forms.Button()
+        Me.backgroundProducts = New System.Windows.Forms.Panel()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnCloseApp = New System.Windows.Forms.Button()
+        Me.btnLogIn = New System.Windows.Forms.Button()
+        Me.btnSignIn = New System.Windows.Forms.Button()
         Me.gbxProducto.SuspendLayout()
         CType(Me.imgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.backgroundProducts.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbxProducto
@@ -64,7 +66,7 @@ Partial Class Principal
         Me.gbxProducto.Controls.Add(Me.lblPrecio)
         Me.gbxProducto.Controls.Add(Me.titProducto)
         Me.gbxProducto.Controls.Add(Me.imgProducto)
-        Me.gbxProducto.Location = New System.Drawing.Point(315, 30)
+        Me.gbxProducto.Location = New System.Drawing.Point(316, 30)
         Me.gbxProducto.Name = "gbxProducto"
         Me.gbxProducto.Size = New System.Drawing.Size(691, 250)
         Me.gbxProducto.TabIndex = 2
@@ -228,63 +230,94 @@ Partial Class Principal
         Me.imgProducto.TabIndex = 0
         Me.imgProducto.TabStop = False
         '
-        'titNosbey
+        'imgNosbey
         '
-        Me.titNosbey.BackColor = System.Drawing.Color.Transparent
-        Me.titNosbey.BackgroundImage = CType(resources.GetObject("titNosbey.BackgroundImage"), System.Drawing.Image)
-        Me.titNosbey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.titNosbey.Enabled = False
-        Me.titNosbey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.titNosbey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.titNosbey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
-        Me.titNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.titNosbey.Location = New System.Drawing.Point(510, 15)
-        Me.titNosbey.Name = "titNosbey"
-        Me.titNosbey.Size = New System.Drawing.Size(303, 128)
-        Me.titNosbey.TabIndex = 3
-        Me.titNosbey.UseVisualStyleBackColor = False
+        Me.imgNosbey.BackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.BackgroundImage = CType(resources.GetObject("imgNosbey.BackgroundImage"), System.Drawing.Image)
+        Me.imgNosbey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.imgNosbey.Enabled = False
+        Me.imgNosbey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.imgNosbey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.imgNosbey.Location = New System.Drawing.Point(510, 15)
+        Me.imgNosbey.Name = "imgNosbey"
+        Me.imgNosbey.Size = New System.Drawing.Size(303, 128)
+        Me.imgNosbey.TabIndex = 3
+        Me.imgNosbey.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'backgroundProducts
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.Panel1.Controls.Add(Me.gbxProducto)
-        Me.Panel1.Location = New System.Drawing.Point(-13, 160)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1408, 800)
-        Me.Panel1.TabIndex = 4
+        Me.backgroundProducts.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.backgroundProducts.Controls.Add(Me.gbxProducto)
+        Me.backgroundProducts.Location = New System.Drawing.Point(-13, 160)
+        Me.backgroundProducts.Name = "backgroundProducts"
+        Me.backgroundProducts.Size = New System.Drawing.Size(1408, 800)
+        Me.backgroundProducts.TabIndex = 4
         '
-        'btnCerrar
+        'btnCloseApp
         '
-        Me.btnCerrar.BackgroundImage = CType(resources.GetObject("btnCerrar.BackgroundImage"), System.Drawing.Image)
-        Me.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Location = New System.Drawing.Point(1320, 15)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(32, 32)
-        Me.btnCerrar.TabIndex = 5
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.btnCloseApp.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnCloseApp.BackgroundImage = CType(resources.GetObject("btnCloseApp.BackgroundImage"), System.Drawing.Image)
+        Me.btnCloseApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCloseApp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCloseApp.FlatAppearance.BorderSize = 0
+        Me.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCloseApp.Location = New System.Drawing.Point(1310, 15)
+        Me.btnCloseApp.Name = "btnCloseApp"
+        Me.btnCloseApp.Size = New System.Drawing.Size(42, 40)
+        Me.btnCloseApp.TabIndex = 5
+        Me.btnCloseApp.UseVisualStyleBackColor = False
         '
-        'Principal
+        'btnLogIn
+        '
+        Me.btnLogIn.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnLogIn.BackgroundImage = CType(resources.GetObject("btnLogIn.BackgroundImage"), System.Drawing.Image)
+        Me.btnLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogIn.FlatAppearance.BorderSize = 0
+        Me.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogIn.Location = New System.Drawing.Point(1275, 15)
+        Me.btnLogIn.Name = "btnLogIn"
+        Me.btnLogIn.Size = New System.Drawing.Size(35, 40)
+        Me.btnLogIn.TabIndex = 6
+        Me.btnLogIn.UseVisualStyleBackColor = False
+        '
+        'btnSignIn
+        '
+        Me.btnSignIn.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnSignIn.BackgroundImage = CType(resources.GetObject("btnSignIn.BackgroundImage"), System.Drawing.Image)
+        Me.btnSignIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSignIn.FlatAppearance.BorderSize = 0
+        Me.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSignIn.Location = New System.Drawing.Point(1240, 15)
+        Me.btnSignIn.Name = "btnSignIn"
+        Me.btnSignIn.Size = New System.Drawing.Size(37, 40)
+        Me.btnSignIn.TabIndex = 7
+        Me.btnSignIn.UseVisualStyleBackColor = False
+        '
+        'Products
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.btnCerrar)
-        Me.Controls.Add(Me.titNosbey)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btnSignIn)
+        Me.Controls.Add(Me.btnLogIn)
+        Me.Controls.Add(Me.btnCloseApp)
+        Me.Controls.Add(Me.imgNosbey)
+        Me.Controls.Add(Me.backgroundProducts)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Principal"
+        Me.Name = "Products"
         Me.Text = "Principal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.gbxProducto.ResumeLayout(False)
         Me.gbxProducto.PerformLayout()
         CType(Me.imgProducto, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        Me.backgroundProducts.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,11 +333,13 @@ Partial Class Principal
     Friend WithEvents btnIgnorar As Button
     Friend WithEvents btnSuspender As Button
     Friend WithEvents btnBorrar As Button
-    Friend WithEvents titNosbey As Button
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents imgNosbey As Button
+    Friend WithEvents backgroundProducts As Panel
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnCloseApp As Button
+    Friend WithEvents btnLogIn As Button
+    Friend WithEvents btnSignIn As Button
 End Class

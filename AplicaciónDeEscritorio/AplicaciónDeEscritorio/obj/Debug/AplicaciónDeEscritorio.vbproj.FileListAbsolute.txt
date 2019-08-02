@@ -14,3 +14,20 @@ C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio
 C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Principal.resources
 C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Producto.resources
 C:\Users\Alumno\Desktop\Principal\Materias\Programación\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.Spalsh.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbprojAssemblyReference.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbproj.GenerateResource.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AplicaciónDeEscritorio.vbproj.CoreCompileInputs.cache
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AdminApp.exe.config
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AdminApp.exe
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AdminApp.pdb
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\bin\Debug\AdminApp.xml
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.CloseAppScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.LogInScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.Resources.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.ProductsSmallScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.ProductsScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.SignInScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.SpalshScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.exe
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.xml
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.pdb
