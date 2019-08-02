@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import path from 'path';
-import { TestDAL } from '../serverDAL/testDAL'
+import { TestDAL } from '../serverDAL/testDAL';
 import { QueryResult } from 'pg';
 import { Utils } from '../utils/utils';
 import { Category } from '../models/Category';
@@ -129,6 +129,10 @@ class IndexController {
         });
 
         res.send(categories);
+    }
+
+    async getUserInfo(req: Request, res: Response){
+        res.send(TestDAL.getUserInfo(req.params.id));
     }
 }
 

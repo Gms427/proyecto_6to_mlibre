@@ -22,4 +22,8 @@ export class TestService {
   verifyEmailDisponibility(email: string){
     return this.http.get(`${this.baseUrl}/verifyEmail/${email}`);
   }
+
+  getUserInfo(email: string){
+    return this.http.get(`${this.baseUrl}/user/information/${email}`);
+  }
 }
