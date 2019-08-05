@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
 import {PublicationList} from '../../models/publicationList'
 import { GeneralService } from 'src/app/shared/services/general.service';
-import { Filter } from 'src/app/shared/utils/types';
+import { Filter, Category, Subcategory } from 'src/app/shared/utils/types';
 
 
 @Component({
@@ -15,6 +15,8 @@ import { Filter } from 'src/app/shared/utils/types';
 export class PublicationListComponent implements OnInit{
   public search: string;
   filtersInfo: Filter[];
+  public categorySearched: Category;
+  public subcategorySearched: Subcategory;
 
   public showSpinner: boolean = false;
 
@@ -64,19 +66,13 @@ export class PublicationListComponent implements OnInit{
 
   async ngOnInit(){
     // service para obtener la búsqueda
-    this.search = this._searchService.searchValue;
-    /*this._searchService.search$.subscribe(
-      (val) => {
-        console.log("búsqueda:", val);
-        this.search = val;
-        console.log(this.search);
-      }
-    );*/
+    this.search = this._searchService.getSearchValue();
+    this.categorySearched = this._searchService.getCategorySearched();
+    console.log(this.categorySearched);
+    this.subcategorySearched = this._searchService.getSubcategorySearched();
     this.filtersInfo = await this._generalService.getFiltersInfo();
     console.log(this.filtersInfo);
-    /*this.filtersInfo.find((filter: Filter): boolean => {
-      return filter.Id == 9
-    }).Values = ["Montevideo", "Canelones", "Tu biega"];*/
+    
   }
 
   addFav(product) {

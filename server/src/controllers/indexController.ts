@@ -107,7 +107,7 @@ class IndexController {
         let categories: Category[] = [];
 
         result.forEach(row => {
-            let catExist = categories.find(c => c.IdCategory === row.idcategory);
+            let catExist = categories.find(c => c.Id === row.idcategory);
             if(catExist){
                 let subCatExist = catExist.Subcategories.find(s => s.SubcategoryName === row.idsubcategory);
                 if(!subCatExist){
@@ -118,8 +118,8 @@ class IndexController {
                 }
             }else{
                 categories.push({
-                    CategoryName: row.categoryname,
-                    IdCategory: row.idcategory,
+                    Name: row.categoryname,
+                    Id: row.idcategory,
                     Subcategories: [{
                         IdSubcategory: row.idsubcategory,
                         SubcategoryName: row.subcategoryname

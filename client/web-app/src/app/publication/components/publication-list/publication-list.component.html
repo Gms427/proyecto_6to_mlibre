@@ -3,6 +3,8 @@
   <div class="filters">
     <mat-list>
       <h3>Búsqueda: {{search}}</h3>
+      <h4 *ngIf="categorySearched">{{ categorySearched.Name }}</h4>
+      <h4 *ngIf="subcategorySearched">{{ subcategorySearched.Name }}</h4>
       <mat-card-subtitle>{{length}} Resultados</mat-card-subtitle>
       <div>
         <p mat-subheader>Ordenar por:</p>

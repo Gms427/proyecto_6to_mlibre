@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
   baseUrl: string = "http://localhost:3000";
-  public loggedUser: UserLogin = new UserLogin("", "");
+  private loggedUser: UserLogin;
   public login = new Subject<boolean>();
   public login$: Observable<boolean> = this.login.asObservable();
 
@@ -27,6 +27,14 @@ export class LoginService {
     console.log("logout work");
     this.loggedUser = new UserLogin("", "");
     this.login.next(false);
+  }
+
+  getLoggedUser(): UserLogin{
+    return this.loggedUser;
+  }
+
+  setLoggedUser(value: UserLogin){
+    this.loggedUser = value;
   }
 
 }
