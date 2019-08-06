@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-	console.log('Branch: login_new');
     const t = await this._testService.test();
   }
 

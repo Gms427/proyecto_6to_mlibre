@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       this._loginService.Login(loggedUser).subscribe(
         (res) => {
           this._navbarService.UserLogged(true);
+          this._loginService.setLoggedUser(loggedUser);
           this.router.navigate(["/home/main"]);
         },(err) => {
           this.error = err.error.text;
