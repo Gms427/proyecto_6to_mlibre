@@ -24,6 +24,7 @@ export class TestService {
   }
 
   getUserInfo(email: string){
-    return this.http.get(`${this.baseUrl}/user/information/${email}`);
+    console.log(email);
+    return this.http.get(`${this.baseUrl}/getUserInfo/${email}`);
   }
 }

@@ -132,7 +132,8 @@ class IndexController {
     }
 
     async getUserInfo(req: Request, res: Response){
-        res.send(TestDAL.getUserInfo(req.params.id));
+        console.log(req.params.emai);
+        res.send(TestDAL.getUserInfo(req.params.email));
     }
 }
 

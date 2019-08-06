@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../../../shared/services/test.service';
+import { LoginService } from 'src/app/shared/services/login.service';
 
 
 @Component({
@@ -9,13 +10,16 @@ import { TestService } from '../../../shared/services/test.service';
 })
 export class UserInformationComponent implements OnInit {
 
-  constructor(private _TestService: TestService) { }
+  constructor(private _TestService: TestService,
+    private _loginService: LoginService) { }
 
   ngOnInit() {
+    console.log(this.getInformation());
   }
 
-  getInformation(){
-    this._TestService.getUserInfo()
+  getInformation() {
+    console.log(this._loginService.loggedUser.Email);
+    this._TestService.getUserInfo(this._loginService.loggedUser.Email);
   }
 
 }
