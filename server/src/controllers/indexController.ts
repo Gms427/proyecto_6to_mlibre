@@ -131,9 +131,8 @@ class IndexController {
         res.send(categories);
     }
 
-    async getUserInfo(req: Request, res: Response){
-        console.log(req.params.emai);
-        res.send(TestDAL.getUserInfo(req.params.email));
+    async getUserInfo(req: Request, res: Response){        
+        res.send(await TestDAL.getUserInfo(req.params.email));
     }
 }
 

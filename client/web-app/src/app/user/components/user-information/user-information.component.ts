@@ -18,8 +18,12 @@ export class UserInformationComponent implements OnInit {
   }
 
   getInformation() {
-    console.log(this._loginService.loggedUser.Email);
-    this._TestService.getUserInfo(this._loginService.loggedUser.Email);
+    this._TestService.getUserInfo(this._loginService.getLoggedUser().Email)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        }
+      );
   }
 
 }
