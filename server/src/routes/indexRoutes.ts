@@ -24,6 +24,7 @@ class IndexRoutes {
         this.router.post('/login', loginController.login);
         this.router.get('/getFiltersInfo', indexController.getFiltersInfo);
         this.router.get('/getCategories', indexController.getCategories);
+        this.router.get('/getUserInfo/:email', indexController.getUserInfo);
     }
 }
 

@@ -22,4 +22,9 @@ export class TestService {
   verifyEmailDisponibility(email: string){
     return this.http.get(`${this.baseUrl}/verifyEmail/${email}`);
   }
+
+  getUserInfo(email: string){
+    console.log(email);
+    return this.http.get(`${this.baseUrl}/getUserInfo/${email}`);
+  }
 }

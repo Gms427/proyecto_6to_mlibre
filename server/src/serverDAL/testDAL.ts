@@ -39,5 +39,11 @@ export class TestDAL {
         let result = await PgClient.query(query);
         return result.rows;
     }
+
+    static async getUserInfo(userEmail: string){
+        let query = `select * from users where email = ${userEmail}`;
+        let result = await PgClient.query(query);
+        return result;
+    }
 }
 
