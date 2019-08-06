@@ -7,6 +7,7 @@ import { Category } from '../models/Category';
 import { Subcategory } from '../models/Subcategory';
 import { Publication } from '../models/Publication';
 import { publications } from '../utils/utils';
+import { User } from '../models/User';
 
 class IndexController {
     
@@ -132,7 +133,21 @@ class IndexController {
     }
 
     async getUserInfo(req: Request, res: Response){        
-        res.send(await TestDAL.getUserInfo(req.params.email));
+        let queryResult = await TestDAL.getUserInfo(req.params.email);
+        let user: User = {
+            Id: queryResult.id_user,
+            FullName: queryResult.full_name,
+            City: queryResult.city,
+            DateOfBirth: queryResult.date_of_birth,
+            Departament: queryResult.departament,
+            Email: queryResult.email,
+            Neighborhood: queryResult.neighborhood,
+            Phone: queryResult.phone,
+            Status: queryResult.status,
+            Street: queryResult.street
+        }
+
+        res.send(user);
     }
 }
 

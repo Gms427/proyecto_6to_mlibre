@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../../../shared/services/test.service';
 import { LoginService } from 'src/app/shared/services/login.service';
+import { UserInfo } from 'src/app/shared/utils/types';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { LoginService } from 'src/app/shared/services/login.service';
   styleUrls: ['./user-information.component.css']
 })
 export class UserInformationComponent implements OnInit {
+
+  public user: UserInfo;
 
   constructor(private _TestService: TestService,
     private _loginService: LoginService) { }
@@ -22,6 +25,7 @@ export class UserInformationComponent implements OnInit {
       .subscribe(
         (res) => {
           console.log(res);
+          this.user = res;
         }
       );
   }
