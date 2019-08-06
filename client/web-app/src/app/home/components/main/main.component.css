@@ -13,6 +13,8 @@
   top: 0;
   width: 100vw;
   z-index: 1;
+  /*background: rgb(245,246,251);
+  background: linear-gradient(180deg, rgba(245,246,251,1) 0%, rgba(173,174,174,1) 100%);*/
 }
 .search-container{
   display: flex;
