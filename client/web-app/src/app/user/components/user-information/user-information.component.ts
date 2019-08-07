@@ -11,7 +11,7 @@ import { UserInfo } from 'src/app/shared/utils/types';
 })
 export class UserInformationComponent implements OnInit {
 
-  public user: UserInfo;
+  public user: any;
 
   constructor(private _TestService: TestService,
     private _loginService: LoginService) { }
