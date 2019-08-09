@@ -1,3 +1,20 @@
-<p>
-  create-publication works!
-</p>
+<h4>Seleccione una subcategoría</h4>
+<mat-form-field>
+  <mat-label>Subcaterogías </mat-label>
+  <mat-select>
+    <mat-option *ngFor="let subcategory of category.Subcategories" [value]="subcategory.SubcategoryName" (click)="getSubcategoryFields(subcategory.IdSubcategory)">
+      {{subcategory.SubcategoryName}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class="form-container" *ngIf="subCategoryFields.length > 0">
+
+  <mat-form-field class="example-full-width" *ngFor="let subCategoryField of subCategoryFields">
+    <input matInput placeholder="Company (disabled)" disabled value="Google">
+    <div [ngSwitch]="subCategoryField.Type">
+
+    </div>
+  </mat-form-field>
+
+</div>

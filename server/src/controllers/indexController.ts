@@ -131,6 +131,13 @@ class IndexController {
         });
         res.send(categories);
     }
+
+    async getSubcategoryFields(req: Request, res: Response){
+        let idSubcategory = req.params.idSubcategory;
+        let idCategory = req.params.idCategory
+        let result = await TestDAL.getSubcategoryFields(idSubcategory, idCategory);
+        res.send(result);
+    }
 }
 
 export const indexController = new IndexController();

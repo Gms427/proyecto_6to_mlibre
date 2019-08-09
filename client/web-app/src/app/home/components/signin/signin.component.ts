@@ -94,6 +94,7 @@ export class SigninComponent implements OnInit {
     this.userData.Fullname = this.nameFormControl.value;
     this.userData.Password = this.passwordFormControl.value;
     this.userData.Phone = this.phoneFormControl.value;
+    
     this._signinService.Signin(this.userData).subscribe(
       (res) => { 
         console.log(res)
