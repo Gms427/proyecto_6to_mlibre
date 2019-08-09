@@ -1,7 +1,44 @@
 <div class="container">
   <h2>Mis datos</h2>
   <mat-card>
-   {{user.Email}}
+    <h4>Mail:</h4>
+    {{user.Email}}
+  </mat-card>
+  <mat-card>
+    <h4>Nombre:</h4>
+    {{user.FullName}}
+  </mat-card>
+  <mat-card>
+    <h4>Telefono:</h4>
+    {{user.Phone}}
+  </mat-card>
+  <h2>Datos nesesarios para comprar y vender </h2>
+  <mat-card>
+    <h4>Fecha de Nacimiento:</h4>
+    {{user.DateOfBirth}}
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="AAAA/MM/DD">
+        </mat-form-field>
+      </form>
+  </mat-card>
+  <mat-card>
+    <h4>Departamento:</h4>
+    {{user.Departament}}
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Departamento">
+      </mat-form-field>
+  </mat-card>
+  <mat-card>
+    <h4>Ciudad:</h4>
+    {{user.City}}
+  </mat-card>
+  <mat-card>
+    <h4>Barrio:</h4>
+    {{user.Neighborhood}}
+  </mat-card>
+  <mat-card>
+    <h4>Calle:</h4>
+    {{user.Street}}
   </mat-card>
 </div>
-

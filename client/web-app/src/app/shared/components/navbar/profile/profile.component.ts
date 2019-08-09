@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
-
-
+import { LoginService } from 'src/app/shared/services/login.service';
+import { TestService } from '../../../../shared/services/test.service';
 
 
 @Component({
@@ -12,13 +11,28 @@ import { NavbarService } from 'src/app/shared/services/navbar.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(public _navbarService: NavbarService) {}
+  constructor(public _navbarService: NavbarService,
+    public _loginService: LoginService,
+    private _TestService: TestService) { }
+
+  public user: any;
 
   ngOnInit() {
+    this.getInformation();
   }
 
   logout() {
     this._navbarService.UserLogged(false);
   }
 
+  getInformation() {
+    this._TestService.getUserInfo(this._loginService.getLoggedUser().Email)
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.user = res;
+        }
+      );
+
+  }
 }
