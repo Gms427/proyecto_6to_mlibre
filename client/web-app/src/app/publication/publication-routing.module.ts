@@ -4,6 +4,7 @@ import { PublicationListComponent } from './components/publication-list/publicat
 import { PublicationComponent } from './components/publication/publication.component';
 import { PublicationCategorySelectorComponent } from './components/publication-category-selector/publication-category-selector.component';
 import { ResolveUserLogged } from '../shared/utils/guards';
+import { CreatePublicationComponent } from './components/create-publication/create-publication.component';
 
 const routes: Routes = [
  {
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'new',
     component: PublicationCategorySelectorComponent,
     canActivate: [ResolveUserLogged]
+  },
+  {
+    path: 'create',
+    component: CreatePublicationComponent
   }
 ];
 
