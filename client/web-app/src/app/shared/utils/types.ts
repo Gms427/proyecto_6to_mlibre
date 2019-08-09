@@ -37,7 +37,8 @@ export interface Category{
     Id: number,
     Name: string,
     Filters?: Filter[],
-    Subcategories: Subcategory[]
+    Subcategories: Subcategory[],
+    Icon: string
 }
 
 export interface Subcategory{

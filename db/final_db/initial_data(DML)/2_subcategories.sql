@@ -158,3 +158,5 @@ INSERT INTO SUBCATEGORY(ID_CATEGORY, NAME)
 INSERT INTO SUBCATEGORY(ID_CATEGORY, NAME)
 (SELECT ID_CATEGORY, 'Pendrives' FROM CATEGORY WHERE NAME = 'Telefonía y computación');
 
+-- Categoría null ------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO SUBCATEGORY(ID_SUBCATEGORY, ID_CATEGORY, NAME) VALUES(0, 0, 'NULL SUBCATEGORY');

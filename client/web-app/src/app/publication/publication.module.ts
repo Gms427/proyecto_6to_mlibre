@@ -11,10 +11,11 @@ import { PublicationProfileComponent } from './components/publication/publicatio
 import { PublicationDescriptionComponent } from './components/publication/publication-description/publication-description.component';
 import { FiltersComponent } from './components/publication-list/filters/filters.component';
 import { PublicationCategorySelectorComponent } from './components/publication-category-selector/publication-category-selector.component';
+import { CreatePublicationComponent } from './components/create-publication/create-publication.component';
 
 
 @NgModule({
-  declarations: [PublicationListComponent, PublicationComponent, PublicationProfileComponent, PublicationDescriptionComponent, FiltersComponent, PublicationCategorySelectorComponent],
+  declarations: [PublicationListComponent, PublicationComponent, PublicationProfileComponent, PublicationDescriptionComponent, FiltersComponent, PublicationCategorySelectorComponent, CreatePublicationComponent],
   imports: [
     CommonModule,
     CoreModule,

@@ -104,6 +104,7 @@ class IndexController {
 
     async getCategories(req: Request, res: Response): Promise<void>{
         let result = await TestDAL.GetCategories();
+        console.log(result);
         let categories: Category[] = [];
 
         result.forEach(row => {
@@ -123,11 +124,11 @@ class IndexController {
                     Subcategories: [{
                         IdSubcategory: row.idsubcategory,
                         SubcategoryName: row.subcategoryname
-                    }]
+                    }],
+                    Icon: row.icon
                 });
             }
         });
-
         res.send(categories);
     }
 }
