@@ -10,7 +10,7 @@
       </mat-select>
     </mat-form-field>
   </div>
-  
+  <mat-divider [vertical]="true"></mat-divider>
   <!-- Form de datos genéricos -->
   <div class="container-form">
     <mat-card class="custom-card">
@@ -93,7 +93,7 @@
       </div>
     </mat-card>-->
   </div>
-
+  <mat-divider [vertical]="true" *ngIf="subCategoryFields.length > 0"></mat-divider>
   <!-- Form de datos de la subcategoría  -->
   <div class="container-form" *ngIf="subCategoryFields.length > 0">
       <mat-card class="custom-card">
