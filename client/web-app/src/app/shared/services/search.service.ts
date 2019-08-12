@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { Category, Subcategory } from '../utils/types';
 
@@ -9,6 +9,8 @@ export class SearchService {
   private searchValue: string = "";
   private categorySearched: Category;
   private subcategorySearched: Subcategory;
+
+  @Output() search: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
