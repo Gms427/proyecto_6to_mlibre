@@ -1,37 +1,51 @@
 <div class="container">
   <h2>Mis datos</h2>
-  <mat-card class="inline">
+  <mat-card *ngIf="user.Status == 2" class="discontinued inline">
+      <h4>Estas suspendido para vender</h4>
+      <button mat-button class="btn-transparent">ver mas</button>
+    </mat-card>
+    <mat-card *ngIf="user.Status == 1" class="authorized inline">
+        <h4>Estas autorizado para vender</h4>
+      </mat-card>
+  <div class="inline">
+      <h2>Datos personales</h2>
+      <button mat-button class="btn-primary">Actualizar</button>
+  </div>
+  <mat-card>
+  <div class="inline">
     <h4>Email:</h4>
     <mat-form-field class="md">
       <input matInput placeholder="Email" [disabled]="!stateEmail" value="{{user.Email}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateEmail" [checked]="stateEmail.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateEmail" [checked]="stateEmail.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Nombre:</h4>
     <mat-form-field class="md">
       <input matInput placeholder="Nombre" [disabled]="!stateFullName" value="{{user.FullName}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateFullName" [checked]="stateFullName.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateFullName" [checked]="stateFullName.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Celular:</h4>
     <mat-form-field class="md">
       <input matInput #phone maxlength="9" placeholder="Celular" [disabled]="!statePhone" value="{{user.Phone}}">
       <mat-hint align="end">{{phone.value.length}} / 9</mat-hint>
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="statePhone" [checked]="statePhone.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="statePhone" [checked]="statePhone.disabled">
     </mat-checkbox>
-  </mat-card>
+  </div>
+</mat-card>
+
   <h2>Datos nesesarios para comprar y vender </h2>
   <mat-card class="inline">
     <h4>Fecha de nacimiento</h4>
     <mat-form-field class="md">
       <input matInput placeholder="Fecha de nacimiento" [disabled]="!stateDateOfBirth" value="{{user.DateOfBirth}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateDateOfBirth" [checked]="stateDateOfBirth.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateDateOfBirth" [checked]="stateDateOfBirth.disabled">
     </mat-checkbox>
   </mat-card>
   <mat-card class="inline">
@@ -39,8 +53,7 @@
     <mat-form-field class="md">
       <input matInput placeholder="Departamento" [disabled]="!stateDepartament" value="{{user.Departament}}">
     </mat-form-field>
-    <mat-checkbox matTooltip="Editar" hidden [(ngModel)]="stateDepartament" [checked]="stateDepartament.disabled">
-        <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-checkbox color="primary" [(ngModel)]="stateDepartament" [checked]="stateDepartament.disabled">
     </mat-checkbox>
   </mat-card>
   <mat-card class="inline">
@@ -48,7 +61,7 @@
     <mat-form-field class="md">
       <input matInput placeholder="Ciudad" [disabled]="!stateCity" value="{{user.stateCity}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateCity" [checked]="stateCity.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateCity" [checked]="stateCity.disabled">
     </mat-checkbox>
   </mat-card>
   <mat-card class="inline">
@@ -56,7 +69,7 @@
     <mat-form-field class="md">
       <input matInput placeholder="Barrio" [disabled]="!stateNeighborhood" value="{{user.Neighborhood}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateNeighborhood" [checked]="stateNeighborhood.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateNeighborhood" [checked]="stateNeighborhood.disabled">
     </mat-checkbox>
   </mat-card>
   <mat-card class="inline">
@@ -64,7 +77,7 @@
     <mat-form-field class="md">
       <input matInput placeholder="Calle" [disabled]="!stateStreet" value="{{user.Street}}">
     </mat-form-field>
-    <mat-checkbox [(ngModel)]="stateStreet" [checked]="stateStreet.disabled">
+    <mat-checkbox color="primary" [(ngModel)]="stateStreet" [checked]="stateStreet.disabled">
     </mat-checkbox>
   </mat-card>
 </div>

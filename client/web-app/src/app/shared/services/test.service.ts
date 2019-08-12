@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserInfo } from '../utils/types'
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,6 @@ export class TestService {
 
   getUserInfo(email: string){
     console.log(email);
-    return this.http.get(`${this.baseUrl}/getUserInfo/${email}`);
+    return this.http.get<UserInfo>(`${this.baseUrl}/getUserInfo/${email}`);
   }
 }

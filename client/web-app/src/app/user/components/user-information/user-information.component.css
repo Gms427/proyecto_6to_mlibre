@@ -1,5 +1,5 @@
 .md{
-    width: 40%;
+    width: 50%;
 }
 
 .inline{
@@ -7,4 +7,22 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+}
+
+h4{
+    width: 20%;
+    margin-bottom: 0;
+}
+
+.discontinued h4{
+    width: 80%;
+    margin-bottom: 0;
+}
+
+.discontinued{
+    background-color: #ff7733;
+}
+
+.authorized{
+    background-color: #2DB66F;
 }

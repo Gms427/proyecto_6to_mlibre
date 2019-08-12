@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/shared/services/navbar.service';
 import { LoginService } from 'src/app/shared/services/login.service';
 import { TestService } from '../../../../shared/services/test.service';
+import { UserInfo } from '../../../utils/types'
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ProfileComponent implements OnInit {
     public _loginService: LoginService,
     private _TestService: TestService) { }
 
-  public user: any;
+  public user: UserInfo;
 
   ngOnInit() {
     this.getInformation();
