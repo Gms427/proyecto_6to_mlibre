@@ -19,11 +19,11 @@ class LoginController {
                 if(Bcrypt.compareSync(pswd, exist[0].password)){
                     res.send(true);
                 }else{
-                    throw 'Password is incorrect';
+                    throw 'La contraseña es incorrecta';
                 }
                 
             }else{
-                throw 'E-mail is not registred';
+                throw 'El E-mail no está registrado';
             }
         } catch (error) {
             res.send(error);

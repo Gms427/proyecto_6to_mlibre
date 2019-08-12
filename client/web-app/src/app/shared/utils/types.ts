@@ -50,7 +50,7 @@ export interface Subcategory{
 export interface Filter{
     Id: number,
     Name: string,
-    Type: number,
+    Type: string,
     Options?: any,
     Values?: any
 }
@@ -61,4 +61,18 @@ export enum FilterTypes{
     OPTIONS_LIST = 3, // Nuevo o usado, solo se puede seleccionar una opción de la lista
     DATE_RANGE = 4,
     SELECTIONABLE_LIST = 5, // Ubicaciones, lista de valores predefinida, se selecciona al menos uno
+}
+
+export interface Currency{
+    Id: number,
+    Name: string,
+    Symbol?: string
+}
+
+export interface PublicationBaseInfo{
+    Title: string,
+    Description: string,
+    Price: string,
+    Currency: string,
+    Quantity: number
 }

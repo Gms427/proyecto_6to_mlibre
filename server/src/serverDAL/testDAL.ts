@@ -44,13 +44,31 @@ export class TestDAL {
     }
 
     static async getSubcategoryFields(idSubcategory: number, idCategory: number): Promise<QueryResult["rows"]>{
-        let query = `select	fl.id_filter as IdFilter,
-                            fl.is_generic as IsGeneric,
-                            fl.filter_name as FilterName,
-                            fl.filter_type as FilterType
+        let query = `select	fl.id_filter,
+                            fl.is_generic,
+                            fl.filter_name,
+                            fl.filter_type
                     from filter fl
-                    where fl.id_subcategory = '${idSubcategory}'
-                    or fl.id_category = '${idCategory}'`;
+                    where (fl.id_subcategory = '${idSubcategory}'
+                    or fl.id_category = '${idCategory}' or fl.is_generic = 1)
+                    and fl.id_filter not in (1,3,4)
+                    order by fl.filter_name`;
+        let result = await PgClient.query(query);
+        return result.rows;
+    }
+
+    static async getFilterValues(idsFilters: number[]): Promise<QueryResult["rows"]>{
+        let query = `select
+                        fl.id_filter,
+                        fl.is_generic,
+                        fl.filter_name,
+                        fl.filter_type,
+                        flop.option_value
+                    from filter fl inner join filter_option flop
+                        on fl.id_filter = flop.id_filter
+                    where fl.id_filter in (${idsFilters})
+                    order by flop.option_value;`
+                    console.log(query);
         let result = await PgClient.query(query);
         return result.rows;
     }
