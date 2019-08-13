@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { TestService } from '../../../shared/services/test.service';
 import { LoginService } from 'src/app/shared/services/login.service';
 import { UserInfo } from 'src/app/shared/utils/types';
+import { SigninService } from 'src/app/home/services/signin.service';
 
 
 @Component({
@@ -23,15 +25,11 @@ export class UserInformationComponent implements OnInit {
   public stateDepartament: boolean = false;
   public stateStreet: boolean = false;
 
-  productForm = this.fb.group({
-    name: [this.user.FullName],
-    unitPrice: [''],
-    stock: ['']
-  });
-
-
   constructor(private _TestService: TestService,
-    private _loginService: LoginService, private fb: FormBuilder) { }
+              private _loginService: LoginService, 
+              private _signinService: SigninService,
+              private toastr: ToastrService,
+              ) { }
 
   ngOnInit() {
     console.log(this.getInformation());
@@ -47,4 +45,22 @@ export class UserInformationComponent implements OnInit {
       );
   }
 
+  UpdateInformation() {
+    this.stateFullName = false;
+    this.stateCity = false;
+    this.stateDateOfBirth = false;
+    this.stateEmail = false;
+    this.stateDepartament = false;
+    this.statePhone = false;
+    this.stateStreet = false;
+    this.stateNeighborhood = false
+    this._signinService.UpdateData(this.user).subscribe(
+      (res) => { 
+        this.toastr.success('Se han actualizado los datos con exito','',{
+          timeOut: 2000,
+          positionClass: 'toast-top-center'
+        });
+        console.log(res)
+        });
+      }
 }

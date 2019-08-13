@@ -9,13 +9,13 @@
       </mat-card>
   <div class="inline">
       <h2>Datos personales</h2>
-      <button mat-button class="btn-primary">Actualizar</button>
+      <button mat-button class="btn-primary" (click)="UpdateInformation()">Actualizar</button>
   </div>
   <mat-card>
   <div class="inline">
     <h4>Email:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Email" [disabled]="!stateEmail" value="{{user.Email}}">
+      <input matInput placeholder="Email" [(ngModel)]="user.Email" [disabled]="!stateEmail" value="{{user.Email}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateEmail" [checked]="stateEmail.disabled">
     </mat-checkbox>
@@ -23,7 +23,7 @@
   <div class="inline">
     <h4>Nombre:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Nombre" [disabled]="!stateFullName" value="{{user.FullName}}">
+      <input matInput placeholder="Nombre" [disabled]="!stateFullName" [(ngModel)]="user.FullName" value="{{user.FullName}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateFullName" [checked]="stateFullName.disabled">
     </mat-checkbox>
@@ -31,7 +31,7 @@
   <div class="inline">
     <h4>Celular:</h4>
     <mat-form-field class="md">
-      <input matInput #phone maxlength="9" placeholder="Celular" [disabled]="!statePhone" value="{{user.Phone}}">
+      <input matInput #phone maxlength="9" placeholder="Celular" [(ngModel)]="user.Phone" [disabled]="!statePhone" value="{{user.Phone}}">
       <mat-hint align="end">{{phone.value.length}} / 9</mat-hint>
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="statePhone" [checked]="statePhone.disabled">
@@ -40,44 +40,46 @@
 </mat-card>
 
   <h2>Datos nesesarios para comprar y vender </h2>
-  <mat-card class="inline">
+  <mat-card>
+  <div class="inline">
     <h4>Fecha de nacimiento</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Fecha de nacimiento" [disabled]="!stateDateOfBirth" value="{{user.DateOfBirth}}">
+      <input matInput placeholder="Fecha de nacimiento" [(ngModel)]="user.DateOfBirth" [disabled]="!stateDateOfBirth" value="{{user.DateOfBirth}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateDateOfBirth" [checked]="stateDateOfBirth.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Departamento:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Departamento" [disabled]="!stateDepartament" value="{{user.Departament}}">
+      <input matInput placeholder="Departamento" [disabled]="!stateDepartament" [(ngModel)]="user.Departament" value="{{user.Departament}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateDepartament" [checked]="stateDepartament.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Ciudad:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Ciudad" [disabled]="!stateCity" value="{{user.stateCity}}">
+      <input matInput placeholder="Ciudad" [disabled]="!stateCity" [(ngModel)]="user.City" value="{{user.City}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateCity" [checked]="stateCity.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Barrio:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Barrio" [disabled]="!stateNeighborhood" value="{{user.Neighborhood}}">
+      <input matInput placeholder="Barrio" [disabled]="!stateNeighborhood" [(ngModel)]="user.Neighborhood" value="{{user.Neighborhood}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateNeighborhood" [checked]="stateNeighborhood.disabled">
     </mat-checkbox>
-  </mat-card>
-  <mat-card class="inline">
+  </div>
+  <div class="inline">
     <h4>Calle:</h4>
     <mat-form-field class="md">
-      <input matInput placeholder="Calle" [disabled]="!stateStreet" value="{{user.Street}}">
+      <input matInput placeholder="Calle" [disabled]="!stateStreet" [(ngModel)]="user.Street" value="{{user.Street}}">
     </mat-form-field>
     <mat-checkbox color="primary" [(ngModel)]="stateStreet" [checked]="stateStreet.disabled">
     </mat-checkbox>
-  </mat-card>
+  </div>
+</mat-card>
 </div>

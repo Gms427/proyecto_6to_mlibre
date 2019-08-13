@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { SigninDTO } from '../serverDAL/DTOs/SigninDTO';
+import { SigninDTO, UserUpdate } from '../serverDAL/DTOs/SigninDTO';
 import { SigninDAL } from '../serverDAL/signinDAL';
 import { Utils, ErrorCodes } from '../utils/utils';
 
@@ -31,6 +31,16 @@ class SigninController {
     async verifyEmail(req: Request, res: Response){
         let exist = await Utils.verifyEmailDisponibility(req.params.email);
         res.send(exist);
+    }
+
+    async UpdateUser(req: Request, res: Response){
+        let user: UserUpdate = req.body;
+        try {
+            SigninDAL.UpateUser(user);
+        } catch (error) {
+            res.send(error);
+        }
+        res.end();
     }
 }
 

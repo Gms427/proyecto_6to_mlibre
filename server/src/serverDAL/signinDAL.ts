@@ -1,6 +1,7 @@
 import PgClient from '../database';
 import { QueryResult } from 'pg';
 import { SigninDTO } from './DTOs/SigninDTO';
+import { UserUpdate } from './DTOs/SigninDTO'
 
 export class SigninDAL {
 
@@ -17,5 +18,21 @@ export class SigninDAL {
         let query = `SELECT * FROM USERS WHERE EMAIL = '${email}'`;
         let result = await PgClient.query(query);
         return result.rows;
+    }
+
+    static async UpateUser(data: UserUpdate): Promise<QueryResult>{
+        console.log(data.Phone);
+        let query = `UPDATE USERS SET 
+        full_name  = '${data.FullName}',
+        email = '${data.Email}',
+        phone = '${data.Phone}',
+        departament = '${data.Departament}',
+        city = '${data.City}',
+        street = '${data.Street}',
+        neighborhood  = '${data.Neighborhood}',
+        date_of_birth = '${data.DateOfBirth}'
+        WHERE phone ='${data.Phone}';`;
+        let result = await PgClient.query(query);
+        return result;
     }
 }

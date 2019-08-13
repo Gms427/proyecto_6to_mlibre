@@ -5,3 +5,16 @@ export interface SigninDTO{
     Password: string;
     Status: number;  
 }
+
+export interface UserUpdate{
+    Id: number,
+    FullName: string,
+    Email: string,
+    DateOfBirth: Date,
+    Phone: string,
+    Status: boolean,
+    Departament: string,
+    City: string,
+    Street: string,
+    Neighborhood: string
+}
