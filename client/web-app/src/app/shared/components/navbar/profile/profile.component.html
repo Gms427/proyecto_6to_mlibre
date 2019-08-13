@@ -8,7 +8,7 @@
 </button>
 <mat-menu #profileMenu="matMenu" xPosition="before">
   <div class="profile-content">
-    <mat-card class="profile-card mat-elevation-z">
+    <mat-card class="profile-card mat-elevation-z" *ngIf="user">
       <mat-card-header>
         <i class="fas fa-user-circle"></i>
         <mat-card-title>{{ "Hello" | translate }} {{user.FullName}}!</mat-card-title>

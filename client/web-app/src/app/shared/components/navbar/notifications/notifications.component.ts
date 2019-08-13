@@ -7,6 +7,7 @@ import { Notifications } from "./notifications";
   styleUrls: ["./notifications.component.css"]
 })
 export class NotificationsComponent implements OnInit {
+  notificationsLength: string;
   notificationsList: Notifications[] = [
     {
       id: 1,
@@ -33,5 +34,11 @@ export class NotificationsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.notificationsLength = this.notificationsList.length;
+  }
+
+  deleteNotifications(){
+    this.notificationsLength = '';
+  }
 }

@@ -24,5 +24,7 @@ h4{
 }
 
 .authorized{
-    background-color: #2DB66F;
+    background-color: #51A351;
+    color: white;
+    font-weight: lighter;
 }

@@ -28,7 +28,22 @@ class LoginController {
         } catch (error) {
             res.send(error);
         }
-        
+    }
+
+    async checkPassword(req: Request, res: Response){
+        let email = req.body.Email;
+        let pswd = req.body.Password;
+        try {
+            let exist = await SigninDAL.getUserByEmail(email);
+                console.log(Bcrypt.compareSync(pswd, exist[0].password));
+                if(Bcrypt.compareSync(pswd, exist[0].password)){
+                    res.send(true);
+                }else{
+                    throw 'Password is incorrect';
+                }
+        } catch (error) {
+            res.send(error);
+        }
     }
     
 }

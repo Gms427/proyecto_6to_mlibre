@@ -21,7 +21,6 @@ export class SigninDAL {
     }
 
     static async UpateUser(data: UserUpdate): Promise<QueryResult>{
-        console.log(data.Phone);
         let query = `UPDATE USERS SET 
         full_name  = '${data.FullName}',
         email = '${data.Email}',
@@ -31,7 +30,7 @@ export class SigninDAL {
         street = '${data.Street}',
         neighborhood  = '${data.Neighborhood}',
         date_of_birth = '${data.DateOfBirth}'
-        WHERE phone ='${data.Phone}';`;
+        WHERE id_user ='${data.Id}';`;
         let result = await PgClient.query(query);
         return result;
     }

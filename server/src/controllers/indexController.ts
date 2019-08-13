@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import path from 'path';
+import * as path from 'path';
 import { TestDAL } from '../serverDAL/testDAL';
 import { QueryResult } from 'pg';
 import { Utils } from '../utils/utils';
@@ -147,7 +147,6 @@ class IndexController {
             Status: queryResult.status,
             Street: queryResult.street
         }
-
         res.send(user);
     }
 }

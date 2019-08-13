@@ -9,8 +9,21 @@
       </mat-card>
   <div class="inline">
       <h2>Datos personales</h2>
-      <button mat-button class="btn-primary" (click)="UpdateInformation()">Actualizar</button>
+      <button mat-button class="btn-primary" (click)="showDialog()">Actualizar</button>
   </div>
+  <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="display">
+    <p>Para guardar los cambios confirme su contraseña</p>
+      <mat-form-field class="example-full-width" style="width: 100%">
+          <input matInput placeholder="Contraseña" [formControl]="passwordFormControl" name="password" type="password">
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="error" style="font-size: 14px;">
+            {{error}}
+          </mat-error>
+        <button mat-button class="btn-primary" (click)="UpdateInformation()">Confirmar</button>        
+  </p-dialog>
   <mat-card>
   <div class="inline">
     <h4>Email:</h4>
