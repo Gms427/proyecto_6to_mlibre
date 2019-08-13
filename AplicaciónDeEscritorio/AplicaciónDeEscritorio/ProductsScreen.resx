@@ -212,6 +212,18 @@
         KAP/2Q==
 </value>
   </data>
+  <data name="btnCloseAlert.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4wgMEyEwkoQPkwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEJSURBVDhP
+        pZNNS0JREIYPan9E0VWLFoIQ9IGLwh8rCQkadCvDXyIGLdrUQhduep64B7xfWt2Bh3uYM/PO3DPnBOwJ
+        nqEHTR1HzJguPMBSh8lbeIUzOCTinjHGbkCR0IEEPuERBtCCvJncB5O+QBE7CQ04hTl8wAwuYF/E9TlM
+        wRgLZbqN6vfwnn6HcAImX8EE3LOAXRZ+VYdV7mANJozgFsbwBgrnu8uYG9dgsiILeIFV6rOryuRotm1l
+        k3cprvW5d9RqCdT6hXiIBnpgfq16Ax6igpWHGMfonMvGeAlOp3SMf7lIChcuUht8UL+9yhbKXGXvtg/j
+        P49JsZ8nqYhqh5KjGWMsySH5BuP+UFc4sI8qAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="lblDescription.Text" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet consectetur adipiscing elit himenaeos suspendisse, cras scelerisque est sagittis ridiculus ullamcorper eros quam dis, accumsan aptent dictum lobortis aenean risus ligula porta. Tempor praesent purus sed dapibus accumsan laoreet velit augue lectus a phasellus tincidunt per duis posuere, primis hendrerit sem porttitor suscipit justo potenti dui torquent eleifend viverra egestas fusce himenaeos. Fusce mollis id habitant nullam hac sapien cursus non feugiat, tempor ultrices et ligula quam dictum suscipit praesent euismod dis, lacinia senectus himenaeos quisque viverra porta pulvinar ac.</value>
   </data>

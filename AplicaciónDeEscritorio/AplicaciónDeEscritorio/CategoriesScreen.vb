@@ -40,4 +40,22 @@
 
     End Sub
 
+    Private Sub CategoriesScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        tvCategories.ExpandAll()
+        tvCategories.Nodes.Add("Add")
+
+
+    End Sub
+
+    Private Sub tvCategories_DoubleClick(sender As Object, e As EventArgs) Handles tvCategories.DoubleClick
+
+        If tvCategories.SelectedNode.Text = "Add" Then
+
+            tvCategories.Nodes.Add("Hola soy nuevo")
+
+        End If
+
+    End Sub
+
 End Class

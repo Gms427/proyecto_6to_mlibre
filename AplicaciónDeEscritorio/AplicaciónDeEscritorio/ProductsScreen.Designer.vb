@@ -46,6 +46,12 @@ Partial Class ProductsScreen
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnCloseApp = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
+        Me.backgroundAlert = New System.Windows.Forms.Panel()
+        Me.viewAlert = New System.Windows.Forms.Panel()
+        Me.btnCloseAlert = New System.Windows.Forms.Button()
+        Me.lblAction = New System.Windows.Forms.Label()
+        Me.btnAcceptAction = New System.Windows.Forms.Button()
+        Me.btnCancelAction = New System.Windows.Forms.Button()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.backgroundProducts.SuspendLayout()
         Me.gbxProductMain.SuspendLayout()
@@ -56,6 +62,8 @@ Partial Class ProductsScreen
         CType(Me.img2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.img1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.backgroundAlert.SuspendLayout()
+        Me.viewAlert.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox3
@@ -70,6 +78,7 @@ Partial Class ProductsScreen
         'backgroundProducts
         '
         Me.backgroundProducts.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.backgroundProducts.Controls.Add(Me.backgroundAlert)
         Me.backgroundProducts.Controls.Add(Me.gbxProductMain)
         Me.backgroundProducts.Location = New System.Drawing.Point(-16, 160)
         Me.backgroundProducts.Name = "backgroundProducts"
@@ -81,9 +90,9 @@ Partial Class ProductsScreen
         Me.gbxProductMain.Controls.Add(Me.gbxVendedor)
         Me.gbxProductMain.Controls.Add(Me.gbxInteraction)
         Me.gbxProductMain.Controls.Add(Me.gbxImages)
-        Me.gbxProductMain.Location = New System.Drawing.Point(241, 20)
+        Me.gbxProductMain.Location = New System.Drawing.Point(276, 20)
         Me.gbxProductMain.Name = "gbxProductMain"
-        Me.gbxProductMain.Size = New System.Drawing.Size(840, 345)
+        Me.gbxProductMain.Size = New System.Drawing.Size(839, 345)
         Me.gbxProductMain.TabIndex = 32
         Me.gbxProductMain.TabStop = False
         '
@@ -340,6 +349,73 @@ Partial Class ProductsScreen
         Me.btnPrevious.TabIndex = 34
         Me.btnPrevious.UseVisualStyleBackColor = False
         '
+        'backgroundAlert
+        '
+        Me.backgroundAlert.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.backgroundAlert.Controls.Add(Me.viewAlert)
+        Me.backgroundAlert.Location = New System.Drawing.Point(475, 145)
+        Me.backgroundAlert.Name = "backgroundAlert"
+        Me.backgroundAlert.Size = New System.Drawing.Size(445, 195)
+        Me.backgroundAlert.TabIndex = 35
+        Me.backgroundAlert.Visible = False
+        '
+        'viewAlert
+        '
+        Me.viewAlert.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.viewAlert.Controls.Add(Me.btnCancelAction)
+        Me.viewAlert.Controls.Add(Me.btnAcceptAction)
+        Me.viewAlert.Controls.Add(Me.lblAction)
+        Me.viewAlert.Controls.Add(Me.btnCloseAlert)
+        Me.viewAlert.Location = New System.Drawing.Point(10, 10)
+        Me.viewAlert.Name = "viewAlert"
+        Me.viewAlert.Size = New System.Drawing.Size(425, 175)
+        Me.viewAlert.TabIndex = 36
+        '
+        'btnCloseAlert
+        '
+        Me.btnCloseAlert.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnCloseAlert.BackgroundImage = CType(resources.GetObject("btnCloseAlert.BackgroundImage"), System.Drawing.Image)
+        Me.btnCloseAlert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCloseAlert.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCloseAlert.FlatAppearance.BorderSize = 0
+        Me.btnCloseAlert.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCloseAlert.Location = New System.Drawing.Point(385, 0)
+        Me.btnCloseAlert.Name = "btnCloseAlert"
+        Me.btnCloseAlert.Size = New System.Drawing.Size(42, 40)
+        Me.btnCloseAlert.TabIndex = 31
+        Me.btnCloseAlert.UseVisualStyleBackColor = False
+        '
+        'lblAction
+        '
+        Me.lblAction.AutoSize = True
+        Me.lblAction.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAction.Location = New System.Drawing.Point(23, 60)
+        Me.lblAction.Name = "lblAction"
+        Me.lblAction.Size = New System.Drawing.Size(379, 23)
+        Me.lblAction.TabIndex = 32
+        Me.lblAction.Text = "¿Realmente quiere eliminar la publicación?"
+        Me.lblAction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btnAcceptAction
+        '
+        Me.btnAcceptAction.Font = New System.Drawing.Font("Berlin Sans FB", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAcceptAction.Location = New System.Drawing.Point(125, 105)
+        Me.btnAcceptAction.Name = "btnAcceptAction"
+        Me.btnAcceptAction.Size = New System.Drawing.Size(75, 25)
+        Me.btnAcceptAction.TabIndex = 38
+        Me.btnAcceptAction.Text = "Aceptar"
+        Me.btnAcceptAction.UseVisualStyleBackColor = True
+        '
+        'btnCancelAction
+        '
+        Me.btnCancelAction.Font = New System.Drawing.Font("Berlin Sans FB", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancelAction.Location = New System.Drawing.Point(225, 105)
+        Me.btnCancelAction.Name = "btnCancelAction"
+        Me.btnCancelAction.Size = New System.Drawing.Size(75, 25)
+        Me.btnCancelAction.TabIndex = 39
+        Me.btnCancelAction.Text = "Cancelar"
+        Me.btnCancelAction.UseVisualStyleBackColor = True
+        '
         'ProductsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -370,6 +446,9 @@ Partial Class ProductsScreen
         CType(Me.img2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.img1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgMain, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.backgroundAlert.ResumeLayout(False)
+        Me.viewAlert.ResumeLayout(False)
+        Me.viewAlert.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -396,4 +475,10 @@ Partial Class ProductsScreen
     Friend WithEvents btnCloseApp As Button
     Friend WithEvents lblDescription As TextBox
     Friend WithEvents btnPrevious As Button
+    Friend WithEvents backgroundAlert As Panel
+    Friend WithEvents viewAlert As Panel
+    Friend WithEvents btnCloseAlert As Button
+    Friend WithEvents lblAction As Label
+    Friend WithEvents btnCancelAction As Button
+    Friend WithEvents btnAcceptAction As Button
 End Class

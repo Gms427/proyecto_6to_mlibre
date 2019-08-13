@@ -23,8 +23,15 @@ Partial Class CategoriesScreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CategoriesScreen))
+        Dim TreeNode6 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Deportes")
+        Dim TreeNode7 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo14")
+        Dim TreeNode8 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo15")
+        Dim TreeNode9 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo16")
+        Dim TreeNode10 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("delete")
         Me.backgroundProducts = New System.Windows.Forms.Panel()
         Me.viewAddCategory = New System.Windows.Forms.Panel()
+        Me.btnAcceptCategory = New System.Windows.Forms.Button()
+        Me.tbxNameCategory = New System.Windows.Forms.TextBox()
         Me.lblCategoryName = New System.Windows.Forms.Label()
         Me.lblAddCategory = New System.Windows.Forms.Label()
         Me.btnCloseAddCategory = New System.Windows.Forms.Button()
@@ -33,8 +40,6 @@ Partial Class CategoriesScreen
         Me.imgNosbey = New System.Windows.Forms.Button()
         Me.btnCloseApp = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
-        Me.tbxNameCategory = New System.Windows.Forms.TextBox()
-        Me.btnAcceptCategory = New System.Windows.Forms.Button()
         Me.backgroundProducts.SuspendLayout()
         Me.viewAddCategory.SuspendLayout()
         Me.SuspendLayout()
@@ -62,6 +67,25 @@ Partial Class CategoriesScreen
         Me.viewAddCategory.Size = New System.Drawing.Size(415, 185)
         Me.viewAddCategory.TabIndex = 2
         Me.viewAddCategory.Visible = False
+        '
+        'btnAcceptCategory
+        '
+        Me.btnAcceptCategory.Font = New System.Drawing.Font("Berlin Sans FB", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAcceptCategory.Location = New System.Drawing.Point(170, 115)
+        Me.btnAcceptCategory.Name = "btnAcceptCategory"
+        Me.btnAcceptCategory.Size = New System.Drawing.Size(75, 25)
+        Me.btnAcceptCategory.TabIndex = 37
+        Me.btnAcceptCategory.Text = "Aceptar"
+        Me.btnAcceptCategory.UseVisualStyleBackColor = True
+        '
+        'tbxNameCategory
+        '
+        Me.tbxNameCategory.Font = New System.Drawing.Font("Berlin Sans FB", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxNameCategory.Location = New System.Drawing.Point(112, 80)
+        Me.tbxNameCategory.Name = "tbxNameCategory"
+        Me.tbxNameCategory.Size = New System.Drawing.Size(190, 24)
+        Me.tbxNameCategory.TabIndex = 36
+        Me.tbxNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lblCategoryName
         '
@@ -102,7 +126,7 @@ Partial Class CategoriesScreen
         Me.btnAddCategory.Font = New System.Drawing.Font("Berlin Sans FB", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddCategory.Image = CType(resources.GetObject("btnAddCategory.Image"), System.Drawing.Image)
         Me.btnAddCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAddCategory.Location = New System.Drawing.Point(840, 60)
+        Me.btnAddCategory.Location = New System.Drawing.Point(860, 60)
         Me.btnAddCategory.Name = "btnAddCategory"
         Me.btnAddCategory.Size = New System.Drawing.Size(125, 40)
         Me.btnAddCategory.TabIndex = 1
@@ -118,6 +142,18 @@ Partial Class CategoriesScreen
         Me.tvCategories.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.tvCategories.Location = New System.Drawing.Point(398, 50)
         Me.tvCategories.Name = "tvCategories"
+        TreeNode6.Checked = True
+        TreeNode6.Name = "Nodo0"
+        TreeNode6.Text = "Deportes"
+        TreeNode7.Name = "Nodo14"
+        TreeNode7.Text = "Nodo14"
+        TreeNode8.Name = "Nodo15"
+        TreeNode8.Text = "Nodo15"
+        TreeNode9.Name = "Nodo16"
+        TreeNode9.Text = "Nodo16"
+        TreeNode10.Name = "btnDeleteNode"
+        TreeNode10.Text = "delete"
+        Me.tvCategories.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode6, TreeNode7, TreeNode8, TreeNode9, TreeNode10})
         Me.tvCategories.Size = New System.Drawing.Size(599, 460)
         Me.tvCategories.TabIndex = 0
         '
@@ -164,25 +200,6 @@ Partial Class CategoriesScreen
         Me.btnPrevious.Size = New System.Drawing.Size(37, 40)
         Me.btnPrevious.TabIndex = 33
         Me.btnPrevious.UseVisualStyleBackColor = False
-        '
-        'tbxNameCategory
-        '
-        Me.tbxNameCategory.Font = New System.Drawing.Font("Berlin Sans FB", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxNameCategory.Location = New System.Drawing.Point(112, 80)
-        Me.tbxNameCategory.Name = "tbxNameCategory"
-        Me.tbxNameCategory.Size = New System.Drawing.Size(190, 24)
-        Me.tbxNameCategory.TabIndex = 36
-        Me.tbxNameCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btnAcceptCategory
-        '
-        Me.btnAcceptCategory.Font = New System.Drawing.Font("Berlin Sans FB", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAcceptCategory.Location = New System.Drawing.Point(170, 115)
-        Me.btnAcceptCategory.Name = "btnAcceptCategory"
-        Me.btnAcceptCategory.Size = New System.Drawing.Size(75, 25)
-        Me.btnAcceptCategory.TabIndex = 37
-        Me.btnAcceptCategory.Text = "Aceptar"
-        Me.btnAcceptCategory.UseVisualStyleBackColor = True
         '
         'CategoriesScreen
         '
