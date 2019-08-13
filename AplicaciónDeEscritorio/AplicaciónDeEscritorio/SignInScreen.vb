@@ -1,8 +1,15 @@
 ﻿Public Class SignInScreen
 
+    Private Sub SignInScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        tbxName.TabStop = False
+        tbxAddres.TabStop = False
+
+    End Sub
+
     Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
 
-        ActiveForm.Close()
+        Me.Hide()
 
     End Sub
 
@@ -41,10 +48,9 @@
             tbxPassword.Text <> "*********" And tbxRepeatPassword.Text <> "" And
             tbxRepeatPassword.Text <> "*********" Then
 
-            ProductsScreen.btnLogIn.Hide()
-            ProductsScreen.btnSignIn.Hide()
-
-            ActiveForm.Close()
+            MainScreen.ShowDialog()
+            LobbyScreen.Close()
+            Me.Close()
 
         Else
 

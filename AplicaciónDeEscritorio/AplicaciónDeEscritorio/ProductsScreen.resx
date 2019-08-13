@@ -212,6 +212,9 @@
         KAP/2Q==
 </value>
   </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet consectetur adipiscing elit himenaeos suspendisse, cras scelerisque est sagittis ridiculus ullamcorper eros quam dis, accumsan aptent dictum lobortis aenean risus ligula porta. Tempor praesent purus sed dapibus accumsan laoreet velit augue lectus a phasellus tincidunt per duis posuere, primis hendrerit sem porttitor suscipit justo potenti dui torquent eleifend viverra egestas fusce himenaeos. Fusce mollis id habitant nullam hac sapien cursus non feugiat, tempor ultrices et ligula quam dictum suscipit praesent euismod dis, lacinia senectus himenaeos quisque viverra porta pulvinar ac.</value>
+  </data>
   <data name="btnLayOff.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -1217,29 +1220,20 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="btnSignIn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLogOut.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4wgBEhY4//CVfwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFQSURBVEhL
-        zdW/K0ZRHMfxi8KAkgw2nolNJkmSDEaLRZKBpEx+DFKYJCmLshhN+BMkDyOKUWJkkVDyI7/en9td3L6O
-        c6+bfOpVz7l1P+d0zvOcJ/gvKUAT+jCADpQgk/TgDB8xt5hBMVJnEfHiuD2UIXGGYRVaNpAo5biGVfad
-        NninF1aJyxq8swSrxOUY3lmFVeJyDu9MwSpx2YZ3WmGVuMwhUY5gFVmeUINEqccdrMK4IaRKO65glcoL
-        xpAqutwmsAOrXE4xDf3IivBjKjCJC1iFlneMoA4L2MQsqvAl3biEVeKyjGbcQ9upSR6jz7UIMw6txCpw
-        0Tv69pxE4wMoN9B4S4NOvEUPktIqK6GJutAApRGD0IUZ7MJ62YdWqn+2Z6xgFIrOYB3h9ZHH4S/koIPV
-        hPEtmg9HGaQa+3iAJn2F9r8UmaUQLeiHzuAvEgSfwFgC4KGW1OcAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnLogIn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4wcREgoRiXyQAAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEOSURBVEhL
-        tZZNagJBEIV7kxxB4lWC+yQgXktzCG/iKiIEcwBXLvyFBHIF9VVLY1m86mom5IMPpqefr0F6pic18Ajf
-        4RGeGz3BNXyBIRPISlrcwJADlPBzHt0YwR9oS60hXrAsHBkyhx/XyztYGZMyg0vYyyMOK2NSyuQK9uUG
-        QZfUpOiAt4jO1KTYEFvEZjzTwtzw/IIalmHmXcImrJ0XYNiQ/EVPUGMznhQdYOWCztSklEmvXNAlNSny
-        oH3Cf3vQNLLLZCNYWBkzxAvqkpohXlCX1Awpr+VBHt2wRZ4hY8h+2GqInMmySOsBo93DzrBCrRynQ9iZ
-        HbSlv3AK5WviAf6JN7iF31BKX6EpTekCwAozI0eFjL8AAAAASUVORK5CYII=
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJ
+        TUUH4wcREgoc983svQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIDSURBVEhL
+        rdXLS1RhHMbxwZRSiCQwEU0rISQURIXMu/gXSFBtBGmRqxZtwqWQunAV/QcKLYJWgtFFU1MpFxIhRQTZ
+        BZLapKXmrdv3GTrDO795zzkKPfABPcw8vznnfeedBDmPj/iFP3vwE+8wgBLEJq78B1Yc37CJr7iJg4hM
+        3CdfxjWUoQDH0I3XeIAziIyv1KVHcge1CNKBaczgnC5ExVdqjaMVQdrwGLNoRBbycBQZ8RVaKlNpEA3T
+        UN1BA07hFkaRcUe+QssOOInrGEQRqvEU2hB6bTNS8RVadoB2znHok2ejBgvQa7XDJtGEZGyZjzvgAErR
+        Ai229OANgtdvYwJnkVYUxh1wGn2YgtZAnmMN7nt2oDVJuxjGHaDH0ouH0ELLPL7Dfc8u7iLtYhh3gJ5/
+        OfR/+z9XYB/RPSR3lFsUxrfIJ1ABrYldZJVrjZKxZT52gB6TtukN6MDTNn2GDYxBd5WKr9CyA/TpHiE4
+        KnRO9WMEaeWKr9CyA/S3rgVHRQ4KoTvLiK/QihsQGV+hZQfoy/UEekT1uhAVX6GlfX4ZlajCVbzCfWgn
+        RUbnva/UtY73eAn90HzBZwwhF5F5i7hftS2oVD+vsgiV6wsXmy4sYRUq+g07YA4Xoe1YjMPYV/JxCbfx
+        CTrXdZZomO5OZ0od/kuOoBPD+IAXuIBD2GcSib8nwDsYr/mJggAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnCloseApp.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1253,8 +1247,17 @@
         Ldj9mbb00A7Qg14wT9MXIr/q6zt0V0MAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="lblDescription.Text" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet consectetur adipiscing elit himenaeos suspendisse, cras scelerisque est sagittis ridiculus ullamcorper eros quam dis, accumsan aptent dictum lobortis aenean risus ligula porta. Tempor praesent purus sed dapibus accumsan laoreet velit augue lectus a phasellus tincidunt per duis posuere, primis hendrerit sem porttitor suscipit justo potenti dui torquent eleifend viverra egestas fusce himenaeos. Fusce mollis id habitant nullam hac sapien cursus non feugiat, tempor ultrices et ligula quam dictum suscipit praesent euismod dis, lacinia senectus himenaeos quisque viverra porta pulvinar ac.</value>
+  <data name="btnPrevious.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH4wcREggcxfuOPwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAD9SURBVEhL
+        7dSxagJBFIXhJXaxUSRtwNLGKkVAsA8hTQq7+AB2eQyLFEKKpIyFjUVIIG1K8QUsrGwSxdbemP+wTLHD
+        xZ3FgRDwwAfDMnPvMjO7yTH/Kh300mHcVDHEDu96EDPX+IaKR21QwTNc4agNbrCEX1ymaOAEhaO3foFV
+        2LfBJ+5xjtxc4QtWsTxbjHEBM4+wFhb1A9UqI5NYDZw56sjkkC2yLHCGTIoccohXmNE1XcFa9AF92dqC
+        Jlq4wwO0Nf78S5ipYQR/wRv2pY0J3Pwn7M0t1ghtoJTQh+bP9CAvOizd89AGLnp7fZDB0e+6mw6DcopB
+        Ojzm75Ikvx9ZoGEpTj8TAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

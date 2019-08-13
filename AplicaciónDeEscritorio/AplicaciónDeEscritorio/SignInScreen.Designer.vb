@@ -45,7 +45,7 @@ Partial Class SignInScreen
         Me.btnSignIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignIn.Location = New System.Drawing.Point(630, 565)
         Me.btnSignIn.Name = "btnSignIn"
-        Me.btnSignIn.Size = New System.Drawing.Size(106, 25)
+        Me.btnSignIn.Size = New System.Drawing.Size(106, 30)
         Me.btnSignIn.TabIndex = 7
         Me.btnSignIn.Text = "Registrarme"
         Me.btnSignIn.UseVisualStyleBackColor = True
@@ -91,6 +91,7 @@ Partial Class SignInScreen
         Me.tbxRepeatPassword.Location = New System.Drawing.Point(574, 515)
         Me.tbxRepeatPassword.MaxLength = 30
         Me.tbxRepeatPassword.Name = "tbxRepeatPassword"
+        Me.tbxRepeatPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbxRepeatPassword.Size = New System.Drawing.Size(218, 24)
         Me.tbxRepeatPassword.TabIndex = 9
         Me.tbxRepeatPassword.Text = "*********"
@@ -102,6 +103,7 @@ Partial Class SignInScreen
         Me.tbxPassword.Location = New System.Drawing.Point(574, 470)
         Me.tbxPassword.MaxLength = 30
         Me.tbxPassword.Name = "tbxPassword"
+        Me.tbxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbxPassword.Size = New System.Drawing.Size(218, 24)
         Me.tbxPassword.TabIndex = 8
         Me.tbxPassword.Text = "*********"
@@ -205,7 +207,7 @@ Partial Class SignInScreen
         Me.btnPrevious.TabIndex = 13
         Me.btnPrevious.UseVisualStyleBackColor = True
         '
-        'Registro
+        'SignInScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -222,7 +224,7 @@ Partial Class SignInScreen
         Me.Controls.Add(Me.backgroundSignIn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Registro"
+        Me.Name = "SignInScreen"
         Me.Text = "Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.backgroundSignIn.ResumeLayout(False)

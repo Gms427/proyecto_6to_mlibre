@@ -67,7 +67,7 @@ Partial Class LogInScreen
         Me.btnLogIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogIn.Location = New System.Drawing.Point(646, 480)
         Me.btnLogIn.Name = "btnLogIn"
-        Me.btnLogIn.Size = New System.Drawing.Size(75, 29)
+        Me.btnLogIn.Size = New System.Drawing.Size(75, 30)
         Me.btnLogIn.TabIndex = 3
         Me.btnLogIn.Text = "Ingresar"
         Me.btnLogIn.UseVisualStyleBackColor = True
@@ -94,6 +94,7 @@ Partial Class LogInScreen
         Me.tbxPassword.Location = New System.Drawing.Point(574, 430)
         Me.tbxPassword.MaxLength = 30
         Me.tbxPassword.Name = "tbxPassword"
+        Me.tbxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.tbxPassword.Size = New System.Drawing.Size(218, 24)
         Me.tbxPassword.TabIndex = 5
         Me.tbxPassword.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "*********"
@@ -157,7 +158,7 @@ Partial Class LogInScreen
         Me.lblError.Text = "  Datos invlaidos  "
         Me.lblError.Visible = False
         '
-        'login
+        'LogInScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -173,7 +174,7 @@ Partial Class LogInScreen
         Me.Controls.Add(Me.backgroundLogIn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "login"
+        Me.Name = "LogInScreen"
         Me.Text = "Login"
         Me.backgroundLogIn.ResumeLayout(False)
         Me.backgroundLogIn.PerformLayout()

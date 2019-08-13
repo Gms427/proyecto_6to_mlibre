@@ -31,3 +31,6 @@ C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_m
 C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.exe
 C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.xml
 C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.pdb
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.MainScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.LobbyScreen.resources
+C:\Users\Alumno\Desktop\Principal\Materias\Proyecto\Mercado libre\proyecto_6to_mlibre\AplicaciónDeEscritorio\AplicaciónDeEscritorio\obj\Debug\AdminApp.CategoriesScreen.resources

@@ -27,6 +27,7 @@ Partial Class ProductsScreen
         Me.backgroundProducts = New System.Windows.Forms.Panel()
         Me.gbxProductMain = New System.Windows.Forms.GroupBox()
         Me.gbxVendedor = New System.Windows.Forms.GroupBox()
+        Me.lblDescription = New System.Windows.Forms.TextBox()
         Me.lblDescriptionTitle = New System.Windows.Forms.Label()
         Me.gbxInteraction = New System.Windows.Forms.GroupBox()
         Me.lblReports = New System.Windows.Forms.Label()
@@ -42,10 +43,9 @@ Partial Class ProductsScreen
         Me.imgMain = New System.Windows.Forms.PictureBox()
         Me.titNosbey = New System.Windows.Forms.Button()
         Me.imgNosbey = New System.Windows.Forms.Button()
-        Me.btnSignIn = New System.Windows.Forms.Button()
-        Me.btnLogIn = New System.Windows.Forms.Button()
+        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnCloseApp = New System.Windows.Forms.Button()
-        Me.lblDescription = New System.Windows.Forms.TextBox()
+        Me.btnPrevious = New System.Windows.Forms.Button()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.backgroundProducts.SuspendLayout()
         Me.gbxProductMain.SuspendLayout()
@@ -96,6 +96,18 @@ Partial Class ProductsScreen
         Me.gbxVendedor.Size = New System.Drawing.Size(405, 215)
         Me.gbxVendedor.TabIndex = 34
         Me.gbxVendedor.TabStop = False
+        '
+        'lblDescription
+        '
+        Me.lblDescription.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescription.Location = New System.Drawing.Point(15, 45)
+        Me.lblDescription.Multiline = True
+        Me.lblDescription.Name = "lblDescription"
+        Me.lblDescription.Size = New System.Drawing.Size(385, 165)
+        Me.lblDescription.TabIndex = 27
+        Me.lblDescription.Text = resources.GetString("lblDescription.Text")
         '
         'lblDescriptionTitle
         '
@@ -280,39 +292,25 @@ Partial Class ProductsScreen
         Me.imgNosbey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.imgNosbey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.imgNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.imgNosbey.Location = New System.Drawing.Point(510, 15)
+        Me.imgNosbey.Location = New System.Drawing.Point(525, 15)
         Me.imgNosbey.Name = "imgNosbey"
         Me.imgNosbey.Size = New System.Drawing.Size(303, 128)
         Me.imgNosbey.TabIndex = 29
         Me.imgNosbey.UseVisualStyleBackColor = False
         '
-        'btnSignIn
+        'btnLogOut
         '
-        Me.btnSignIn.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.btnSignIn.BackgroundImage = CType(resources.GetObject("btnSignIn.BackgroundImage"), System.Drawing.Image)
-        Me.btnSignIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSignIn.FlatAppearance.BorderSize = 0
-        Me.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSignIn.Location = New System.Drawing.Point(1240, 15)
-        Me.btnSignIn.Name = "btnSignIn"
-        Me.btnSignIn.Size = New System.Drawing.Size(37, 40)
-        Me.btnSignIn.TabIndex = 32
-        Me.btnSignIn.UseVisualStyleBackColor = False
-        '
-        'btnLogIn
-        '
-        Me.btnLogIn.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.btnLogIn.BackgroundImage = CType(resources.GetObject("btnLogIn.BackgroundImage"), System.Drawing.Image)
-        Me.btnLogIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLogIn.FlatAppearance.BorderSize = 0
-        Me.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogIn.Location = New System.Drawing.Point(1275, 15)
-        Me.btnLogIn.Name = "btnLogIn"
-        Me.btnLogIn.Size = New System.Drawing.Size(35, 40)
-        Me.btnLogIn.TabIndex = 31
-        Me.btnLogIn.UseVisualStyleBackColor = False
+        Me.btnLogOut.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnLogOut.BackgroundImage = CType(resources.GetObject("btnLogOut.BackgroundImage"), System.Drawing.Image)
+        Me.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogOut.FlatAppearance.BorderSize = 0
+        Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogOut.Location = New System.Drawing.Point(1275, 15)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(35, 40)
+        Me.btnLogOut.TabIndex = 31
+        Me.btnLogOut.UseVisualStyleBackColor = False
         '
         'btnCloseApp
         '
@@ -328,17 +326,19 @@ Partial Class ProductsScreen
         Me.btnCloseApp.TabIndex = 30
         Me.btnCloseApp.UseVisualStyleBackColor = False
         '
-        'lblDescription
+        'btnPrevious
         '
-        Me.lblDescription.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescription.Location = New System.Drawing.Point(15, 45)
-        Me.lblDescription.Multiline = True
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(385, 165)
-        Me.lblDescription.TabIndex = 27
-        Me.lblDescription.Text = resources.GetString("lblDescription.Text")
+        Me.btnPrevious.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnPrevious.BackgroundImage = CType(resources.GetObject("btnPrevious.BackgroundImage"), System.Drawing.Image)
+        Me.btnPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPrevious.FlatAppearance.BorderSize = 0
+        Me.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrevious.Location = New System.Drawing.Point(1275, 15)
+        Me.btnPrevious.Name = "btnPrevious"
+        Me.btnPrevious.Size = New System.Drawing.Size(37, 40)
+        Me.btnPrevious.TabIndex = 34
+        Me.btnPrevious.UseVisualStyleBackColor = False
         '
         'ProductsScreen
         '
@@ -346,8 +346,8 @@ Partial Class ProductsScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.btnSignIn)
-        Me.Controls.Add(Me.btnLogIn)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.btnCloseApp)
         Me.Controls.Add(Me.imgNosbey)
         Me.Controls.Add(Me.titNosbey)
@@ -392,8 +392,8 @@ Partial Class ProductsScreen
     Friend WithEvents img2 As PictureBox
     Friend WithEvents img1 As PictureBox
     Friend WithEvents imgMain As PictureBox
-    Friend WithEvents btnSignIn As Button
-    Friend WithEvents btnLogIn As Button
+    Friend WithEvents btnLogOut As Button
     Friend WithEvents btnCloseApp As Button
     Friend WithEvents lblDescription As TextBox
+    Friend WithEvents btnPrevious As Button
 End Class

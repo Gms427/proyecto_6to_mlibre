@@ -1,8 +1,14 @@
 ﻿Public Class LogInScreen
 
+    Private Sub LogInScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        tbxAddres.TabStop = False
+
+    End Sub
+
     Private Sub btnPrevious_Click(sender As Object, e As EventArgs) Handles btnPrevious.Click
 
-        ActiveForm.Close()
+        Me.Hide()
 
     End Sub
 
@@ -25,9 +31,9 @@
         If tbxAddres.Text <> "" And tbxAddres.Text <> "admin@anima.edu.uy" And
             tbxPassword.Text <> "" And tbxPassword.Text <> "*********" Then
 
-            ProductsScreen.btnLogIn.Hide()
-            ProductsScreen.btnSignIn.Hide()
-            ActiveForm.Close()
+            MainScreen.ShowDialog()
+            LobbyScreen.Close()
+            Me.Close()
 
         Else
 
