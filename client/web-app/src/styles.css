@@ -61,9 +61,3 @@ body {
     background: rgb(78, 112, 251)!important;
     background: linear-gradient(180deg, rgba(78, 112, 251, 1) 0%, rgba(95, 81, 206, 1) 100%)!important;
 }
-
-@media (max-width: 780px) {
-    .ng-tns-c9-0 {
-        display: block;
-    }
-}

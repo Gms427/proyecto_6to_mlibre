@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  display: boolean = true;
+  display: boolean = false;
 
     showDialog() {
         this.display = true;
@@ -22,4 +22,12 @@ export class FooterComponent implements OnInit {
       this.display = false;
     }
 
+    onResize(event){
+      console.log('aver si anda', event);
+      if(event.target.innerWidth < 780){
+        this.showDialog();
+      }else{
+        this.closeDialog();
+      }
+    }
 }
