@@ -1,17 +1,17 @@
 <div class="container">
   <h2>Mis datos</h2>
   <mat-card *ngIf="user.Status == 2" class="discontinued inline">
-      <h4>Estas suspendido para vender</h4>
+      <p>Estas suspendido para vender</p>
       <button mat-button class="btn-transparent">ver mas</button>
     </mat-card>
     <mat-card *ngIf="user.Status == 1" class="authorized inline">
-        <h4>Estas autorizado para vender</h4>
+        <p>Estas autorizado para vender</p>
       </mat-card>
   <div class="inline">
       <h2>Datos personales</h2>
       <button mat-button class="btn-primary" (click)="showDialog()">Actualizar</button>
   </div>
-  <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="display">
+  <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="display"> 
     <p>Para guardar los cambios confirme su contraseña</p>
       <mat-form-field class="example-full-width" style="width: 100%">
           <input matInput placeholder="Contraseña" [formControl]="passwordFormControl" name="password" type="password">
@@ -19,7 +19,7 @@
             Password is <strong>required</strong>
           </mat-error>
         </mat-form-field>
-        <mat-error *ngIf="error" style="font-size: 14px;">
+        <mat-error *ngIf="error">
             {{error}}
           </mat-error>
         <button mat-button class="btn-primary" (click)="UpdateInformation()">Confirmar</button>        

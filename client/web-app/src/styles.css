@@ -1,60 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "https://fonts.googleapis.com/css?family=Raleway&display=swap";
-@import "https://fonts.googleapis.com/css?family=Roboto&display=swap"; 
-
+@import "https://fonts.googleapis.com/css?family=Roboto&display=swap";
 html,
 body {
-  height: 100%;
-  overflow-x: hidden;
+    height: 100%;
+    overflow-x: hidden;
 }
+
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: #f7f6f6;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #f7f6f6;
 }
+
 .mat-card-header-text {
-  margin: auto !important;
+    margin: auto !important;
 }
 
 .mat-menu-panel {
-  max-width: max-content !important;
+    max-width: max-content !important;
 }
 
 .mat-menu-content {
-  padding-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .container {
-  padding: 0 10%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .btn-primary {
-  background-color: #5294e2 !important;
-  color: white!important;
+    background-color: #5294e2 !important;
+    color: white!important;
 }
 
 .btn-transparent {
-  color: #5294e2 !important;
+    color: #5294e2 !important;
 }
 
 .subtitle-green {
-  color: #0aa252 !important;
+    color: #0aa252 !important;
 }
 
 .mat-focused .mat-form-field-label {
-  color: #5294e2 !important;
+    color: #5294e2 !important;
 }
 
 .mat-focused .mat-form-field-ripple {
-  background-color: #5294e2 !important;
+    background-color: #5294e2 !important;
 }
 
 :enabled.mat-raised-button.mat-primary {
-  background-color: #5294e2;
+    background-color: #5294e2;
 }
 
-.bg-red{
-  background: rgb(78,112,251)!important;
-  background: linear-gradient(180deg, rgba(78,112,251,1) 0%, rgba(95,81,206,1) 100%)!important; 
+.bg-red {
+    background: rgb(78, 112, 251)!important;
+    background: linear-gradient(180deg, rgba(78, 112, 251, 1) 0%, rgba(95, 81, 206, 1) 100%)!important;
+}
+
+@media (max-width: 780px) {
+    .ng-tns-c9-0 {
+        display: block;
+    }
 }

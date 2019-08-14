@@ -35,7 +35,7 @@ export class NotificationsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.notificationsLength = this.notificationsList.length;
+    this.notificationsLength = this.notificationsList.length.toString();
   }
 
   deleteNotifications(){

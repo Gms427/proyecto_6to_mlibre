@@ -1,12 +1,22 @@
 .searcher {
-  padding: 5px 10px;
-  height: 37px;
-  width: 600px;
-  border-radius: 0px 4px 4px 0px;
-  margin-right: 10px;
-  font-size: 16px;
-  color: grey;
-  outline: none;
-  border: 0px;
+    padding: 5px 10px;
+    width: 465px;
+    font-size: 16px;
+    color: grey;
+    outline: none;
+    border: 0px;
 }
 
+.buttonSearch {
+    background: white;
+    border: 0;
+    border-left: 1px solid gray;
+    color: gray;
+}
+
+.search {
+    height: 39px;
+    border-radius: 4px;
+    padding: 5px;
+    background: white;
+}

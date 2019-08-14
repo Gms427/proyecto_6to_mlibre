@@ -1,67 +1,52 @@
-<div class="navbar container" [ngStyle]="{ 'background-color': navbarColor }">
-  <div class="navbar-section-logo">
-    <img
-      width="50"
-      class="logo"
-      routerLink="/home/main"
-      alt="Angular Logo"
-      src="assets/logoBlanco.png"
-    />
-  </div>
-  <div class="section-up">
-    <div class="searcher-container"*ngIf="searchNadvar">
-      <app-search></app-search>
+<div class="navbar" [ngStyle]="{ 'background-color': navbarColor }">
+    <div class="section-up container">
+        <img class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logoBlanco.png" />
+        <app-search *ngIf="searchNadvar"></app-search>
+        <button style="visibility: hidden"></button>
     </div>
-  </div>
-  <div class="section-down">
-    <div class="navbar-section-navegation">
-      <div class="modules" *ngIf="flag">
-        <div class="item">
-          <button mat-button routerLink="/publications/new">
+    <div class="section-down container">
+        <app-categories-menu *ngIf="flag"></app-categories-menu>
+        <div class="navbar-section-navegation" *ngIf="flag">
+            <div class="item">
+                <button mat-button routerLink="/publications/new">
             <span>{{ "Sell" | translate }}</span>
           </button>
-        </div>
-        <div class="item">
-          <button mat-button routerLink="/user/history">
+            </div>
+            <div class="item">
+                <button mat-button routerLink="/user/history">
             <span>{{ "History" | translate }}</span>
           </button>
-        </div>
-        <div class="item">
-          <button mat-button routerLink="/home/stores">
+            </div>
+            <div class="item">
+                <button mat-button routerLink="/home/stores">
             <span>{{ "OfficialStores" | translate }}</span>
           </button>
-        </div>
-        <div class="item">
-          <button mat-button>
+            </div>
+            <div class="item">
+                <button mat-button>
             <span>{{ "OffersWeek" | translate }}</span>
           </button>
+            </div>
         </div>
-      </div>
+        <div class="navbar-section-options">
+            <div class="modules" *ngIf="flag && logged">
+                <div class="item">
+                    <app-favorites></app-favorites>
+                </div>
+                <div class="item">
+                    <app-notifications></app-notifications>
+                </div>
+                <div class="item">
+                    <app-profile></app-profile>
+                </div>
+            </div>
+            <div class="modules" *ngIf="flag && !logged">
+                <div class="item">
+                    <button mat-button class="options" matTooltip="{{ 'Login' | translate }}" routerLink="/home/login">
+              <i class="fas fa-sign-in-alt"></i>
+            </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="navbar-section-options">
-      <div class="modules" *ngIf="flag && logged">
-        <div class="item">
-          <app-favorites></app-favorites>
-        </div>
-        <div class="item">
-          <app-notifications></app-notifications>
-        </div>
-        <div class="item">
-          <app-profile></app-profile>
-        </div>
-      </div>
-      <div class="modules" *ngIf="flag && !logged">
-        <div class="item">
-          <button
-            mat-button
-            class="options"
-            matTooltip="{{ 'Login' | translate }}"
-            routerLink="/home/login"
-          >
-            <i class="fas fa-sign-in-alt"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

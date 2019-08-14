@@ -12,4 +12,14 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  display: boolean = true;
+
+    showDialog() {
+        this.display = true;
+    }
+
+    closeDialog(){
+      this.display = false;
+    }
+
 }

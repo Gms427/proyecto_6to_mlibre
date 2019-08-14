@@ -1,4 +1,6 @@
-<div>
-  FOOTER
-
-</div>
+<p-dialog header="Alerta" [modal]="true" [draggable]="false" [(visible)]="display">
+    <p><strong> aplicion aun se encuentra en desarrollo, puede no es posible mostrar la aplicacion en resolucion mobile</strong></p>
+    <p-footer>
+        <button mat-button class="btn-primary" (click)="closeDialog()">Entendido</button>
+    </p-footer>
+</p-dialog>
