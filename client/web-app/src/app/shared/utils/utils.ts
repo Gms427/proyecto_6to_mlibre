@@ -55,6 +55,18 @@ export class CustomValidators {
       return (null);
     }
   }
+
+  public static PasswordMatchValidator(fc: AbstractControl){
+    const password: string = fc.get('passwordFormControl').value;
+    const confirmPassword: string = fc.get('confirmPasswordFormControl').value;
+    
+    if(password !== confirmPassword){
+      fc.get('confirmPasswordFormControl').setErrors({ NoPassswordMatch: true });
+      return ({ NoPassswordMatch: true });
+    }else{
+      return (null);
+    }
+  }
 }
 
 export class CustomErrorStateMatcher implements ErrorStateMatcher {

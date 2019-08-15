@@ -67,6 +67,7 @@ export class PublicationListComponent implements OnInit{
   async ngOnInit(){
     // service para obtener la búsqueda
     this.search = this._searchService.getSearchValue();
+    this._searchService.search.subscribe(value => { this.search = value; });
     this.categorySearched = this._searchService.getCategorySearched();
     this.subcategorySearched = this._searchService.getSubcategorySearched();
     this.filtersInfo = await this._generalService.getFiltersInfo();    

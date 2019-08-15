@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category, Publication } from '../utils/types';
+import { Category, Publication, Filter } from '../utils/types';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +35,13 @@ export class PublicationService {
         return r;
       });
     }
+  }
+
+  async getSubcategoryFields(idSubcategory: number, idCategory: number): Promise<Filter[]> {
+    return await this.http.get(`${this.baseUrl}/getSubcategoryFields/${idSubcategory}/${idCategory}`)
+      .toPromise()
+      .then((r: Filter[]) => {
+        return r;
+      });
   }
 }

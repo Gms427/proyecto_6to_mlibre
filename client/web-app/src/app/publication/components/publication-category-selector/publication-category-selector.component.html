@@ -5,7 +5,7 @@
 
 <div class="container-popular-categories">
   <div class="container-card" *ngFor="let category of categories">
-    <mat-card class="favorites-card mat-elevation-z transparent text-center" (click)="navigateToCreate(category.Id)">
+    <mat-card class="favorites-card mat-elevation-z transparent text-center" (click)="navigateToCreate(category)">
       <mat-card-content>
           <i class="{{category.Icon}}"></i>
       </mat-card-content>
@@ -15,57 +15,5 @@
       </mat-card-subtitle>
     </mat-card>
   </div>
-
-<!--<div class="container-popular-categories">
-  <div class="container-card">
-    <mat-card class="favorites-card mat-elevation-z transparent text-center">
-      <mat-card-content>
-          <i class="fas fa-home"></i>
-      </mat-card-content>
-      <hr>
-      <mat-card-subtitle>
-        Inmuebles y propiedades
-      </mat-card-subtitle>
-    </mat-card>
-  </div>
-
-  <div class="container-card">
-      <mat-card class="favorites-card mat-elevation-z transparent text-center">
-        <mat-card-content>
-            <i class="fas fa-car-side"></i>
-            
-        </mat-card-content>
-        <hr>
-        <mat-card-subtitle>
-         Vehículos
-        </mat-card-subtitle>
-      </mat-card>
-  </div>
-
-  <div class="container-card">
-      <mat-card class="favorites-card mat-elevation-z transparent text-center">
-        <mat-card-content>
-            <i class="fas fa-mobile-alt"></i>
-        </mat-card-content>
-        <hr>
-        <mat-card-subtitle>
-          Telefonía y computación
-        </mat-card-subtitle>
-      </mat-card>
-  </div>
-
-  <div class="container-card">
-      <mat-card class="favorites-card mat-elevation-z transparent text-center">
-        <mat-card-content>
-            <i class="fas fa-tshirt"></i>
-        </mat-card-content>
-        <hr>
-        <mat-card-subtitle>
-            Ropa, calzado y accesorios
-        </mat-card-subtitle>
-      </mat-card>
-  </div>-->
-    
-
 </div>
 <!--<i class="fas fa-car"></i>-->

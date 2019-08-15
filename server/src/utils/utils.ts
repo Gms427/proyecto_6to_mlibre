@@ -16,7 +16,7 @@ export class Utils {
         }
     }
 
-    public static getUnique(arr: [], prop: string) {
+    public static getUnique(arr: any[], prop: string): any[] {
         const unique = arr
           .map(e => e[prop])
           .map((e, i, final): any => final.indexOf(e) === i && i)

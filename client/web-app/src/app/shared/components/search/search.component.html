@@ -1,5 +1,6 @@
 <div class="search ui-inputgroup">
-    <input class="searcher" placeholder="Search..." [(ngModel)]="searchValue" />
+  <div class="ui-inputgroup">
+    <input class="searcher" placeholder="Search..." [(ngModel)]="searchValue" (keydown.enter)="search()" />
     <button class="buttonSearch" (click)="search()">
       <i class="fas fa-search"></i>
     </button>

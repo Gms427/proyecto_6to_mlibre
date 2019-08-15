@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, DoCheck } from '@angular/core';
 import { UserSignin } from '../../models/UserSignin';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { CustomErrorStateMatcher, CustomValidators } from '../../../shared/utils/utils';
 import { SigninService } from '../../services/signin.service';
 import { TestService } from 'src/app/shared/services/test.service';
@@ -16,6 +16,7 @@ export class SigninComponent implements OnInit {
   public userData: UserSignin = new UserSignin();
   public checkTerms: boolean = false;
   public error: string;
+  public form: FormGroup;
   matcher = new CustomErrorStateMatcher();
 
   emailFormControl = new FormControl('', Validators.compose([
@@ -25,19 +26,15 @@ export class SigninComponent implements OnInit {
     CustomValidators.EmailDisponibilityValidator(this._testService)
   );
 
-  passwordFormControl = new FormControl('', Validators.compose([
+  /*passwordFormControl = new FormControl('', Validators.compose([
     CustomValidators.PasswordValidator,
     Validators.required
-  ]));
+  ]));*/
 
   nameFormControl = new FormControl('', Validators.compose([
     CustomValidators.NameValidator, 
     Validators.required
   ]));
-
-  surnameFormControl = new FormControl('', [
-    Validators.required
-  ]);
 
   phoneFormControl = new FormControl('', [
     Validators.required,
@@ -48,7 +45,20 @@ export class SigninComponent implements OnInit {
   constructor(private _signinService: SigninService,
               private _testService: TestService,
               private toastr: ToastrService,
-              private router: Router) {   }
+              private router: Router,
+              private fb: FormBuilder) { 
+    this.form = this.fb.group({
+      passwordFormControl: [null, Validators.compose([
+        CustomValidators.PasswordValidator,
+        Validators.required
+      ])],
+      confirmPasswordFormControl: [null, Validators.compose([
+        Validators.required,
+      ])]
+    },{
+      validator: CustomValidators.PasswordMatchValidator
+    });
+                }
 
   ngOnInit() {
     /*this.nameFormControl.setValue("Gonzalo Manzzi");
@@ -92,8 +102,9 @@ export class SigninComponent implements OnInit {
   signin() {
     this.userData.Email = this.emailFormControl.value;
     this.userData.Fullname = this.nameFormControl.value;
-    this.userData.Password = this.passwordFormControl.value;
+    //this.userData.Password = this.passwordFormControl.value;
     this.userData.Phone = this.phoneFormControl.value;
+    
     this._signinService.Signin(this.userData).subscribe(
       (res) => { 
         console.log(res)

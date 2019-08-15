@@ -3,9 +3,7 @@ import * as path from 'path';
 import { TestDAL } from '../serverDAL/testDAL';
 import { QueryResult } from 'pg';
 import { Utils } from '../utils/utils';
-import { Category } from '../models/Category';
-import { Subcategory } from '../models/Subcategory';
-import { Publication } from '../models/Publication';
+import { Category, Subcategory, Publication, Filter } from '../models/models';
 import { publications } from '../utils/utils';
 import { User } from '../models/User';
 
@@ -74,7 +72,7 @@ class IndexController {
         const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
         const rows = queryResult.rows;
 
-        let result: any = [];
+        let result: Filter[] = [];
         rows.forEach(filter => {
             let options: any = [];
             rows.forEach(f => {
@@ -110,11 +108,11 @@ class IndexController {
         result.forEach(row => {
             let catExist = categories.find(c => c.Id === row.idcategory);
             if(catExist){
-                let subCatExist = catExist.Subcategories.find(s => s.SubcategoryName === row.idsubcategory);
+                let subCatExist = catExist.Subcategories.find(s => s.Name === row.idsubcategory);
                 if(!subCatExist){
                     catExist.Subcategories.push({
-                        IdSubcategory: row.idsubcategory,
-                        SubcategoryName: row.subcategoryname
+                        Id: row.idsubcategory,
+                        Name: row.subcategoryname
                     });
                 }
             }else{
@@ -122,14 +120,50 @@ class IndexController {
                     Name: row.categoryname,
                     Id: row.idcategory,
                     Subcategories: [{
-                        IdSubcategory: row.idsubcategory,
-                        SubcategoryName: row.subcategoryname
+                        Id: row.idsubcategory,
+                        Name: row.subcategoryname
                     }],
                     Icon: row.icon
                 });
             }
         });
         res.send(categories);
+    }
+
+    async getSubcategoryFields(req: Request, res: Response): Promise<void>{
+        let idSubcategory = req.params.idSubcategory;
+        let idCategory = req.params.idCategory
+        let result = await TestDAL.getSubcategoryFields(idSubcategory, idCategory);
+        console.log(result);
+
+        let fieldsWithDefaultValues = result.filter(f => f.filter_type === 'SELECTIONABLE_LIST' || f.filter_type === 'OPTIONS_LIST')
+                                        .map(f => f.id_filter);
+        
+        let defaultValues: any[] | never[] = [];
+        if(fieldsWithDefaultValues.length > 0){
+            defaultValues = await TestDAL.getFilterValues(fieldsWithDefaultValues);
+        }
+        
+        console.log("fieldsWithDefaultValues", defaultValues);
+
+        let finalResult: Filter[] = result.map((f) => {
+            
+            let options = defaultValues.filter(d => d.id_filter === f.id_filter).map(v => v.option_value);
+            let values: any[] = [];
+            if(f.filter_type === "BOOLEAN"){
+                values = [false]; // Los boolean vienen con la opción por default en false
+            }
+
+            return {
+                Id: f.id_filter,
+                Name: f.filter_name,
+                Type: f.filter_type,
+                Options: options,
+                Values: values
+            }
+        });
+        console.log(finalResult);
+        res.send(finalResult);
     }
 
     async getUserInfo(req: Request, res: Response){        
