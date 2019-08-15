@@ -20,7 +20,6 @@ export class PublicationCategorySelectorComponent implements OnInit {
   }
 
   navigateToCreate(idCategory: number){
-    console.log(`Navegando a crear publicación (id category = ${idCategory})`);
     this._router.navigate(['/publications/create']);
   }
 }

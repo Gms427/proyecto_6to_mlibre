@@ -23,7 +23,6 @@ export class FooterComponent implements OnInit {
     }
 
     onResize(event){
-      console.log('aver si anda', event);
       if(event.target.innerWidth < 780){
         this.showDialog();
       }else{

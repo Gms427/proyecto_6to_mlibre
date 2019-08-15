@@ -73,7 +73,6 @@ class IndexController {
     async getFiltersInfo(req: Request, res: Response): Promise<void>{
         const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
         const rows = queryResult.rows;
-        console.log(queryResult);
 
         let result: any = [];
         rows.forEach(filter => {

@@ -5,6 +5,8 @@
     color: grey;
     outline: none;
     border: 0px;
+    font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
+    font-weight: 100!important
 }
 
 .buttonSearch {

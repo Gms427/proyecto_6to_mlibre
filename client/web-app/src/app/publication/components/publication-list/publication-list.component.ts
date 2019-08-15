@@ -68,11 +68,8 @@ export class PublicationListComponent implements OnInit{
     // service para obtener la búsqueda
     this.search = this._searchService.getSearchValue();
     this.categorySearched = this._searchService.getCategorySearched();
-    console.log(this.categorySearched);
     this.subcategorySearched = this._searchService.getSubcategorySearched();
-    this.filtersInfo = await this._generalService.getFiltersInfo();
-    console.log(this.filtersInfo);
-    
+    this.filtersInfo = await this._generalService.getFiltersInfo();    
   }
 
   addFav(product) {
@@ -84,7 +81,6 @@ export class PublicationListComponent implements OnInit{
   }
 
   navegateToProduct(product) {
-    console.log(product);
     this.router.navigate([`/publications/publication/${product.Id}`]);
   }
 

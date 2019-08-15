@@ -18,13 +18,11 @@ export class LoginService {
 
   Login(user: UserLogin) {
     return this.http.post(`${this.baseUrl}/login`, user);
-    console.log("login work");
     this.loggedUser = user;
     this.login.next(true);
   }
 
   Logout() {
-    console.log("logout work");
     this.loggedUser = new UserLogin("", "");
     this.login.next(false);
   }

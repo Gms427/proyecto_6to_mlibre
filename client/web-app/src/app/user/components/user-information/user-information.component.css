@@ -1,29 +1,42 @@
-.md{
+.md {
     width: 50%;
 }
 
-.inline{
+.inline {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
 }
 
-h4{
+h4 {
     width: 20%;
     margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
-.discontinued h4{
+h2 {
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.discontinued p {
     width: 80%;
     margin-bottom: 0;
 }
 
-.discontinued{
+.discontinued {
     background-color: #ff7733;
+    color: white;
 }
 
-.authorized{
+.authorized {
     background-color: #51A351;
     color: white;
+}
+
+.confirmEmail {
+    background-color: yellow
 }

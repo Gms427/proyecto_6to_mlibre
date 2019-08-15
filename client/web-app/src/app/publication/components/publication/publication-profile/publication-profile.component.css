@@ -1,31 +1,34 @@
 .publication-profile {
-    margin-top: 50px;
-    width: 100%;
-    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .photo {
     width: 70%;
-    height: 100%;
-    float: left;
     padding: 30px;
     border-right: 1px solid grey;
 }
 
+.btn-buy {
+    margin: auto;
+    display: -webkit-box;
+    width: 100%;
+}
+
+.reputation-container {
+    display: flex;
+    width: 100%;
+}
+
 .general-information {
-    width: 30%;
-    height: 50%;
-    float: left;
-    padding: 40px 30px;
     border-bottom: 1px solid grey;
+    padding: 20px;
 }
 
 .seller-information {
-    width: 30%;
-    height: 50%;
-    float: left;
-    padding: 30px;
     text-align: center;
+    padding: 20px;
 }
 
 .btn-favorite {
@@ -37,24 +40,6 @@
     outline: none;
     cursor: pointer;
     transition: all 200ms ease;
-}
-
-.header {
-    width: 100%;
-    height: 15%;
-}
-
-.header-right {
-    width: 50%;
-    right: 10px;
-    float: left;
-    text-align: end;
-}
-
-.header-left {
-    width: 50%;
-    left: 10px;
-    float: left;
 }
 
 mat-card-subtitle i {
@@ -69,27 +54,10 @@ mat-card-subtitle:last-child {
     margin: -13px 2px;
 }
 
-.photo-section {
-    height: 70%;
-}
-
-.photo-section img {
+.header {
     display: flex;
-    margin: auto;
-    height: -webkit-fill-available;
-}
-
-.product-info {
-    font-size: 12px;
-    margin: -10px 0 20px 0;
-    color: #5294e2;
-}
-
-.btn-buy {
-    color: white;
-    width: 80%;
-    margin: auto;
-    display: -webkit-box
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .reputation {
@@ -114,30 +82,7 @@ mat-card-subtitle:last-child {
     background-color: green;
 }
 
-.reputation-container {
+.slider {
     display: flex;
-    width: 100%;
-}
-
-.seller-container {
-    width: 100%;
-    float: left;
-    margin-bottom: 10px;
-}
-
-.contact {
-    height: 15%;
-}
-
-.seller-content {
-    width: 50%;
-    float: left;
-}
-
-.title {
-    margin-bottom: 5px;
-}
-
-.information {
-    height: 85%;
+    justify-content: center
 }

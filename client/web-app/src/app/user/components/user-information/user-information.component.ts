@@ -27,6 +27,9 @@ export class UserInformationComponent implements OnInit {
   public stateDepartament: boolean = false;
   public stateStreet: boolean = false;
   private display: boolean = false;
+  private displayModalConfEmail: boolean = false;
+  private displayChangePassword: boolean = false;
+
   public error: string;  
 
   passwordFormControl = new FormControl('', [Validators.required]);
@@ -40,6 +43,7 @@ export class UserInformationComponent implements OnInit {
   ngOnInit() {
     console.log(this.getInformation());
   }
+
   showDialog() {
     this.display = true;
     this.stateFullName = false;
@@ -56,7 +60,6 @@ export class UserInformationComponent implements OnInit {
     this._TestService.getUserInfo(this._loginService.getLoggedUser().Email)
       .subscribe(
       (res) => {
-        console.log(res);
         this.user = res;
       }
       );
@@ -75,6 +78,35 @@ export class UserInformationComponent implements OnInit {
             this.display = false;
             this.passwordFormControl.setValue('');
           });
+      },(err) => {
+        this.error = err.error.text;
+      });
+    }
+  }
+
+  showModalEmail() {
+    this.displayModalConfEmail = true;
+  }
+
+  showModalChangePassword() {
+    this.displayChangePassword = true;
+  }
+
+  closeModal(){
+    this.displayModalConfEmail = false;
+  }
+
+  sendEmail(){
+    if(!(this.passwordFormControl.hasError("required"))){
+      let CheckUser = new UserLogin(this.user.Email, this.passwordFormControl.value);      
+      this._loginService.checkPassword(CheckUser).subscribe((res) => {
+            this.toastr.success('Se ha enviado el e-mail', '', {
+              timeOut: 2000,
+              positionClass: 'toast-top-center'
+            });
+            this.displayChangePassword = false;
+            this.error = ""
+            this.passwordFormControl.setValue('');
       },(err) => {
         this.error = err.error.text;
       });

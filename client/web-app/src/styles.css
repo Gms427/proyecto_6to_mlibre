@@ -9,14 +9,29 @@ body {
     overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
+    font-weight: 100!important
+}
+
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
     background-color: #f7f6f6;
+}
+
+.mat-car-title {
+    font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
+    font-weight: 100!important
 }
 
 .mat-card-header-text {
     margin: auto !important;
+    font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
+    font-weight: 100!important
 }
 
 .mat-menu-panel {
@@ -35,14 +50,20 @@ body {
 .btn-primary {
     background-color: #5294e2 !important;
     color: white!important;
+    font-family: 'Roboto', sans-serif!important;
+    font-weight: lighter!important;
 }
 
 .btn-transparent {
     color: #5294e2 !important;
+    font-family: 'Roboto', sans-serif!important;
+    font-weight: lighter!important;
 }
 
 .subtitle-green {
     color: #0aa252 !important;
+    font-family: 'Roboto', sans-serif!important;
+    font-weight: lighter!important;
 }
 
 .mat-focused .mat-form-field-label {
@@ -60,4 +81,13 @@ body {
 .bg-red {
     background: rgb(78, 112, 251)!important;
     background: linear-gradient(180deg, rgba(78, 112, 251, 1) 0%, rgba(95, 81, 206, 1) 100%)!important;
+}
+
+.mat-button {
+    font-family: 'Roboto', sans-serif!important;
+    font-weight: 100!important;
+}
+
+.ui-panel-images {
+    width: 600px;
 }

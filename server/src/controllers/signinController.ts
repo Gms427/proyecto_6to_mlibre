@@ -13,7 +13,6 @@ class SigninController {
                 throw `The email ${user.Email} is alredy in use`;
             }else{
                 user.Password = Utils.encriptPassword(user.Password);
-                console.log(user);
                 // TODO: validaciones que se hacen del lado del cliente
                 SigninDAL.Signin(user);
             }
@@ -24,7 +23,6 @@ class SigninController {
         res.end();
     }
     t(req: Request, res: Response){
-        console.log("t");
         res.end();
     }
 

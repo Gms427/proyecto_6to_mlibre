@@ -36,7 +36,6 @@ export class ProfileComponent implements OnInit {
     this._TestService.getUserInfo(this._loginService.getLoggedUser().Email)
       .subscribe(
         (res) => {
-          console.log(res);
           this.user = res;
         }
       );

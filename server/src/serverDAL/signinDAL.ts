@@ -7,14 +7,13 @@ export class SigninDAL {
 
     static async Signin(data: SigninDTO): Promise<QueryResult>{
         let query = `INSERT INTO USERS(full_name, password, email, phone, status)
-           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}', '1');`;
+           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}', '3');`;
     
         let result = await PgClient.query(query);
         return result;
     }
 
     static async getUserByEmail(email: string): Promise<QueryResult["rows"]>{
-        console.log(email);
         let query = `SELECT * FROM USERS WHERE EMAIL = '${email}'`;
         let result = await PgClient.query(query);
         return result.rows;
