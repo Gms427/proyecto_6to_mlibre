@@ -23,11 +23,6 @@ Partial Class CategoriesScreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CategoriesScreen))
-        Dim TreeNode1 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Deportes")
-        Dim TreeNode2 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo14")
-        Dim TreeNode3 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo15")
-        Dim TreeNode4 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("Nodo16")
-        Dim TreeNode5 As System.Windows.Forms.TreeNode = New System.Windows.Forms.TreeNode("delete")
         Me.backgroundProducts = New System.Windows.Forms.Panel()
         Me.viewAddCategory = New System.Windows.Forms.Panel()
         Me.btnAcceptCategory = New System.Windows.Forms.Button()
@@ -142,18 +137,6 @@ Partial Class CategoriesScreen
         Me.tvCategories.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.tvCategories.Location = New System.Drawing.Point(398, 50)
         Me.tvCategories.Name = "tvCategories"
-        TreeNode1.Checked = True
-        TreeNode1.Name = "Nodo0"
-        TreeNode1.Text = "Deportes"
-        TreeNode2.Name = "Nodo14"
-        TreeNode2.Text = "Nodo14"
-        TreeNode3.Name = "Nodo15"
-        TreeNode3.Text = "Nodo15"
-        TreeNode4.Name = "Nodo16"
-        TreeNode4.Text = "Nodo16"
-        TreeNode5.Name = "btnDeleteNode"
-        TreeNode5.Text = "delete"
-        Me.tvCategories.Nodes.AddRange(New System.Windows.Forms.TreeNode() {TreeNode1, TreeNode2, TreeNode3, TreeNode4, TreeNode5})
         Me.tvCategories.Size = New System.Drawing.Size(599, 460)
         Me.tvCategories.TabIndex = 0
         '

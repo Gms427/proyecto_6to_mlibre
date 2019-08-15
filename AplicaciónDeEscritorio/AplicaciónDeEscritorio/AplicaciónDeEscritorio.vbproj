@@ -99,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ApplicationEvents.vb" />
+    <Compile Include="Classes\Category.vb" />
+    <Compile Include="Controllers\CategoryController.vb" />
+    <Compile Include="DAL\CategoryDAL.vb" />
     <Compile Include="Forms\CategoriesScreen.Designer.vb">
       <DependentUpon>CategoriesScreen.vb</DependentUpon>
     </Compile>
@@ -222,5 +225,6 @@
   <ItemGroup>
     <Content Include="4-removebg-preview %281%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -21,7 +21,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim pgClass = New ConnectionPgSQL()
 
-        Dim conn As Npgsql.NpgsqlConnection = pgClass.AbrirConexion()
+        Dim conn As Npgsql.NpgsqlConnection = pgClass.openConnection()
 
         Dim queryString = "SELECT * FROM TEST;"
 
@@ -36,8 +36,6 @@
 
             End While
         End If
-
-
 
     End Sub
 End Class

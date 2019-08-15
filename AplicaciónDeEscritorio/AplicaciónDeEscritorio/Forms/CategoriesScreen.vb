@@ -1,4 +1,5 @@
 ﻿Public Class CategoriesScreen
+    Private categoryController As CategoryController = New CategoryController()
 
     Private Sub btnCloseApp_Click(sender As Object, e As EventArgs) Handles btnCloseApp.Click
 
@@ -15,7 +16,7 @@
     Private Sub btnAddCategory_Click(sender As Object, e As EventArgs) Handles btnAddCategory.Click
 
         viewAddCategory.Show()
-
+        categoryController.GetCategories()
     End Sub
 
     Private Sub btnCloseAddCategory_Click(sender As Object, e As EventArgs) Handles btnCloseAddCategory.Click
@@ -43,18 +44,6 @@
     Private Sub CategoriesScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         tvCategories.ExpandAll()
-        tvCategories.Nodes.Add("Add")
-
-
-    End Sub
-
-    Private Sub tvCategories_DoubleClick(sender As Object, e As EventArgs) Handles tvCategories.DoubleClick
-
-        If tvCategories.SelectedNode.Text = "Add" Then
-
-            tvCategories.Nodes.Add("Hola soy nuevo")
-
-        End If
 
     End Sub
 

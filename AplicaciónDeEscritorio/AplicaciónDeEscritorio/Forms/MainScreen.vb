@@ -17,5 +17,4 @@
         CategoriesScreen.ShowDialog()
 
     End Sub
-
 End Class
