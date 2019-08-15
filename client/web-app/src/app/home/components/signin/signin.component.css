@@ -1,5 +1,5 @@
 .signin-container {
-  height: 394px; /*394px*/
+ /* height: 500px; 394px*/
   width: 450px; /*450px*/
   position: absolute;
   top: 0;
@@ -7,6 +7,7 @@
   right: 0;
   bottom: 0;
   margin: auto;
+  margin-top: 145px;
 }
 .mat-grid-tile .mat-figure {
   align-items: baseline !important;
@@ -23,9 +24,6 @@
   display: inline-block; /*inline-block*/
   width: 300px;
   font-size: 13px;
-}
-.controles-container {
-  width: 95%;
 }
 .mat-card:not([class*="mat-elevation-z"]) {
   box-shadow: 1px 2px 15px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
