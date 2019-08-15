@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
               private _navbarService: NavbarService) { }
 
   ngOnInit() {
+    this.emailFormControl.setValue('alejandroalbarenga30@gmail.com');
+    this.passwordFormControl.setValue('Pass1234!')
   }
 
   login() {
@@ -39,8 +41,6 @@ export class LoginComponent implements OnInit {
         this.passwordFormControl.hasError("required")
       )
     ) {
-      console.log(`The username is ${this.emailFormControl.value}`);
-      console.log(`The password is ${this.passwordFormControl.value}`);
       let loggedUser = new UserLogin(this.emailFormControl.value, this.passwordFormControl.value);
       this._loginService.Login(loggedUser).subscribe(
         (res) => {

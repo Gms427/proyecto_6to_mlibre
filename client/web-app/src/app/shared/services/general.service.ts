@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { fromEvent } from 'rxjs';
 import { Filter, Category } from '../utils/types';
 
 @Injectable({
@@ -7,6 +8,8 @@ import { Filter, Category } from '../utils/types';
 })
 export class GeneralService {
   baseUrl: string = "http://localhost:3000";
+  
+  public obs = fromEvent(window, 'resize')
 
   private categoryForCreate: Category;
 

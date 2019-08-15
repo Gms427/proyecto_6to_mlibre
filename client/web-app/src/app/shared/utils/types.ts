@@ -1,4 +1,4 @@
-export interface UserInfo{
+/*export interface UserInfo{
     Id: number,
     Name: string,
     Email: string,
@@ -9,6 +9,19 @@ export interface UserInfo{
     Street: string,
     RatingPromedy: number,
     Publications: number[]
+}*/
+
+export interface UserInfo {
+    Id: number,
+    FullName: string,
+    Email: string,
+    DateOfBirth: Date,
+    Phone: string,
+    Status: number,
+    Departament: string,
+    City: string,
+    Street: string,
+    Neighborhood: string
 }
 
 /*export interface Publication{

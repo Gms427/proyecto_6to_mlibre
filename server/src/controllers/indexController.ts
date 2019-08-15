@@ -1,10 +1,11 @@
 import { Request, Response } from 'express';
-import path from 'path';
-import { TestDAL } from '../serverDAL/testDAL'
+import * as path from 'path';
+import { TestDAL } from '../serverDAL/testDAL';
 import { QueryResult } from 'pg';
 import { Utils } from '../utils/utils';
 import { Category, Subcategory, Publication, Filter } from '../models/models';
 import { publications } from '../utils/utils';
+import { User } from '../models/User';
 
 class IndexController {
     
@@ -70,7 +71,6 @@ class IndexController {
     async getFiltersInfo(req: Request, res: Response): Promise<void>{
         const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
         const rows = queryResult.rows;
-        console.log(queryResult);
 
         let result: Filter[] = [];
         rows.forEach(filter => {
@@ -164,6 +164,23 @@ class IndexController {
         });
         console.log(finalResult);
         res.send(finalResult);
+    }
+
+    async getUserInfo(req: Request, res: Response){        
+        let queryResult = await TestDAL.getUserInfo(req.params.email);
+        let user: User = {
+            Id: queryResult.id_user,
+            FullName: queryResult.full_name,
+            City: queryResult.city,
+            DateOfBirth: queryResult.date_of_birth,
+            Departament: queryResult.departament,
+            Email: queryResult.email,
+            Neighborhood: queryResult.neighborhood,
+            Phone: queryResult.phone,
+            Status: queryResult.status,
+            Street: queryResult.street
+        }
+        res.send(user);
     }
 }
 

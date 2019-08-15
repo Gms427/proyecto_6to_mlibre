@@ -12,4 +12,21 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  display: boolean = false;
+
+    showDialog() {
+        this.display = true;
+    }
+
+    closeDialog(){
+      this.display = false;
+    }
+
+    onResize(event){
+      if(event.target.innerWidth < 780){
+        this.showDialog();
+      }else{
+        this.closeDialog();
+      }
+    }
 }

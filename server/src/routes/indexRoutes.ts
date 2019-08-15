@@ -25,6 +25,10 @@ class IndexRoutes {
         this.router.get('/getFiltersInfo', indexController.getFiltersInfo);
         this.router.get('/getCategories', indexController.getCategories);
         this.router.get('/getSubcategoryFields/:idSubcategory/:idCategory', indexController.getSubcategoryFields);
+        this.router.get('/getUserInfo/:email', indexController.getUserInfo);
+        this.router.put('/updateUser', signinController.UpdateUser);
+        this.router.post('/checkPassword', loginController.checkPassword);        
+
     }
 }
 

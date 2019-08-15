@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserHistoryComponent } from 'src/app/user/components/user-history/user-history.component';
+import { UserHistoryComponent } from './components/user-history/user-history.component';
+import { UserInformationComponent } from './components/user-information/user-information.component';
+
 
 const routes: Routes = [
  /*{
@@ -11,6 +13,10 @@ const routes: Routes = [
   {
     path: 'history',
     component: UserHistoryComponent
+  },
+  {
+    path: 'information',
+    component: UserInformationComponent
   }
 ];
 

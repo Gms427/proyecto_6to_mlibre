@@ -1,12 +1,4 @@
-export interface SigninDTO{
-    Fullname: string;
-    Phone: string;
-    Email: string;
-    Password: string;
-    Status: number;  
-}
-
-export interface UserUpdate{
+export interface User {
     Id: number,
     FullName: string,
     Email: string,

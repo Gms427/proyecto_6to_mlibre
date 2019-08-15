@@ -23,7 +23,6 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-	console.log('Branch: aesthetic_changes');
     const t = await this._testService.test();
   }
 

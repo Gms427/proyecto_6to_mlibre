@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ResolveUserLogged } from './shared/utils/guards';
 
 const routes: Routes = [
  {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: './user/user.module#UserModule'
+    loadChildren: './user/user.module#UserModule',
+    canActivate: [ResolveUserLogged]
   }
 ];
 
