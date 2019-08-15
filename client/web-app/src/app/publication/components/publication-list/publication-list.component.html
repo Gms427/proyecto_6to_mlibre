@@ -1,27 +1,38 @@
 <div class="list-component container">
+  <!-- Filtros -->
   <div class="filters">
     <mat-list>
-      <h3>Busqueda: {{search}}</h3>
-      <mat-card-subtitle>{{length}} resultados</mat-card-subtitle>
+      <h3>Búsqueda: {{search}}</h3>
+      <h4 *ngIf="categorySearched">{{ categorySearched.Name }}</h4>
+      <h4 *ngIf="subcategorySearched">{{ subcategorySearched.Name }}</h4>
+      <mat-card-subtitle>{{length}} Resultados</mat-card-subtitle>
       <div>
         <p mat-subheader>Ordenar por:</p>
         <mat-form-field>
           <mat-select [(value)]="selected">
-            <mat-option value="option3">Mas visitados</mat-option>
+            <mat-option value="option3">Más visitados</mat-option>
             <mat-option value="option1">Menor precio</mat-option>
             <mat-option value="option2">Mayor precio</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-button class="btn-sortby btn-transparent">
-          <i class="fas fa-list"></i>
-        </button>
-        <button mat-button class="btn-sortby btn-transparent">
-          <i class="fas fa-th-large"></i>
-        </button>
+        <div class="btns-container">
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-list"></i>
+          </button>
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-th-large"></i>
+          </button>
+        </div>
       </div>
+      <!-- Filtros  -->
+      <div class="filters-container">
+          <app-filters [filtersInfo]="filtersInfo" (spinner)="onFiltersChange($event)"></app-filters>
+      </div>
+
     </mat-list>
   </div>
-  <div class="list">
+  <mat-spinner class="spinner" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  <div class="list" [style.display]="!showSpinner ? 'block' : 'none'">
     <mat-list>
       <a *ngFor="let product of Publications">
         <mat-card class="publication-card mat-elevation-z">

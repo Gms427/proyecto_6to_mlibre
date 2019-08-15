@@ -8,15 +8,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { SearchComponent } from './components/search/search.component';
 import { NotificationsComponent } from './components/navbar/notifications/notifications.component';
+import { ResolveUserLogged } from './utils/guards';
+import { FooterComponent } from './components/footer/footer.component';
+import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent],
+  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent, FooterComponent, CategoriesMenuComponent],
   imports: [
     CommonModule,
     CoreModule,
     RouterModule,
     TranslateModule
   ],
-  exports: [NavbarComponent, SearchComponent]
+  exports: [NavbarComponent, SearchComponent, FooterComponent, CategoriesMenuComponent],
+  providers: [ResolveUserLogged]
 })
 export class SharedModule { }

@@ -1,109 +1,56 @@
 .navbar {
-  min-height: 100px;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  position: relative;
-  width: 100vw;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    z-index: 2;
 }
 
-.navbar-section-logo {
-  width: 20%;
-  margin: auto;
-  cursor: pointer;
-  float: left;
+.section-up {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navbar-section-navegation {
-  margin: auto;
-  width: 60%;
-  margin-bottom: 0;
-  height: 50px;
-  float: left;
-}
-
-.navbar-section-options {
-  width: 20%;
-  margin: auto;
-  margin-bottom: 0;
-  height: 50px;
-  float: right;
-}
-
-.navbar-section-navegation button {
-  background: transparent;
-  color: white;
-  font-size: 14px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms ease;
-  padding: 15px 20px;
-}
-
-.seccion-up {
-  width: 80%;
-  height: 50px;
-  float: left;
-}
-
-.seccion-down {
-  width: 80%;
-  height: 50px;
-  float: left;
-}
-
-.navbar-section-navegation button:hover {
-  background: rgba(#5294e2, 0.3);
-  color: white;
-}
-
-.navbar-section-options button {
-  background: transparent;
-  color: white;
-  font-size: 14px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 200ms ease;
-  align-items: flex-end;
-}
-
-.navbar-section-options button:hover {
-  color: white;
-}
-
-.navbar-section-options .options {
-  font-size: 20px;
-  min-width: 40px;
-  padding-bottom: 3px;
-  margin: 11px;
-}
-
-.navbar-section-options .options:hover {
-  color: #5294e2;
-}
-
-.item {
-  float: left;
-}
-
-.mat-menu-content {
-  min-width: 435px;
-}
-
-.options-content {
-  max-height: 205px;
-  min-width: 450px;
-  overflow: auto;
+.section-down {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
 
 .logo {
-  width: auto;
-  height: 50px;
-  outline: none;
-  margin: 25px;
+    width: auto;
+    height: 40px;
+    outline: none;
 }
 
-.searcher-container{
-  margin-top: 13px;
+.navbar-section-navegation {
+    display: flex;
+    font-size: 20px
+}
+
+.navbar-section-options {
+    display: flex;
+}
+
+.modules {
+    display: flex;
+}
+
+.options {
+    font-size: 20px
+}
+
+.navbar-section-navegation button:hover {
+    background: rgba(#5294e2, 0.3);
+    color: #5294e2;
+}
+
+.navbar-section-options .options:hover {
+    color: #5294e2;
 }

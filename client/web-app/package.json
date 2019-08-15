@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node ./validatorForTranslateFiles && ng serve -o --proxy-config proxyconfig.json",
+    "start": "ng serve -o --proxy-config proxyconfig.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,7 +24,9 @@
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "core-js": "^2.5.4",
+    "google-libphonenumber": "^3.2.3",
     "hammerjs": "^2.0.8",
+    "ngx-toastr": "^10.0.4",
     "primeicons": "^1.0.0",
     "primeng": "^7.1.3",
     "rxjs": "~6.3.3",

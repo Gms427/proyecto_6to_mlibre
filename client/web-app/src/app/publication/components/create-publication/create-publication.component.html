@@ -1,0 +1,162 @@
+<div class="container-create">
+  <div class="container-subcategory">
+    <h4>Seleccione una subcategoría</h4>
+    <mat-form-field *ngIf="category">
+      <mat-label>Subcategorías </mat-label>
+      <mat-select (selectionChange)="getSubcategoryFields($event)">
+        <mat-option *ngFor="let subcategory of category.Subcategories" [value]="subcategory.Id">
+          {{subcategory.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <!-- Form de datos genéricos -->
+  <div class="container-form">
+    <mat-card class="custom-card">
+        <mat-card-title>
+            Por favor, ingrese los datos:
+        </mat-card-title>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Título" [(ngModel)]="publicationBaseInfo.Title">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <textarea matInput placeholder="Descripción" [(ngModel)]="publicationBaseInfo.Description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Precio" [(ngModel)]="publicationBaseInfo.Price">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Moneda</mat-label>
+            <br/>
+            <mat-select [(ngModel)]="publicationBaseInfo.Currency">
+              <mat-option *ngFor="let currency of currencies" [value]="currency.Id">
+                {{currency.Name}} {{currency.Symbol}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Cantidad" [(ngModel)]="publicationBaseInfo.Quantity">
+        </mat-form-field>
+    </mat-card>
+
+    <!-- Form de datos de la subcategoría 
+    <mat-card class="custom-card" *ngIf="subCategoryFields.length > 0">
+        <mat-card-title>
+            Datos para {{subcategory.Name}}:
+        </mat-card-title>
+      <div class="example-form">
+        <div *ngFor="let subCategoryField of subCategoryFields">
+            <div [ngSwitch]="subCategoryField.Type">
+              
+                <mat-form-field class="full-width" *ngSwitchCase="'INPUT'">
+                  <input matInput placeholder="{{subCategoryField.Name}}" >
+                </mat-form-field>
+                
+                <mat-form-field class="full-width" *ngSwitchCase="'NUMERIC_RANGE'">
+                    <input matInput placeholder="{{subCategoryField.Name}}" >
+                </mat-form-field>
+
+                <mat-form-field class="full-width" *ngSwitchCase="'SELECTIONABLE_LIST'">
+                    <mat-label>{{subCategoryField.Name}}</mat-label>
+                    <br/>
+                    <mat-select [(value)]="subCategoryField.Values">
+                      <mat-option *ngFor="let option of subCategoryField.Options" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div class="full-width" *ngSwitchCase="'OPTIONS_LIST'">
+                    <mat-label style="color: #757575">{{subCategoryField.Name}}</mat-label>
+                    <br/>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    [(ngModel)]="subCategoryField.Values"
+                    class="example-radio-group">
+                        <mat-radio-button class="example-radio-button" *ngFor="let option of subCategoryField.Options" [value]="option">
+                            {{option}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div *ngSwitchDefault>
+                    <input matInput placeholder="Cooming soon" *ngSwitchCase="'INPUT'">
+                </div>
+            </div>
+        </div>
+      </div>
+    </mat-card>-->
+  </div>
+  <mat-divider [vertical]="true" *ngIf="subCategoryFields.length > 0"></mat-divider>
+  <!-- Form de datos de la subcategoría  -->
+  <div class="container-form" *ngIf="subCategoryFields.length > 0">
+      <mat-card class="custom-card">
+          <mat-card-title>
+              Datos para {{subcategory.Name}}:
+          </mat-card-title>
+        <div class="form">
+          <div *ngFor="let subCategoryField of subCategoryFields">
+              <div [ngSwitch]="subCategoryField.Type">
+                
+                  <mat-form-field class="full-width" *ngSwitchCase="'INPUT'">
+                    <input matInput placeholder="{{subCategoryField.Name}}" [(ngModel)]="subCategoryField.Values">
+                  </mat-form-field>
+                  
+                  <mat-form-field class="full-width" *ngSwitchCase="'NUMERIC_RANGE'">
+                      <input matInput placeholder="{{subCategoryField.Name}}" [(ngModel)]="subCategoryField.Values">
+                  </mat-form-field>
+  
+                  <mat-form-field class="full-width" *ngSwitchCase="'SELECTIONABLE_LIST'">
+                      <mat-label>{{subCategoryField.Name}}</mat-label>
+                      <br/>
+                      <mat-select [(ngModel)]="subCategoryField.Values">
+                        <mat-option *ngFor="let option of subCategoryField.Options" [value]="option">
+                          {{option}}
+                        </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+  
+                  <div class="full-width" *ngSwitchCase="'OPTIONS_LIST'">
+                      <mat-label style="color: #757575">{{subCategoryField.Name}}</mat-label>
+                      <br/>
+                      <mat-radio-group
+                      aria-labelledby="radio-group-label"
+                      [(ngModel)]="subCategoryField.Values"
+                      class="radio-group">
+                          <mat-radio-button class="radio-button" *ngFor="let option of subCategoryField.Options" [value]="option">
+                              {{option}}
+                          </mat-radio-button>
+                      </mat-radio-group>
+                  </div>
+  
+                  <div *ngSwitchDefault>
+                      <input matInput placeholder="Cooming soon" *ngSwitchCase="'INPUT'">
+                  </div>
+              </div>
+          </div>
+        </div>
+      </mat-card>
+
+      <!-- Otras características -->
+      <mat-card class="custom-card" *ngIf="booleanFields.length > 0">
+        <mat-card-title>
+          Otras características:
+        </mat-card-title>
+        <mat-card-content>
+          <section class="section">
+            <mat-checkbox *ngFor="let booleanField of booleanFields" class="checkbox-margin" [(ngModel)]="booleanField.Values[0]">{{booleanField.Name}}</mat-checkbox>
+          </section>
+        </mat-card-content>
+      </mat-card>
+
+      <button mat-raised-button color="primary" class="btn-post" (click)="post()">Publicar</button>
+  </div>
+</div>
+
+

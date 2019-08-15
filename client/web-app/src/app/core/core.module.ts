@@ -10,6 +10,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { GalleriaModule } from 'primeng/galleria';
+
 
 
 // Form Controls
@@ -58,6 +61,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+
+// Toast
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -110,9 +116,13 @@ import { MatTableModule } from '@angular/material/table';
     MenubarModule,
     InputTextModule,
     ButtonModule,
-    // Internacionalización
-    TranslateModule
+    DialogModule,
+    GalleriaModule,
     
+    // Internacionalización
+    TranslateModule,
+    // Toast 
+    ToastrModule.forRoot()
   ],
   exports: [
     // Angular material
@@ -158,7 +168,9 @@ import { MatTableModule } from '@angular/material/table';
     // Primeng Menu
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule,
+    GalleriaModule,
   ],
   providers: []
 })

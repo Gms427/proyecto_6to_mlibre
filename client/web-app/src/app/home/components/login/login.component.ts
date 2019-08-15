@@ -1,14 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import {
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators
-} from "@angular/forms";
+import { FormControl, Validators} from "@angular/forms";
 //import { ErrorStateMatcher } from '@angular/material/core';
-import { MyErrorStateMatcher } from "../../../shared/utils/utils";
-import { Router, ActivatedRouteSnapshot } from "@angular/router";
+import { CustomErrorStateMatcher } from "../../../shared/utils/utils";
+import { Router } from "@angular/router";
 import { LoginService } from "src/app/shared/services/login.service";
 import { UserLogin } from "src/app/home/models/UserLogin";
 import { NavbarService } from 'src/app/shared/services/navbar.service';
@@ -19,22 +14,23 @@ import { NavbarService } from 'src/app/shared/services/navbar.service';
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  public password: string;
-  public username: string;
+  public error: string;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email
   ]);
 
-  passwordFormControl = new FormControl("", [Validators.required]);
+  passwordFormControl = new FormControl('', [Validators.required]);
 
-  matcher = new MyErrorStateMatcher();
+  matcher = new CustomErrorStateMatcher();
 
   constructor(private router: Router,
               private _loginService: LoginService,
               private _navbarService: NavbarService) { }
 
   ngOnInit() {
+    this.emailFormControl.setValue('alejandroalbarenga30@gmail.com');
+    this.passwordFormControl.setValue('Pass1234!')
   }
 
   login() {
@@ -45,12 +41,15 @@ export class LoginComponent implements OnInit {
         this.passwordFormControl.hasError("required")
       )
     ) {
-      console.log(`The username is ${this.username}`);
-      console.log(`The password is ${this.password}`);
-      let loggedUser = new UserLogin(this.username, this.password);
-      this._loginService.Login(loggedUser);
-      this._navbarService.UserLogged(true);
-      this.router.navigate(["/home/main"]);
+      let loggedUser = new UserLogin(this.emailFormControl.value, this.passwordFormControl.value);
+      this._loginService.Login(loggedUser).subscribe(
+        (res) => {
+          this._navbarService.UserLogged(true);
+          this._loginService.setLoggedUser(loggedUser);
+          this.router.navigate(["/home/main"]);
+        },(err) => {
+          this.error = err.error.text;
+        });
     }
   }
 }

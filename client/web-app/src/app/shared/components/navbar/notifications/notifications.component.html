@@ -1,8 +1,12 @@
 <button
   mat-button
+  matBadge="{{notificationsLength}}" 
+  matBadgeColor="warn"
   [matMenuTriggerFor]="notifications"
   class="options"
+  id="notifications"
   matTooltip="{{ 'Notifications' | translate }}"
+  (click)="deleteNotifications()"
 >
   <i class="fas fa-bell"></i>
 </button>

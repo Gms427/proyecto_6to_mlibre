@@ -3,6 +3,8 @@ import { LoginService } from "src/app/shared/services/login.service";
 import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
 import {PublicationList} from '../../models/publicationList'
+import { GeneralService } from 'src/app/shared/services/general.service';
+import { Filter, Category, Subcategory } from 'src/app/shared/utils/types';
 
 
 @Component({
@@ -12,6 +14,12 @@ import {PublicationList} from '../../models/publicationList'
 })
 export class PublicationListComponent implements OnInit{
   public search: string;
+  filtersInfo: Filter[];
+  public categorySearched: Category;
+  public subcategorySearched: Subcategory;
+
+  public showSpinner: boolean = false;
+
   public Publications: PublicationList[] = [
     {
       Id: 1,
@@ -53,18 +61,16 @@ export class PublicationListComponent implements OnInit{
 
   constructor(private loginService: LoginService,
               private router: Router,
-              private _searchService: SearchService) {}
+              private _searchService: SearchService,
+              private _generalService: GeneralService) {}
 
-  ngOnInit(){
+  async ngOnInit(){
     // service para obtener la búsqueda
-    this.search = this._searchService.searchValue;
-    /*this._searchService.search$.subscribe(
-      (val) => {
-        console.log("búsqueda:", val);
-        this.search = val;
-        console.log(this.search);
-      }
-    );*/
+    this.search = this._searchService.getSearchValue();
+    this._searchService.search.subscribe(value => { this.search = value; });
+    this.categorySearched = this._searchService.getCategorySearched();
+    this.subcategorySearched = this._searchService.getSubcategorySearched();
+    this.filtersInfo = await this._generalService.getFiltersInfo();    
   }
 
   addFav(product) {
@@ -76,7 +82,10 @@ export class PublicationListComponent implements OnInit{
   }
 
   navegateToProduct(product) {
-    console.log(product);
     this.router.navigate([`/publications/publication/${product.Id}`]);
+  }
+
+  onFiltersChange(event){
+    this.showSpinner = event;
   }
 }

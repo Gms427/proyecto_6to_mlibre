@@ -1,0 +1,6 @@
+<p-dialog header="Alerta" [modal]="true" [draggable]="false" [(visible)]="display" (window:resize)="onResize($event)">
+    <p><strong> aplicion aun se encuentra en desarrollo, puede que haya errores en resoluciones menores a 780px</strong></p>
+    <p-footer>
+        <button mat-button class="btn-primary" (click)="closeDialog()">Entendido</button>
+    </p-footer>
+</p-dialog>
