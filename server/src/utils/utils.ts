@@ -1,5 +1,6 @@
 import * as Bcrypt from 'bcrypt';
 import { SigninDAL } from '../serverDAL/signinDAL';
+import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
 
 export class Utils {
     public static encriptPassword(pswd: string): string{
@@ -23,6 +24,14 @@ export class Utils {
           .filter(e => arr[e]).map<boolean>(e => arr[e]);
       
           return unique;
+    }
+
+    public static validateUserForSell(user: UserUpdate): boolean{
+        if (user.Status && user.Status == 1){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

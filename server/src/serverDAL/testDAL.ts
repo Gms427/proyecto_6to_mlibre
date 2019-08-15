@@ -1,5 +1,7 @@
 import PgClient from '../database';
 import { QueryResult, Query } from 'pg';
+import { Publication } from '../models/models';
+import { UserUpdate } from './DTOs/SigninDTO';
 
 export class TestDAL {
 
@@ -78,5 +80,34 @@ export class TestDAL {
         let result = await PgClient.query(query);
         return result.rows[0];
     }
-}
 
+    static async uploadPublication(publication: Publication, user: UserUpdate){
+        let query = `INSERT INTO PRODUCT (
+            ID_PRODUCT,
+            ID_USER, 
+            PRICE, 
+            CURRENCY, 
+            DESCRIPTION, 
+            CATEGORY, 
+            SUBCATEGORY,
+            NAME, 
+            STOCK, 
+            WARRANTY, 
+            STATUS
+            ) VALUES('
+            ${publication.Id}',
+            ${user.Id}',
+            ${publication.Price}',
+            ${publication.Currency}',
+            ${publication.Description}',
+            ${publication.Category}',
+            ${publication.Subcategory}',
+            ${publication.Name}',
+            ${publication.Stock}',
+            ${publication.Warranty}',
+            ${publication.Status}',
+            )`;
+        let result = await PgClient.query(query);
+        return result.rows[0];
+    }
+}

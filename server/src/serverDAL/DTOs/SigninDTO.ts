@@ -12,7 +12,7 @@ export interface UserUpdate{
     Email: string,
     DateOfBirth: Date,
     Phone: string,
-    Status: boolean,
+    Status: number,
     Departament: string,
     City: string,
     Street: string,

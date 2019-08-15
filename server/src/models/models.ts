@@ -9,10 +9,16 @@ export interface Publication{
     Id: number,
     Name: string,
     Price: string,
-    State: boolean,
+    Status: number,
     Shipping: boolean,
     Favorite: boolean,
-    Img: string
+    Img: string,
+    Currency: string,
+    Description: string,
+    Category: number,
+    Subcategory: number,
+    Stock: number,
+    Warranty: string,
 }
 
 export interface Subcategory{
