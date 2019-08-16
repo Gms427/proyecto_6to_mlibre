@@ -138,7 +138,7 @@
                     </mat-card-header>
                     <!-- Name -->
                     <mat-form-field class="example-full-width" style="width: 100%">
-                        <input matInput placeholder="{{ 'Fullname' | translate }}" type="number" name="name" [formControl]="nameFormControl" />
+                        <input matInput placeholder="{{ 'Fullname' | translate }}" type="text" name="name" [formControl]="nameFormControl" />
                         <mat-error *ngIf="nameFormControl.hasError('invalidUsername')">
                             El nombre debe tener más de 3 caracteres
                         </mat-error>

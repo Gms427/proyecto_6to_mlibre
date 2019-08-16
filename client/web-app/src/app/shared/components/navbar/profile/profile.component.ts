@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
 
   logout() {
     this._navbarService.UserLogged(false);
-    if(this.router.url == '/user/information'){
+    if(this.router.url != '/home/main'){
       this.router.navigate(["/home/main"]);      
     }
   }

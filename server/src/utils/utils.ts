@@ -40,20 +40,20 @@ export class Utils {
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'alejandroalbarenga30@gmail.com',
-            pass: 'S0l0alejandr0'
-          }
+            user: 'nosbeyTeam@gmail.com',
+            pass: 'N0sb3yT3am'
+          },
         });
         
         var mailOptions = {
-          from: 'alejandroalbarenga30@gmail.com',
+          from: 'nosbeyTeam@gmail.com',
           to: user.Email,
           subject: 'Confirma tu email',
           text: 'preciona el boton para confirmar!',
           html: '<button>Confirmar</button>'
         };
         
-        transporter.sendMail(mailOptions, function(error, info){
+        transporter.sendMail(mailOptions, function(error: any, info:any){
           if (error) {
             console.log(error);
           } else {

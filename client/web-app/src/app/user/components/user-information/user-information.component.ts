@@ -71,28 +71,28 @@ export class UserInformationComponent implements OnInit {
     console.log(editFielId)
     setTimeout(function () {
       switch (editFielId) {
-        case 'mat-input-4':
+        case 'email':
           that.emailField.nativeElement.focus();
           break;
-        case 'mat-input-5':
+        case 'fullName':
           that.fullNameField.nativeElement.focus();
           break;
-        case 'mat-input-6':
+        case 'phone':
           that.phoneField.nativeElement.focus();
           break;
-        case 'mat-input-7':
+        case 'dateOfBirth':
           that.dateOfBirthField.nativeElement.focus();
           break;
-        case 'mat-input-8':
+        case 'departament':
           that.departametField.nativeElement.focus();
           break;
-        case 'mat-input-9':
+        case 'city':
           that.cityField.nativeElement.focus();
           break;
-        case 'mat-input-10':
+        case 'neighborhood':
           that.neighborhoodField.nativeElement.focus();
           break;
-        case 'mat-input-11':
+        case 'street':
           that.streetField.nativeElement.focus();
           break;
         default:
