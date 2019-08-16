@@ -186,7 +186,7 @@ class IndexController {
 
         try {
             let userAuth = Utils.validateUserForSell(user);
-            console.log('userauuth', userAuth);
+            console.log('userauth', userAuth);
             if (userAuth) {
                 let queryResult = await TestDAL.uploadPublication(publication, user);
             } else {

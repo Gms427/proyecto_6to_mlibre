@@ -3,7 +3,6 @@ export interface SigninDTO{
     Phone: string;
     Email: string;
     Password: string;
-    Status: number;  
 }
 
 export interface UserUpdate{

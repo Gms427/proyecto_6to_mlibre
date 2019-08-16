@@ -1,6 +1,6 @@
 import * as Bcrypt from 'bcrypt';
 import { SigninDAL } from '../serverDAL/signinDAL';
-import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
+import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
 
 export class Utils {
     public static encriptPassword(pswd: string): string{
@@ -32,6 +32,34 @@ export class Utils {
         }else{
             return false;
         }
+    }
+
+    public static sendEmail(user: SigninDTO){
+        var nodemailer = require('nodemailer');
+
+        var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: 'alejandroalbarenga30@gmail.com',
+            pass: 'S0l0alejandr0'
+          }
+        });
+        
+        var mailOptions = {
+          from: 'alejandroalbarenga30@gmail.com',
+          to: user.Email,
+          subject: 'Confirma tu email',
+          text: 'preciona el boton para confirmar!',
+          html: '<button>Confirmar</button>'
+        };
+        
+        transporter.sendMail(mailOptions, function(error, info){
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('Email sent: ' + info.response);
+          }
+        }); 
     }
 
 }

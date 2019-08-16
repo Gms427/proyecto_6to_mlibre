@@ -6,8 +6,9 @@ import { UserUpdate } from './DTOs/SigninDTO'
 export class SigninDAL {
 
     static async Signin(data: SigninDTO): Promise<QueryResult>{
-        let query = `INSERT INTO USERS(full_name, password, email, phone)
-           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}');`;
+        console.log(data)
+        let query = `INSERT INTO USERS(full_name, password, email, phone, status)
+           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}', '3');`;
     
         let result = await PgClient.query(query);
         return result;
