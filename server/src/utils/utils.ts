@@ -50,9 +50,8 @@ export class Utils {
           to: user.Email,
           subject: 'Confirma tu email',
           text: 'preciona el boton para confirmar!',
-          html: '<button>Confirmar</button>'
+          html: '<a href="http://localhost:4200">Confirmar</a>'
         };
-        
         transporter.sendMail(mailOptions, function(error: any, info:any){
           if (error) {
             console.log(error);
