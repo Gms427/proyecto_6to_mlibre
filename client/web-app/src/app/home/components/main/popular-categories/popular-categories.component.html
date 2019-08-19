@@ -4,11 +4,11 @@
   <div *ngFor="let category of categories" class="container-card" (click)="navigateToCategory(category)">
     <mat-card class="mat-elevation-z transparent text-center">
       <mat-card-title>
-        {{ category.Name }}
+        <i class="{{category.Icon}} size"></i>
       </mat-card-title>
       <hr />
       <mat-card-subtitle>
-        Info about the category
+        {{ category.Name }}
       </mat-card-subtitle>
     </mat-card>
   </div>

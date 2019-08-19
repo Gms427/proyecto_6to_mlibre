@@ -2,8 +2,9 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-image: url('../../../../assets/images/4.jpg');
-  background-repeat: round;
+  background: #ffc244;
+  /*background-image: url('../../../../assets/images/4.jpg');
+  background-repeat: round;*/
   /*Las lindas --> 4, 12, 15, */
   display: flow-root;
   background-size: cover;
