@@ -1,7 +1,139 @@
-<div class="container">
-  <h2>Mis datos</h2>
-  <mat-card>
-  
-  </mat-card>
-</div>
+<div class="container" *ngIf="user">
+    <h2>Mis datos</h2>
+    <mat-card *ngIf="user.Status == 2" class="discontinued inline">
+        <p>Estas suspendido para vender</p>
+        <button mat-button class="btn-transparent">ver mas</button>
+    </mat-card>
+    <mat-card *ngIf="user.Status == 3" class="discontinued inline">
+        <p>Confirme su email</p>
+        <button mat-button class="btn-transparent" (click)="showModalEmail()">ver mas</button>
+    </mat-card>
+    <p-dialog header="Confirmar email" [modal]="true" [draggable]="false" [(visible)]="displayModalConfEmail">
+        <p>Se le ha enviado un e-mail a su cuenta de correo electronico para que confirme su direccion de correo electronico</p>
+        <p-footer>
+            <button mat-button class="btn-primary" (click)="closeModal()">Entendido</button>
+        </p-footer>
+    </p-dialog>
+    <mat-card *ngIf="user.Status == 1" class="authorized inline">
+        <p>Estas autorizado para vender</p>
+    </mat-card>
+    <div class="inline">
+        <h2>Datos personales</h2>
+        <button mat-button class="btn-primary" (click)="showDialog()">Actualizar</button>
+    </div>
+    <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="display">
+        <p>Para guardar los cambios confirme su contraseña</p>
+        <mat-form-field class="example-full-width" style="width: 100%">
+            <input matInput placeholder="Contraseña" [formControl]="passwordFormControl" name="password" type="password">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="error">
+            {{error}}
+        </mat-error>
+        <p-footer>
+            <button mat-button class="btn-primary" (click)="UpdateInformation()">Confirmar</button>
+        </p-footer>
+    </p-dialog>
+    <mat-card>
+        <div class="inline">
+            <h4>Email:</h4>
+            <mat-form-field class="md">
+                <input #email id="email" matInput placeholder="Email" [(ngModel)]="user.Email" [disabled]="!stateEmail" value="{{user.Email}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateEmail" [checked]="stateEmail.disabled" (change)="editField(email)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Nombre:</h4>
+            <mat-form-field class="md">
+                <input #fullName id="fullName" matInput placeholder="Nombre" [disabled]="!stateFullName" [(ngModel)]="user.FullName" value="{{user.FullName}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateFullName" [checked]="stateFullName.disabled" (change)="editField(fullName)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Celular:</h4>
+            <mat-form-field class="md">
+                <input #phone id="phone" type="number" matInput #phone maxlength="9" placeholder="Celular" [(ngModel)]="user.Phone" [disabled]="!statePhone" value="{{user.Phone}}">
+                <mat-hint align="end">{{phone.value.length}} / 9</mat-hint>
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="statePhone" [checked]="statePhone.disabled" (change)="editField(phone)">
+            </mat-checkbox>
+        </div>
+    </mat-card>
 
+    <h2>Datos nesesarios para comprar y vender </h2>
+    <mat-card>
+        <div class="inline">
+            <h4>Fecha de nacimiento</h4>
+            <mat-form-field class="md">
+                <input #dateOfBirth id="dateOfBirth" [matDatepicker]="picker" matInput placeholder="Fecha de nacimiento" [(ngModel)]="user.DateOfBirth" [disabled]="!stateDateOfBirth" [value]="user.DateOfBirth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateDateOfBirth" [checked]="stateDateOfBirth.disabled" (change)="editField(dateOfBirth)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Departamento:</h4>
+            <mat-form-field class="md">
+                <input #departament id="departament" matInput placeholder="Departamento" [disabled]="!stateDepartament" [(ngModel)]="user.Departament" value="{{user.Departament}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateDepartament" [checked]="stateDepartament.disabled" (change)="editField(departament)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Ciudad:</h4>
+            <mat-form-field class="md">
+                <input #city matInput id="city" placeholder="Ciudad" [disabled]="!stateCity" [(ngModel)]="user.City" value="{{user.City}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateCity" [checked]="stateCity.disabled" (change)="editField(city)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Barrio:</h4>
+            <mat-form-field class="md">
+                <input #neighborhood matInput id="neighborhood" placeholder="Barrio" [disabled]="!stateNeighborhood" [(ngModel)]="user.Neighborhood" value="{{user.Neighborhood}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateNeighborhood" [checked]="stateNeighborhood.disabled" (change)="editField(neighborhood)">
+            </mat-checkbox>
+        </div>
+        <div class="inline">
+            <h4>Calle:</h4>
+            <mat-form-field class="md">
+                <input #street matInput id="street" placeholder="Calle" [disabled]="!stateStreet" [(ngModel)]="user.Street" value="{{user.Street}}">
+            </mat-form-field>
+            <mat-checkbox color="primary" [(ngModel)]="stateStreet" [checked]="stateStreet.disabled" (change)="editField(street)">
+            </mat-checkbox>
+        </div>
+    </mat-card>
+
+    <h2>Seguridad</h2>
+    <mat-card>
+        <div class="inline">
+            <h4>Contraseña:</h4>
+            <p>Por politicas de privacidad no es posible mostrar su contraseña</p>
+            <button mat-button class="btn-transparent">Saber mas</button>
+            <button mat-button class="btn-primary" (click)="showModalChangePassword()">Cambiar contraseña</button>
+        </div>
+    </mat-card>
+    <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="displayChangePassword">
+        <p>Primero confirme su actual contraseña</p>
+        <mat-form-field class="example-full-width" style="width: 100%">
+            <input matInput placeholder="Contraseña" [formControl]="passwordFormControl" name="password" type="password">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="error">
+            {{error}}
+        </mat-error>
+        <p>Al confirmar se le enviara un e-mail con un verificador</p>
+        <p-footer>
+            <button mat-button class="btn-transparent" (click)="UpdateInformation()">Olvide mi contraseña</button>
+            <button mat-button class="btn-primary" (click)="sendEmail()">Confirmar</button>
+        </p-footer>
+    </p-dialog>
+</div>

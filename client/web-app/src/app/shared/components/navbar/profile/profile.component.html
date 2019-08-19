@@ -8,11 +8,11 @@
 </button>
 <mat-menu #profileMenu="matMenu" xPosition="before">
   <div class="profile-content">
-    <mat-card class="profile-card mat-elevation-z">
+    <mat-card class="profile-card mat-elevation-z" *ngIf="user">
       <mat-card-header>
         <i class="fas fa-user-circle"></i>
-        <mat-card-title>{{ "Hello" | translate }} Alejandro!</mat-card-title>
-        <mat-card-subtitle>Alejandro.Albarenga@anima.edu.uy</mat-card-subtitle>
+        <mat-card-title>{{ "Hello" | translate }} {{user.FullName}}!</mat-card-title>
+        <mat-card-subtitle>{{user.Email}}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <button mat-button class="btn-account">

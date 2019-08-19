@@ -1,4 +1,4 @@
-export interface UserInfo{
+/*export interface UserInfo{
     Id: number,
     Name: string,
     Email: string,
@@ -9,6 +9,19 @@ export interface UserInfo{
     Street: string,
     RatingPromedy: number,
     Publications: number[]
+}*/
+
+export interface UserInfo {
+    Id: number,
+    FullName: string,
+    Email: string,
+    DateOfBirth: Date,
+    Phone: string,
+    Status: number,
+    Departament: string,
+    City: string,
+    Street: string,
+    Neighborhood: string
 }
 
 /*export interface Publication{
@@ -37,7 +50,8 @@ export interface Category{
     Id: number,
     Name: string,
     Filters?: Filter[],
-    Subcategories: Subcategory[]
+    Subcategories: Subcategory[],
+    Icon: string
 }
 
 export interface Subcategory{
@@ -49,7 +63,7 @@ export interface Subcategory{
 export interface Filter{
     Id: number,
     Name: string,
-    Type: number,
+    Type: string,
     Options?: any,
     Values?: any
 }
@@ -60,4 +74,26 @@ export enum FilterTypes{
     OPTIONS_LIST = 3, // Nuevo o usado, solo se puede seleccionar una opción de la lista
     DATE_RANGE = 4,
     SELECTIONABLE_LIST = 5, // Ubicaciones, lista de valores predefinida, se selecciona al menos uno
+}
+
+export interface Currency{
+    Id: number,
+    Name: string,
+    Symbol?: string
+}
+
+export interface PublicationBaseInfo{
+    Title: string,
+    Description: string,
+    Price: string,
+    Currency: string,
+    Stock: number,
+    Category: number,
+    Subcategory: number
+}
+
+export enum Currencies {
+    USD = 1,
+    UYU = 2,
+    EUR = 3
 }

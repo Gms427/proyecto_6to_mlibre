@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
 
   search() {
     this._searchService.setSearchValue(this.searchValue);
+    this._searchService.search.emit(this.searchValue);
     this.router.navigate(["/publications/list"]);
   }
 }

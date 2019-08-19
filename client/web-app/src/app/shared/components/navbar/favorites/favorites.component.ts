@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Favorites } from './favorites';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,7 +32,9 @@ export class FavoritesComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -50,6 +53,7 @@ export class FavoritesComponent implements OnInit {
 
   listAllFavorites() {
     console.log(this.favoritesList);
+    this.router.navigate(["/publications/favorites"]);
   }
 
 }

@@ -17,6 +17,13 @@ export class ResolveUserLogged implements CanActivate {
           return false;
       }
     }
-} 
+}
+
+export class ResolveUserAvailableForSell implements CanActivate{
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+        
+        return false;
+    }
+}
 
 

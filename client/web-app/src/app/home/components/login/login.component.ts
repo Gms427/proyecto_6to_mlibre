@@ -41,8 +41,6 @@ export class LoginComponent implements OnInit {
         this.passwordFormControl.hasError("required")
       )
     ) {
-      console.log(`The username is ${this.emailFormControl.value}`);
-      console.log(`The password is ${this.passwordFormControl.value}`);
       let loggedUser = new UserLogin(this.emailFormControl.value, this.passwordFormControl.value);
       this._loginService.Login(loggedUser).subscribe(
         (res) => {

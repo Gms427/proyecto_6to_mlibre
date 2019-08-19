@@ -21,6 +21,5 @@ export class MainComponent implements OnInit {
     }];*/
 
     this.categories = await this._publicationService.getCategories();
-    console.log("Categories desde main", this.categories);
   }
 }

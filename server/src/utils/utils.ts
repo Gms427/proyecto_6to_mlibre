@@ -1,5 +1,6 @@
 import * as Bcrypt from 'bcrypt';
 import { SigninDAL } from '../serverDAL/signinDAL';
+import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
 
 export class Utils {
     public static encriptPassword(pswd: string): string{
@@ -16,13 +17,48 @@ export class Utils {
         }
     }
 
-    public static getUnique(arr: [], prop: string) {
+    public static getUnique(arr: any[], prop: string): any[] {
         const unique = arr
           .map(e => e[prop])
           .map((e, i, final): any => final.indexOf(e) === i && i)
           .filter(e => arr[e]).map<boolean>(e => arr[e]);
       
           return unique;
+    }
+
+    public static validateUserForSell(user: UserUpdate): boolean{
+        if (user.Status && user.Status == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static sendEmail(user: SigninDTO){
+        var nodemailer = require('nodemailer');
+
+        var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: 'nosbeyTeam@gmail.com',
+            pass: 'N0sb3yT3am'
+          },
+        });
+        
+        var mailOptions = {
+          from: 'nosbeyTeam@gmail.com',
+          to: user.Email,
+          subject: 'Confirma tu email',
+          text: 'preciona el boton para confirmar!',
+          html: '<a href="http://localhost:4200">Confirmar</a>'
+        };
+        transporter.sendMail(mailOptions, function(error: any, info:any){
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('Email sent: ' + info.response);
+          }
+        }); 
     }
 
 }
