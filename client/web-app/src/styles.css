@@ -91,3 +91,12 @@ body {
 .ui-panel-images {
     width: 600px;
 }
+
+.mat-card-title {
+    font-weight: 100!important;
+}
+
+.mat-form-field-infix {
+    font-family: 'Roboto', sans-serif!important;
+    font-weight: 100!important;
+}

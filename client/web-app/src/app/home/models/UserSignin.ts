@@ -3,4 +3,5 @@ export class UserSignin {
   Phone: string;
   Email: string;
   Password: string;
+  status: number;
 }

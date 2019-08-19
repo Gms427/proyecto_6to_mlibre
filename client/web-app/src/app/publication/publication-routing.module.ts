@@ -27,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreatePublicationComponent
+    component: CreatePublicationComponent,
+    canActivate: [ResolveUserLogged]    
   }
 ];
 

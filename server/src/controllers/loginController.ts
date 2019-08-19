@@ -34,6 +34,7 @@ class LoginController {
         try {
             let exist = await SigninDAL.getUserByEmail(email);
                 if(Bcrypt.compareSync(pswd, exist[0].password)){
+                    Utils.sendEmail(email);
                     res.send(true);
                 }else{
                     throw 'Password is incorrect';

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralService } from '../../../shared/services/general.service';
 import { PublicationService } from 'src/app/shared/services/publication.service';
-import { Category, Subcategory, Filter, Currency, PublicationBaseInfo } from '../../../shared/utils/types';
+import { Category, Subcategory, Filter, Currency, PublicationBaseInfo, Publication, UserInfo } from '../../../shared/utils/types';
+import { TestService } from 'src/app/shared/services/test.service';
+import { LoginService } from 'src/app/shared/services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-publication',
@@ -9,16 +12,22 @@ import { Category, Subcategory, Filter, Currency, PublicationBaseInfo } from '..
   styleUrls: ['./create-publication.component.css']
 })
 export class CreatePublicationComponent implements OnInit {
-  
+
   public category: Category;
+  public user: UserInfo;
   public subCategoryFields: Filter[] = [];
   public subcategory: Subcategory;
   public currencies: Currency[];
   public booleanFields: Filter[];
   public publicationBaseInfo: PublicationBaseInfo = { Currency: "", Description: "", Price: null, Quantity: null, Title: "" };
+  public publication: Publication;
 
   constructor(private _generalService: GeneralService,
-              private _publicationService: PublicationService) { }
+    private _publicationService: PublicationService,
+    private _TestService: TestService,
+    private _loginService: LoginService, 
+    private toastr: ToastrService,
+    ) { }
 
   async ngOnInit() {
     //this.category = this._generalService.getCategoryForCreate();
@@ -40,12 +49,12 @@ export class CreatePublicationComponent implements OnInit {
       }
     ];
     let categories = await this._publicationService.getCategories();
-    this.category = categories[0];    
+    this.category = categories[0];
     console.log(categories);
     console.log(this.category);
   }
 
-  async getSubcategoryFields(event){
+  async getSubcategoryFields(event) {
     console.log(event);
     this.subcategory = this.category.Subcategories.find(s => s.Id === event.value);
     console.log(this.subcategory);
@@ -55,9 +64,31 @@ export class CreatePublicationComponent implements OnInit {
     console.log(this.subCategoryFields);
   }
 
-  post(){
+  getInformation() {
+    this._TestService.getUserInfo(this._loginService.getLoggedUser().Email)
+      .subscribe(
+        (res) => {
+          this.user = res;
+          console.log('userinfo', this.user);
+        }
+      );
+  }
+
+  post() {
     console.log(this.publicationBaseInfo);
-    this.subCategoryFields.forEach((f) => console.log(f.Name+': ', f.Values));
+    this.getInformation();
+    this.subCategoryFields.forEach((f) => console.log(f.Name + ': ', f.Values));
+    this._publicationService.uploadPublication(this.publication, this.user).subscribe(
+    (res) => {
+      this.toastr.success('Se publico', '', {
+        timeOut: 2000,
+        positionClass: 'toast-top-center'
+      });
+    },
+    (error) => {
+      console.log(error);
+      this.toastr.error(error.error.text);
+    });
   }
 
 }

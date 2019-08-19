@@ -6,7 +6,6 @@ import { Utils, ErrorCodes } from '../utils/utils';
 class SigninController {
     async signin(req: Request, res: Response){
         let user: SigninDTO = req.body;
-        
         try {
             let exist = await SigninDAL.getUserByEmail(user.Email);
             if(exist.length > 0){
@@ -15,6 +14,8 @@ class SigninController {
                 user.Password = Utils.encriptPassword(user.Password);
                 // TODO: validaciones que se hacen del lado del cliente
                 SigninDAL.Signin(user);
+                console.log("Pase el registro")
+                Utils.sendEmail(user);
             }
         } catch (error) {
             res.send(error);

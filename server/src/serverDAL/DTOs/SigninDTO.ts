@@ -3,7 +3,6 @@ export interface SigninDTO{
     Phone: string;
     Email: string;
     Password: string;
-    Status: number;  
 }
 
 export interface UserUpdate{
@@ -12,7 +11,7 @@ export interface UserUpdate{
     Email: string,
     DateOfBirth: Date,
     Phone: string,
-    Status: boolean,
+    Status: number,
     Departament: string,
     City: string,
     Street: string,

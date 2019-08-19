@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Category, Publication, Filter } from '../utils/types';
 import { LoginService } from './login.service';
+import { UserUpdate } from '../../../../../../server/src/serverDAL/DTOs/SigninDTO';
+
 
 @Injectable({
   providedIn: 'root'
@@ -57,5 +59,9 @@ export class PublicationService {
     return await this.http.get(`${this.baseUrl}/history/${emailCurrentUser}`)
       .toPromise()
       .then((r: Publication[]) => r);
+  }
+
+  uploadPublication(publication: Publication, user: UserUpdate){
+    return this.http.post(`${this.baseUrl}/product`, { publication: publication, user: user });
   }
 }
