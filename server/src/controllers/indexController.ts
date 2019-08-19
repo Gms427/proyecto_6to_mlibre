@@ -22,9 +22,28 @@ class IndexController {
         res.sendFile(path.join(__dirname, '../../../client/web-app/dist/web-app/index.html'));
     }
 
-	getProducts(req: Request, res: Response){
-        res.send(publications);
-	}
+	async getProducts(req: Request, res: Response){
+        let products = await TestDAL.GetProducts(req.params.search);
+        
+        let idProducts = products.map(p => p.id_product);
+        let imgs = await TestDAL.GetProductsImgs(idProducts);
+
+        let finalProducts = products.map(p => {
+            let images = imgs.filter(i => i.id_product == p.id_product);
+
+            return {
+                Id: p.id_product,
+                Name: p.name,
+                Price: p.price,
+                State: p.status,
+                Shipping: false,
+                Favorite: false,
+                Imgs: images
+            }
+        });
+        //res.send(publications);
+        res.send(finalProducts);
+    }
 
 	createProduct(){
 	
@@ -133,7 +152,7 @@ class IndexController {
     async getSubcategoryFields(req: Request, res: Response): Promise<void>{
         let idSubcategory = req.params.idSubcategory;
         let idCategory = req.params.idCategory
-        let result = await TestDAL.getSubcategoryFields(idSubcategory, idCategory);
+        let result = await TestDAL.GetSubcategoryFields(idSubcategory, idCategory);
         console.log(result);
 
         let fieldsWithDefaultValues = result.filter(f => f.filter_type === 'SELECTIONABLE_LIST' || f.filter_type === 'OPTIONS_LIST')
@@ -141,7 +160,7 @@ class IndexController {
         
         let defaultValues: any[] | never[] = [];
         if(fieldsWithDefaultValues.length > 0){
-            defaultValues = await TestDAL.getFilterValues(fieldsWithDefaultValues);
+            defaultValues = await TestDAL.GetFilterValues(fieldsWithDefaultValues);
         }
         
         console.log("fieldsWithDefaultValues", defaultValues);
@@ -167,7 +186,7 @@ class IndexController {
     }
 
     async getUserInfo(req: Request, res: Response){        
-        let queryResult = await TestDAL.getUserInfo(req.params.email);
+        let queryResult = await TestDAL.GetUserInfo(req.params.email);
         let user: User = {
             Id: queryResult.id_user,
             FullName: queryResult.full_name,
@@ -181,6 +200,57 @@ class IndexController {
             Street: queryResult.street
         }
         res.send(user);
+    }
+
+    async getHistory(req: Request, res: Response){
+        let history = await TestDAL.GetUserHistory(req.params.email);
+        let idsProducts = history.map(h => h.id_product);
+        console.log(history);
+        let imgs = await TestDAL.GetProductsImgs(idsProducts);
+
+        let finalHistory = history.map(p => {
+            let images = imgs.filter(i => i.id_product == p.id_product);
+
+            return {
+                Id: p.id_product,
+                Name: p.name,
+                Price: p.price,
+                State: p.status,
+                Shipping: false,
+                Favorite: false,
+                Date: p.date_of_visit,
+                Currency: p.currency,
+                Imgs: images,
+            }
+        });
+        //console.log(finalHistory);
+
+        res.send(finalHistory);
+    }
+
+    async getAllProducts(req: Request, res: Response){
+        let products = await TestDAL.GetAllProducts();
+        let idsProducts = products.map(h => h.id_product);
+
+        let imgs = await TestDAL.GetProductsImgs(idsProducts);
+
+        let finalProducts = products.map(p => {
+            let images = imgs.filter(i => i.id_product == p.id_product);
+
+            return {
+                Id: p.id_product,
+                Name: p.name,
+                Price: p.price,
+                State: p.status,
+                Shipping: false,
+                Favorite: false,
+                Date: p.date_of_visit,
+                Currency: p.currency,
+                Imgs: images,
+            }
+        });
+
+        res.send(finalProducts);
     }
 }
 

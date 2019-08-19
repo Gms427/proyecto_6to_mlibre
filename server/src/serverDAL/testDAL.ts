@@ -43,7 +43,7 @@ export class TestDAL {
         return result.rows;
     }
 
-    static async getSubcategoryFields(idSubcategory: number, idCategory: number): Promise<QueryResult["rows"]>{
+    static async GetSubcategoryFields(idSubcategory: number, idCategory: number): Promise<QueryResult["rows"]>{
         let query = `select	fl.id_filter,
                             fl.is_generic,
                             fl.filter_name,
@@ -57,7 +57,7 @@ export class TestDAL {
         return result.rows;
     }
 
-    static async getFilterValues(idsFilters: number[]): Promise<QueryResult["rows"]>{
+    static async GetFilterValues(idsFilters: number[]): Promise<QueryResult["rows"]>{
         let query = `select
                         fl.id_filter,
                         fl.is_generic,
@@ -73,10 +73,51 @@ export class TestDAL {
         return result.rows;
     }
 
-    static async getUserInfo(userEmail: string){
+    static async GetUserInfo(userEmail: string){
         let query = `select * from users where email = '${userEmail}'`;
         let result = await PgClient.query(query);
         return result.rows[0];
+    }
+
+    static async GetProducts(searchValue: string): Promise<QueryResult["rows"]>{
+        let query = `SELECT * FROM product WHERE name ~* '${searchValue}';`;
+        let result = await PgClient.query(query);
+        return result.rows;
+    }
+
+    static async GetProductsImgs(idsProducts: number[]): Promise<QueryResult["rows"]>{
+        let query = `SELECT * FROM product_img WHERE id_product in (${idsProducts})`;
+        let result = await PgClient.query(query);
+        return result.rows;
+    }
+
+    static async GetUserHistory(email: string): Promise<QueryResult["rows"]>{
+        let query = `select 	pr.id_product,
+                            pr.id_user,
+                            pr.price,
+                            pr.currency,
+                            pr.description,
+                            pr.category,
+                            pr.subcategory,
+                            pr.name,
+                            pr.stock,
+                            pr.warranty,
+                            pr.status,
+                            his.date_of_visit
+                    from product pr
+                    inner join history his
+                        on pr.id_product = his.id_product
+                    inner join users us
+                        on pr.id_user = us.id_user
+                    where us.email = '${email}';`
+        let result = await PgClient.query(query);
+        return result.rows;
+    }
+
+    static async GetAllProducts(): Promise<QueryResult["rows"]>{
+        let query = `select * from product where status = 1;`;
+        let result = await PgClient.query(query);
+        return result.rows;
     }
 }
 

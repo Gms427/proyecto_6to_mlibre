@@ -12,7 +12,8 @@ export interface Publication{
     State: boolean,
     Shipping: boolean,
     Favorite: boolean,
-    Img: string
+    Currency: string,
+    Imgs: string[]
 }
 
 export interface Subcategory{
