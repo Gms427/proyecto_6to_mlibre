@@ -29,9 +29,9 @@ export class UserHistoryComponent implements OnInit {
     });
   }
 
-  deleteItem(IdPublication: number){
+  deleteItem(IdPublication: number) {
     this.history.forEach((p: Publication, i: number, a: Publication[]) => {
-      if(p.Id === IdPublication){
+      if (p.Id === IdPublication) {
         a.splice(i, 1);
       }
     });

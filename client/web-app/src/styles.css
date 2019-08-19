@@ -12,7 +12,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: 'Roboto', "Helvetica Neue", sans-serif!important;
     font-weight: 100!important
 }
@@ -99,4 +101,11 @@ body {
 .mat-form-field-infix {
     font-family: 'Roboto', sans-serif!important;
     font-weight: 100!important;
+}
+
+.inline {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
 }
