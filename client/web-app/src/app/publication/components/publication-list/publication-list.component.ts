@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { SearchService } from 'src/app/shared/services/search.service';
 import {PublicationList} from '../../models/publicationList'
 import { GeneralService } from 'src/app/shared/services/general.service';
-import { Filter, Category, Subcategory } from 'src/app/shared/utils/types';
+import { Filter, Category, Subcategory, Currencies } from 'src/app/shared/utils/types';
 import { PublicationService } from 'src/app/shared/services/publication.service';
 
 
@@ -14,6 +14,9 @@ import { PublicationService } from 'src/app/shared/services/publication.service'
   styleUrls: ['./publication-list.component.css']
 })
 export class PublicationListComponent implements OnInit{
+
+  public currenciesEnum = Currencies
+  
   public search: string;
   filtersInfo: Filter[];
   public categorySearched: Category;
@@ -75,6 +78,7 @@ export class PublicationListComponent implements OnInit{
     }else{
       this.Publications = await this._publicationService.getAllProducts();
     }
+    console.log(this.Publications);
     this._searchService.search.subscribe(value => { this.search = value; });
     this.categorySearched = this._searchService.getCategorySearched();
     this.subcategorySearched = this._searchService.getSubcategorySearched();

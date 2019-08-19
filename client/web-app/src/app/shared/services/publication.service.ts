@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category, Publication, Filter } from '../utils/types';
+import { Category, Publication, Filter, PublicationBaseInfo } from '../utils/types';
 import { LoginService } from './login.service';
 import { UserUpdate } from '../../../../../../server/src/serverDAL/DTOs/SigninDTO';
 
@@ -61,7 +61,7 @@ export class PublicationService {
       .then((r: Publication[]) => r);
   }
 
-  uploadPublication(publication: Publication, user: UserUpdate){
+  uploadPublication(publication: PublicationBaseInfo, user: UserUpdate){
     return this.http.post(`${this.baseUrl}/product`, { publication: publication, user: user });
   }
 }

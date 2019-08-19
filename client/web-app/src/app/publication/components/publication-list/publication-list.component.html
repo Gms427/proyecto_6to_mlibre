@@ -37,13 +37,26 @@
       <a *ngFor="let product of Publications">
         <mat-card class="publication-card mat-elevation-z">
           <mat-card-content>
-            <img class="modeless-box-img" [attr.src]="product.Imgs[0].image" />
+            <img class="modeless-box-img" *ngIf="product.Imgs[0]" [attr.src]="product.Imgs[0].image" />
             <mat-card-title
               class="publication-name"
               (click)="navegateToProduct(product)"
               >{{ product.Name }}</mat-card-title
             >
-            <mat-card-subtitle>{{ product.Price }} {{product.Currency}}</mat-card-subtitle>
+            <mat-card-subtitle [ngSwitch]="product.Currency">
+              
+              <span *ngSwitchCase="currenciesEnum.USD">
+                  $USD {{ product.Price }} 
+              </span>
+
+              <span *ngSwitchCase="currenciesEnum.UYU">
+                  $UYU {{ product.Price }} 
+              </span>
+
+              <span *ngSwitchCase="currenciesEnum.EUR">
+                  €EUR {{ product.Price }} 
+              </span>
+            </mat-card-subtitle>
             <mat-card-subtitle
               class="subtitle-green"
               *ngIf="product.Shipping"

@@ -7,7 +7,7 @@ export interface Category{
 
 export interface Publication{
     Id: number,
-    Name: string,
+    Title: string,
     Price: string,
     Status: number,
     Shipping: boolean,

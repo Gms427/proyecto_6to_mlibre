@@ -46,10 +46,6 @@ class IndexController {
         res.send(finalProducts);
     }
 
-	createProduct(){
-	
-    }
-
     getProduct(req: Request, res: Response) {
 
         const list = [
@@ -257,7 +253,8 @@ class IndexController {
     async uploadPublication(req: Request, res: Response) {
         let user: UserUpdate = req.body.user;
         let publication: Publication = req.body.publication;
-
+        console.log(user);
+        console.log(publication);
         try {
             let userAuth = Utils.validateUserForSell(user);
             console.log('userauth', userAuth);
@@ -268,7 +265,7 @@ class IndexController {
             }
         } catch (error) {
             res.send(error);
-        } 
+        }
         res.send();
     }
 }

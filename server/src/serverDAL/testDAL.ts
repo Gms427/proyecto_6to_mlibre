@@ -124,7 +124,6 @@ export class TestDAL {
 
     static async uploadPublication(publication: Publication, user: UserUpdate){
         let query = `INSERT INTO PRODUCT (
-            ID_PRODUCT,
             ID_USER, 
             PRICE, 
             CURRENCY, 
@@ -132,22 +131,20 @@ export class TestDAL {
             CATEGORY, 
             SUBCATEGORY,
             NAME, 
-            STOCK, 
-            WARRANTY, 
+            STOCK,
             STATUS
-            ) VALUES('
-            ${publication.Id}',
-            ${user.Id}',
-            ${publication.Price}',
-            ${publication.Currency}',
-            ${publication.Description}',
-            ${publication.Category}',
-            ${publication.Subcategory}',
-            ${publication.Name}',
-            ${publication.Stock}',
-            ${publication.Warranty}',
-            ${publication.Status}',
+            ) VALUES(
+            '${user.Id}',
+            '${publication.Price}',
+            '${publication.Currency}',
+            '${publication.Description}',
+            '${publication.Category}',
+            '${publication.Subcategory}',
+            '${publication.Title}',
+            '${publication.Stock}',
+            1
             )`;
+        console.log('query', query);
         let result = await PgClient.query(query);
         return result.rows[0];
     }

@@ -17,7 +17,6 @@ class IndexRoutes {
         this.router.get('/main', indexController.main);
         this.router.get('/getProducts/:search', indexController.getProducts);
         this.router.get('/getProducts', indexController.getAllProducts);
-        this.router.post('/product', indexController.createProduct);
         this.router.get('/product/:id', indexController.getProduct);
         this.router.post('/signin', signinController.signin);
         this.router.get('/signin', signinController.t);
