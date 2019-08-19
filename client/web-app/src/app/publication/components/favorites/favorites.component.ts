@@ -18,7 +18,7 @@ export class FavoritesComponent implements OnInit {
   public favoritesList: Publication[] = [];
 
   async ngOnInit() {
-    this.favoritesList = await this._publicationService.getProducts();
+    this.favoritesList = await this._publicationService.getAllProducts();
   }
 
   deleteItem(IdPublication: number) {
