@@ -18,13 +18,11 @@ export class LoginService {
 
   Login(user: UserLogin) {
     return this.http.post(`${this.baseUrl}/login`, user);
-    console.log("login work");
     this.loggedUser = user;
     this.login.next(true);
   }
 
   Logout() {
-    console.log("logout work");
     this.loggedUser = new UserLogin("", "");
     this.login.next(false);
   }
@@ -35,6 +33,10 @@ export class LoginService {
 
   setLoggedUser(value: UserLogin){
     this.loggedUser = value;
+  }
+
+  checkPassword(user: UserLogin){
+    return this.http.post(`${this.baseUrl}/checkPassword`, user);    
   }
 
 }

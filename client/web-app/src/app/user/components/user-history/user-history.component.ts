@@ -18,7 +18,7 @@ export class UserHistoryComponent implements OnInit {
               private router: Router) { }
 
   async ngOnInit() {
-    this.history = await this._publicationService.getProducts();
+    this.history = await this._publicationService.getHistory();
   }
 
   deleteHistory(){
@@ -29,11 +29,9 @@ export class UserHistoryComponent implements OnInit {
     });
   }
 
-  deleteItem(IdPublication: number){
-    console.log(IdPublication);
-    
+  deleteItem(IdPublication: number) {
     this.history.forEach((p: Publication, i: number, a: Publication[]) => {
-      if(p.Id === IdPublication){
+      if (p.Id === IdPublication) {
         a.splice(i, 1);
       }
     });

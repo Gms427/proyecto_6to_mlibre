@@ -14,8 +14,6 @@ class LoginController {
         try {
             let exist = await SigninDAL.getUserByEmail(email);
             if(exist.length > 0){
-                console.log('email is registred');
-                console.log(Bcrypt.compareSync(pswd, exist[0].password));
                 if(Bcrypt.compareSync(pswd, exist[0].password)){
                     res.send(true);
                 }else{
@@ -28,7 +26,22 @@ class LoginController {
         } catch (error) {
             res.send(error);
         }
-        
+    }
+
+    async checkPassword(req: Request, res: Response){
+        let email = req.body.Email;
+        let pswd = req.body.Password;
+        try {
+            let exist = await SigninDAL.getUserByEmail(email);
+                if(Bcrypt.compareSync(pswd, exist[0].password)){
+                    Utils.sendEmail(email);
+                    res.send(true);
+                }else{
+                    throw 'Password is incorrect';
+                }
+        } catch (error) {
+            res.send(error);
+        }
     }
     
 }

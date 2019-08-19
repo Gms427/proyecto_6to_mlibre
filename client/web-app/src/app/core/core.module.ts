@@ -10,6 +10,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MenubarModule } from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { GalleriaModule } from 'primeng/galleria';
+
 
 
 // Form Controls
@@ -113,6 +116,9 @@ import { ToastrModule } from 'ngx-toastr';
     MenubarModule,
     InputTextModule,
     ButtonModule,
+    DialogModule,
+    GalleriaModule,
+    
     // Internacionalización
     TranslateModule,
     // Toast 
@@ -162,7 +168,9 @@ import { ToastrModule } from 'ngx-toastr';
     // Primeng Menu
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule,
+    GalleriaModule,
   ],
   providers: []
 })

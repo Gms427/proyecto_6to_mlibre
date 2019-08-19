@@ -1,4 +1,4 @@
-export interface UserInfo{
+/*export interface UserInfo{
     Id: number,
     Name: string,
     Email: string,
@@ -9,6 +9,19 @@ export interface UserInfo{
     Street: string,
     RatingPromedy: number,
     Publications: number[]
+}*/
+
+export interface UserInfo {
+    Id: number,
+    FullName: string,
+    Email: string,
+    DateOfBirth: Date,
+    Phone: string,
+    Status: number,
+    Departament: string,
+    City: string,
+    Street: string,
+    Neighborhood: string
 }
 
 /*export interface Publication{
@@ -74,5 +87,13 @@ export interface PublicationBaseInfo{
     Description: string,
     Price: string,
     Currency: string,
-    Quantity: number
+    Stock: number,
+    Category: number,
+    Subcategory: number
+}
+
+export enum Currencies {
+    USD = 1,
+    UYU = 2,
+    EUR = 3
 }

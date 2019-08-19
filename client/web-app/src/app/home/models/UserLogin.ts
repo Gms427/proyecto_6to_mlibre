@@ -1,5 +1,5 @@
-export class UserLogin {
 
+export class UserLogin {
     Email: string;
     Password: string;
     
