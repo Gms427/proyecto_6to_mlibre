@@ -248,4 +248,3 @@ client/web-app/node_modules
 server/node_modules
 server/build
 client/web-app/.vs
-client/web-app/.vscode/
