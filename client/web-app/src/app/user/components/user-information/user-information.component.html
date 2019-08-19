@@ -56,7 +56,7 @@
         <div class="inline">
             <h4>Celular:</h4>
             <mat-form-field class="md">
-                <input #phone id="phone" matInput #phone maxlength="9" placeholder="Celular" [(ngModel)]="user.Phone" [disabled]="!statePhone" value="{{user.Phone}}">
+                <input #phone id="phone" type="number" matInput #phone maxlength="9" placeholder="Celular" [(ngModel)]="user.Phone" [disabled]="!statePhone" value="{{user.Phone}}">
                 <mat-hint align="end">{{phone.value.length}} / 9</mat-hint>
             </mat-form-field>
             <mat-checkbox color="primary" [(ngModel)]="statePhone" [checked]="statePhone.disabled" (change)="editField(phone)">
@@ -69,7 +69,9 @@
         <div class="inline">
             <h4>Fecha de nacimiento</h4>
             <mat-form-field class="md">
-                <input #dateOfBirth  id="dateOfBirth" matInput placeholder="Fecha de nacimiento" [(ngModel)]="user.DateOfBirth" [disabled]="!stateDateOfBirth" value="{{user.DateOfBirth}}">
+                <input #dateOfBirth id="dateOfBirth" [matDatepicker]="picker" matInput placeholder="Fecha de nacimiento" [(ngModel)]="user.DateOfBirth" [disabled]="!stateDateOfBirth" [value]="user.DateOfBirth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <mat-checkbox color="primary" [(ngModel)]="stateDateOfBirth" [checked]="stateDateOfBirth.disabled" (change)="editField(dateOfBirth)">
             </mat-checkbox>
