@@ -54,12 +54,15 @@ body {
     color: white!important;
     font-family: 'Roboto', sans-serif!important;
     font-weight: lighter!important;
+    border-radius: 20px!important;
+    box-shadow: 3px 3px 5px 0 rgba(0,0,0,.1)!important;    
 }
 
 .btn-transparent {
     color: #5294e2 !important;
     font-family: 'Roboto', sans-serif!important;
     font-weight: lighter!important;
+    border-radius: 20px!important;    
 }
 
 .subtitle-green {
@@ -88,6 +91,7 @@ body {
 .mat-button {
     font-family: 'Roboto', sans-serif!important;
     font-weight: 100!important;
+    border-radius: 20px!important;
 }
 
 .ui-panel-images {
@@ -108,4 +112,12 @@ body {
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+}
+
+.navbar .searcher{
+    font-size: 20px!important;
+}
+
+.navbar .search i {
+    font-size: 26px!important;
 }

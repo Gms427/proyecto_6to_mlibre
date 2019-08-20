@@ -1,7 +1,6 @@
 <div class="navbar" [ngStyle]="{ 'background-color': navbarColor }">
     <!-- <div class="section-up container">
         <img class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logoBlanco.png" />
-        <app-search *ngIf="searchNadvar"></app-search>
         <button style="visibility: hidden"></button>
     </div> -->
     <div class="section-down container">
@@ -29,6 +28,7 @@
             </div>
         </div> -->
         <i size="2x" class="fas fa-bars" (click)="test()"></i>
+        <app-search *ngIf="searchNadvar"></app-search>
         <div class="navbar-section-options">
             <div class="modules" *ngIf="flag && logged">
                 <div class="item">

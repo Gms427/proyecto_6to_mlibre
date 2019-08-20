@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    align-items: center;
 }
 
 .section-down i {
@@ -43,7 +44,7 @@
 
 .modules {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .options {
@@ -113,3 +114,4 @@
   .fas.fa-bars{
     cursor: pointer;
   }
+  
