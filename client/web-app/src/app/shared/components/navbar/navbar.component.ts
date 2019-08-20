@@ -3,6 +3,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { LoginService } from "../../services/login.service";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { NavbarService } from "src/app/shared/services/navbar.service";
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: "app-navbar",
@@ -15,6 +16,8 @@ export class NavbarComponent implements OnInit {
   public navbarColor: string;
   public flag: boolean;
   public searchNadvar: boolean;
+
+  @ViewChild("sidenav") sideNav: MatSidenav;
 
   constructor(
     public _loginService: LoginService,
@@ -37,5 +40,10 @@ export class NavbarComponent implements OnInit {
     this._navbarService.searcherInNavdar$.subscribe(res => {
       this.searchNadvar = res;
     });
+  }
+
+  test(){
+    console.log('toggle sidenav');
+    this.sideNav.toggle();
   }
 }
