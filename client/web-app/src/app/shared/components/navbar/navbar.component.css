@@ -1,6 +1,6 @@
 .navbar {
-    min-height: 100px;
-    background-color: rgba(0, 0, 0, 0.5);
+    min-height: auto;
+    background-color: transparent;
     color: white;
     position: relative;
     z-index: 2;
@@ -16,11 +16,14 @@
 }
 
 .section-down {
-    height: auto;
+    height: 76px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+    padding: 20px;
+}
+
+.section-down i {
+    font-size: 26px;
 }
 
 .logo {
@@ -40,10 +43,12 @@
 
 .modules {
     display: flex;
+    flex-direction: column;
 }
 
 .options {
-    font-size: 20px
+    border-radius: 20px;
+    padding: 0 30px;
 }
 
 .navbar-section-navegation button:hover {

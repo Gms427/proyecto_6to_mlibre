@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     this.changeNavbar();
     this.searcherNavbar();
     if (this.router.url === "/home/main") {
-      this._navbarService.UpdateNavbarColor("rgba(0,0,0,0.4)");
+      this._navbarService.UpdateNavbarColor("#FFC244");
     } else {
       this._navbarService.UpdateNavbarColor("#303641");
     }

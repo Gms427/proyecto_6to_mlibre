@@ -1,11 +1,11 @@
 <div class="navbar" [ngStyle]="{ 'background-color': navbarColor }">
-    <div class="section-up container">
+    <!-- <div class="section-up container">
         <img class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/logoBlanco.png" />
         <app-search *ngIf="searchNadvar"></app-search>
         <button style="visibility: hidden"></button>
-    </div>
+    </div> -->
     <div class="section-down container">
-        <app-categories-menu *ngIf="flag"></app-categories-menu>
+        <!-- <app-categories-menu *ngIf="flag"></app-categories-menu>
         <div class="navbar-section-navegation" *ngIf="flag">
             <div class="item">
                 <button mat-button routerLink="/publications/new">
@@ -27,7 +27,8 @@
             <span>{{ "OffersWeek" | translate }}</span>
           </button>
             </div>
-        </div>
+        </div> -->
+        <i size="2x" class="fas fa-bars"></i>
         <div class="navbar-section-options">
             <div class="modules" *ngIf="flag && logged">
                 <div class="item">
@@ -42,9 +43,9 @@
             </div>
             <div class="modules" *ngIf="flag && !logged">
                 <div class="item">
-                    <button mat-button class="options" matTooltip="{{ 'Login' | translate }}" routerLink="/home/login">
-              <i class="fas fa-sign-in-alt"></i>
-            </button>
+                    <button mat-button class="options btn-primary" matTooltip="{{ 'Login' | translate }}" routerLink="/home/login">
+                    Login
+                    </button>
                 </div>
             </div>
         </div>
