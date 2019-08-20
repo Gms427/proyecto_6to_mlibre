@@ -16,6 +16,7 @@ export class NavbarComponent implements OnInit {
   public navbarColor: string;
   public flag: boolean;
   public searchNadvar: boolean;
+  public width = 6;
 
   @ViewChild("sidenav") sideNav: MatSidenav;
 
@@ -44,6 +45,13 @@ export class NavbarComponent implements OnInit {
 
   test(){
     console.log('toggle sidenav');
+    this.width = 300;
     this.sideNav.toggle();
+  }
+
+  close(){
+    setTimeout(() => {
+      this.width = 6;
+    }, 300);
   }
 }
