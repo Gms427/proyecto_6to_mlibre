@@ -7,7 +7,6 @@ import { GeneralService } from 'src/app/shared/services/general.service';
 import { Filter, Category, Subcategory, Currencies } from 'src/app/shared/utils/types';
 import { PublicationService } from 'src/app/shared/services/publication.service';
 
-
 @Component({
   selector: 'app-publication-list',
   templateUrl: './publication-list.component.html',
