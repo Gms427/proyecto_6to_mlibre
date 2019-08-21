@@ -103,9 +103,32 @@ mat-drawer-content {
     cursor: pointer;
 }
 
-  .black{
-      color: black;
-  }
-  .mat-list-item{
+.black {
+    color: black;
+}
+
+.mat-list-item {
     cursor: pointer;
-  }
+}
+
+.fab {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 4;
+    font-size: 30px;
+    color: white;
+    background-color: #5294e2;
+    height: 70px;
+    width: 70px;
+}
+
+.item i {
+    font-size: 40px;
+    margin: 13px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}

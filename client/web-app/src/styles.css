@@ -129,6 +129,11 @@ body {
     src: local('Gotham Light'), url('./assets/fonts/GothamLight.woff') format('woff');
 }
 
-.mat-progress-spinner circle, .mat-spinner circle{
+.mat-progress-spinner circle,
+.mat-spinner circle {
     stroke: #5294e2!important;
-  }
+}
+
+.navbar-section-navegation .mat-button-focus-overlay {
+    background-color: transparent!important;
+}
