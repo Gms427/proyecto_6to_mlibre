@@ -54,46 +54,44 @@
 
 <mat-sidenav-container class="example-container" [style.width]="width + '%'" (backdropClick)="close()">
     <mat-sidenav #sidenav mode="over" class="sidenav">
-        <mat-list>
-            <div class="navbar-section-navegation">
-                <div class="item">
-                    <i class="fas fa-home"></i>
-                    <button class="btn-sidenav" mat-button routerLink="/home/main">
+        <div class="navbar-section-navegation">
+            <div class="item">
+                <i class="fas fa-home"></i>
+                <button class="btn-sidenav" mat-button routerLink="/home/main" (click)="close()">
                         <span>Inicio</span>
                     </button>
-                </div>
-                <div class="item">
-                    <i class="fas fa-tags"></i>
-                    <button class="btn-sidenav" mat-button routerLink="/publications/new">
+            </div>
+            <div class="item">
+                <i class="fas fa-tags"></i>
+                <button class="btn-sidenav" mat-button routerLink="/publications/new" (click)="close()">
                     <span>{{ "Sell" | translate }}</span>
                   </button>
-                </div>
-                <div class="item">
-                    <i class="fas fa-history"></i>
-                    <button class="btn-sidenav" mat-button routerLink="/user/history">
+            </div>
+            <div class="item">
+                <i class="fas fa-history"></i>
+                <button class="btn-sidenav" mat-button routerLink="/user/history" (click)="close()">
                     <span>{{ "History" | translate }}</span>
                   </button>
-                </div>
-                <div class="item">
-                    <i class="fas fa-certificate"></i>
-                    <button class="btn-sidenav" mat-button routerLink="/home/stores">
+            </div>
+            <div class="item">
+                <i class="fas fa-certificate"></i>
+                <button class="btn-sidenav" mat-button routerLink="/home/stores" (click)="close()">
                     <span>{{ "OfficialStores" | translate }}</span>
                   </button>
-                </div>
-                <div class="item">
-                    <i class="fas fa-search-dollar"></i>
-                    <button class="btn-sidenav" mat-button>
+            </div>
+            <div class="item">
+                <i class="fas fa-search-dollar"></i>
+                <button class="btn-sidenav" mat-button (click)="close()">
                     <span>{{ "OffersWeek" | translate }}</span>
                   </button>
-                </div>
-                <div class="item">
-                    <i class="fas fa-gift"></i>
-                    <button class="btn-sidenav" mat-button>
+            </div>
+            <div class="item">
+                <i class="fas fa-gift"></i>
+                <button class="btn-sidenav" mat-button>
                         <span>Invita y gana</span>
                       </button>
-                </div>
             </div>
-        </mat-list>
+        </div>
     </mat-sidenav>
 </mat-sidenav-container>
 <button mat-fab class="fab" (click)="openBottomSheet()">

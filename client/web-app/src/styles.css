@@ -129,6 +129,6 @@ body {
     src: local('Gotham Light'), url('./assets/fonts/GothamLight.woff') format('woff');
 }
 
-.navbar-section-navegation .mat-button-focus-overlay {
-    background-color: transparent!important;
-}
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #5294e2!important;
+  }

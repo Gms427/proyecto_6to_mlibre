@@ -56,6 +56,7 @@ export class NavbarComponent implements OnInit {
   }
 
   close(){
+    this.sideNav.toggle();
     setTimeout(() => {
       this.width = 1;
     }, 300);

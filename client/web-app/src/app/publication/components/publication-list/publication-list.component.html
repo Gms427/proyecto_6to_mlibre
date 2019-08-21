@@ -31,7 +31,7 @@
 
     </mat-list>
   </div>
-  <mat-spinner class="spinner" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  <mat-spinner class="spinner" style="stroke: #5294e2;" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   <div class="list" [style.display]="!showSpinner ? 'block' : 'none'">
     <mat-list>
       <a *ngFor="let product of Publications">
