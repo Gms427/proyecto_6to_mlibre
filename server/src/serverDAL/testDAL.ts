@@ -40,7 +40,7 @@ export class TestDAL {
                         scat.id_subcategory as IdSubcategory
                     from category cat inner join subcategory scat
                         on cat.id_category = scat.id_category
-                    where cat.id_category <> 0
+                    where cat.id_category in (1,2,3,4)
                     order by cat.id_category;`;
         let result = await PgClient.query(query);
         return result.rows;
