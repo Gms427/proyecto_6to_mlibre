@@ -87,5 +87,13 @@ export interface PublicationBaseInfo{
     Description: string,
     Price: string,
     Currency: string,
-    Quantity: number
+    Stock: number,
+    Category: number,
+    Subcategory: number
+}
+
+export enum Currencies {
+    USD = 1,
+    UYU = 2,
+    EUR = 3
 }

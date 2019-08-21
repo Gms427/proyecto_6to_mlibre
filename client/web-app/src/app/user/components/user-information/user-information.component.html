@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="user">
     <h2>Mis datos</h2>
     <mat-card *ngIf="user.Status == 2" class="discontinued inline">
         <p>Estas suspendido para vender</p>

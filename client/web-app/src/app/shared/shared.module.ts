@@ -11,16 +11,18 @@ import { NotificationsComponent } from './components/navbar/notifications/notifi
 import { ResolveUserLogged } from './utils/guards';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
+import { HelpComponent } from './components/help/help.component';
 
 @NgModule({
-  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent, FooterComponent, CategoriesMenuComponent],
+  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent, FooterComponent, CategoriesMenuComponent, HelpComponent],
   imports: [
     CommonModule,
     CoreModule,
     RouterModule,
     TranslateModule
   ],
-  exports: [NavbarComponent, SearchComponent, FooterComponent, CategoriesMenuComponent],
-  providers: [ResolveUserLogged]
+  exports: [NavbarComponent, SearchComponent, FooterComponent, CategoriesMenuComponent, HelpComponent],
+  providers: [ResolveUserLogged],
+  entryComponents: [HelpComponent]
 })
 export class SharedModule { }

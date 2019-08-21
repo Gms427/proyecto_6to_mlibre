@@ -1,19 +1,17 @@
 <div class="top-section">
-    <h2 class="title-categorie-selection">¡Hola! Antes que nada cuéntanos,
-        ¿qué vas a publicar?</h2>
+    <h2 class="title-categorie-selection">¡Hola! Antes que nada cuéntanos, ¿qué vas a publicar?</h2>
 </div>
 
 <div class="container-popular-categories">
-  <div class="container-card" *ngFor="let category of categories">
-    <mat-card class="favorites-card mat-elevation-z transparent text-center" (click)="navigateToCreate(category)">
-      <mat-card-content>
-          <i class="{{category.Icon}}"></i>
-      </mat-card-content>
-      <hr>
-      <mat-card-subtitle>
-        {{ category.Name }}
-      </mat-card-subtitle>
-    </mat-card>
-  </div>
+    <div class="container-card" *ngFor="let category of categories">
+        <mat-card class="favorites-card mat-elevation-z transparent text-center" (click)="navigateToCreate(category)">
+            <mat-card-content>
+                <img src="{{category.Icon}}" />
+            </mat-card-content>
+            <mat-card-subtitle>
+                {{ category.Name }}
+            </mat-card-subtitle>
+        </mat-card>
+    </div>
 </div>
 <!--<i class="fas fa-car"></i>-->

@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { } from 'googlemaps';
 import { TranslateService } from "@ngx-translate/core";
 import { Router } from "@angular/router";
 import { TestService } from "./shared/services/test.service";
@@ -11,7 +12,9 @@ import { NavbarService } from "src/app/shared/services/navbar.service";
 })
 export class AppComponent implements OnInit {
   title = "web-app";
-
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  
   constructor(
     private translate: TranslateService,
     private router: Router,
@@ -30,9 +33,9 @@ export class AppComponent implements OnInit {
     this.changeNavbar();
     this.searcherNavbar();
     if (this.router.url === "/home/main") {
-      this._navbarService.UpdateNavbarColor("rgba(0,0,0,0.4)");
+      this._navbarService.UpdateNavbarColor("#FFC244");
     } else {
-      this._navbarService.UpdateNavbarColor("#303641");
+      this._navbarService.UpdateNavbarColor("#FFC244");
     }
   }
 

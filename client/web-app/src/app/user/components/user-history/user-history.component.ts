@@ -18,7 +18,7 @@ export class UserHistoryComponent implements OnInit {
               private router: Router) { }
 
   async ngOnInit() {
-    this.history = await this._publicationService.getProducts();
+    this.history = await this._publicationService.getHistory();
   }
 
   deleteHistory(){

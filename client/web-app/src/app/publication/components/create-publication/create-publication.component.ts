@@ -12,14 +12,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./create-publication.component.css']
 })
 export class CreatePublicationComponent implements OnInit {
-
   public category: Category;
   public user: UserInfo;
   public subCategoryFields: Filter[] = [];
   public subcategory: Subcategory;
   public currencies: Currency[];
   public booleanFields: Filter[];
-  public publicationBaseInfo: PublicationBaseInfo = { Currency: "", Description: "", Price: null, Quantity: null, Title: "" };
+  public publicationBaseInfo: PublicationBaseInfo = { Currency: "", Description: "", Price: null, Stock: null, Title: "", Category: null, Subcategory: null };
   public publication: Publication;
 
   constructor(private _generalService: GeneralService,
@@ -50,13 +49,16 @@ export class CreatePublicationComponent implements OnInit {
     ];
     let categories = await this._publicationService.getCategories();
     this.category = categories[0];
+    this.publicationBaseInfo.Category = this.category.Id;
     console.log(categories);
     console.log(this.category);
+    this.getInformation();
   }
 
   async getSubcategoryFields(event) {
     console.log(event);
     this.subcategory = this.category.Subcategories.find(s => s.Id === event.value);
+    this.publicationBaseInfo.Subcategory = this.subcategory.Id;
     console.log(this.subcategory);
     this.subCategoryFields = await this._publicationService.getSubcategoryFields(event.value, this.category.Id);
     this.booleanFields = this.subCategoryFields.filter(f => f.Type === "BOOLEAN");
@@ -76,9 +78,8 @@ export class CreatePublicationComponent implements OnInit {
 
   post() {
     console.log(this.publicationBaseInfo);
-    this.getInformation();
     this.subCategoryFields.forEach((f) => console.log(f.Name + ': ', f.Values));
-    this._publicationService.uploadPublication(this.publication, this.user).subscribe(
+    this._publicationService.uploadPublication(this.publicationBaseInfo, this.user).subscribe(
     (res) => {
       this.toastr.success('Se publico', '', {
         timeOut: 2000,

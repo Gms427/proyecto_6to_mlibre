@@ -14,6 +14,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { LoginService } from './shared/services/login.service';
 
+import { AgmCoreModule } from '@agm/core';
+
 export function createTranslateLoader(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -35,6 +37,9 @@ export function createTranslateLoader(http: HttpClient){
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCdMrMwZ7-4WJPpIofMsv5o5k47cNPDDrk'
     })
   ],
   providers: [LoginService],
