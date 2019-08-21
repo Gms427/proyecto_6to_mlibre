@@ -37,4 +37,10 @@ export class SearchService {
   setSubcategorySearched(value: Subcategory){
     this.subcategorySearched = value;
   }
+
+  Search(value: string){
+    this.setSearchValue(value);
+    this.search.emit(value);
+  }
+  
 }

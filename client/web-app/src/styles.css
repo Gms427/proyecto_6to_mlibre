@@ -128,3 +128,7 @@ body {
     font-weight: normal;
     src: local('Gotham Light'), url('./assets/fonts/GothamLight.woff') format('woff');
 }
+
+.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #5294e2!important;
+  }

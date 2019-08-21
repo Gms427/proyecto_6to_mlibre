@@ -7,7 +7,7 @@
   <div class="container-card" *ngFor="let category of categories">
     <mat-card class="favorites-card mat-elevation-z transparent text-center" (click)="navigateToCreate(category)">
       <mat-card-content>
-          <i class="{{category.Icon}}"></i>
+          <img src="{{category.Icon}}">
       </mat-card-content>
       <hr>
       <mat-card-subtitle>

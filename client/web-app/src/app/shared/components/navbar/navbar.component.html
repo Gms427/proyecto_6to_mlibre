@@ -71,9 +71,11 @@
                 </ul>
             </div>
         <mat-list>
-            <mat-list-item> Vender </mat-list-item>
+            <mat-list-item routerLink="/home/main" (click)="close()"> Home </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item> Historial </mat-list-item>
+            <mat-list-item routerLink="/publications/new" (click)="close()"> Vender </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item routerLink="/user/history" (click)="close()"> Historial </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item> Categorías </mat-list-item>
            </mat-list>

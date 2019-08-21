@@ -26,6 +26,7 @@ export class TestDAL {
                         on fl.id_filter = flop.id_filter
                     where fl.is_generic = 1
                     order by fl.id_filter;`;
+                    console.log(query);
         let result = await PgClient.query(query);
         return result;
     }
