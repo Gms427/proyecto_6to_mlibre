@@ -70,15 +70,13 @@ export class PublicationListComponent implements OnInit{
 
   async ngOnInit(){
     // service para obtener la búsqueda
-    
-    this.search = this._searchService.getSearchValue();
-    if(this.search){
-      this.Publications = await this._publicationService.getProducts(this.search);
-    }else{
-      this.Publications = await this._publicationService.getAllProducts();
-    }
     console.log(this.Publications);
-    this._searchService.search.subscribe(value => { this.search = value; });
+    this.getSearch();
+
+    this._searchService.search.subscribe(async (value) => { 
+      this.getSearch();
+    });
+
     this.categorySearched = this._searchService.getCategorySearched();
     this.subcategorySearched = this._searchService.getSubcategorySearched();
     this.filtersInfo = await this._generalService.getFiltersInfo();    
@@ -98,5 +96,22 @@ export class PublicationListComponent implements OnInit{
 
   onFiltersChange(event){
     this.showSpinner = event;
+  }
+
+  async getSearch(){
+    this.showSpinner = true;
+    this.search = this._searchService.getSearchValue();
+    console.log('this.search', this.search);
+      if(this.search !== undefined && this.search !== ""){
+        console.log('getProducts');
+        this.Publications = await this._publicationService.getProducts(this.search);
+      }else{
+        console.log('getAllProducts');
+        this.Publications = await this._publicationService.getAllProducts();
+      }
+      setTimeout(() => {
+        this.showSpinner = false;
+      }, 500);
+      
   }
 }
