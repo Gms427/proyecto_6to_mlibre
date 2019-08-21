@@ -55,14 +55,14 @@ body {
     font-family: 'Roboto', sans-serif!important;
     font-weight: lighter!important;
     border-radius: 20px!important;
-    box-shadow: 3px 3px 5px 0 rgba(0,0,0,.1)!important;    
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .1)!important;
 }
 
 .btn-transparent {
     color: #5294e2 !important;
     font-family: 'Roboto', sans-serif!important;
     font-weight: lighter!important;
-    border-radius: 20px!important;    
+    border-radius: 20px!important;
 }
 
 .subtitle-green {
@@ -114,7 +114,7 @@ body {
     justify-content: space-between;
 }
 
-.navbar .searcher{
+.navbar .searcher {
     font-size: 20px!important;
 }
 
@@ -127,4 +127,8 @@ body {
     font-style: normal;
     font-weight: normal;
     src: local('Gotham Light'), url('./assets/fonts/GothamLight.woff') format('woff');
+}
+
+.navbar-section-navegation .mat-button-focus-overlay {
+    background-color: transparent!important;
 }

@@ -1,0 +1,13 @@
+<div>
+    <h1>En que te podemos ayudar?
+    </h1>
+    <div class="content">
+        <div class="contentChat">
+            <div class="messageUser" *ngFor="let message of messages">{{message}}</div>
+        </div>
+    </div>
+    <div>
+        <input class="input" placeholder="Escribe tu pregunta" [(ngModel)]="inputChat">
+        <i class="fas fa-paper-plane send" (click)="sendMessage()"></i>
+    </div>
+</div>
