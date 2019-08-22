@@ -36,24 +36,26 @@ export class Utils {
 		}
 	}
 
-	static async sendCode(data: SigninDTO): Promise<QueryResult> {
+	static async InsertCode(idUser: any): Promise<QueryResult> {
 		let code = Math.floor(Math.random() * 999999);
-		let query = `INSERT INTO CODE_CONFIRM(email, code)
-        VALUES ('${data.Email}', '${code}');`;
+		
+		let query = `INSERT INTO CODE_CONFIRM(id_user, code)
+		VALUES ('${idUser}', '${code}');`;
+		console.log('code query', query);
 		let result = await PgClient.query(query);
 		return result;
 	}
 
-	static async getCode(email: string): Promise<QueryResult> {
-		let query = `SELECT CODE FROM CODE_CONFIRM WHERE email = '${email}';`;
+	static async getCode(idUser: number): Promise<number> {
+		let query = `SELECT CODE FROM CODE_CONFIRM WHERE id_user = '${idUser}';`;
 		let result = await PgClient.query(query);
-		return result;
+		return result.rows[0].code;
 	}
 
-	public static async sendEmail(user: SigninDTO) {
+	public static async sendEmail(user: SigninDTO, idUser: number) {
 		var nodemailer = require('nodemailer');
-		var code = await this.getCode(user.Email);
-		console.log(JSON.stringify(code))
+		var code = await this.getCode(idUser);
+		console.log("codigo...", code);
 
 		var transporter = nodemailer.createTransport({
 			service: 'gmail',
@@ -71,8 +73,27 @@ export class Utils {
 			from: 'nosbeyTeam@gmail.com',
 			to: user.Email,
 			subject: 'Confirma tu email',
-			text: ""+code+"",
-			html: '<a href="http://localhost:4200">Confirmar</a>'
+			text: `tubiega en la guarida`,
+			html: `<!DOCTYPE html>
+			<html lang="en">
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<meta http-equiv="X-UA-Compatible" content="ie=edge">
+				<title>Document</title>
+				<style>
+					a{
+						color: red;
+					}
+				</style>
+			</head>
+			<body>
+				<span>Tu codigo es ${code}</span>
+				<a href="">Confirmar</a>
+			
+			</body>
+			</html>
+			`
 		};
 		transporter.sendMail(mailOptions, function (error: any, info: any) {
 			if (error) {

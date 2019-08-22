@@ -2,24 +2,22 @@ import { Request, Response } from 'express';
 import { SigninDTO, UserUpdate } from '../serverDAL/DTOs/SigninDTO';
 import { SigninDAL } from '../serverDAL/signinDAL';
 import { Utils, ErrorCodes } from '../utils/utils';
+import { exists } from 'fs';
 
 class SigninController {
     async signin(req: Request, res: Response){
         let user: SigninDTO = req.body;
         try {
-            let exist = await SigninDAL.getUserByEmail(user.Email);
+            let exist: any = await SigninDAL.getUserByEmail(user.Email);
             if(exist.length > 0){
                 throw `The email ${user.Email} is alredy in use`;
             }else{
                 user.Password = Utils.encriptPassword(user.Password);
                 // TODO: validaciones que se hacen del lado del cliente
-                SigninDAL.Signin(user);
-                console.log('Se registro');
-                // let userSenCode = await SigninDAL.getUserByEmail(user.Email)
-                // console.log('trae usuario ' + userSenCode);
-                Utils.sendCode(user);
-                console.log('envia el codigo');
-                Utils.sendEmail(user);
+                let idNewUser = await SigninDAL.Signin(user);
+                console.log(idNewUser);
+                Utils.InsertCode(idNewUser);
+                Utils.sendEmail(user, idNewUser);
                 console.log('envia el mail');
             }
         } catch (error) {

@@ -5,12 +5,13 @@ import { UserUpdate } from './DTOs/SigninDTO'
 
 export class SigninDAL {
 
-    static async Signin(data: SigninDTO): Promise<QueryResult>{
+    static async Signin(data: SigninDTO): Promise<number>{
         let query = `INSERT INTO USERS(full_name, password, email, phone, status)
-           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}', '3');`;
+           VALUES ('${data.Fullname}','${data.Password}','${data.Email}', '${data.Phone}', '3')
+           RETURNING ID_USER;`;
     
         let result = await PgClient.query(query);
-        return result;
+        return result.rows[0].id_user;
     }
 
     static async getUserByEmail(email: string): Promise<QueryResult["rows"]>{
