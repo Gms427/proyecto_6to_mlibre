@@ -14,8 +14,13 @@ class SigninController {
                 user.Password = Utils.encriptPassword(user.Password);
                 // TODO: validaciones que se hacen del lado del cliente
                 SigninDAL.Signin(user);
-                console.log("Pase el registro")
+                console.log('Se registro');
+                // let userSenCode = await SigninDAL.getUserByEmail(user.Email)
+                // console.log('trae usuario ' + userSenCode);
+                Utils.sendCode(user);
+                console.log('envia el codigo');
                 Utils.sendEmail(user);
+                console.log('envia el mail');
             }
         } catch (error) {
             res.send(error);
