@@ -137,3 +137,7 @@ body {
 .navbar-section-navegation .mat-button-focus-overlay {
     background-color: transparent!important;
 }
+
+.shadow{
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+}

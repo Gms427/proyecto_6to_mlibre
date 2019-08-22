@@ -175,7 +175,11 @@ class IndexController {
                 Name: f.filter_name,
                 Type: f.filter_type,
                 Options: options,
-                Values: values
+                Values: values,
+                Category: (f.id_category != 0) ? f.id_category : null,
+                Subcategory: (f.id_subcategory) ? f.id_subcategory: null,
+                TableName: f.table_name,
+                ColumnName: f.column_name
             }
         });
         console.log(finalResult);

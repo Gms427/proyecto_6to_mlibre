@@ -65,7 +65,11 @@ export interface Filter{
     Name: string,
     Type: string,
     Options?: any,
-    Values?: any
+    Values?: any,
+    Category?: number,
+    Subcategory?: number,
+    TableName: string,
+    ColumnName: string
 }
 
 export enum FilterTypes{
@@ -89,7 +93,8 @@ export interface PublicationBaseInfo{
     Currency: string,
     Stock: number,
     Category: number,
-    Subcategory: number
+    Subcategory: number,
+    NewOrUsed: any[]
 }
 
 export enum Currencies {

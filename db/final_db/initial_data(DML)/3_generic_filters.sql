@@ -29,6 +29,5 @@ INSERT INTO FILTER(IS_GENERIC, FILTER_NAME, FILTER_TYPE)
 VALUES(1, 'Tiendas oficiales','BOOLEAN');
 
 
-
-
+update filter set id_category = 0, id_subcategory = 0 where is_generic = 1;
  

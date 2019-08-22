@@ -32,5 +32,9 @@ export interface Filter{
     Name: string,
     Type: number,
     Options?: any,
-    Values?: any
+    Values?: any,
+    Category?: number,
+    Subcategory?: number,
+    TableName: string,
+    ColumnName: string
 }
