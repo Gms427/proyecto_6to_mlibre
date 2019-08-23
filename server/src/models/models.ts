@@ -38,3 +38,15 @@ export interface Filter{
     TableName: string,
     ColumnName: string
 }
+
+export class Message {
+    constructor(
+        public Content: string,
+        public Speaker: Speaker,
+    ) { }
+}
+
+export enum Speaker {
+    USER = 1,
+    ADMIN = 2
+}

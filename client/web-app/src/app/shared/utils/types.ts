@@ -102,3 +102,15 @@ export enum Currencies {
     UYU = 2,
     EUR = 3
 }
+
+export class Message {
+    constructor(
+        public Content: string,
+        public Speaker: Speaker,
+    ) { }
+}
+
+export enum Speaker {
+    USER = 1,
+    ADMIN = 2
+}

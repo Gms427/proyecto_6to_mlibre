@@ -1,6 +1,7 @@
 import * as Bcrypt from 'bcrypt';
 import { SigninDAL } from '../serverDAL/signinDAL';
 import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
+import { Speaker, Message } from '../models/models';
 
 export class Utils {
     public static encriptPassword(pswd: string): string{
@@ -61,6 +62,9 @@ export class Utils {
         }); 
     }
 
+    public static createMessage(Content: string, Speaker: Speaker): string{
+      return JSON.stringify(new Message(Content, Speaker));
+    }
 }
 
 export class ErrorCodes{

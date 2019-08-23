@@ -3,7 +3,23 @@
     </h1>
     <div class="content">
         <div class="contentChat">
-            <div class="messageUser" *ngFor="let message of messages">{{message}}</div>
+                <ngx-spinner
+                bdOpacity = 0.9
+                bdColor = "transparent"
+                size = "medium"
+                color = "#5294e2"
+                type = "ball-fall"
+                [fullScreen] = "false"
+                >
+                </ngx-spinner>
+            <div *ngFor="let message of messages">
+
+                <div class="messageUser" *ngIf="message.Speaker === Speaker.USER">{{message.Content}}</div>
+
+                <div class="messageAdmin" *ngIf="message.Speaker === Speaker.ADMIN">{{message.Content}}</div>
+
+            </div>
+            
         </div>
     </div>
     <div>
