@@ -76,22 +76,74 @@ export class Utils {
 			text: `tubiega en la guarida`,
 			html: `<!DOCTYPE html>
 			<html lang="en">
+			
 			<head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<meta http-equiv="X-UA-Compatible" content="ie=edge">
 				<title>Document</title>
 				<style>
-					a{
-						color: red;
+					button {
+						border: 0;
+						background-color: #5294e2;
+						color: white;
+						border-radius: 20px;
+						box-shadow: 3px 3px 5px 0 #0000001a;
+						outline: none;
+						cursor: pointer;
+						padding: 20px;
+						width: 100%;
+						font-size: 20px;
+					}
+			
+					.containerEmail{
+						background-color: #FFC244;
+						color: white;
+						display: flex;
+						height: 500px;
+						width: 500px;
+						padding: 40px;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+					}
+			
+					body{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						font-family: 'Roboto', sans-serif;
+						font-weight: lighter;
+						background-color: #5294e2
+					}
+			
+					.title{
+						font-size: 60px;
+						padding: 20px;
+					}
+			
+					.subtitle{
+						font-size: 40px;
+						padding: 0 20px;
+						border-bottom: 2px solid white;
+					}
+			
+					.confirm{
+						font-size: 20px;
+						padding: 20px;
 					}
 				</style>
 			</head>
-			<body>
-				<span>Tu codigo es ${code}</span>
-				<a href="">Confirmar</a>
 			
+			<body>
+				<div class="containerEmail">
+					<span class="title">Tu codigo es</span>
+					<span class="subtitle">${code}</span>
+					<span class="confirm">Para confirmar presiona el boton</span>
+					<button href="http://localhost:4200">Confirmar</button>
+				</div>
 			</body>
+			
 			</html>
 			`
 		};
