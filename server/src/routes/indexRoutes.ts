@@ -29,7 +29,9 @@ class IndexRoutes {
         this.router.put('/updateUser', signinController.UpdateUser);
         this.router.post('/checkPassword', loginController.checkPassword);        
         this.router.get('/history/:email', indexController.getHistory);
-        this.router.post('/product', indexController.uploadPublication);        
+        this.router.post('/product', indexController.uploadPublication); 
+        this.router.post('/changePass', indexController.changePass);        
+        this.router.post('/checkCode', indexController.checkCode);        
 
     }
 }

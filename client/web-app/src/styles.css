@@ -137,3 +137,13 @@ body {
 .navbar-section-navegation .mat-button-focus-overlay {
     background-color: transparent!important;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

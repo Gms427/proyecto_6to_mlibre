@@ -7,6 +7,7 @@ import { LoginService } from 'src/app/shared/services/login.service';
 import { UserInfo } from 'src/app/shared/utils/types';
 import { SigninService } from 'src/app/home/services/signin.service';
 import { UserLogin } from "src/app/home/models/UserLogin";
+import { GeneralService } from 'src/app/shared/services/general.service';
 
 
 
@@ -38,6 +39,7 @@ export class UserInformationComponent implements OnInit {
     private _loginService: LoginService,
     private _signinService: SigninService,
     private toastr: ToastrService,
+    private _generalService: GeneralService
   ) { }
 
   ngOnInit() {
@@ -145,15 +147,20 @@ export class UserInformationComponent implements OnInit {
 
   sendEmail() {
     if (!(this.passwordFormControl.hasError("required"))) {
+      console.log(this.user)
       let CheckUser = new UserLogin(this.user.Email, this.passwordFormControl.value);
-      this._loginService.checkPassword(CheckUser).subscribe((res) => {
-        this.toastr.success('Se ha enviado el e-mail', '', {
-          timeOut: 2000,
-          positionClass: 'toast-top-center'
-        });
-        this.displayChangePassword = false;
+      this._loginService.checkPassword(CheckUser).subscribe(() => {
+        this._generalService.changePass(this.user).subscribe((res) => {
+          this.toastr.success('Se ha enviado el e-mail', '', {
+            timeOut: 2000,
+            positionClass: 'toast-top-center'
+          });
+          this.displayChangePassword = false;
         this.error = ""
         this.passwordFormControl.setValue('');
+        },(err) => {
+          this.error = err.error.text;
+        });
       }, (err) => {
         this.error = err.error.text;
       });

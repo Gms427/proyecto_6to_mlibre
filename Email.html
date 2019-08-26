@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        button {
+        a {
             border: 0;
             background-color: #5294e2;
             color: white;
@@ -18,41 +18,36 @@
             padding: 20px;
             width: 100%;
             font-size: 20px;
+            text-decoration: none;
         }
-
-        .container{
+        
+        .container {
             background-color: #FFC244;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             height: 500px;
             width: 500px;
             padding: 40px;
+            text-align: center;
         }
-
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        
+        body {
             font-family: 'Roboto', sans-serif;
             font-weight: lighter;
             background-color: #5294e2
         }
-
-        .title{
+        
+        .title {
             font-size: 60px;
             padding: 20px;
         }
-
-        .subtitle{
+        
+        .subtitle {
             font-size: 40px;
             padding: 0 20px;
             border-bottom: 2px solid white;
         }
-
-        .confirm{
+        
+        .confirm {
             font-size: 20px;
             padding: 20px;
         }
@@ -61,10 +56,10 @@
 
 <body>
     <div class="container">
-        <span class="title">Tu codigo es</span>
-        <span class="subtitle">${code}</span>
-        <span class="confirm">Para confirmar presiona el boton</span>
-        <button href="http://localhost:4200">Confirmar</button>
+        <p class="title">Tu codigo es</p>
+        <p class="subtitle">${code}</p>
+        <p class="confirm">Para confirmar presiona el boton</p>
+        <a href="http://localhost:4200">Confirmar</a>
     </div>
 </body>
 

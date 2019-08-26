@@ -6,7 +6,10 @@
     </mat-card>
     <mat-card *ngIf="user.Status == 3" class="discontinued inline">
         <p>Confirme su email</p>
-        <button mat-button class="btn-transparent" (click)="showModalEmail()">ver mas</button>
+        <div>
+            <button mat-button class="btn-transparent" (click)="showModalEmail()">ver mas</button>
+            <button mat-button class="btn-primary" routerLink="/user/checkCode">Confirmar</button>
+        </div>
     </mat-card>
     <p-dialog header="Confirmar email" [modal]="true" [draggable]="false" [(visible)]="displayModalConfEmail">
         <p>Se le ha enviado un e-mail a su cuenta de correo electronico para que confirme su direccion de correo electronico</p>

@@ -7,6 +7,7 @@ import { exists } from 'fs';
 class SigninController {
     async signin(req: Request, res: Response){
         let user: SigninDTO = req.body;
+        let url = "http://localhost:4200"
         try {
             let exist: any = await SigninDAL.getUserByEmail(user.Email);
             if(exist.length > 0){
@@ -17,7 +18,7 @@ class SigninController {
                 let idNewUser = await SigninDAL.Signin(user);
                 console.log(idNewUser);
                 Utils.InsertCode(idNewUser);
-                Utils.sendEmail(user, idNewUser);
+                Utils.sendEmail(user, idNewUser, url);
                 console.log('envia el mail');
             }
         } catch (error) {

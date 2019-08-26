@@ -6,7 +6,8 @@ import { Utils } from '../utils/utils';
 import { Category, Subcategory, Publication, Filter } from '../models/models';
 import { publications } from '../utils/utils';
 import { User } from '../models/User';
-import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
+import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
+import { loginController } from './loginController';
 
 class IndexController {
 
@@ -267,6 +268,31 @@ class IndexController {
             res.send(error);
         }
         res.send();
+    }
+
+    async changePass(req: Request, res: Response){
+        let user = req.body
+        let idUser = req.body.Id;
+        let url = "http://localhost:4200"
+        await Utils.sendEmail(user, idUser, url);
+        res.send();
+    }
+
+    async checkCode(req: Request, res: Response){
+        let userId = req.body.user.Id
+        let code = req.body.code;
+        try {
+            let codeDb = await Utils.getCode(userId);
+            console.log(codeDb)
+                 if(codeDb == code){
+                    Utils.mailConfirm(userId);
+                   res.send(true);
+                 }else{
+                    throw 'wrong code';
+                 }
+        } catch (error) {
+            res.send(error);
+        }
     }
 }
 

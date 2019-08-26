@@ -3,6 +3,7 @@ import { SigninDAL } from '../serverDAL/signinDAL';
 import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
 import PgClient from '../database';
 import { QueryResult } from 'pg';
+import { StringifyOptions } from 'querystring';
 
 export class Utils {
 	public static encriptPassword(pswd: string): string {
@@ -52,7 +53,14 @@ export class Utils {
 		return result.rows[0].code;
 	}
 
-	public static async sendEmail(user: SigninDTO, idUser: number) {
+	static async mailConfirm(idUser: number): Promise<QueryResult>{
+		let query = `UPDATE USERS SET STATUS = 1  WHERE ID_USER ='${idUser}';
+		DELETE FROM CODE_CONFIRM WHERE ID_USER = ${idUser}`
+		let result = await PgClient.query(query);
+		return result;
+	}
+
+	public static async sendEmail(user: SigninDTO, idUser: number, url: String) {
 		var nodemailer = require('nodemailer');
 		var code = await this.getCode(idUser);
 		console.log("codigo...", code);
@@ -72,8 +80,8 @@ export class Utils {
 		var mailOptions = {
 			from: 'nosbeyTeam@gmail.com',
 			to: user.Email,
-			subject: 'Confirma tu email',
-			text: `tubiega en la guarida`,
+			subject: 'Confirmar',
+			text: `Confirmar`,
 			html: `<!DOCTYPE html>
 			<html lang="en">
 			
@@ -83,7 +91,7 @@ export class Utils {
 				<meta http-equiv="X-UA-Compatible" content="ie=edge">
 				<title>Document</title>
 				<style>
-					button {
+					a {
 						border: 0;
 						background-color: #5294e2;
 						color: white;
@@ -94,41 +102,36 @@ export class Utils {
 						padding: 20px;
 						width: 100%;
 						font-size: 20px;
+						text-decoration: none;
 					}
-			
-					.containerEmail{
+					
+					.container {
 						background-color: #FFC244;
 						color: white;
-						display: flex;
 						height: 500px;
 						width: 500px;
 						padding: 40px;
-						justify-content: center;
-						align-items: center;
-						flex-direction: column;
+						text-align: center;
 					}
-			
-					body{
-						display: flex;
-						justify-content: center;
-						align-items: center;
+					
+					body {
 						font-family: 'Roboto', sans-serif;
 						font-weight: lighter;
 						background-color: #5294e2
 					}
-			
-					.title{
+					
+					.title {
 						font-size: 60px;
 						padding: 20px;
 					}
-			
-					.subtitle{
+					
+					.subtitle {
 						font-size: 40px;
 						padding: 0 20px;
 						border-bottom: 2px solid white;
 					}
-			
-					.confirm{
+					
+					.confirm {
 						font-size: 20px;
 						padding: 20px;
 					}
@@ -136,11 +139,11 @@ export class Utils {
 			</head>
 			
 			<body>
-				<div class="containerEmail">
-					<span class="title">Tu codigo es</span>
-					<span class="subtitle">${code}</span>
-					<span class="confirm">Para confirmar presiona el boton</span>
-					<button href="http://localhost:4200">Confirmar</button>
+				<div class="container">
+					<p class="title">Tu codigo es</p>
+					<p class="subtitle">${code}</p>
+					<p class="confirm">Para confirmar presiona el boton</p>
+					<a href="${url}">Confirmar</a>
 				</div>
 			</body>
 			

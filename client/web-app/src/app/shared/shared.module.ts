@@ -12,14 +12,17 @@ import { ResolveUserLogged } from './utils/guards';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoriesMenuComponent } from './components/categories-menu/categories-menu.component';
 import { HelpComponent } from './components/help/help.component';
+import { CheckCodeComponent } from '../user/components/check-code/check-code.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 @NgModule({
-  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent, FooterComponent, CategoriesMenuComponent, HelpComponent],
+  declarations: [NavbarComponent, FavoritesComponent, ProfileComponent, SearchComponent, NotificationsComponent, FooterComponent, CategoriesMenuComponent, HelpComponent, CheckCodeComponent],
   imports: [
     CommonModule,
     CoreModule,
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    SharedRoutingModule
   ],
   exports: [NavbarComponent, SearchComponent, FooterComponent, CategoriesMenuComponent, HelpComponent],
   providers: [ResolveUserLogged],
