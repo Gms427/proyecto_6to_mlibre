@@ -51,7 +51,7 @@
           aria-labelledby="radio-group-label"
           [(ngModel)]="publicationBaseInfo.NewOrUsed"
           class="radio-group">
-              <mat-radio-button class="radio-button" *ngFor="let option of publicationBaseInfo.NewOrUsed" [value]="option.Value">
+              <mat-radio-button class="radio-button" *ngFor="let option of newOrUsedOptions" [value]="option.Value">
                   {{option.DisplayValue}}
               </mat-radio-button>
           </mat-radio-group>

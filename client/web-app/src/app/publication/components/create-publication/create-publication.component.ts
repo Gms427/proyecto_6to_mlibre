@@ -19,21 +19,27 @@ export class CreatePublicationComponent implements OnInit {
   public subcategory: Subcategory;
   public currencies: Currency[];
   public booleanFields: Filter[];
-  public publicationBaseInfo: PublicationBaseInfo = { Currency: "", 
-  Description: "", 
-  Price: null,
-  Stock: null, 
-  Title: "", 
-  Category: null, 
-  Subcategory: null, 
-  NewOrUsed: [ { 
+  public publicationBaseInfo: PublicationBaseInfo = { 
+    Currency: "", 
+    Description: "", 
+    Price: null,
+    Stock: null, 
+    Title: "", 
+    Category: null, 
+    Subcategory: null, 
+    NewOrUsed: null
+  };
+
+  public newOrUsedOptions = [ { 
     Value: 0,
     DisplayValue: "Usado"
   },
   {
     Value: 1,
     DisplayValue: "Nuevo"
-  }] };
+  }];
+
+
   public publication: Publication;
 
   constructor(private _generalService: GeneralService,
@@ -134,7 +140,28 @@ export class CreatePublicationComponent implements OnInit {
 
     let columns = fields.map(f => f.ColumnName);
     console.log(columns);
-    let values = fields.map(f => f.Values);
+    let values = fields.map(f => {
+      
+      switch (typeof(f.Values)) {
+        
+        case "string":
+          return `'${f.Values}'`;
+          break;
+
+        case "number":
+          return `'${f.Values}'`;
+          break;
+          
+        case "boolean":
+          return f.Values;
+          break;
+      
+        default:
+          return f.Values;
+          break;
+      }
+      
+    });
 
     let query = `INSERT INTO ${table} (${columns})
                 (${values})`;

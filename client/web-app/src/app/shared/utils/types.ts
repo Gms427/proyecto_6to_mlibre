@@ -94,7 +94,7 @@ export interface PublicationBaseInfo{
     Stock: number,
     Category: number,
     Subcategory: number,
-    NewOrUsed: any[]
+    NewOrUsed: number
 }
 
 export enum Currencies {
