@@ -50,10 +50,14 @@ export class TestDAL {
         let query = `select	fl.id_filter,
                             fl.is_generic,
                             fl.filter_name,
-                            fl.filter_type
+                            fl.filter_type,
+                            fl.id_category,
+                            fl.id_subcategory,
+                            fl.table_name,
+                            fl.column_name
                     from filter fl
                     where (fl.id_subcategory = '${idSubcategory}'
-                    or fl.id_category = '${idCategory}' or fl.is_generic = 1)
+                    or fl.id_category = '${idCategory}')
                     and fl.id_filter not in (1,3,4)
                     order by fl.filter_name`;
         let result = await PgClient.query(query);

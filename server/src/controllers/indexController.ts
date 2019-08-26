@@ -108,7 +108,11 @@ class IndexController {
                 Name: filter.filter_name,
                 Type: filter.filter_type,
                 Options: options,
-                Values: values
+                Values: values,
+                Category: (filter.id_category != 0) ? filter.id_category : null,
+                Subcategory: (filter.id_subcategory) ? filter.id_subcategory: null,
+                TableName: filter.table_name,
+                ColumnName: filter.column_name
             });
 
         });
@@ -176,7 +180,11 @@ class IndexController {
                 Name: f.filter_name,
                 Type: f.filter_type,
                 Options: options,
-                Values: values
+                Values: values,
+                Category: (f.id_category != 0) ? f.id_category : null,
+                Subcategory: (f.id_subcategory) ? f.id_subcategory: null,
+                TableName: f.table_name,
+                ColumnName: f.column_name
             }
         });
         console.log(finalResult);

@@ -29,14 +29,17 @@
 
 .logo {
     width: auto;
-    height: 40px;
+    height: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
     outline: none;
-}
+    background-image: url('../../../../assets/logo2.png');
+} 
 
 .navbar-section-navegation {
     display: flex;
     flex-direction: column;
-    font-size: 20px
+    font-size: 20px;
 }
 
 .navbar-section-options {

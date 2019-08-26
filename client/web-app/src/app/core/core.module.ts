@@ -65,6 +65,9 @@ import { MatTableModule } from '@angular/material/table';
 // Toast
 import { ToastrModule } from 'ngx-toastr';
 
+// Ngx Spinner
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
   declarations: [],
@@ -122,7 +125,9 @@ import { ToastrModule } from 'ngx-toastr';
     // Internacionalización
     TranslateModule,
     // Toast 
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    // Ngx Spinner
+    NgxSpinnerModule
   ],
   exports: [
     // Angular material
@@ -171,6 +176,8 @@ import { ToastrModule } from 'ngx-toastr';
     ButtonModule,
     DialogModule,
     GalleriaModule,
+    // Ngx Spinner
+    NgxSpinnerModule
   ],
   providers: []
 })

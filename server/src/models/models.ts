@@ -32,5 +32,21 @@ export interface Filter{
     Name: string,
     Type: number,
     Options?: any,
-    Values?: any
+    Values?: any,
+    Category?: number,
+    Subcategory?: number,
+    TableName: string,
+    ColumnName: string
+}
+
+export class Message {
+    constructor(
+        public Content: string,
+        public Speaker: Speaker,
+    ) { }
+}
+
+export enum Speaker {
+    USER = 1,
+    ADMIN = 2
 }
