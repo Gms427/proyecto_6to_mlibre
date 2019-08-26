@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material';
 import { WebSocketSubject } from 'rxjs/observable/dom/WebSocketSubject';
 import { Message, Speaker } from '../../utils/types';
@@ -13,7 +13,7 @@ export class HelpComponent implements OnInit {
 
   private socket$: WebSocketSubject<Message>;
   public messages: Message[] = [];
-
+  @ViewChild("messagesContainer") messagesContainer: ElementRef;
   public Speaker = Speaker;
 
   constructor(private _bottomSheetRef: MatBottomSheetRef<HelpComponent>,
@@ -27,6 +27,7 @@ export class HelpComponent implements OnInit {
         this.messages.push(message);
         console.log('Message received', this.messages);
         this.spinner.hide();
+        this.scrollDownChat();
         this.cdRef.detectChanges();
       }
     );
@@ -47,7 +48,15 @@ export class HelpComponent implements OnInit {
       this.messages.push(message);
       this.socket$.next(message);
       this.inputChat = "";
+      this.scrollDownChat();
     }
   }
 
+  scrollDownChat(){
+    setTimeout(() => {
+      this.messagesContainer.nativeElement.scrollTo(0, 999999);
+    });
+  }
 }
+
+
