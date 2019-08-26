@@ -116,8 +116,8 @@ export class UserInformationComponent implements OnInit {
 
   UpdateInformation() {
     if (!(this.passwordFormControl.hasError("required"))) {
-      let CheckUser = new UserLogin(this.user.Email, this.passwordFormControl.value);
-      this._loginService.checkPassword(CheckUser).subscribe((res) => {
+      let pass = this.passwordFormControl.value;
+      this._loginService.checkPassword(this.user, pass).subscribe((res) => {
         this._signinService.UpdateData(this.user).subscribe(
           (res) => {
             this.toastr.success('Se han actualizado los datos con exito', '', {
@@ -148,9 +148,8 @@ export class UserInformationComponent implements OnInit {
   sendEmail() {
     if (!(this.passwordFormControl.hasError("required"))) {
       console.log(this.user)
-      let CheckUser = new UserLogin(this.user.Email, this.passwordFormControl.value);
-      this._loginService.checkPassword(CheckUser).subscribe(() => {
-        this._generalService.changePass(this.user).subscribe((res) => {
+      let pass = this.passwordFormControl.value;
+      this._loginService.checkPassword(pass, this.user).subscribe(() => {
           this.toastr.success('Se ha enviado el e-mail', '', {
             timeOut: 2000,
             positionClass: 'toast-top-center'
@@ -158,9 +157,6 @@ export class UserInformationComponent implements OnInit {
           this.displayChangePassword = false;
         this.error = ""
         this.passwordFormControl.setValue('');
-        },(err) => {
-          this.error = err.error.text;
-        });
       }, (err) => {
         this.error = err.error.text;
       });
