@@ -6,10 +6,10 @@ import { UserRoutingModule } from './user-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 import { UserInformationComponent } from './components/user-information/user-information.component';
-import { ConfirmMailComponent } from './components/confirm-mail/confirm-mail.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 @NgModule({
-  declarations: [UserHistoryComponent, UserInformationComponent, ConfirmMailComponent],
+  declarations: [UserHistoryComponent, UserInformationComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     RouterModule,

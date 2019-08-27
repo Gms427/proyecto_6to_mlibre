@@ -30,8 +30,10 @@ export class CheckCodeComponent implements OnInit {
   async checkCode() {
     if (this.codeFormControl.valid) {
       await this._generalService.checkCode(this.user, this.codeFormControl.value).subscribe((res) => {
-        console.log("llego");
-        this.router.navigate(['/user/information']);
+        if(res = 'confirmMail'){
+          console.log("llego");
+          this.router.navigate(['/user/information']);
+        } 
       },(err) => {
         console.log(err);
       });

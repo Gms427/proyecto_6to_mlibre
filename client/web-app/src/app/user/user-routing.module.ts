@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UserHistoryComponent } from './components/user-history/user-history.component';
 import { UserInformationComponent } from './components/user-information/user-information.component';
-import { ConfirmMailComponent } from './components/confirm-mail/confirm-mail.component';
 import { CheckCodeComponent } from './components/check-code/check-code.component';
 
 
@@ -20,10 +19,6 @@ const routes: Routes = [
     path: 'information',
     component: UserInformationComponent
   },
-  // {
-  //   path: 'confrimEmail',
-  //   component: ConfirmMailComponent
-  // }
   {
     path: 'checkCode',
     component: CheckCodeComponent
