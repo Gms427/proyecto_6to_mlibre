@@ -21,6 +21,8 @@ export class TestDAL {
                         fl.is_generic,
                         fl.filter_name,
                         fl.filter_type,
+                        fl.column_name,
+                        fl.table_name,
                         flop.option_value
                     from filter fl full join filter_option flop
                         on fl.id_filter = flop.id_filter

@@ -95,7 +95,7 @@ class IndexController {
     async getFiltersInfo(req: Request, res: Response): Promise<void> {
         const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
         const rows = queryResult.rows;
-
+        console.log(rows);
         let result: Filter[] = [];
         rows.forEach(filter => {
             let options: any = [];
@@ -121,7 +121,6 @@ class IndexController {
                 TableName: filter.table_name,
                 ColumnName: filter.column_name
             });
-
         });
         result = Utils.getUnique(result, "Id");
 

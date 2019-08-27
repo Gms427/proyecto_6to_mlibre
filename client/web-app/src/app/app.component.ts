@@ -12,8 +12,8 @@ import { NavbarService } from "src/app/shared/services/navbar.service";
 })
 export class AppComponent implements OnInit {
   title = "web-app";
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = -34.899977;
+  lng: number = -56.1633164;
   
   constructor(
     private translate: TranslateService,
