@@ -26,7 +26,7 @@
       </div>
       <!-- Filtros  -->
       <div class="filters-container">
-          <app-filters [filtersInfo]="filtersInfo" (spinner)="onFiltersChange($event)"></app-filters>
+          <app-filters [filtersInfo]="filtersInfo" (spinner)="spinnerChange($event)" (updateFilters)="onFiltersChange($event)"></app-filters>
       </div>
 
     </mat-list>

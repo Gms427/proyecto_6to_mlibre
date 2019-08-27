@@ -13,6 +13,7 @@ export class FiltersComponent implements OnInit, AfterViewInit {
   filtersInfo: Filter[];
 
   @Output() spinner: EventEmitter<boolean> = new EventEmitter();
+  @Output() updateFilters: EventEmitter<Filter[]> = new EventEmitter();
 
   constructor() { }
 
@@ -29,6 +30,9 @@ export class FiltersComponent implements OnInit, AfterViewInit {
     this.filtersInfo.forEach((f) => {
       console.log(f.Name, f.Values);
     });
+
+    this.updateFilters.emit(this.filtersInfo);
+
     this.spinner.emit(true);
     setTimeout(() => {
       this.spinner.emit(false);

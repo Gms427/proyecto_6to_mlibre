@@ -63,7 +63,7 @@ export class PublicationListComponent implements OnInit{
     this.router.navigate([`/publications/publication/${product.Id}`]);
   }
 
-  onFiltersChange(event){
+  spinnerChange(event){
     this.showSpinner = event;
   }
 
@@ -82,5 +82,12 @@ export class PublicationListComponent implements OnInit{
         this.showSpinner = false;
       }, 500);
       
+  }
+
+  onFiltersChange(event){
+    console.log("Filters info plist: ",event);
+
+    // TODO: Matchear cada filtro con una property de las Publications para poder filtrar, ver de configurar por bd a qué property
+    // corresponde cada filtro, meter en el columnName o algo columna nueva tipo property_name
   }
 }
