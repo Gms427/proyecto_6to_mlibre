@@ -24,26 +24,34 @@ class IndexController {
     }
 
 	async getProducts(req: Request, res: Response){
-        let products = await TestDAL.GetProducts(req.params.search);
+        try {
+            let products = await TestDAL.GetProducts(req.params.search);
         
-        let idProducts = products.map(p => p.id_product);
-        let imgs = await TestDAL.GetProductsImgs(idProducts);
+            let idProducts = products.map(p => p.id_product);
+            if(idProducts.length > 0){
+                let imgs = await TestDAL.GetProductsImgs(idProducts);
 
-        let finalProducts = products.map(p => {
-            let images = imgs.filter(i => i.id_product == p.id_product);
-
-            return {
-                Id: p.id_product,
-                Name: p.name,
-                Price: p.price,
-                State: p.status,
-                Shipping: false,
-                Favorite: false,
-                Imgs: images
+                let finalProducts = products.map(p => {
+                    let images = imgs.filter(i => i.id_product == p.id_product);
+    
+                    return {
+                        Id: p.id_product,
+                        Name: p.name,
+                        Price: p.price,
+                        State: p.status,
+                        Shipping: false,
+                        Favorite: false,
+                        Imgs: images
+                    }
+                });
+                //res.send(publications);
+                res.send(finalProducts);
+            }else{
+                res.send();
             }
-        });
-        //res.send(publications);
-        res.send(finalProducts);
+        } catch (error) {
+            throw error;
+        }
     }
 
     getProduct(req: Request, res: Response) {
@@ -122,7 +130,6 @@ class IndexController {
 
     async getCategories(req: Request, res: Response): Promise<void> {
         let result = await TestDAL.GetCategories();
-        console.log(result);
         let categories: Category[] = [];
 
         result.forEach(row => {

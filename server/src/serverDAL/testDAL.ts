@@ -88,6 +88,7 @@ export class TestDAL {
 
     static async GetProducts(searchValue: string): Promise<QueryResult["rows"]>{
         let query = `SELECT * FROM product WHERE name ~* '${searchValue}';`;
+        console.log(query);
         let result = await PgClient.query(query);
         return result.rows;
     }
