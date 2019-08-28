@@ -258,6 +258,11 @@ class IndexController {
                 Date: p.date_of_visit,
                 Currency: p.currency,
                 Imgs: images,
+                NewOrUsed: 'Usado',
+                OfficialStore: true,
+                Ubication: 'Montevideo',
+                Category: p.category,
+                Subcategory: p.subcategory
             }
         });
 

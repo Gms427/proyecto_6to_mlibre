@@ -30,4 +30,10 @@ VALUES(1, 'Tiendas oficiales','BOOLEAN');
 
 
 update filter set id_category = 0, id_subcategory = 0 where is_generic = 1;
+UPDATE FILTER SET TABLE_NAME = 'PRODUCT' WHERE IS_GENERIC = 1;
+
+UPDATE FILTER SET COLUMN_NAME = 'NewOrUsed' WHERE ID_FILTER = 2;
+UPDATE FILTER SET COLUMN_NAME = 'Ubication' WHERE ID_FILTER = 3;
+UPDATE FILTER SET COLUMN_NAME = 'OfficialStore' WHERE ID_FILTER = 4;
+UPDATE FILTER SET COLUMN_NAME = 'Price' WHERE ID_FILTER = 1;
  

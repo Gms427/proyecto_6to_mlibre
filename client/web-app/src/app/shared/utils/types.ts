@@ -43,7 +43,12 @@ export interface Publication{
     State: boolean,
     Shipping: boolean,
     Favorite: boolean,
-    Img: string
+    Img: string,
+    NewOrUsed: string,
+    OfficialStore: boolean,
+    Ubication: string,
+    Category: number,
+    Subcategory: number
 }
 
 export interface Category{

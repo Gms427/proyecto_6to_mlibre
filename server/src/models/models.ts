@@ -7,18 +7,17 @@ export interface Category{
 
 export interface Publication{
     Id: number,
-    Title: string,
+    Name: string,
     Price: string,
-    Status: number,
+    State: boolean,
     Shipping: boolean,
     Favorite: boolean,
-    Currency: string,
-    Description: string,
+    Img: string,
+    NewOrUsed: string,
+    OfficialStore: boolean,
+    Ubication: string,
     Category: number,
-    Subcategory: number,
-    Stock: number,
-    Warranty: string,
-    Imgs: string[]
+    Subcategory: number
 }
 
 export interface Subcategory{
