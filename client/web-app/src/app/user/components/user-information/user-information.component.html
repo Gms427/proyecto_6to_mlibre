@@ -119,10 +119,10 @@
             <h4>Contraseña:</h4>
             <p>Por politicas de privacidad no es posible mostrar su contraseña</p>
             <button mat-button class="btn-transparent">Saber mas</button>
-            <button mat-button class="btn-primary" (click)="showModalChangePassword()">Cambiar contraseña</button>
+            <button mat-button class="btn-primary" routerLink="/user/changePassword">Cambiar contraseña</button>
         </div>
     </mat-card>
-    <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="displayChangePassword">
+    <!-- <p-dialog header="Confirmar contraseña" [modal]="true" [draggable]="false" [(visible)]="displayChangePassword">
         <p>Primero confirme su actual contraseña</p>
         <mat-form-field class="example-full-width" style="width: 100%">
             <input matInput placeholder="Contraseña" [formControl]="passwordFormControl" name="password" type="password">
@@ -138,5 +138,5 @@
             <button mat-button class="btn-transparent" (click)="sendEmail()">Olvide mi contraseña</button>
             <button mat-button class="btn-primary" (click)="confirmPass()">Confirmar</button>
         </p-footer>
-    </p-dialog>
+    </p-dialog> -->
 </div>
