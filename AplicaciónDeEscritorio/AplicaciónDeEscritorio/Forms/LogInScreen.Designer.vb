@@ -34,6 +34,7 @@ Partial Class LogInScreen
         Me.lblAddres = New System.Windows.Forms.Label()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.lblError = New System.Windows.Forms.Label()
+        Me.lblTestNode = New System.Windows.Forms.Label()
         Me.backgroundLogIn.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -102,6 +103,7 @@ Partial Class LogInScreen
         'backgroundLogIn
         '
         Me.backgroundLogIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.backgroundLogIn.Controls.Add(Me.lblTestNode)
         Me.backgroundLogIn.Controls.Add(Me.lblPassword)
         Me.backgroundLogIn.Controls.Add(Me.lblAddres)
         Me.backgroundLogIn.Location = New System.Drawing.Point(384, 110)
@@ -158,6 +160,18 @@ Partial Class LogInScreen
         Me.lblError.Text = "  Datos invlaidos  "
         Me.lblError.Visible = False
         '
+        'lblTestNode
+        '
+        Me.lblTestNode.AutoSize = True
+        Me.lblTestNode.BackColor = System.Drawing.Color.Gold
+        Me.lblTestNode.Font = New System.Drawing.Font("Yu Gothic UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTestNode.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblTestNode.Location = New System.Drawing.Point(43, 419)
+        Me.lblTestNode.Name = "lblTestNode"
+        Me.lblTestNode.Size = New System.Drawing.Size(0, 15)
+        Me.lblTestNode.TabIndex = 19
+        Me.lblTestNode.Visible = False
+        '
         'LogInScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -194,4 +208,5 @@ Partial Class LogInScreen
     Friend WithEvents lblPassword As Label
     Friend WithEvents btnPrevious As Button
     Friend WithEvents lblError As Label
+    Friend WithEvents lblTestNode As Label
 End Class
