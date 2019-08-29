@@ -9,6 +9,8 @@ export interface Publication{
     Id: number,
     Name: string,
     Price: string,
+    Title: string,
+    Description: string,
     State: boolean,
     Shipping: boolean,
     Favorite: boolean,

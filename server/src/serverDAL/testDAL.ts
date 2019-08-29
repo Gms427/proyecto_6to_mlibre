@@ -144,12 +144,12 @@ export class TestDAL {
             ) VALUES(
             '${user.Id}',
             '${publication.Price}',
-            '${publication.Currency}',
+            'USD',
             '${publication.Description}',
             '${publication.Category}',
             '${publication.Subcategory}',
-            '${publication.Title}',
-            '${publication.Stock}',
+            '${publication.Name}',
+            '1',
             1
             )`;
         console.log('query', query);
