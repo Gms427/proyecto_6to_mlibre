@@ -1,0 +1,101 @@
+button{
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  align-items: flex-end;
+}
+
+.options {
+  font-size: 20px;
+  min-width: 40px;
+  padding-bottom: 3px;
+}
+
+.options:hover {
+  color: #5294E2;
+}
+
+button .notifications {
+  margin-right: 5px;
+}
+
+.btn-notifications {
+  padding: 15px 20px;
+}
+
+.notifications-menu {
+  padding: 20px;
+}
+
+.notifications-card {
+  padding: 20px;
+}
+
+.notifications-card:hover {
+  background-color: #d6d6d6;
+  cursor: pointer;
+}
+
+.header-title {
+  margin: 5px 0px 5px 20px;
+  font-size: 14px;
+}
+
+.notifications-card .modeless-box-img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.notifications-card button {
+  color: #5294E2;
+}
+
+.mat-menu-content {
+  min-width: 435px;
+}
+
+.btn-notifications-all {
+  width: 100%;
+  color: #5294E2;
+}
+
+.notifications-content {
+  max-height: 204px;
+  min-width: 450px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  float: left;
+  background: rgba(51, 51, 51, 0.32);
+  overflow-y: scroll;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.btn-notifications-centre{
+  padding: 0 14%;
+}
+

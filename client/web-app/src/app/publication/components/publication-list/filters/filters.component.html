@@ -1,0 +1,68 @@
+
+<h3 (click)="test()">Filtros:</h3>
+<br/>
+<a *ngFor="let filter of filtersInfo">
+
+    <div [ngSwitch]="filter.Type">
+
+            <div *ngSwitchCase="'NUMERIC_RANGE'">
+                    <a>{{filter.Name}}</a>
+                    <p>
+                        <mat-form-field appearance="outline" style="width: 53px; height: 30px; font-size: 11px;">
+                          <input matInput placeholder="Mínimo" [(ngModel)]="filter.Values[0]">
+                        </mat-form-field>
+          
+                        <mat-form-field appearance="outline" style="width: 56px; height: 30px; font-size: 11px; margin-left: 18px;">
+                            <input matInput placeholder="Máximo" [(ngModel)]="filter.Values[1]">
+                          </mat-form-field>
+                    </p>
+            </div>
+        
+            <div *ngSwitchCase="'BOOLEAN'">
+                <mat-slide-toggle
+                    [(ngModel)]="filter.Values[0]"
+                    [checked]="filter.Values[0]"
+                    [disabled]="disabled">
+                     {{filter.Name}}
+                </mat-slide-toggle>
+            </div>
+        
+            <div *ngSwitchCase="'OPTIONS_LIST'">
+                <a>{{filter.Name}}</a>
+                <br/>
+                <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+                [(ngModel)]="filter.Values"
+                class="example-radio-group">
+                    <mat-radio-button class="example-radio-button" *ngFor="let option of filter.Options" [value]="option">
+                        {{option}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        
+            <div *ngSwitchCase="'DATE_RANGE'">
+                {{filter.Name}}
+                Date range
+            </div>
+        
+            <div *ngSwitchCase="'SELECTIONABLE_LIST'">
+                <mat-form-field>
+                    <a>{{filter.Name}}</a>
+                    <br/>
+                    <mat-select [(value)]="filter.Values">
+                      <mat-option *ngFor="let option of filter.Options" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+                
+    
+            <div *ngSwitchDefault>
+                Comming soon
+            </div>
+    </div>
+    <br/>
+</a>
+
+<button mat-raised-button color="primary" (click)="Test()">Aplicar filtros</button>

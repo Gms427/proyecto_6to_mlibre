@@ -1,0 +1,27 @@
+<div class=" container container-history">
+
+    <header>
+        <h1>Productos que visitaste recientemente</h1>
+        <button *ngIf="history.length != 0" mat-button color="primary" class="custom" (click)="deleteHistory()">Eliminar historial</button>
+    </header>
+
+    <section>
+        <mat-card *ngFor="let publication of history;" class="example-card" (click)="navigateToPublication(publication.Id)">
+            <!--<mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>-->
+            <img mat-card-image src="https://mlstaticquic-a.akamaihd.net/iphone-7-plus-32gb-original-recertificado-regalo-futuro21-D_NP_938282-MLU30746149274_052019-X.webp" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <mat-card-title>{{publication.Price}} ({{publication.Id}})</mat-card-title>
+                <mat-card-subtitle>{{publication.Name}}</mat-card-subtitle>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="warn" (click)="deleteItem(publication.Id)">Eliminar</button>
+                <!--<button mat-button>SHARE</button>-->
+            </mat-card-actions>
+        </mat-card>
+
+    </section>
+</div>

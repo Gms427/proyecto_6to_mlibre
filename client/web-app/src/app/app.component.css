@@ -1,0 +1,9 @@
+.btn-changeLenguage{
+  position: absolute;
+  bottom: 50px;
+  left: 0%;
+}
+
+agm-map {
+  height: 300px;
+}

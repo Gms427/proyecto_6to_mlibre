@@ -1,0 +1,16 @@
+<div class="container popular-categories">
+    <h2 class="title-popular-categories" (click)="test()">Categorías populares</h2>
+
+    <div class="container-popular-categories">
+        <div *ngFor="let category of categories" class="container-card" (click)="navigateToCategory(category)">
+            <mat-card class="mat-elevation-z transparent text-center">
+                <mat-card-title>
+                    <img src="{{category.Icon}}" />
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{ category.Name }}
+                </mat-card-subtitle>
+            </mat-card>
+        </div>
+    </div>
+</div>

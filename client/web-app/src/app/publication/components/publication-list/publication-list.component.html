@@ -1,0 +1,98 @@
+<div class="list-component container">
+  <!-- Filtros -->
+  <div class="filters">
+    <mat-list>
+      <h3>Búsqueda: {{search}}</h3>
+      <h4 *ngIf="categorySearched">{{ categorySearched.Name }}</h4>
+      <h4 *ngIf="subcategorySearched">{{ subcategorySearched.Name }}</h4>
+      <mat-card-subtitle>{{length}} Resultados</mat-card-subtitle>
+      <div>
+        <p mat-subheader>Ordenar por:</p>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option value="option3">Más visitados</mat-option>
+            <mat-option value="option1">Menor precio</mat-option>
+            <mat-option value="option2">Mayor precio</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="btns-container">
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-list"></i>
+          </button>
+          <button mat-button class="btn-sortby btn-transparent">
+            <i class="fas fa-th-large"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Filtros  -->
+      <div class="filters-container">
+          <app-filters [filtersInfo]="filtersInfo" (spinner)="onFiltersChange($event)"></app-filters>
+      </div>
+
+    </mat-list>
+  </div>
+  <mat-spinner class="spinner" style="stroke: #5294e2;" [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  <div class="list" [style.display]="!showSpinner ? 'block' : 'none'">
+    <mat-list>
+      <a *ngFor="let product of Publications">
+        <mat-card class="publication-card mat-elevation-z">
+          <mat-card-content>
+            <img class="modeless-box-img" *ngIf="product.Imgs[0]" [attr.src]="product.Imgs[0].image" />
+            <mat-card-title
+              class="publication-name"
+              (click)="navegateToProduct(product)"
+              >{{ product.Name }}</mat-card-title
+            >
+            <mat-card-subtitle [ngSwitch]="product.Currency">
+              
+              <span *ngSwitchCase="currenciesEnum.USD">
+                  $USD {{ product.Price }} 
+              </span>
+
+              <span *ngSwitchCase="currenciesEnum.UYU">
+                  $UYU {{ product.Price }} 
+              </span>
+
+              <span *ngSwitchCase="currenciesEnum.EUR">
+                  €EUR {{ product.Price }} 
+              </span>
+            </mat-card-subtitle>
+            <mat-card-subtitle
+              class="subtitle-green"
+              *ngIf="product.Shipping"
+              >{{ "FreeShipping" | translate }}</mat-card-subtitle
+            >
+            <mat-card-subtitle *ngIf="product.State">{{
+              "New" | translate
+            }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="!product.State">{{
+              "Used" | translate
+            }}</mat-card-subtitle>
+          </mat-card-content>
+          <button class="btn-favorite btn-transparent">
+            <i
+              class="far fa-heart"
+              *ngIf="!product.favorite"
+              (click)="addFav(product)"
+              matTooltip="{{ 'AddToFav' | translate }}"
+            ></i>
+            <i
+              class="fas fa-heart"
+              *ngIf="product.favorite"
+              (click)="removeFav(product)"
+              matTooltip="{{ 'DeleteFav' | translate }}"
+            ></i>
+          </button>
+        </mat-card>
+        <mat-divider></mat-divider>
+      </a>
+    </mat-list>
+    <mat-paginator
+      [length]="length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="pageEvent = $event"
+    >
+    </mat-paginator>
+  </div>
+</div>
