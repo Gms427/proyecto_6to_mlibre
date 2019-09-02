@@ -1,7 +1,6 @@
-﻿Public Class Category
+﻿Public Class Subcategory
     Private _name As String
     Private _id As Integer
-    Private _subcategories As List(Of Subcategory)
 
     Public Sub New(id As Integer, name As String)
         _id = id
@@ -23,15 +22,6 @@
         End Get
         Set(value As Integer)
             _id = value
-        End Set
-    End Property
-
-    Public Property Subcategories As List(Of Subcategory)
-        Get
-            Return _subcategories
-        End Get
-        Set(value As List(Of Subcategory))
-            _subcategories = value
         End Set
     End Property
 

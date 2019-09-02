@@ -1,11 +1,13 @@
 ﻿Imports System.Net
+Imports Newtonsoft.Json
+
 Public Class LogInScreen
 
     Private Sub LogInScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         tbxAddres.TabStop = False
         Try
-            Dim Request As HttpWebRequest = HttpWebRequest.Create("http://localhost:3000/test")
+            Dim Request As HttpWebRequest = HttpWebRequest.Create("http://localhost:3000/getCategories")
             Request.Proxy = Nothing
             Request.UserAgent = "test"
 
@@ -14,6 +16,9 @@ Public Class LogInScreen
 
             Dim streamReader As New System.IO.StreamReader(responseStream)
             Dim data As String = streamReader.ReadToEnd
+
+            Dim categories As List(Of Category) = JsonConvert.DeserializeObject(Of List(Of Category))(data)
+
             lblTestNode.Text = data
             lblTestNode.Show()
             streamReader.Close()
