@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
               private _navbarService: NavbarService) { }
 
   ngOnInit() {
-    this.emailFormControl.setValue('alejandroalbarenga30@gmail.com');
-    this.passwordFormControl.setValue('Pass1234!')
+    this.emailFormControl.setValue('gonzalo427@hotmail.com');
+    this.passwordFormControl.setValue('Tubiega1');
   }
 
   login() {

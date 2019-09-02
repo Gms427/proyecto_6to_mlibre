@@ -30,6 +30,7 @@ class IndexRoutes {
         this.router.post('/checkPassword', loginController.checkPassword);        
         this.router.get('/history/:email', indexController.getHistory);
         this.router.post('/product', indexController.uploadPublication);        
+        this.router.post('/uploadFile',  indexController.uploadFile);
 
     }
 }

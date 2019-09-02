@@ -16,6 +16,7 @@
     width: 100%;
     padding: 20px 45px;
     margin: 20px 0px;
+    display: inline-block;
 }
 .full-width{
     width: 100%;
@@ -46,4 +47,22 @@ a{
   .font{
     font-family: 'Roboto', "Helvetica Neue", sans-serif !important;
     font-weight: 100 !important;
+  }
+
+  .uploader{
+      border: dotted 3px lightgray;
+      height: 170px;
+      margin: 20px 0px 20px 0px;  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .uploader-over { border: dotted 3px #5294e2; }
+
+  mat-label{
+      color: #757575;
+  }
+
+  .img-preview{
+      width: 30%;
   }

@@ -7,6 +7,8 @@ import { Category, Subcategory, Publication, Filter } from '../models/models';
 import { publications } from '../utils/utils';
 import { User } from '../models/User';
 import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
+import * as Formidable from 'formidable';
+import { Config } from '../utils/config';
 
 class IndexController {
 
@@ -286,6 +288,23 @@ class IndexController {
             res.send(error);
         }
         res.send();
+    }
+
+    async uploadFile(req: Request, res: Response){
+        var form = new Formidable.IncomingForm();
+
+        form.parse(req);
+
+        form.on('fileBegin', function (name, file){
+            file.path =  Config.filesPath + file.name;
+            console.log("file --> ", file);
+        });
+
+        form.on('file', function (name, file){
+            console.log('Uploaded ' + file.name);
+            res.send(file.path);
+        });
+
     }
 }
 
