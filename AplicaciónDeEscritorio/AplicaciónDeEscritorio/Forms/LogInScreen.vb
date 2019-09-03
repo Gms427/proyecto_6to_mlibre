@@ -31,6 +31,7 @@
         If tbxAddres.Text <> "" And tbxAddres.Text <> "admin@anima.edu.uy" And
             tbxPassword.Text <> "" And tbxPassword.Text <> "*********" Then
 
+            lblError.Hide()
             MainScreen.ShowDialog()
             LobbyScreen.Close()
             Me.Close()
@@ -42,5 +43,4 @@
         End If
 
     End Sub
-
 End Class

@@ -18,24 +18,24 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim pgClass = New ConnectionPgSQL()
+    'private sub button1_click(sender as object, e as eventargs)
+    '    dim pgclass = new connectionpgsql()
 
-        Dim conn As Npgsql.NpgsqlConnection = pgClass.openConnection()
+    '    dim conn as npgsql.npgsqlconnection = pgclass.openconnection()
 
-        Dim queryString = "SELECT * FROM TEST;"
+    '    dim querystring = "select * from test;"
 
-        Dim cmd = New Npgsql.NpgsqlCommand(queryString, conn)
+    '    dim cmd = new npgsql.npgsqlcommand(querystring, conn)
 
-        Dim reader As Npgsql.NpgsqlDataReader
-        reader = cmd.ExecuteReader()
+    '    dim reader as npgsql.npgsqldatareader
+    '    reader = cmd.executereader()
 
-        If reader.HasRows Then
-            While (reader.Read())
-                Dim nombre = reader("nombre")
+    '    if reader.hasrows then
+    '        while (reader.read())
+    '            dim nombre = reader("nombre")
 
-            End While
-        End If
+    '        end while
+    '    end if
 
-    End Sub
+    'end sub
 End Class

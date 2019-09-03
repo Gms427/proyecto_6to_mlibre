@@ -29,32 +29,35 @@ Partial Class SignInScreen
         Me.lblSignIn = New System.Windows.Forms.Label()
         Me.tbxRepeatPassword = New System.Windows.Forms.TextBox()
         Me.tbxPassword = New System.Windows.Forms.TextBox()
-        Me.backgroundSignIn = New System.Windows.Forms.Panel()
         Me.lblError = New System.Windows.Forms.Label()
         Me.lblRepeatPassword = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblAddres = New System.Windows.Forms.Label()
-        Me.imgNosbey = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
-        Me.backgroundSignIn.SuspendLayout()
+        Me.imgNosbey = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSignIn
         '
-        Me.btnSignIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignIn.Location = New System.Drawing.Point(630, 565)
+        Me.btnSignIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.btnSignIn.FlatAppearance.BorderSize = 0
+        Me.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSignIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignIn.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnSignIn.Location = New System.Drawing.Point(623, 610)
         Me.btnSignIn.Name = "btnSignIn"
-        Me.btnSignIn.Size = New System.Drawing.Size(106, 30)
+        Me.btnSignIn.Size = New System.Drawing.Size(120, 30)
         Me.btnSignIn.TabIndex = 7
         Me.btnSignIn.Text = "Registrarme"
-        Me.btnSignIn.UseVisualStyleBackColor = True
+        Me.btnSignIn.UseVisualStyleBackColor = False
         '
         'tbxAddres
         '
+        Me.tbxAddres.BackColor = System.Drawing.Color.White
         Me.tbxAddres.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxAddres.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.tbxAddres.Location = New System.Drawing.Point(574, 425)
+        Me.tbxAddres.Location = New System.Drawing.Point(574, 460)
         Me.tbxAddres.MaxLength = 30
         Me.tbxAddres.Name = "tbxAddres"
         Me.tbxAddres.Size = New System.Drawing.Size(218, 24)
@@ -63,9 +66,10 @@ Partial Class SignInScreen
         '
         'tbxName
         '
+        Me.tbxName.BackColor = System.Drawing.Color.White
         Me.tbxName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxName.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.tbxName.Location = New System.Drawing.Point(574, 380)
+        Me.tbxName.Location = New System.Drawing.Point(574, 410)
         Me.tbxName.MaxLength = 30
         Me.tbxName.Name = "tbxName"
         Me.tbxName.Size = New System.Drawing.Size(218, 24)
@@ -75,20 +79,21 @@ Partial Class SignInScreen
         'lblSignIn
         '
         Me.lblSignIn.AutoSize = True
-        Me.lblSignIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.lblSignIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSignIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblSignIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSignIn.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblSignIn.Location = New System.Drawing.Point(478, 330)
+        Me.lblSignIn.Location = New System.Drawing.Point(455, 355)
         Me.lblSignIn.Name = "lblSignIn"
-        Me.lblSignIn.Size = New System.Drawing.Size(410, 24)
+        Me.lblSignIn.Size = New System.Drawing.Size(457, 24)
         Me.lblSignIn.TabIndex = 4
         Me.lblSignIn.Text = "Completa los siguientes campos para registrarte"
         '
         'tbxRepeatPassword
         '
+        Me.tbxRepeatPassword.BackColor = System.Drawing.Color.White
         Me.tbxRepeatPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxRepeatPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.tbxRepeatPassword.Location = New System.Drawing.Point(574, 515)
+        Me.tbxRepeatPassword.Location = New System.Drawing.Point(574, 560)
         Me.tbxRepeatPassword.MaxLength = 30
         Me.tbxRepeatPassword.Name = "tbxRepeatPassword"
         Me.tbxRepeatPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -98,9 +103,10 @@ Partial Class SignInScreen
         '
         'tbxPassword
         '
+        Me.tbxPassword.BackColor = System.Drawing.Color.White
         Me.tbxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbxPassword.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.tbxPassword.Location = New System.Drawing.Point(574, 470)
+        Me.tbxPassword.Location = New System.Drawing.Point(574, 510)
         Me.tbxPassword.MaxLength = 30
         Me.tbxPassword.Name = "tbxPassword"
         Me.tbxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -108,27 +114,13 @@ Partial Class SignInScreen
         Me.tbxPassword.TabIndex = 8
         Me.tbxPassword.Text = "*********"
         '
-        'backgroundSignIn
-        '
-        Me.backgroundSignIn.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.backgroundSignIn.Controls.Add(Me.lblError)
-        Me.backgroundSignIn.Controls.Add(Me.lblRepeatPassword)
-        Me.backgroundSignIn.Controls.Add(Me.lblPassword)
-        Me.backgroundSignIn.Controls.Add(Me.lblName)
-        Me.backgroundSignIn.Controls.Add(Me.lblAddres)
-        Me.backgroundSignIn.Location = New System.Drawing.Point(384, 110)
-        Me.backgroundSignIn.Name = "backgroundSignIn"
-        Me.backgroundSignIn.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.backgroundSignIn.Size = New System.Drawing.Size(599, 510)
-        Me.backgroundSignIn.TabIndex = 11
-        '
         'lblError
         '
         Me.lblError.AutoSize = True
         Me.lblError.BackColor = System.Drawing.Color.Firebrick
         Me.lblError.Font = New System.Drawing.Font("Yu Gothic UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblError.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblError.Location = New System.Drawing.Point(250, 435)
+        Me.lblError.Location = New System.Drawing.Point(635, 590)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(100, 15)
         Me.lblError.TabIndex = 17
@@ -138,61 +130,46 @@ Partial Class SignInScreen
         'lblRepeatPassword
         '
         Me.lblRepeatPassword.AutoSize = True
-        Me.lblRepeatPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRepeatPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRepeatPassword.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblRepeatPassword.Location = New System.Drawing.Point(190, 390)
+        Me.lblRepeatPassword.Location = New System.Drawing.Point(575, 540)
         Me.lblRepeatPassword.Name = "lblRepeatPassword"
-        Me.lblRepeatPassword.Size = New System.Drawing.Size(124, 16)
+        Me.lblRepeatPassword.Size = New System.Drawing.Size(142, 16)
         Me.lblRepeatPassword.TabIndex = 16
         Me.lblRepeatPassword.Text = "Repetir Contraseña"
         '
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPassword.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblPassword.Location = New System.Drawing.Point(190, 345)
+        Me.lblPassword.Location = New System.Drawing.Point(575, 490)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(77, 16)
+        Me.lblPassword.Size = New System.Drawing.Size(87, 16)
         Me.lblPassword.TabIndex = 15
         Me.lblPassword.Text = "Contraseña"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblName.Location = New System.Drawing.Point(190, 255)
+        Me.lblName.Location = New System.Drawing.Point(575, 390)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(57, 16)
+        Me.lblName.Size = New System.Drawing.Size(63, 16)
         Me.lblName.TabIndex = 14
         Me.lblName.Text = "Nombre"
         '
         'lblAddres
         '
         Me.lblAddres.AutoSize = True
-        Me.lblAddres.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddres.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddres.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblAddres.Location = New System.Drawing.Point(190, 300)
+        Me.lblAddres.Location = New System.Drawing.Point(575, 440)
         Me.lblAddres.Name = "lblAddres"
-        Me.lblAddres.Size = New System.Drawing.Size(49, 16)
+        Me.lblAddres.Size = New System.Drawing.Size(55, 16)
         Me.lblAddres.TabIndex = 13
         Me.lblAddres.Text = "Correo"
-        '
-        'imgNosbey
-        '
-        Me.imgNosbey.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.imgNosbey.BackgroundImage = CType(resources.GetObject("imgNosbey.BackgroundImage"), System.Drawing.Image)
-        Me.imgNosbey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.imgNosbey.Enabled = False
-        Me.imgNosbey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.imgNosbey.FlatAppearance.BorderSize = 0
-        Me.imgNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.imgNosbey.Location = New System.Drawing.Point(459, 125)
-        Me.imgNosbey.Name = "imgNosbey"
-        Me.imgNosbey.Size = New System.Drawing.Size(449, 195)
-        Me.imgNosbey.TabIndex = 12
-        Me.imgNosbey.UseVisualStyleBackColor = False
         '
         'btnPrevious
         '
@@ -207,28 +184,47 @@ Partial Class SignInScreen
         Me.btnPrevious.TabIndex = 13
         Me.btnPrevious.UseVisualStyleBackColor = True
         '
+        'imgNosbey
+        '
+        Me.imgNosbey.BackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.BackgroundImage = CType(resources.GetObject("imgNosbey.BackgroundImage"), System.Drawing.Image)
+        Me.imgNosbey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.imgNosbey.Enabled = False
+        Me.imgNosbey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.imgNosbey.FlatAppearance.BorderSize = 0
+        Me.imgNosbey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.imgNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.imgNosbey.Location = New System.Drawing.Point(554, 70)
+        Me.imgNosbey.Name = "imgNosbey"
+        Me.imgNosbey.Size = New System.Drawing.Size(259, 275)
+        Me.imgNosbey.TabIndex = 32
+        Me.imgNosbey.UseVisualStyleBackColor = False
+        '
         'SignInScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.imgNosbey)
+        Me.Controls.Add(Me.lblError)
+        Me.Controls.Add(Me.lblRepeatPassword)
+        Me.Controls.Add(Me.btnPrevious)
+        Me.Controls.Add(Me.lblPassword)
+        Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.tbxRepeatPassword)
+        Me.Controls.Add(Me.lblAddres)
         Me.Controls.Add(Me.tbxPassword)
         Me.Controls.Add(Me.btnSignIn)
         Me.Controls.Add(Me.tbxAddres)
         Me.Controls.Add(Me.tbxName)
         Me.Controls.Add(Me.lblSignIn)
-        Me.Controls.Add(Me.backgroundSignIn)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SignInScreen"
         Me.Text = "Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.backgroundSignIn.ResumeLayout(False)
-        Me.backgroundSignIn.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -240,12 +236,11 @@ Partial Class SignInScreen
     Friend WithEvents lblSignIn As Label
     Friend WithEvents tbxRepeatPassword As TextBox
     Friend WithEvents tbxPassword As TextBox
-    Friend WithEvents backgroundSignIn As Panel
-    Friend WithEvents imgNosbey As Button
     Friend WithEvents lblAddres As Label
     Friend WithEvents lblRepeatPassword As Label
     Friend WithEvents lblPassword As Label
     Friend WithEvents lblName As Label
     Friend WithEvents btnPrevious As Button
     Friend WithEvents lblError As Label
+    Friend WithEvents imgNosbey As Button
 End Class

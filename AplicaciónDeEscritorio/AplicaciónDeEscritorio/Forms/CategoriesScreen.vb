@@ -36,15 +36,56 @@
         Else
 
             tvCategories.SelectedNode.Nodes.Add(categoryName, categoryName)
-
         End If
+
+        categoryController.AddCategory(tvCategories.SelectedNode.Text)
+
+        tbxNameCategory.Text = ""
+
+        viewAddCategory.Hide()
 
     End Sub
 
     Private Sub CategoriesScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Dim categories = categoryController.GetCategories()
+
+        For Each cat As Category In categories
+            tvCategories.Nodes.Add(cat.Id, cat.Name)
+        Next
+
+
+
         tvCategories.ExpandAll()
 
     End Sub
 
+    Private Sub btnRemoveCategory_Click(sender As Object, e As EventArgs) Handles btnRemoveCategory.Click
+
+        viewRemoveCategory.Show()
+
+    End Sub
+
+    Private Sub btnCloseRemoveCategory_Click(sender As Object, e As EventArgs) Handles btnCloseRemoveCategory.Click
+
+        viewRemoveCategory.Hide()
+
+    End Sub
+
+    Private Sub btnCancelRemoveCategory_Click(sender As Object, e As EventArgs) Handles btnCancelRemoveCategory.Click
+
+        viewRemoveCategory.Hide()
+
+    End Sub
+
+    Private Sub btnAceptRemoveCategory_Click(sender As Object, e As EventArgs) Handles btnAceptRemoveCategory.Click
+
+        tvCategories.SelectedNode.Remove()
+        viewRemoveCategory.Hide()
+
+    End Sub
+
+    Private Sub tvCategories_NodeMouseHover(sender As Object, e As TreeNodeMouseHoverEventArgs) Handles tvCategories.NodeMouseHover
+
+    End Sub
 End Class

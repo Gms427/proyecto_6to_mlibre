@@ -33,9 +33,9 @@ Partial Class SpalshScreen
         Me.titNosbey.Enabled = False
         Me.titNosbey.FlatAppearance.BorderSize = 0
         Me.titNosbey.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.titNosbey.Location = New System.Drawing.Point(461, 270)
+        Me.titNosbey.Location = New System.Drawing.Point(434, 132)
         Me.titNosbey.Name = "titNosbey"
-        Me.titNosbey.Size = New System.Drawing.Size(445, 225)
+        Me.titNosbey.Size = New System.Drawing.Size(499, 505)
         Me.titNosbey.TabIndex = 0
         Me.titNosbey.UseVisualStyleBackColor = True
         '
@@ -43,7 +43,7 @@ Partial Class SpalshScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(65, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1366, 768)
         Me.Controls.Add(Me.titNosbey)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

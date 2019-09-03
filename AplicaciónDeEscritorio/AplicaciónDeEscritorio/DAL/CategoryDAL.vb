@@ -29,8 +29,16 @@ Public Class CategoryDAL
             End While
         End If
 
+        reader.Close()
+
         Return categoryList
 
     End Function
+
+    Public Function AddCategory(name As String)
+
+    End Function
+
+
 
 End Class
