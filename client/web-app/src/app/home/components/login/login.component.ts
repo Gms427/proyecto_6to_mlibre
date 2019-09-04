@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
 import { LoginService } from "src/app/shared/services/login.service";
 import { UserLogin } from "src/app/home/models/UserLogin";
 import { NavbarService } from 'src/app/shared/services/navbar.service';
+import { GeneralService } from 'src/app/shared/services/general.service';
 
 @Component({
   selector: "app-login",
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router,
               private _loginService: LoginService,
-              private _navbarService: NavbarService) { }
+              private _navbarService: NavbarService,
+              private _generalService: GeneralService) { }
 
   ngOnInit() {
     this.emailFormControl.setValue('gonzalo427@hotmail.com');
@@ -46,7 +48,7 @@ export class LoginComponent implements OnInit {
         (res) => {
           this._navbarService.UserLogged(true);
           this._loginService.setLoggedUser(loggedUser);
-          this.router.navigate(["/home/main"]);
+          this.router.navigate([this._generalService.previousUrl]);
         },(err) => {
           this.error = err.error.text;
         });

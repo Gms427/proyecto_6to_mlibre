@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 
@@ -13,8 +13,9 @@ export class NavbarService {
   public updateNavbarPlace$: Observable<boolean> = this.updateNavbarPlace.asObservable();
   public searcherInNavdar = new Subject<boolean>();
   public searcherInNavdar$: Observable<boolean> = this.searcherInNavdar.asObservable();
-  public userLogged = new Subject<boolean>();
-  public userLogged$: Observable<boolean> = this.userLogged.asObservable();
+  
+  public userLogged: boolean = false;
+  @Output() userLogged$: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
@@ -31,6 +32,7 @@ export class NavbarService {
   }
 
   UserLogged(logged: boolean) {
-    this.userLogged.next(logged);
+    this.userLogged = logged;
+    this.userLogged$.next(logged);
   }
 }
