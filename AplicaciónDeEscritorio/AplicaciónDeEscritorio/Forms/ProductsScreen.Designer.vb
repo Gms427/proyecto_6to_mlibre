@@ -23,6 +23,16 @@ Partial Class ProductsScreen
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ProductsScreen))
+        Dim ListViewGroup1 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup2 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup3 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup4 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup5 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup6 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup7 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup8 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup9 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
+        Dim ListViewGroup10 As System.Windows.Forms.ListViewGroup = New System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left)
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.viewAlert = New System.Windows.Forms.Panel()
         Me.btnCancelAction = New System.Windows.Forms.Button()
@@ -33,33 +43,32 @@ Partial Class ProductsScreen
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.btnCloseApp = New System.Windows.Forms.Button()
         Me.btnPrevious = New System.Windows.Forms.Button()
-        Me.gbxProductMain = New System.Windows.Forms.GroupBox()
-        Me.gbxVendedor = New System.Windows.Forms.GroupBox()
-        Me.lblDescription = New System.Windows.Forms.TextBox()
-        Me.lblDescriptionTitle = New System.Windows.Forms.Label()
-        Me.gbxInteraction = New System.Windows.Forms.GroupBox()
-        Me.lblReports = New System.Windows.Forms.Label()
-        Me.lblPrice = New System.Windows.Forms.Label()
-        Me.lblProduct = New System.Windows.Forms.Label()
-        Me.btnLayOff = New System.Windows.Forms.Button()
-        Me.btnDisregard = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.gbxImages = New System.Windows.Forms.GroupBox()
-        Me.img3 = New System.Windows.Forms.PictureBox()
-        Me.img2 = New System.Windows.Forms.PictureBox()
-        Me.img1 = New System.Windows.Forms.PictureBox()
-        Me.imgMain = New System.Windows.Forms.PictureBox()
         Me.imgNosbey = New System.Windows.Forms.Button()
+        Me.gbxImages = New System.Windows.Forms.GroupBox()
+        Me.imgMain = New System.Windows.Forms.PictureBox()
+        Me.img1 = New System.Windows.Forms.PictureBox()
+        Me.img2 = New System.Windows.Forms.PictureBox()
+        Me.img3 = New System.Windows.Forms.PictureBox()
+        Me.gbxInteraction = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnDisregard = New System.Windows.Forms.Button()
+        Me.btnLayOff = New System.Windows.Forms.Button()
+        Me.lblProduct = New System.Windows.Forms.Label()
+        Me.lblPrice = New System.Windows.Forms.Label()
+        Me.lblReports = New System.Windows.Forms.Label()
+        Me.gbxVendedor = New System.Windows.Forms.GroupBox()
+        Me.lblDescriptionTitle = New System.Windows.Forms.Label()
+        Me.lblDescription = New System.Windows.Forms.TextBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.viewAlert.SuspendLayout()
-        Me.gbxProductMain.SuspendLayout()
-        Me.gbxVendedor.SuspendLayout()
-        Me.gbxInteraction.SuspendLayout()
         Me.gbxImages.SuspendLayout()
-        CType(Me.img3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.img2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.img1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.imgMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.img3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxInteraction.SuspendLayout()
+        Me.gbxVendedor.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox3
@@ -75,13 +84,15 @@ Partial Class ProductsScreen
         '
         Me.viewAlert.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.viewAlert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.viewAlert.Controls.Add(Me.gbxVendedor)
         Me.viewAlert.Controls.Add(Me.btnCancelAction)
+        Me.viewAlert.Controls.Add(Me.gbxInteraction)
         Me.viewAlert.Controls.Add(Me.btnAcceptAction)
         Me.viewAlert.Controls.Add(Me.lblAction)
         Me.viewAlert.Controls.Add(Me.btnCloseAlert)
-        Me.viewAlert.Location = New System.Drawing.Point(471, 290)
+        Me.viewAlert.Location = New System.Drawing.Point(10, 10)
         Me.viewAlert.Name = "viewAlert"
-        Me.viewAlert.Size = New System.Drawing.Size(425, 175)
+        Me.viewAlert.Size = New System.Drawing.Size(375, 115)
         Me.viewAlert.TabIndex = 36
         Me.viewAlert.Visible = False
         '
@@ -197,200 +208,6 @@ Partial Class ProductsScreen
         Me.btnPrevious.TabIndex = 34
         Me.btnPrevious.UseVisualStyleBackColor = False
         '
-        'gbxProductMain
-        '
-        Me.gbxProductMain.Controls.Add(Me.gbxVendedor)
-        Me.gbxProductMain.Controls.Add(Me.gbxInteraction)
-        Me.gbxProductMain.Controls.Add(Me.gbxImages)
-        Me.gbxProductMain.Location = New System.Drawing.Point(264, 180)
-        Me.gbxProductMain.Name = "gbxProductMain"
-        Me.gbxProductMain.Size = New System.Drawing.Size(839, 340)
-        Me.gbxProductMain.TabIndex = 32
-        Me.gbxProductMain.TabStop = False
-        '
-        'gbxVendedor
-        '
-        Me.gbxVendedor.Controls.Add(Me.lblDescription)
-        Me.gbxVendedor.Controls.Add(Me.lblDescriptionTitle)
-        Me.gbxVendedor.Location = New System.Drawing.Point(430, 125)
-        Me.gbxVendedor.Name = "gbxVendedor"
-        Me.gbxVendedor.Size = New System.Drawing.Size(405, 215)
-        Me.gbxVendedor.TabIndex = 34
-        Me.gbxVendedor.TabStop = False
-        '
-        'lblDescription
-        '
-        Me.lblDescription.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescription.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblDescription.Location = New System.Drawing.Point(15, 45)
-        Me.lblDescription.Multiline = True
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(385, 165)
-        Me.lblDescription.TabIndex = 27
-        Me.lblDescription.Text = resources.GetString("lblDescription.Text")
-        '
-        'lblDescriptionTitle
-        '
-        Me.lblDescriptionTitle.AutoSize = True
-        Me.lblDescriptionTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.lblDescriptionTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescriptionTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblDescriptionTitle.Location = New System.Drawing.Point(10, 20)
-        Me.lblDescriptionTitle.Name = "lblDescriptionTitle"
-        Me.lblDescriptionTitle.Size = New System.Drawing.Size(103, 20)
-        Me.lblDescriptionTitle.TabIndex = 26
-        Me.lblDescriptionTitle.Text = "Descripción"
-        Me.lblDescriptionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'gbxInteraction
-        '
-        Me.gbxInteraction.Controls.Add(Me.lblReports)
-        Me.gbxInteraction.Controls.Add(Me.lblPrice)
-        Me.gbxInteraction.Controls.Add(Me.lblProduct)
-        Me.gbxInteraction.Controls.Add(Me.btnLayOff)
-        Me.gbxInteraction.Controls.Add(Me.btnDisregard)
-        Me.gbxInteraction.Controls.Add(Me.btnDelete)
-        Me.gbxInteraction.Location = New System.Drawing.Point(430, 5)
-        Me.gbxInteraction.Name = "gbxInteraction"
-        Me.gbxInteraction.Size = New System.Drawing.Size(405, 105)
-        Me.gbxInteraction.TabIndex = 32
-        Me.gbxInteraction.TabStop = False
-        '
-        'lblReports
-        '
-        Me.lblReports.AutoSize = True
-        Me.lblReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.lblReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReports.ForeColor = System.Drawing.Color.Red
-        Me.lblReports.Location = New System.Drawing.Point(5, 74)
-        Me.lblReports.Name = "lblReports"
-        Me.lblReports.Size = New System.Drawing.Size(223, 20)
-        Me.lblReports.TabIndex = 28
-        Me.lblReports.Text = "Cantidad de denuncias: 17"
-        '
-        'lblPrice
-        '
-        Me.lblPrice.AutoSize = True
-        Me.lblPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.lblPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPrice.ForeColor = System.Drawing.Color.Green
-        Me.lblPrice.Location = New System.Drawing.Point(5, 48)
-        Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(77, 25)
-        Me.lblPrice.TabIndex = 27
-        Me.lblPrice.Text = "$2599"
-        '
-        'lblProduct
-        '
-        Me.lblProduct.AutoSize = True
-        Me.lblProduct.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.lblProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProduct.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblProduct.Location = New System.Drawing.Point(5, 20)
-        Me.lblProduct.Name = "lblProduct"
-        Me.lblProduct.Size = New System.Drawing.Size(253, 29)
-        Me.lblProduct.TabIndex = 26
-        Me.lblProduct.Text = "Championes Adidas "
-        Me.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btnLayOff
-        '
-        Me.btnLayOff.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnLayOff.BackgroundImage = CType(resources.GetObject("btnLayOff.BackgroundImage"), System.Drawing.Image)
-        Me.btnLayOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnLayOff.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLayOff.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
-        Me.btnLayOff.FlatAppearance.BorderSize = 0
-        Me.btnLayOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLayOff.Location = New System.Drawing.Point(275, 18)
-        Me.btnLayOff.Name = "btnLayOff"
-        Me.btnLayOff.Size = New System.Drawing.Size(33, 32)
-        Me.btnLayOff.TabIndex = 29
-        Me.btnLayOff.UseVisualStyleBackColor = False
-        '
-        'btnDisregard
-        '
-        Me.btnDisregard.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnDisregard.BackgroundImage = CType(resources.GetObject("btnDisregard.BackgroundImage"), System.Drawing.Image)
-        Me.btnDisregard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnDisregard.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDisregard.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
-        Me.btnDisregard.FlatAppearance.BorderSize = 0
-        Me.btnDisregard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDisregard.Location = New System.Drawing.Point(325, 18)
-        Me.btnDisregard.Name = "btnDisregard"
-        Me.btnDisregard.Size = New System.Drawing.Size(25, 32)
-        Me.btnDisregard.TabIndex = 31
-        Me.btnDisregard.UseVisualStyleBackColor = False
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnDelete.BackgroundImage = CType(resources.GetObject("btnDelete.BackgroundImage"), System.Drawing.Image)
-        Me.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
-        Me.btnDelete.FlatAppearance.BorderSize = 0
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.ForeColor = System.Drawing.Color.Transparent
-        Me.btnDelete.Location = New System.Drawing.Point(365, 18)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(25, 32)
-        Me.btnDelete.TabIndex = 30
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'gbxImages
-        '
-        Me.gbxImages.Controls.Add(Me.img3)
-        Me.gbxImages.Controls.Add(Me.img2)
-        Me.gbxImages.Controls.Add(Me.img1)
-        Me.gbxImages.Controls.Add(Me.imgMain)
-        Me.gbxImages.Location = New System.Drawing.Point(5, 5)
-        Me.gbxImages.Name = "gbxImages"
-        Me.gbxImages.Size = New System.Drawing.Size(420, 330)
-        Me.gbxImages.TabIndex = 33
-        Me.gbxImages.TabStop = False
-        '
-        'img3
-        '
-        Me.img3.BackgroundImage = CType(resources.GetObject("img3.BackgroundImage"), System.Drawing.Image)
-        Me.img3.Location = New System.Drawing.Point(10, 215)
-        Me.img3.Name = "img3"
-        Me.img3.Size = New System.Drawing.Size(95, 95)
-        Me.img3.TabIndex = 10
-        Me.img3.TabStop = False
-        '
-        'img2
-        '
-        Me.img2.BackgroundImage = CType(resources.GetObject("img2.BackgroundImage"), System.Drawing.Image)
-        Me.img2.Location = New System.Drawing.Point(10, 114)
-        Me.img2.Name = "img2"
-        Me.img2.Size = New System.Drawing.Size(95, 95)
-        Me.img2.TabIndex = 9
-        Me.img2.TabStop = False
-        '
-        'img1
-        '
-        Me.img1.BackgroundImage = CType(resources.GetObject("img1.BackgroundImage"), System.Drawing.Image)
-        Me.img1.Location = New System.Drawing.Point(10, 13)
-        Me.img1.Name = "img1"
-        Me.img1.Size = New System.Drawing.Size(95, 95)
-        Me.img1.TabIndex = 8
-        Me.img1.TabStop = False
-        '
-        'imgMain
-        '
-        Me.imgMain.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.imgMain.BackgroundImage = CType(resources.GetObject("imgMain.BackgroundImage"), System.Drawing.Image)
-        Me.imgMain.Location = New System.Drawing.Point(110, 12)
-        Me.imgMain.Name = "imgMain"
-        Me.imgMain.Size = New System.Drawing.Size(300, 300)
-        Me.imgMain.TabIndex = 7
-        Me.imgMain.TabStop = False
-        '
         'imgNosbey
         '
         Me.imgNosbey.BackColor = System.Drawing.Color.Transparent
@@ -408,20 +225,234 @@ Partial Class ProductsScreen
         Me.imgNosbey.TabIndex = 37
         Me.imgNosbey.UseVisualStyleBackColor = False
         '
+        'gbxImages
+        '
+        Me.gbxImages.Controls.Add(Me.img3)
+        Me.gbxImages.Controls.Add(Me.img2)
+        Me.gbxImages.Controls.Add(Me.img1)
+        Me.gbxImages.Controls.Add(Me.imgMain)
+        Me.gbxImages.Location = New System.Drawing.Point(10, 10)
+        Me.gbxImages.Name = "gbxImages"
+        Me.gbxImages.Size = New System.Drawing.Size(400, 140)
+        Me.gbxImages.TabIndex = 33
+        Me.gbxImages.TabStop = False
+        '
+        'imgMain
+        '
+        Me.imgMain.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.imgMain.BackgroundImage = CType(resources.GetObject("imgMain.BackgroundImage"), System.Drawing.Image)
+        Me.imgMain.Location = New System.Drawing.Point(110, 15)
+        Me.imgMain.Name = "imgMain"
+        Me.imgMain.Size = New System.Drawing.Size(300, 300)
+        Me.imgMain.TabIndex = 7
+        Me.imgMain.TabStop = False
+        '
+        'img1
+        '
+        Me.img1.BackgroundImage = CType(resources.GetObject("img1.BackgroundImage"), System.Drawing.Image)
+        Me.img1.Location = New System.Drawing.Point(10, 16)
+        Me.img1.Name = "img1"
+        Me.img1.Size = New System.Drawing.Size(95, 95)
+        Me.img1.TabIndex = 8
+        Me.img1.TabStop = False
+        '
+        'img2
+        '
+        Me.img2.BackgroundImage = CType(resources.GetObject("img2.BackgroundImage"), System.Drawing.Image)
+        Me.img2.Location = New System.Drawing.Point(10, 117)
+        Me.img2.Name = "img2"
+        Me.img2.Size = New System.Drawing.Size(95, 95)
+        Me.img2.TabIndex = 9
+        Me.img2.TabStop = False
+        '
+        'img3
+        '
+        Me.img3.BackgroundImage = CType(resources.GetObject("img3.BackgroundImage"), System.Drawing.Image)
+        Me.img3.Location = New System.Drawing.Point(10, 218)
+        Me.img3.Name = "img3"
+        Me.img3.Size = New System.Drawing.Size(95, 95)
+        Me.img3.TabIndex = 10
+        Me.img3.TabStop = False
+        '
+        'gbxInteraction
+        '
+        Me.gbxInteraction.Controls.Add(Me.lblReports)
+        Me.gbxInteraction.Controls.Add(Me.lblPrice)
+        Me.gbxInteraction.Controls.Add(Me.lblProduct)
+        Me.gbxInteraction.Controls.Add(Me.btnLayOff)
+        Me.gbxInteraction.Controls.Add(Me.btnDisregard)
+        Me.gbxInteraction.Controls.Add(Me.btnDelete)
+        Me.gbxInteraction.Location = New System.Drawing.Point(13, 9)
+        Me.gbxInteraction.Name = "gbxInteraction"
+        Me.gbxInteraction.Size = New System.Drawing.Size(405, 100)
+        Me.gbxInteraction.TabIndex = 32
+        Me.gbxInteraction.TabStop = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btnDelete.BackgroundImage = CType(resources.GetObject("btnDelete.BackgroundImage"), System.Drawing.Image)
+        Me.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnDelete.FlatAppearance.BorderSize = 0
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.ForeColor = System.Drawing.Color.Transparent
+        Me.btnDelete.Location = New System.Drawing.Point(365, 18)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(25, 32)
+        Me.btnDelete.TabIndex = 30
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnDisregard
+        '
+        Me.btnDisregard.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btnDisregard.BackgroundImage = CType(resources.GetObject("btnDisregard.BackgroundImage"), System.Drawing.Image)
+        Me.btnDisregard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnDisregard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDisregard.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnDisregard.FlatAppearance.BorderSize = 0
+        Me.btnDisregard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDisregard.Location = New System.Drawing.Point(325, 18)
+        Me.btnDisregard.Name = "btnDisregard"
+        Me.btnDisregard.Size = New System.Drawing.Size(25, 32)
+        Me.btnDisregard.TabIndex = 31
+        Me.btnDisregard.UseVisualStyleBackColor = False
+        '
+        'btnLayOff
+        '
+        Me.btnLayOff.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btnLayOff.BackgroundImage = CType(resources.GetObject("btnLayOff.BackgroundImage"), System.Drawing.Image)
+        Me.btnLayOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnLayOff.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLayOff.FlatAppearance.BorderColor = System.Drawing.SystemColors.ScrollBar
+        Me.btnLayOff.FlatAppearance.BorderSize = 0
+        Me.btnLayOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLayOff.Location = New System.Drawing.Point(275, 18)
+        Me.btnLayOff.Name = "btnLayOff"
+        Me.btnLayOff.Size = New System.Drawing.Size(33, 32)
+        Me.btnLayOff.TabIndex = 29
+        Me.btnLayOff.UseVisualStyleBackColor = False
+        '
+        'lblProduct
+        '
+        Me.lblProduct.AutoSize = True
+        Me.lblProduct.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProduct.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblProduct.Location = New System.Drawing.Point(5, 20)
+        Me.lblProduct.Name = "lblProduct"
+        Me.lblProduct.Size = New System.Drawing.Size(253, 29)
+        Me.lblProduct.TabIndex = 26
+        Me.lblProduct.Text = "Championes Adidas "
+        Me.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblPrice
+        '
+        Me.lblPrice.AutoSize = True
+        Me.lblPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrice.ForeColor = System.Drawing.Color.Green
+        Me.lblPrice.Location = New System.Drawing.Point(5, 48)
+        Me.lblPrice.Name = "lblPrice"
+        Me.lblPrice.Size = New System.Drawing.Size(77, 25)
+        Me.lblPrice.TabIndex = 27
+        Me.lblPrice.Text = "$2599"
+        '
+        'lblReports
+        '
+        Me.lblReports.AutoSize = True
+        Me.lblReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReports.ForeColor = System.Drawing.Color.Red
+        Me.lblReports.Location = New System.Drawing.Point(5, 74)
+        Me.lblReports.Name = "lblReports"
+        Me.lblReports.Size = New System.Drawing.Size(223, 20)
+        Me.lblReports.TabIndex = 28
+        Me.lblReports.Text = "Cantidad de denuncias: 17"
+        '
+        'gbxVendedor
+        '
+        Me.gbxVendedor.Controls.Add(Me.lblDescription)
+        Me.gbxVendedor.Controls.Add(Me.lblDescriptionTitle)
+        Me.gbxVendedor.Location = New System.Drawing.Point(13, 9)
+        Me.gbxVendedor.Name = "gbxVendedor"
+        Me.gbxVendedor.Size = New System.Drawing.Size(257, 111)
+        Me.gbxVendedor.TabIndex = 34
+        Me.gbxVendedor.TabStop = False
+        '
+        'lblDescriptionTitle
+        '
+        Me.lblDescriptionTitle.AutoSize = True
+        Me.lblDescriptionTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblDescriptionTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescriptionTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblDescriptionTitle.Location = New System.Drawing.Point(10, 20)
+        Me.lblDescriptionTitle.Name = "lblDescriptionTitle"
+        Me.lblDescriptionTitle.Size = New System.Drawing.Size(103, 20)
+        Me.lblDescriptionTitle.TabIndex = 26
+        Me.lblDescriptionTitle.Text = "Descripción"
+        Me.lblDescriptionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblDescription
+        '
+        Me.lblDescription.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescription.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblDescription.Location = New System.Drawing.Point(15, 45)
+        Me.lblDescription.Multiline = True
+        Me.lblDescription.Name = "lblDescription"
+        Me.lblDescription.Size = New System.Drawing.Size(385, 160)
+        Me.lblDescription.TabIndex = 27
+        Me.lblDescription.Text = resources.GetString("lblDescription.Text")
+        '
+        'ListView1
+        '
+        ListViewGroup1.Header = "ListViewGroup"
+        ListViewGroup1.Name = "ListViewGroup1"
+        ListViewGroup2.Header = "ListViewGroup"
+        ListViewGroup2.Name = "ListViewGroup2"
+        ListViewGroup3.Header = "ListViewGroup"
+        ListViewGroup3.Name = "ListViewGroup3"
+        ListViewGroup4.Header = "ListViewGroup"
+        ListViewGroup4.Name = "ListViewGroup4"
+        ListViewGroup5.Header = "ListViewGroup"
+        ListViewGroup5.Name = "ListViewGroup5"
+        ListViewGroup6.Header = "ListViewGroup"
+        ListViewGroup6.Name = "ListViewGroup6"
+        ListViewGroup7.Header = "ListViewGroup"
+        ListViewGroup7.Name = "ListViewGroup7"
+        ListViewGroup8.Header = "ListViewGroup"
+        ListViewGroup8.Name = "ListViewGroup8"
+        ListViewGroup9.Header = "ListViewGroup"
+        ListViewGroup9.Name = "ListViewGroup9"
+        ListViewGroup10.Header = "ListViewGroup"
+        ListViewGroup10.Name = "ListViewGroup10"
+        Me.ListView1.Groups.AddRange(New System.Windows.Forms.ListViewGroup() {ListViewGroup1, ListViewGroup2, ListViewGroup3, ListViewGroup4, ListViewGroup5, ListViewGroup6, ListViewGroup7, ListViewGroup8, ListViewGroup9, ListViewGroup10})
+        Me.ListView1.Location = New System.Drawing.Point(263, 175)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(840, 340)
+        Me.ListView1.TabIndex = 38
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.VirtualListSize = 2
+        '
         'ProductsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.imgNosbey)
         Me.Controls.Add(Me.viewAlert)
+        Me.Controls.Add(Me.gbxImages)
         Me.Controls.Add(Me.btnPrevious)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.btnCloseApp)
         Me.Controls.Add(Me.titNosbey)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.gbxProductMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ProductsScreen"
@@ -430,16 +461,15 @@ Partial Class ProductsScreen
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.viewAlert.ResumeLayout(False)
         Me.viewAlert.PerformLayout()
-        Me.gbxProductMain.ResumeLayout(False)
-        Me.gbxVendedor.ResumeLayout(False)
-        Me.gbxVendedor.PerformLayout()
+        Me.gbxImages.ResumeLayout(False)
+        CType(Me.imgMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.img3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxInteraction.ResumeLayout(False)
         Me.gbxInteraction.PerformLayout()
-        Me.gbxImages.ResumeLayout(False)
-        CType(Me.img3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.img2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.img1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgMain, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxVendedor.ResumeLayout(False)
+        Me.gbxVendedor.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -453,7 +483,7 @@ Partial Class ProductsScreen
     Friend WithEvents lblAction As Label
     Friend WithEvents btnCancelAction As Button
     Friend WithEvents btnAcceptAction As Button
-    Friend WithEvents gbxProductMain As GroupBox
+    Friend WithEvents imgNosbey As Button
     Friend WithEvents gbxVendedor As GroupBox
     Friend WithEvents lblDescription As TextBox
     Friend WithEvents lblDescriptionTitle As Label
@@ -469,5 +499,5 @@ Partial Class ProductsScreen
     Friend WithEvents img2 As PictureBox
     Friend WithEvents img1 As PictureBox
     Friend WithEvents imgMain As PictureBox
-    Friend WithEvents imgNosbey As Button
+    Friend WithEvents ListView1 As ListView
 End Class
