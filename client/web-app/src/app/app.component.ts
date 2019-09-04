@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { } from 'googlemaps';
 import { TranslateService } from "@ngx-translate/core";
-import { Router } from "@angular/router";
+import { Router, NavigationEnd } from "@angular/router";
 import { TestService } from "./shared/services/test.service";
 import { NavbarService } from "src/app/shared/services/navbar.service";
 import { InfoWindow } from '@agm/core/services/google-maps-types';
 import { ToastrService } from 'ngx-toastr';
+import { GeneralService } from './shared/services/general.service';
 
 @Component({
   selector: "app-root",
@@ -37,10 +38,16 @@ export class AppComponent implements OnInit, AfterViewInit {
     private router: Router,
     private _testService: TestService,
     private _navbarService: NavbarService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private _generalService: GeneralService
   ) {
     translate.setDefaultLang("es");
     translate.use("es");
+    this.router.events.subscribe((event) => {​
+      if (event instanceof NavigationEnd) {​
+        this._generalService.setCurrentAndPreviousRoutes(event.url);​
+      }​
+    });
   }
 
   async ngOnInit() {
@@ -55,10 +62,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.warehouseWindow.open();
+    /*this.warehouseWindow.open();
     this.userWindow.open();
     this.orderWindow.open();
-    this.simulateShipping();
+    this.simulateShipping();*/
   }
 
   changeOfRoutes() {

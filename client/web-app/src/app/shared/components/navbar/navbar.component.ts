@@ -29,6 +29,8 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.logged = this._navbarService.userLogged;
+    
     this._navbarService.updateNavbarColor$.subscribe(res => {
       this.navbarColor = res;
     });
