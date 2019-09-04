@@ -295,12 +295,12 @@ class IndexController {
 
         form.parse(req);
 
-        form.on('fileBegin', function (name, file){
+        form.on('fileBegin', function (name: any, file: any){
             file.path =  Config.filesPath + file.name;
             console.log("file --> ", file);
         });
 
-        form.on('file', function (name, file){
+        form.on('file', function (name: any, file: any){
             console.log('Uploaded ' + file.name);
             res.send(file.path);
         });

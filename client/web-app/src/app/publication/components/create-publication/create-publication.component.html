@@ -69,15 +69,17 @@
         {{ file.file.name }}
       </div>
 
-      <mat-progress-bar mode="determinate" [value]="uploader.progress" style="margin: 10px"></mat-progress-bar>
+      <mat-progress-bar mode="determinate" [value]="uploader.progress"></mat-progress-bar>
 
+      <div class="container-images">
+        <img *ngFor="let img of previewImages" class="img-preview" [src]="sanitizer.bypassSecurityTrustUrl(img)" >
+      </div>
       
-      <img *ngFor="let img of previewImages" class="img-preview" [src]="sanitizer.bypassSecurityTrustUrl(img)" >
+      <div class="container-buttons">
+        <button mat-raised-button color="primary" class="btn-primary" (click)="u()">Subir imágenes</button>
 
-      <button mat-raised-button color="primary" class="btn-primary" (click)="u()">Subir imágenes</button>
-
-      <button mat-raised-button color="primary" class="btn-primary" (click)="c()">Borrar imágenes</button>
-
+        <button mat-raised-button color="primary" class="btn-primary" (click)="c()">Borrar imágenes</button>
+      </div>
     </mat-card>
 
     <!-- Form de datos de la subcategoría 
