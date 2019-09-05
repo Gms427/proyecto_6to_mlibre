@@ -8,7 +8,6 @@ import { publications } from '../utils/utils';
 import { User } from '../models/User';
 import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
 import { loginController } from './loginController';
-import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
 import * as Formidable from 'formidable';
 import { Config } from '../utils/config';
 
