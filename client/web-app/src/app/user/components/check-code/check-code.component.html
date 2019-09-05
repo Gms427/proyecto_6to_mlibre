@@ -1,0 +1,9 @@
+<div class="top-section">
+    <h1 class="title">Ingresa el codigo que se te envio al email</h1>
+</div>
+
+<mat-card class="container">
+    <h2>Codigo</h2>
+    <input class="code" type="number" placeholder="######" [formControl]="codeFormControl" (keydown.enter)="checkCode()" />
+    <button mat-button class="btn-primary confirm" (click)="checkCode()">Confirmar</button>
+</mat-card>

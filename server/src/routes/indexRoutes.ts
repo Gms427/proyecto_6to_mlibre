@@ -15,8 +15,8 @@ class IndexRoutes {
         this.router.get('/', indexController.index);
         this.router.get('/test', indexController.test);
         this.router.get('/main', indexController.main);
-		this.router.get('/getProducts', indexController.getProducts);
-        this.router.post('/product', indexController.createProduct);
+        this.router.get('/getProducts/:search', indexController.getProducts);
+        this.router.get('/getProducts', indexController.getAllProducts);
         this.router.get('/product/:id', indexController.getProduct);
         this.router.post('/signin', signinController.signin);
         this.router.get('/signin', signinController.t);
@@ -28,6 +28,10 @@ class IndexRoutes {
         this.router.get('/getUserInfo/:email', indexController.getUserInfo);
         this.router.put('/updateUser', signinController.UpdateUser);
         this.router.post('/checkPassword', loginController.checkPassword);        
+        this.router.get('/history/:email', indexController.getHistory);
+        this.router.post('/product', indexController.uploadPublication); 
+        this.router.post('/changePass', indexController.changePass);        
+        this.router.post('/checkCode', indexController.checkCode);        
 
     }
 }

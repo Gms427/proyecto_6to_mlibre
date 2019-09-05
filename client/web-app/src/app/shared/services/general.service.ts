@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { fromEvent } from 'rxjs';
-import { Filter, Category } from '../utils/types';
+import { Filter, Category, UserInfo } from '../utils/types';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,13 @@ export class GeneralService {
 
   setCategoryForCreate(value: Category){
     this.categoryForCreate = value;
+  }
+
+  changePass(user: UserInfo){
+    return this.http.post(`${this.baseUrl}/changePass`, user);    
+  }
+
+  checkCode(user, code){
+    return this.http.post(`${this.baseUrl}/checkCode`, {user, code});    
   }
 }

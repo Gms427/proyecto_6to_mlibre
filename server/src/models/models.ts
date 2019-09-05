@@ -7,12 +7,18 @@ export interface Category{
 
 export interface Publication{
     Id: number,
-    Name: string,
+    Title: string,
     Price: string,
-    State: boolean,
+    Status: number,
     Shipping: boolean,
     Favorite: boolean,
-    Img: string
+    Currency: string,
+    Description: string,
+    Category: number,
+    Subcategory: number,
+    Stock: number,
+    Warranty: string,
+    Imgs: string[]
 }
 
 export interface Subcategory{
@@ -26,5 +32,21 @@ export interface Filter{
     Name: string,
     Type: number,
     Options?: any,
-    Values?: any
+    Values?: any,
+    Category?: number,
+    Subcategory?: number,
+    TableName: string,
+    ColumnName: string
+}
+
+export class Message {
+    constructor(
+        public Content: string,
+        public Speaker: Speaker,
+    ) { }
+}
+
+export enum Speaker {
+    USER = 1,
+    ADMIN = 2
 }

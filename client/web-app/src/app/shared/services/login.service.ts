@@ -35,8 +35,8 @@ export class LoginService {
     this.loggedUser = value;
   }
 
-  checkPassword(user: UserLogin){
-    return this.http.post(`${this.baseUrl}/checkPassword`, user);    
+  checkPassword(pass: any, user: any){
+    return this.http.post(`${this.baseUrl}/checkPassword`, {pass, user});    
   }
 
 }

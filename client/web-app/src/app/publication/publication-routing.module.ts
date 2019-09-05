@@ -5,6 +5,7 @@ import { PublicationComponent } from './components/publication/publication.compo
 import { PublicationCategorySelectorComponent } from './components/publication-category-selector/publication-category-selector.component';
 import { ResolveUserLogged } from '../shared/utils/guards';
 import { CreatePublicationComponent } from './components/create-publication/create-publication.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const routes: Routes = [
  {
@@ -27,7 +28,13 @@ const routes: Routes = [
   },
   {
     path: 'create',
-    component: CreatePublicationComponent
+    component: CreatePublicationComponent,
+    canActivate: [ResolveUserLogged]    
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent,
+    canActivate: [ResolveUserLogged]    
   }
 ];
 

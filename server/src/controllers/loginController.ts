@@ -29,11 +29,16 @@ class LoginController {
     }
 
     async checkPassword(req: Request, res: Response){
-        let email = req.body.Email;
-        let pswd = req.body.Password;
+        let userId = req.body.user.Id;
+        let user = req.body.user
+        let pswd = req.body.pass;
+        let url = 'http://localhost:4200'
+        console.log(req.body);
         try {
-            let exist = await SigninDAL.getUserByEmail(email);
+            let exist = await SigninDAL.getUserByEmail(req.body.user.Email);
                 if(Bcrypt.compareSync(pswd, exist[0].password)){
+                    await Utils.InsertCode(userId);
+                    Utils.sendEmail(user, userId, url);
                     res.send(true);
                 }else{
                     throw 'Password is incorrect';

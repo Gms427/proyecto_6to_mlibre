@@ -61,53 +61,16 @@ export class SigninComponent implements OnInit {
                 }
 
   ngOnInit() {
-    /*this.nameFormControl.setValue("Gonzalo Manzzi");
-    this.emailFormControl.setValue("gonzalo427@hotmail.com");
-    this.phoneFormControl.setValue("096011626");
-    this.passwordFormControl.setValue("tubiega");
-    console.log(!this.checkTerms &&
-      this.nameFormControl.status !== 'VALID' &&
-      this.phoneFormControl.status !== 'VALID' &&
-      this.emailFormControl.status !== 'VALID' && 
-      this.passwordFormControl.status !== 'VALID');*/
   }
-
-  /*ngAfterViewInit(): void {
-    console.log(!(this.checkTerms &&
-      this.nameFormControl.status !== 'INVALID' &&
-      this.phoneFormControl.status !== 'INVALID' &&
-      this.emailFormControl.status !== 'INVALID' && 
-      this.passwordFormControl.status !== 'INVALID') );
-      console.log("check Terms", this.checkTerms);
-      console.log("nameFormControl", this.nameFormControl.status !== 'INVALID');
-      console.log("phoneFormControl", this.phoneFormControl.status !== 'INVALID');
-      console.log("emailFormControl", this.emailFormControl.status !== 'INVALID');
-      console.log("passwordFormControl", this.passwordFormControl.status !== 'INVALID');
-      console.log(this.passwordFormControl);
-  }
-
-  ngDoCheck(): void {
-    console.log(!(this.checkTerms &&
-      this.nameFormControl.status !== 'INVALID' &&
-      this.phoneFormControl.status !== 'INVALID' &&
-      this.emailFormControl.status !== 'INVALID' && 
-      this.passwordFormControl.status !== 'INVALID') );
-      console.log("check Terms", this.checkTerms);
-      console.log("nameFormControl", this.nameFormControl.status !== 'INVALID');
-      console.log("phoneFormControl", this.phoneFormControl.status !== 'INVALID');
-      console.log("emailFormControl", this.emailFormControl.status !== 'INVALID');
-      console.log("passwordFormControl", this.passwordFormControl.status !== 'INVALID');
-  }*/
 
   signin() {
     this.userData.Email = this.emailFormControl.value;
     this.userData.Fullname = this.nameFormControl.value;
-    //this.userData.Password = this.passwordFormControl.value;
+    this.userData.Password = this.form.value.confirmPasswordFormControl;
     this.userData.Phone = this.phoneFormControl.value;
     
     this._signinService.Signin(this.userData).subscribe(
       (res) => { 
-        console.log(res)
         this.error = '';
         this.toastr.success('Se ha registrado con éxito','',{
           timeOut: 2000,

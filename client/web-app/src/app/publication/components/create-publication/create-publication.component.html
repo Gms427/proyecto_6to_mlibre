@@ -41,8 +41,22 @@
         </mat-form-field>
 
         <mat-form-field class="full-width">
-            <input matInput placeholder="Cantidad" [(ngModel)]="publicationBaseInfo.Quantity">
+            <input matInput placeholder="Cantidad" [(ngModel)]="publicationBaseInfo.Stock">
         </mat-form-field>
+
+        <div class="full-width font">
+          <mat-label style="color: #757575">Nuevo o usado</mat-label>
+          <br/>
+          <mat-radio-group
+          aria-labelledby="radio-group-label"
+          [(ngModel)]="publicationBaseInfo.NewOrUsed"
+          class="radio-group">
+              <mat-radio-button class="radio-button" *ngFor="let option of publicationBaseInfo.NewOrUsed" [value]="option.Value">
+                  {{option.DisplayValue}}
+              </mat-radio-button>
+          </mat-radio-group>
+      </div>
+
     </mat-card>
 
     <!-- Form de datos de la subcategoría 

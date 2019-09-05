@@ -65,7 +65,11 @@ export interface Filter{
     Name: string,
     Type: string,
     Options?: any,
-    Values?: any
+    Values?: any,
+    Category?: number,
+    Subcategory?: number,
+    TableName: string,
+    ColumnName: string
 }
 
 export enum FilterTypes{
@@ -87,5 +91,26 @@ export interface PublicationBaseInfo{
     Description: string,
     Price: string,
     Currency: string,
-    Quantity: number
+    Stock: number,
+    Category: number,
+    Subcategory: number,
+    NewOrUsed: any[]
+}
+
+export enum Currencies {
+    USD = 1,
+    UYU = 2,
+    EUR = 3
+}
+
+export class Message {
+    constructor(
+        public Content: string,
+        public Speaker: Speaker,
+    ) { }
+}
+
+export enum Speaker {
+    USER = 1,
+    ADMIN = 2
 }
