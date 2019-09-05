@@ -3,9 +3,13 @@ import indexRoutes  from './routes/indexRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import * as WebSocket from 'ws';
+import * as http from 'http';
+import { Message, Speaker } from './models/models';
+import { Utils } from './utils/utils';
 
 class Server {
-    public app: Application
+    public app: Application;
 
     constructor(){
         this.app = express();
@@ -29,6 +33,49 @@ class Server {
     start(): void {
         this.app.listen(this.app.get('port'), () => {
             console.log('Server running on port: '+ this.app.get('port'));
+        });
+        const server = http.createServer(this.app);
+        let wss = new WebSocket.Server({ server });
+
+        wss.on('connection', (ws: WebSocket, request: any, client: any) => {
+
+            console.log('Connection to websocket');
+
+
+            setTimeout(() => {
+                ws.send(Utils.createMessage("Hola, ¿En qué podemos ayudarte?", Speaker.ADMIN));
+            }, 1500);
+            
+
+            ws.on('message', (msg: string) => {
+
+                const message = JSON.parse(msg) as Message;
+                console.log(`New message: ${message.Content}`);
+                
+                setTimeout(() => {
+                    let parsedMsg = JSON.parse(msg);
+                    if(parsedMsg.Speaker === Speaker.ADMIN){
+                        wss.clients.forEach(client => {
+                            client.send(Utils.createMessage(parsedMsg.Content, parsedMsg.Speaker));
+                        });
+                    }else{
+                        wss.clients.forEach(client => {
+                            if(client != ws){
+                                client.send(Utils.createMessage(parsedMsg.Content, parsedMsg.Speaker));
+                            }
+                        });
+                    }
+                    
+                    //ws.send(Utils.createMessage("Respuesta de prueba", Speaker.ADMIN));
+
+                }, 2000);
+
+            });
+
+        });
+
+        server.listen(8999, () => {
+            console.log('WebSocket server is listening on '+ 8999);
         });
     }
 }

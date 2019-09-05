@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 230px;
+}
+
+.favoritesContent {
+    padding: 0 35px;
+}
+
+.favoritesList {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.option {
+    width: auto;
+}
+
+mat-card-actions {
+    display: flex;
+}

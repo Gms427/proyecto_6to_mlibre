@@ -65,4 +65,19 @@
   .mat-form-field {
     width: 130px;
   }
+
+  .filters-container{
+    padding: 22px 8px;
+  }
   
+  .spinner{
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img{
+    width: 160px;
+  }

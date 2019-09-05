@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PublicationListComponent } from './components/publication-list/publication-list.component';
 import { PublicationComponent } from './components/publication/publication.component';
+import { PublicationCategorySelectorComponent } from './components/publication-category-selector/publication-category-selector.component';
+import { ResolveUserLogged } from '../shared/utils/guards';
+import { CreatePublicationComponent } from './components/create-publication/create-publication.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 const routes: Routes = [
  {
@@ -16,6 +20,21 @@ const routes: Routes = [
   {
     path: 'publication/:id',
     component: PublicationComponent
+  },
+  {
+    path: 'new',
+    component: PublicationCategorySelectorComponent,
+    canActivate: [ResolveUserLogged]
+  },
+  {
+    path: 'create',
+    component: CreatePublicationComponent,
+    canActivate: [ResolveUserLogged]    
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent,
+    canActivate: [ResolveUserLogged]    
   }
 ];
 

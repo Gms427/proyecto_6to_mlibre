@@ -1,0 +1,29 @@
+.btn-categories {
+  background: white;
+  /* border: 1px solid #a6a6a6; */
+  color: #666666;
+  line-height: 37px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.btn-categories:not(.btn-primary){
+  width: 217px;
+}
+.container-blocks{
+  width: 400px;
+  height: 300px;
+}
+.block {
+  display: inline-block;
+  width: 50%;
+  /* border: 1px solid black; */
+  height: 50%;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}

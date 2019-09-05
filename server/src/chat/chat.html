@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="publish">
+      <input type="text" name="message" />
+      <input type="submit" value="Send" />
+    </form>
+
+    <!-- div with messages -->
+    <div id="messages"></div>
+
+    <script>
+
+        let socket = new WebSocket("ws://localhost:8999");
+
+        // send message from the form
+        document.forms.publish.onsubmit = function() {
+            let outgoingMessage = this.message.value;
+            
+            let message = {
+                Content: outgoingMessage,
+                Speaker:  2
+            }
+
+            socket.send(JSON.stringify(message));
+            return false;
+        };
+
+        // message received - show the message in div#messages
+        socket.onmessage = function(event) {
+            let message = event.data;
+
+            let messageElem = document.createElement('div');
+            messageElem.textContent = message;
+            document.getElementById('messages').prepend(messageElem);
+        }
+    </script>
+  </body>
+</html>

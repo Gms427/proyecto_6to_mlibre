@@ -1,7 +1,7 @@
 export class UserSignin {
-  Name: string;
+  Fullname: string;
   Phone: string;
   Email: string;
-  Surname: string;
   Password: string;
+  status: number;
 }

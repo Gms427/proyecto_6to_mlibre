@@ -2,56 +2,41 @@ import { Injectable } from "@angular/core";
 import { Subject, Observable } from "rxjs";
 import { UserLogin } from "src/app/home/models/UserLogin";
 import { Router, NavigationEnd } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: "root"
 })
 export class LoginService {
-  public loggedUser: UserLogin = new UserLogin("", "");
-  public isLogged: boolean = false;
-  public isInLogin: boolean = false;
-
+  baseUrl: string = "http://localhost:3000";
+  private loggedUser: UserLogin;
   public login = new Subject<boolean>();
-  public inLogin = new Subject<boolean>();  
   public login$: Observable<boolean> = this.login.asObservable();
-  public inLogin$: Observable<boolean> = this.inLogin.asObservable();
 
-  public showNavbar = new Subject<boolean>();
-  public showNavbar$: Observable<boolean> = this.showNavbar.asObservable(); 
-  
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+              private http: HttpClient) {}
 
   Login(user: UserLogin) {
-    console.log("login work");
+    return this.http.post(`${this.baseUrl}/login`, user);
     this.loggedUser = user;
-    this.isLogged = true;
     this.login.next(true);
-    this.isInLogin = false;
-    this.inLogin.next(false);
   }
 
   Logout() {
-    console.log("logout work");
     this.loggedUser = new UserLogin("", "");
-    this.isLogged = false;
     this.login.next(false);
   }
 
-  getIsLogged() {
-    return this.isLogged;
+  getLoggedUser(): UserLogin{
+    return this.loggedUser;
   }
 
-  userIsLogin() {
-    console.log("work");
-    this.isInLogin = true;
-    this.inLogin.next(true);
+  setLoggedUser(value: UserLogin){
+    this.loggedUser = value;
   }
 
-  ShowNavbar(){
-    this.showNavbar.next(true);
+  checkPassword(pass: any, user: any){
+    return this.http.post(`${this.baseUrl}/checkPassword`, {pass, user});    
   }
 
-  HideNavbar(){
-    this.showNavbar.next(false);
-  }
 }
