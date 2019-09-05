@@ -1,3 +1,7 @@
-<h1>
-  main works!
-</h1>
+<div class="container-main">
+    <img class="logo" routerLink="/home/main" alt="Angular Logo" src="assets/NosbeyLogo.png" />
+    <div class="search-container">
+        <app-search></app-search>
+    </div>
+    <app-popular-categories [categories]="categories"></app-popular-categories>
+</div>

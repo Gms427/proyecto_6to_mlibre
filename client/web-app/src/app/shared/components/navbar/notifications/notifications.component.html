@@ -1,0 +1,55 @@
+<button
+  mat-button
+  matBadge="{{notificationsLength}}" 
+  matBadgeColor="warn"
+  [matMenuTriggerFor]="notifications"
+  class="options"
+  id="notifications"
+  matTooltip="{{ 'Notifications' | translate }}"
+  (click)="deleteNotifications()"
+>
+  <i class="fas fa-bell"></i>
+</button>
+<mat-menu #notifications="matMenu" xPosition="before">
+  <p class="header-title">{{ "Notifications" | translate }}</p>
+  <mat-divider></mat-divider>
+  <div class="notifications-content">
+    <a *ngFor="let notification of notificationsList">
+      <mat-card class="notifications-card mat-elevation-z">
+        <img class="modeless-box-img" [attr.src]="notification.img" />
+        <mat-card-header>
+          <mat-card-title>{{ "AnswerQuestion" | translate }}{{ notification.name }}</mat-card-title>
+          <mat-card-subtitle>
+            <p><i class="far fa-comment-alt"></i> {{ notification.question }}</p>
+            <p><i class="far fa-comment-alt"></i> {{ notification.answer }}</p>
+          </mat-card-subtitle>
+          <button mat-button class="btn-transparent">
+            {{ "Delete" | translate }}
+          </button>
+        </mat-card-header>
+        <mat-card-actions>
+          <div class="btn-notifications-centre">
+          <button mat-button class="btn-transparent">
+            {{ "Buy" | translate }}
+          </button>
+          <button mat-button class="btn-transparent">
+            {{ "Ask" | translate }}
+          </button>
+        </div>
+        </mat-card-actions>
+      </mat-card>
+      <mat-divider></mat-divider>
+    </a>
+  </div>
+  <a *ngIf="notificationsList.length == 0">
+    <mat-card class="notifications-card mat-elevation-z">
+      <mat-card-header>
+        <mat-card-title>{{ "NoDataDisplay" | translate }}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+    <mat-divider></mat-divider>
+  </a>
+  <button mat-button class="btn-notifications-all">
+    {{ "SeeAllNot" | translate }}
+  </button>
+</mat-menu>

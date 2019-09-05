@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/components/common/menuitem';
+import { PublicationService } from 'src/app/shared/services/publication.service';
+import {Category} from '../../../shared/utils/types'
 
 @Component({
   selector: 'app-main',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  public categories: Category[];
 
-  ngOnInit() {
+  constructor(private _publicationService: PublicationService) { }
+
+  async ngOnInit() {
+    /*this.categories = [{
+      label: 'Categories',
+      items: [{ label: 'Cat 1' }, { label: 'Cat 2' }, { label: 'Cat 3' }, ]
+    }];*/
+
+    this.categories = await this._publicationService.getCategories();
   }
-
 }

@@ -1,0 +1,29 @@
+<div>
+    <h1>En que te podemos ayudar?
+    </h1>
+    <div #messagesContainer class="content">
+        <div class="contentChat">
+                <ngx-spinner
+                bdOpacity = 0.9
+                bdColor = "transparent"
+                size = "medium"
+                color = "#5294e2"
+                type = "ball-fall"
+                [fullScreen] = "false"
+                >
+                </ngx-spinner>
+            <div *ngFor="let message of messages">
+
+                <div class="messageUser" *ngIf="message.Speaker === Speaker.USER">{{message.Content}}</div>
+
+                <div class="messageAdmin" *ngIf="message.Speaker === Speaker.ADMIN">{{message.Content}}</div>
+
+            </div>
+            
+        </div>
+    </div>
+    <div>
+        <input class="input" placeholder="Escribe tu pregunta" [(ngModel)]="inputChat">
+        <i class="fas fa-paper-plane send" (click)="sendMessage()"></i>
+    </div>
+</div>

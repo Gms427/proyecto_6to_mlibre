@@ -1,0 +1,83 @@
+.list-component {
+    padding-top: 30px;
+    width: 100%;
+    display: block;
+  }
+  
+  .filters {
+    width: 20%;
+    display: block;
+    border: 1px solid transparent;
+    float: left;
+  }
+  
+  .list {
+    width: 70%;
+    display: block;
+    height: 100%;
+    float: left;
+  }
+  
+  .publication-card {
+    min-height: 190px;
+    padding-top: 20px;
+  }
+  
+  .publication-card .modeless-box-img {
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .publication-name {
+    cursor: pointer;
+  }
+  
+  .publication-name:hover {
+    color: black;
+  }
+  
+  .btn-favorite {
+    outline: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all 200ms ease;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .btn-sortby{
+    outline: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all 200ms ease;
+    color:red
+  }
+  
+  .mat-form-field {
+    width: 130px;
+  }
+
+  .filters-container{
+    padding: 22px 8px;
+  }
+  
+  .spinner{
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img{
+    width: 160px;
+  }

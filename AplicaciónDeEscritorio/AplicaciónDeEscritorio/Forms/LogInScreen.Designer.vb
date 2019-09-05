@@ -30,6 +30,7 @@ Partial Class LogInScreen
         Me.tbxPassword = New System.Windows.Forms.TextBox()
         Me.btnPrevious = New System.Windows.Forms.Button()
         Me.lblError = New System.Windows.Forms.Label()
+        Me.lblTestNode = New System.Windows.Forms.Label()
         Me.imgNosbey = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -112,6 +113,18 @@ Partial Class LogInScreen
         Me.lblError.Text = "  Datos invalidos  "
         Me.lblError.Visible = False
         '
+        'lblTestNode
+        '
+        Me.lblTestNode.AutoSize = True
+        Me.lblTestNode.BackColor = System.Drawing.Color.Gold
+        Me.lblTestNode.Font = New System.Drawing.Font("Yu Gothic UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTestNode.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblTestNode.Location = New System.Drawing.Point(43, 419)
+        Me.lblTestNode.Name = "lblTestNode"
+        Me.lblTestNode.Size = New System.Drawing.Size(0, 15)
+        Me.lblTestNode.TabIndex = 19
+        Me.lblTestNode.Visible = False
+        '
         'imgNosbey
         '
         Me.imgNosbey.BackColor = System.Drawing.Color.Transparent
@@ -158,5 +171,6 @@ Partial Class LogInScreen
     Friend WithEvents tbxPassword As TextBox
     Friend WithEvents btnPrevious As Button
     Friend WithEvents lblError As Label
+    Friend WithEvents lblTestNode As Label
     Friend WithEvents imgNosbey As Button
 End Class

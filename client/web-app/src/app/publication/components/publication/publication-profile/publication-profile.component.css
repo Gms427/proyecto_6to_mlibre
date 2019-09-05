@@ -1,0 +1,88 @@
+.publication-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.photo {
+    width: 70%;
+    padding: 30px;
+    border-right: 1px solid grey;
+}
+
+.btn-buy {
+    margin: auto;
+    display: -webkit-box;
+    width: 100%;
+}
+
+.reputation-container {
+    display: flex;
+    width: 100%;
+}
+
+.general-information {
+    border-bottom: 1px solid grey;
+    padding: 20px;
+}
+
+.seller-information {
+    text-align: center;
+    padding: 20px;
+}
+
+.btn-favorite {
+    outline: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+mat-card-subtitle i {
+    margin-right: 10px;
+}
+
+mat-card-subtitle i span {
+    padding-left: 4px;
+}
+
+mat-card-subtitle:last-child {
+    margin: -13px 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.reputation {
+    margin: auto;
+    height: 20px;
+    width: 17%;
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.486);
+}
+
+.orange {
+    background-color: rgba(255, 166, 0, 0.486);
+}
+
+.yellow {
+    background-color: rgba(255, 255, 0, 0.486);
+}
+
+.green {
+    background-color: green;
+}
+
+.slider {
+    display: flex;
+    justify-content: center
+}
