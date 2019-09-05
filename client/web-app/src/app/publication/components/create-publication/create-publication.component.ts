@@ -6,6 +6,8 @@ import { TestService } from 'src/app/shared/services/test.service';
 import { LoginService } from 'src/app/shared/services/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { query } from '@angular/core/src/render3';
+import { FileUploader } from 'ng2-file-upload';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-create-publication',
@@ -19,21 +21,34 @@ export class CreatePublicationComponent implements OnInit {
   public subcategory: Subcategory;
   public currencies: Currency[];
   public booleanFields: Filter[];
-  public publicationBaseInfo: PublicationBaseInfo = { Currency: "", 
-  Description: "", 
-  Price: null,
-  Stock: null, 
-  Title: "", 
-  Category: null, 
-  Subcategory: null, 
-  NewOrUsed: [ { 
+  public publicationBaseInfo: PublicationBaseInfo = { 
+    Currency: "", 
+    Description: "", 
+    Price: null,
+    Stock: null, 
+    Title: "", 
+    Category: null, 
+    Subcategory: null, 
+    NewOrUsed: null
+  };
+
+  public newOrUsedOptions = [ { 
     Value: 0,
     DisplayValue: "Usado"
   },
   {
     Value: 1,
     DisplayValue: "Nuevo"
-  }] };
+  }];
+  
+  public url: string = 'http://localhost:3000/uploadFile';
+  public uploader:FileUploader = new FileUploader({url: this.url});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
+  public previewImages = [];
+  public responseUrl;
+  public progress = 0;
+
   public publication: Publication;
 
   constructor(private _generalService: GeneralService,
@@ -41,7 +56,22 @@ export class CreatePublicationComponent implements OnInit {
     private _TestService: TestService,
     private _loginService: LoginService, 
     private toastr: ToastrService,
-    ) { }
+    private sanitizer: DomSanitizer
+    ) { 
+
+      this.uploader.onAfterAddingFile = (fileItem) => {
+        fileItem.withCredentials = false;
+        let url = (window.URL) ? window.URL.createObjectURL(fileItem._file) : (window as any).webkitURL.createObjectURL(fileItem._file);
+        this.previewImages.push(url);
+      }
+
+      this.uploader.onSuccessItem = (item, response, status, headers) => {
+        console.log("item", item);
+        console.log("response", response);
+        console.log("status", status);
+        console.log("headers", headers);
+      }
+    }
 
   async ngOnInit() {
     //this.category = this._generalService.getCategoryForCreate();
@@ -134,7 +164,28 @@ export class CreatePublicationComponent implements OnInit {
 
     let columns = fields.map(f => f.ColumnName);
     console.log(columns);
-    let values = fields.map(f => f.Values);
+    let values = fields.map(f => {
+      
+      switch (typeof(f.Values)) {
+        
+        case "string":
+          return `'${f.Values}'`;
+          break;
+
+        case "number":
+          return `'${f.Values}'`;
+          break;
+          
+        case "boolean":
+          return f.Values;
+          break;
+      
+        default:
+          return f.Values;
+          break;
+      }
+      
+    });
 
     let query = `INSERT INTO ${table} (${columns})
                 (${values})`;
@@ -142,4 +193,26 @@ export class CreatePublicationComponent implements OnInit {
     return query;
   }
 
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+    console.log("fileOverBase",e);
+  }
+
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
+    console.log("fileOverAnother",e);
+  }
+
+  u(){
+    console.log(this.uploader);    
+    setTimeout(() => {
+      this.progress ++;
+    }, 20);
+    this.uploader.uploadAll();
+  }
+
+  c(){
+    this.uploader.clearQueue();
+    this.previewImages = [];
+  }
 }

@@ -1,8 +1,32 @@
 <app-navbar></app-navbar>
 <router-outlet (activate)="changeOfRoutes()"></router-outlet>
 
-<!--<agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  </agm-map>
 
-<app-footer></app-footer>-->
+<!--
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="14">
+
+    <agm-marker [latitude]="lat" 
+                [longitude]="lng">
+        <agm-info-window #userWindow>
+            <h3>Estas aquí</h3>
+        </agm-info-window>
+    </agm-marker>
+
+    <agm-marker [latitude]="warehouseUbication.lat" 
+                [longitude]="warehouseUbication.lng">
+        <agm-info-window #warehouseWindow>
+            <h3>Nuestro almacén</h3>
+            <i class="fas fa-warehouse map-icon"></i>
+        </agm-info-window>
+    </agm-marker>
+
+    <agm-marker [latitude]="orderUbication.lat" 
+                [longitude]="orderUbication.lng">
+        <agm-info-window #orderWindow>
+            <h3>Tu pedido</h3>
+            <i class="fas fa-truck map-icon"></i>
+        </agm-info-window>
+    </agm-marker>
+
+</agm-map>
+-->

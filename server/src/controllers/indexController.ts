@@ -8,6 +8,9 @@ import { publications } from '../utils/utils';
 import { User } from '../models/User';
 import { UserUpdate, SigninDTO } from '../serverDAL/DTOs/SigninDTO';
 import { loginController } from './loginController';
+import { UserUpdate } from '../serverDAL/DTOs/SigninDTO';
+import * as Formidable from 'formidable';
+import { Config } from '../utils/config';
 
 class IndexController {
 
@@ -25,26 +28,34 @@ class IndexController {
     }
 
 	async getProducts(req: Request, res: Response){
-        let products = await TestDAL.GetProducts(req.params.search);
+        try {
+            let products = await TestDAL.GetProducts(req.params.search);
         
-        let idProducts = products.map(p => p.id_product);
-        let imgs = await TestDAL.GetProductsImgs(idProducts);
+            let idProducts = products.map(p => p.id_product);
+            if(idProducts.length > 0){
+                let imgs = await TestDAL.GetProductsImgs(idProducts);
 
-        let finalProducts = products.map(p => {
-            let images = imgs.filter(i => i.id_product == p.id_product);
-
-            return {
-                Id: p.id_product,
-                Name: p.name,
-                Price: p.price,
-                State: p.status,
-                Shipping: false,
-                Favorite: false,
-                Imgs: images
+                let finalProducts = products.map(p => {
+                    let images = imgs.filter(i => i.id_product == p.id_product);
+    
+                    return {
+                        Id: p.id_product,
+                        Name: p.name,
+                        Price: p.price,
+                        State: p.status,
+                        Shipping: false,
+                        Favorite: false,
+                        Imgs: images
+                    }
+                });
+                //res.send(publications);
+                res.send(finalProducts);
+            }else{
+                res.send();
             }
-        });
-        //res.send(publications);
-        res.send(finalProducts);
+        } catch (error) {
+            throw error;
+        }
     }
 
     getProduct(req: Request, res: Response) {
@@ -88,7 +99,7 @@ class IndexController {
     async getFiltersInfo(req: Request, res: Response): Promise<void> {
         const queryResult: QueryResult = await TestDAL.GetFiltersInfo();
         const rows = queryResult.rows;
-
+        console.log(rows);
         let result: Filter[] = [];
         rows.forEach(filter => {
             let options: any = [];
@@ -114,7 +125,6 @@ class IndexController {
                 TableName: filter.table_name,
                 ColumnName: filter.column_name
             });
-
         });
         result = Utils.getUnique(result, "Id");
 
@@ -123,7 +133,6 @@ class IndexController {
 
     async getCategories(req: Request, res: Response): Promise<void> {
         let result = await TestDAL.GetCategories();
-        console.log(result);
         let categories: Category[] = [];
 
         result.forEach(row => {
@@ -253,6 +262,11 @@ class IndexController {
                 Date: p.date_of_visit,
                 Currency: p.currency,
                 Imgs: images,
+                NewOrUsed: 'Usado',
+                OfficialStore: true,
+                Ubication: 'Montevideo',
+                Category: p.category,
+                Subcategory: p.subcategory
             }
         });
 
@@ -276,6 +290,23 @@ class IndexController {
             res.send(error);
         }
         res.send();
+    }
+
+    async uploadFile(req: Request, res: Response){
+        var form = new Formidable.IncomingForm();
+
+        form.parse(req);
+
+        form.on('fileBegin', function (name: any, file: any){
+            file.path =  Config.filesPath + file.name;
+            console.log("file --> ", file);
+        });
+
+        form.on('file', function (name: any, file: any){
+            console.log('Uploaded ' + file.name);
+            res.send(file.path);
+        });
+
     }
 
     async changePass(req: Request, res: Response){

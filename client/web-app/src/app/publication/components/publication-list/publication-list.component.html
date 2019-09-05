@@ -26,7 +26,7 @@
       </div>
       <!-- Filtros  -->
       <div class="filters-container">
-          <app-filters [filtersInfo]="filtersInfo" (spinner)="onFiltersChange($event)"></app-filters>
+          <app-filters [filtersInfo]="filtersInfo" (spinner)="spinnerChange($event)" (updateFilters)="onFiltersChange($event)"></app-filters>
       </div>
 
     </mat-list>
@@ -62,12 +62,15 @@
               *ngIf="product.Shipping"
               >{{ "FreeShipping" | translate }}</mat-card-subtitle
             >
-            <mat-card-subtitle *ngIf="product.State">{{
+            <!--<mat-card-subtitle *ngIf="product.State">{{
               "New" | translate
             }}</mat-card-subtitle>
             <mat-card-subtitle *ngIf="!product.State">{{
               "Used" | translate
-            }}</mat-card-subtitle>
+            }}</mat-card-subtitle>-->
+            <mat-card-subtitle>
+              {{ product.NewOrUsed }}
+            </mat-card-subtitle> 
           </mat-card-content>
           <button class="btn-favorite btn-transparent">
             <i

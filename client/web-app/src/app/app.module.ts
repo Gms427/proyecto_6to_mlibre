@@ -39,7 +39,7 @@ export function createTranslateLoader(http: HttpClient){
       }
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCdMrMwZ7-4WJPpIofMsv5o5k47cNPDDrk'
+      apiKey: 'AIzaSyAjVWu9CenDWlGzxbyGuU17vVzvM_ukbi4'
     })
   ],
   providers: [LoginService],

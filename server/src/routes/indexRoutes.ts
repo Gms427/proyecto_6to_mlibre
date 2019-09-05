@@ -32,6 +32,8 @@ class IndexRoutes {
         this.router.post('/product', indexController.uploadPublication); 
         this.router.post('/changePass', indexController.changePass);        
         this.router.post('/checkCode', indexController.checkCode);        
+        this.router.post('/product', indexController.uploadPublication);        
+        this.router.post('/uploadFile',  indexController.uploadFile);
 
     }
 }

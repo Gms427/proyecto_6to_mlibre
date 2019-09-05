@@ -3,6 +3,8 @@ import { Subject, Observable } from "rxjs";
 import { UserLogin } from "src/app/home/models/UserLogin";
 import { Router, NavigationEnd } from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { NavbarService } from './navbar.service';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: "root"
@@ -14,7 +16,15 @@ export class LoginService {
   public login$: Observable<boolean> = this.login.asObservable();
 
   constructor(private router: Router,
-              private http: HttpClient) {}
+              private http: HttpClient,
+              private _navbarService: NavbarService) {
+
+    console.log("Logged User --> ", JSON.parse(localStorage.getItem('loggedUser')));
+    this.loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
+    if(this.loggedUser){
+      this._navbarService.UserLogged(true);
+    }
+  }
 
   Login(user: UserLogin) {
     return this.http.post(`${this.baseUrl}/login`, user);
@@ -24,7 +34,8 @@ export class LoginService {
 
   Logout() {
     this.loggedUser = new UserLogin("", "");
-    this.login.next(false);
+    localStorage.removeItem('loggedUser');
+    this._navbarService.UserLogged(false);
   }
 
   getLoggedUser(): UserLogin{
@@ -33,6 +44,7 @@ export class LoginService {
 
   setLoggedUser(value: UserLogin){
     this.loggedUser = value;
+    localStorage.setItem('loggedUser', JSON.stringify(this.loggedUser));
   }
 
   checkPassword(pass: any, user: any){

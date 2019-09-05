@@ -21,6 +21,8 @@ export class TestDAL {
                         fl.is_generic,
                         fl.filter_name,
                         fl.filter_type,
+                        fl.column_name,
+                        fl.table_name,
                         flop.option_value
                     from filter fl full join filter_option flop
                         on fl.id_filter = flop.id_filter
@@ -88,6 +90,7 @@ export class TestDAL {
 
     static async GetProducts(searchValue: string): Promise<QueryResult["rows"]>{
         let query = `SELECT * FROM product WHERE name ~* '${searchValue}';`;
+        console.log(query);
         let result = await PgClient.query(query);
         return result.rows;
     }
@@ -141,12 +144,12 @@ export class TestDAL {
             ) VALUES(
             '${user.Id}',
             '${publication.Price}',
-            '${publication.Currency}',
+            'USD',
             '${publication.Description}',
             '${publication.Category}',
             '${publication.Subcategory}',
-            '${publication.Title}',
-            '${publication.Stock}',
+            '${publication.Name}',
+            '1',
             1
             )`;
         console.log('query', query);

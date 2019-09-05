@@ -12,6 +12,9 @@ export class GeneralService {
   public obs = fromEvent(window, 'resize')
 
   private categoryForCreate: Category;
+  
+  public currentUrl: string;
+  public previousUrl: string;
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +30,13 @@ export class GeneralService {
 
   setCategoryForCreate(value: Category){
     this.categoryForCreate = value;
+  }
+
+  setCurrentAndPreviousRoutes(route: string){
+    this.previousUrl = this.currentUrl;
+    this.currentUrl = route;
+    console.log('Previous url -->', this.previousUrl);
+    console.log('Current url -->', this.currentUrl);
   }
 
   changePass(user: UserInfo){

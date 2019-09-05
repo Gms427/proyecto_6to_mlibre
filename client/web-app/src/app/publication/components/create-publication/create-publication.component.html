@@ -51,12 +51,35 @@
           aria-labelledby="radio-group-label"
           [(ngModel)]="publicationBaseInfo.NewOrUsed"
           class="radio-group">
-              <mat-radio-button class="radio-button" *ngFor="let option of publicationBaseInfo.NewOrUsed" [value]="option.Value">
+              <mat-radio-button class="radio-button" *ngFor="let option of newOrUsedOptions" [value]="option.Value">
                   {{option.DisplayValue}}
               </mat-radio-button>
           </mat-radio-group>
       </div>
 
+      <div ng2FileDrop
+                 [ngClass]="{'uploader-over': hasBaseDropZoneOver}"
+                 (fileOver)="fileOverBase($event)"
+                 [uploader]="uploader"
+                 class="uploader">
+                 <mat-label>Suelte las imágenes aquí</mat-label>
+      </div>
+
+      <div *ngFor="let file of uploader.queue">
+        {{ file.file.name }}
+      </div>
+
+      <mat-progress-bar mode="determinate" [value]="uploader.progress"></mat-progress-bar>
+
+      <div class="container-images">
+        <img *ngFor="let img of previewImages" class="img-preview" [src]="sanitizer.bypassSecurityTrustUrl(img)" >
+      </div>
+      
+      <div class="container-buttons">
+        <button mat-raised-button color="primary" class="btn-primary" (click)="u()">Subir imágenes</button>
+
+        <button mat-raised-button color="primary" class="btn-primary" (click)="c()">Borrar imágenes</button>
+      </div>
     </mat-card>
 
     <!-- Form de datos de la subcategoría 
@@ -169,7 +192,7 @@
         </mat-card-content>
       </mat-card>
 
-      <button mat-raised-button color="primary" class="btn-post" (click)="post()">Publicar</button>
+      <button mat-raised-button color="primary" class="btn-post btn-primary" (click)="post()">Publicar</button>
   </div>
 </div>
 

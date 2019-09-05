@@ -68,6 +68,10 @@ import { ToastrModule } from 'ngx-toastr';
 // Ngx Spinner
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+// File Upload Module
+import { FileUploadModule } from 'ng2-file-upload';
+
+
 
 @NgModule({
   declarations: [],
@@ -127,7 +131,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     // Toast 
     ToastrModule.forRoot(),
     // Ngx Spinner
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    // File Upload Module
+    FileUploadModule
   ],
   exports: [
     // Angular material
@@ -177,7 +183,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     DialogModule,
     GalleriaModule,
     // Ngx Spinner
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    // File Upload Module
+    FileUploadModule
   ],
   providers: []
 })
